@@ -6,6 +6,7 @@ import 'models/round_state.dart';
 import 'screens/deal_cards_screen.dart';
 import 'screens/discussion_screen.dart';
 import 'screens/setup_screen.dart';
+import 'services/update_service.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -42,6 +43,14 @@ class GameContainer extends StatefulWidget {
 
 class _GameContainerState extends State<GameContainer> {
   ScreenState _currentScreen = ScreenState.setup;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      UpdateService.checkAndShowUpdateDialog(context);
+    });
+  }
 
   // Setup state
   List<Industry> _selectedIndustries = [
