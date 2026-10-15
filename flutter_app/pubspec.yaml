@@ -18,3 +18,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Courier New
+      fonts:
+        - asset: assets/fonts/CourierNew-Regular.ttf
+        - asset: assets/fonts/CourierNew-Bold.ttf
+          weight: 700

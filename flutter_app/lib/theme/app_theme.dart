@@ -24,7 +24,8 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(color: AppColors.textPrimary),
       ),
-      fontFamily: 'Roboto',
+      fontFamily: 'Courier New',
+      fontFamilyFallback: const ['Courier', 'monospace'],
     );
   }
 }
