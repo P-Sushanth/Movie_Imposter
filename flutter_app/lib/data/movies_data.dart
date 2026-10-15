@@ -1478,6 +1478,18 @@ const List<Movie> kAllMovies = <Movie>[
     isRemake: false,
   ),
   Movie(
+    id: 'tollywood-124',
+    title: 'Devara',
+    industry: Industry.tollywood,
+    releaseYear: 2024,
+    decade: '2020s',
+    hero: 'N. T. Rama Rao Jr.',
+    director: 'Koratala Siva',
+    genre: 'Action Drama',
+    isAdult: false,
+    isRemake: false,
+  ),
+  Movie(
     id: 'bollywood-001',
     title: 'Awaara',
     industry: Industry.bollywood,
