@@ -48,13 +48,13 @@ class UpdateService {
     HttpClient? client;
     try {
       client = HttpClient();
-      client.connectionTimeout = const Duration(seconds: 3);
+      client.connectionTimeout = const Duration(seconds: 5);
 
       final request = await client.getUrl(Uri.parse(kGithubReleasesApiUrl));
       request.headers.set('User-Agent', 'MovieImposterApp');
       request.headers.set('Accept', 'application/vnd.github.v3+json');
 
-      final response = await request.close().timeout(const Duration(seconds: 4));
+      final response = await request.close().timeout(const Duration(seconds: 6));
       if (response.statusCode != 200) return null;
 
       final body = await response.transform(utf8.decoder).join();
@@ -98,9 +98,24 @@ class UpdateService {
   }
 
   /// Checks and presents an update dialog if an update exists.
-  static Future<void> checkAndShowUpdateDialog(BuildContext context) async {
+  static Future<void> checkAndShowUpdateDialog(
+    BuildContext context, {
+    bool showNoUpdateMessage = false,
+  }) async {
     final update = await checkForUpdate();
-    if (update == null || !context.mounted) return;
+    if (!context.mounted) return;
+
+    if (update == null) {
+      if (showNoUpdateMessage) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('You are on the latest version!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+      return;
+    }
 
     showDialog(
       context: context,
