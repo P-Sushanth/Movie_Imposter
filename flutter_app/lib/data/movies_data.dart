@@ -1490,6 +1490,18 @@ const List<Movie> kAllMovies = <Movie>[
     isRemake: false,
   ),
   Movie(
+    id: 'tollywood-125',
+    title: 'Pushpa 2: The Rule',
+    industry: Industry.tollywood,
+    releaseYear: 2024,
+    decade: '2020s',
+    hero: 'Allu Arjun',
+    director: 'Sukumar',
+    genre: 'Action Thriller',
+    isAdult: false,
+    isRemake: false,
+  ),
+  Movie(
     id: 'bollywood-001',
     title: 'Awaara',
     industry: Industry.bollywood,
