@@ -1,6 +1,6 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.0.5)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.0.6)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
@@ -10,7 +10,7 @@ An offline, pass-and-play party game inspired by Indian and international cinema
 
 ## 📲 Download & Install
 
-1. Download the latest **[movie-imposter.apk (v1.0.5)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)** directly to your Android device.
+1. Download the latest **[movie-imposter.apk (v1.0.6)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)** directly to your Android device.
 2. Tap the downloaded `.apk` file to install (allow *"Install unknown apps"* if prompted).
 3. Open **Movie Imposter** and start playing immediately—completely offline with no logins or ads!
 4. *All past versions can be found on the [Releases Page](https://github.com/P-Sushanth/Movie_Imposter/releases).*
@@ -30,8 +30,8 @@ An offline, pass-and-play party game inspired by Indian and international cinema
    - Release the hold before passing the phone to ensure complete privacy.
 
 3. **Discussion & Accusation**:
-   - Tap **Start Discussion** to spotlight a **randomly chosen player** who speaks or asks the first question!
-   - Follow the visual **Speaking Order** to discuss the movie without leaking the title directly.
+   - Tap **Start Discussion** to spotlight a **randomly chosen player** to start the round!
+   - Players discuss the movie and ask questions without leaking the title directly.
    - The imposter tries to blend in using their subtle clue!
    - Vote on who the imposter is, then tap **Reveal Imposter** to see if the group won.
 
@@ -40,8 +40,8 @@ An offline, pass-and-play party game inspired by Indian and international cinema
 ## ✨ Features
 
 - **100% Offline-First**: No servers, no accounts, no analytics, no ads required for gameplay.
-- **Session-Based Movie Exclusion**: Played movies are removed from the pool for that session so you never get repeats.
-- **Randomized Dealing & Turn Order**: Dealing order is shuffled every round, and a random player is selected to start the discussion.
+- **Session-Based Movie Exclusion**: Played movies are removed from the pool in the background so you never get repeats.
+- **Randomized Dealing & Starting Player**: Dealing order is shuffled every round, and a random player is spotlighted to start the round.
 - **In-App Update Engine**: Automatically notifies you when a new version of the game is available and lets you update with 1 tap.
 - **Courier New Retro Typography**: Clean typewriter aesthetic throughout the entire app.
 - **Privacy-Safe Card Reveal**: Hold-to-reveal gesture prevents reflection leaks.

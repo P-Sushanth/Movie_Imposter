@@ -17,9 +17,6 @@ class SetupScreen extends StatelessWidget {
   final bool imposterClueEnabled;
   final void Function(bool enabled) onToggleClueEnabled;
   final VoidCallback onStartGame;
-  final int sessionMovieCount;
-  final VoidCallback? onResetSession;
-
   const SetupScreen({
     super.key,
     required this.selectedIndustries,
@@ -34,8 +31,6 @@ class SetupScreen extends StatelessWidget {
     required this.imposterClueEnabled,
     required this.onToggleClueEnabled,
     required this.onStartGame,
-    this.sessionMovieCount = 0,
-    this.onResetSession,
   });
 
   @override
@@ -92,53 +87,6 @@ class SetupScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    if (sessionMovieCount > 0) ...[
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: AppColors.surfaceElevated,
-                              borderRadius: BorderRadius.circular(6),
-                              border: Border.all(color: AppColors.surfaceBorder),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(Icons.movie_filter_outlined, size: 13, color: AppColors.textMuted),
-                                const SizedBox(width: 5),
-                                Text(
-                                  '$sessionMovieCount movie${sessionMovieCount == 1 ? '' : 's'} played this session',
-                                  style: const TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.textSecondary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          if (onResetSession != null)
-                            InkWell(
-                              onTap: onResetSession,
-                              borderRadius: BorderRadius.circular(6),
-                              child: const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-                                child: Text(
-                                  'Reset',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w700,
-                                    color: AppColors.danger,
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ],
                     const SizedBox(height: 20),
 
                     // 1. Categories Section

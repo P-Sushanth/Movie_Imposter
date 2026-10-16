@@ -259,18 +259,6 @@ class _GameContainerState extends State<GameContainer> {
             });
           },
           onStartGame: _handleStartGame,
-          sessionMovieCount: _usedMovieIds.length,
-          onResetSession: () {
-            setState(() {
-              _usedMovieIds.clear();
-            });
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Session movie history reset!'),
-                duration: Duration(seconds: 2),
-              ),
-            );
-          },
         );
 
       case ScreenState.dealing:
@@ -288,7 +276,6 @@ class _GameContainerState extends State<GameContainer> {
           movieTitle: _roundState!.movieTitle,
           imposters: _roundState!.imposters,
           startingPlayer: _roundState!.startingPlayer,
-          discussionOrder: _roundState!.discussionOrder,
           onReturnToSetup: _handleReturnToSetup,
         );
     }
