@@ -1,6 +1,6 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.0.0)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.0.5)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
@@ -10,9 +10,10 @@ An offline, pass-and-play party game inspired by Indian and international cinema
 
 ## 📲 Download & Install
 
-1. Download the latest **[movie-imposter.apk](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)** directly to your Android device.
+1. Download the latest **[movie-imposter.apk (v1.0.5)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)** directly to your Android device.
 2. Tap the downloaded `.apk` file to install (allow *"Install unknown apps"* if prompted).
 3. Open **Movie Imposter** and start playing immediately—completely offline with no logins or ads!
+4. *All past versions can be found on the [Releases Page](https://github.com/P-Sushanth/Movie_Imposter/releases).*
 
 ---
 
@@ -24,22 +25,27 @@ An offline, pass-and-play party game inspired by Indian and international cinema
    - Choose whether the imposter receives a subtle clue (decade, director, genre, etc.).
 
 2. **Secret Role Deal**:
-   - Pass the phone to each player one by one.
+   - The device is passed to each player in a **randomized dealing order** so no player is always first.
    - Each player holds their card to secretly reveal either the **Movie Title** or the **Imposter Role**.
    - Release the hold before passing the phone to ensure complete privacy.
 
 3. **Discussion & Accusation**:
-   - Once all cards are dealt, players discuss the movie without giving it away directly.
+   - Tap **Start Discussion** to spotlight a **randomly chosen player** who speaks or asks the first question!
+   - Follow the visual **Speaking Order** to discuss the movie without leaking the title directly.
    - The imposter tries to blend in using their subtle clue!
-   - Vote on who the imposter is, then tap **Reveal Imposter** to see if the group won or if the imposter escaped undetected.
+   - Vote on who the imposter is, then tap **Reveal Imposter** to see if the group won.
 
 ---
 
 ## ✨ Features
 
-- **100% Offline-First**: No servers, no accounts, no analytics, no ads.
+- **100% Offline-First**: No servers, no accounts, no analytics, no ads required for gameplay.
+- **Session-Based Movie Exclusion**: Played movies are removed from the pool for that session so you never get repeats.
+- **Randomized Dealing & Turn Order**: Dealing order is shuffled every round, and a random player is selected to start the discussion.
+- **In-App Update Engine**: Automatically notifies you when a new version of the game is available and lets you update with 1 tap.
+- **Courier New Retro Typography**: Clean typewriter aesthetic throughout the entire app.
 - **Privacy-Safe Card Reveal**: Hold-to-reveal gesture prevents reflection leaks.
-- **Data-Driven Clues**: Over 300+ curated movies with deterministic clue generation that never leaks the film title.
+- **Data-Driven Clues**: Over 320+ curated movies with deterministic clue generation that never leaks the film title.
 - **Dual Framework Architecture**: Available in both high-performance Flutter (native APK) and React Native / Expo.
 
 ---
