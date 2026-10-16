@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_colors.dart';
 
-const String kCurrentAppVersion = '1.0.6';
+const String kCurrentAppVersion = '1.0.7';
 const String kGithubReleasesApiUrl =
     'https://api.github.com/repos/P-Sushanth/Movie_Imposter/releases/latest';
 
@@ -126,9 +126,9 @@ class UpdateService {
           children: [
             const Icon(Icons.system_update_rounded, color: AppColors.primary, size: 28),
             const SizedBox(width: 12),
-            Text(
+            const Text(
               'Update Available!',
-              style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
             ),
           ],
         ),
@@ -176,12 +176,13 @@ class UpdateService {
             ),
           ),
           ElevatedButton(
-            onPressed: () async {
+            onPressed: () {
               Navigator.pop(ctx);
-              try {
-                const channel = MethodChannel('com.imposterwho.game/updater');
-                await channel.invokeMethod('launchUrl', {'url': update.downloadUrl});
-              } catch (_) {}
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (dlCtx) => _UpdateDownloadDialog(update: update),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
@@ -193,6 +194,269 @@ class UpdateService {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _UpdateDownloadDialog extends StatefulWidget {
+  final UpdateInfo update;
+
+  const _UpdateDownloadDialog({required this.update});
+
+  @override
+  State<_UpdateDownloadDialog> createState() => _UpdateDownloadDialogState();
+}
+
+class _UpdateDownloadDialogState extends State<_UpdateDownloadDialog> {
+  static const _channel = MethodChannel('com.imposterwho.game/updater');
+
+  double _progress = 0.0;
+  int _receivedBytes = 0;
+  int _totalBytes = 0;
+  String _status = 'Connecting...';
+  bool _isDownloading = true;
+  String? _errorMessage;
+  HttpClient? _client;
+  IOSink? _fileSink;
+  File? _downloadFile;
+  bool _cancelled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _startDownload();
+  }
+
+  @override
+  void dispose() {
+    _cancelled = true;
+    _cleanup();
+    super.dispose();
+  }
+
+  void _cleanup() {
+    try {
+      _fileSink?.close();
+      _client?.close(force: true);
+    } catch (_) {}
+  }
+
+  Future<void> _startDownload() async {
+    try {
+      String? cachePath;
+      try {
+        cachePath = await _channel.invokeMethod<String>('getAppCacheDir');
+      } catch (_) {}
+
+      final Directory saveDir = cachePath != null
+          ? Directory(cachePath)
+          : Directory.systemTemp;
+
+      if (!await saveDir.exists()) {
+        await saveDir.create(recursive: true);
+      }
+
+      final file = File('${saveDir.path}/movie_imposter_update.apk');
+      if (await file.exists()) {
+        try {
+          await file.delete();
+        } catch (_) {}
+      }
+      _downloadFile = file;
+
+      _client = HttpClient();
+      _client!.connectionTimeout = const Duration(seconds: 15);
+      final request = await _client!.getUrl(Uri.parse(widget.update.downloadUrl));
+      request.followRedirects = true;
+
+      final response = await request.close();
+      if (response.statusCode != 200) {
+        throw Exception('Download server returned HTTP ${response.statusCode}');
+      }
+
+      _totalBytes = response.contentLength;
+      _fileSink = file.openWrite();
+
+      if (mounted) {
+        setState(() {
+          _status = 'Downloading update...';
+        });
+      }
+
+      await for (final chunk in response) {
+        if (_cancelled) return;
+        _fileSink!.add(chunk);
+        _receivedBytes += chunk.length;
+        if (mounted) {
+          setState(() {
+            if (_totalBytes > 0) {
+              _progress = (_receivedBytes / _totalBytes).clamp(0.0, 1.0);
+            }
+          });
+        }
+      }
+
+      await _fileSink!.flush();
+      await _fileSink!.close();
+      _fileSink = null;
+
+      if (_cancelled) return;
+
+      if (mounted) {
+        setState(() {
+          _progress = 1.0;
+          _status = 'Launching installer...';
+          _isDownloading = false;
+        });
+      }
+
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      try {
+        await _channel.invokeMethod('installApk', {'filePath': file.path});
+      } on MissingPluginException {
+        // Fallback for older binary without installApk method
+        await _channel.invokeMethod('launchUrl', {'url': widget.update.downloadUrl});
+      }
+
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
+    } catch (e) {
+      if (_cancelled) return;
+      if (mounted) {
+        setState(() {
+          _isDownloading = false;
+          _errorMessage = e.toString().replaceFirst('Exception: ', '');
+          _status = 'Download failed';
+        });
+      }
+    }
+  }
+
+  void _cancelDownload() {
+    _cancelled = true;
+    _cleanup();
+    try {
+      _downloadFile?.deleteSync();
+    } catch (_) {}
+    Navigator.of(context).pop();
+  }
+
+  Future<void> _fallbackBrowser() async {
+    Navigator.of(context).pop();
+    try {
+      await _channel.invokeMethod('launchUrl', {'url': widget.update.downloadUrl});
+    } catch (_) {}
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final downloadedMb = (_receivedBytes / (1024 * 1024)).toStringAsFixed(1);
+    final totalMb = _totalBytes > 0
+        ? (_totalBytes / (1024 * 1024)).toStringAsFixed(1)
+        : '?';
+
+    return AlertDialog(
+      backgroundColor: AppColors.surface,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Row(
+        children: [
+          Icon(
+            _errorMessage != null ? Icons.error_outline : Icons.downloading_rounded,
+            color: _errorMessage != null ? AppColors.danger : AppColors.primary,
+            size: 28,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              _errorMessage != null ? 'Update Failed' : 'Updating Movie Imposter',
+              style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+            ),
+          ),
+        ],
+      ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Version ${widget.update.version}',
+            style: const TextStyle(
+              fontSize: 13,
+              color: AppColors.textSecondary,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 16),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: LinearProgressIndicator(
+              value: _progress > 0 ? _progress : null,
+              backgroundColor: AppColors.surfaceElevated,
+              valueColor: AlwaysStoppedAnimation<Color>(
+                _errorMessage != null ? AppColors.danger : AppColors.primary,
+              ),
+              minHeight: 8,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                _status,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: _errorMessage != null ? AppColors.danger : AppColors.textSecondary,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              if (_isDownloading && _totalBytes > 0)
+                Text(
+                  '${(_progress * 100).toInt()}% ($downloadedMb / $totalMb MB)',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: AppColors.textMuted,
+                    fontFamily: 'Courier New',
+                  ),
+                ),
+            ],
+          ),
+          if (_errorMessage != null) ...[
+            const SizedBox(height: 10),
+            Text(
+              _errorMessage!,
+              style: const TextStyle(fontSize: 11, color: AppColors.textMuted),
+            ),
+          ],
+        ],
+      ),
+      actions: [
+        if (_errorMessage != null) ...[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('Dismiss', style: TextStyle(color: AppColors.textMuted)),
+          ),
+          ElevatedButton(
+            onPressed: _fallbackBrowser,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.textOnPrimary,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            child: const Text('Open in Browser'),
+          ),
+        ] else if (_isDownloading) ...[
+          TextButton(
+            onPressed: _cancelDownload,
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: AppColors.textMuted, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
