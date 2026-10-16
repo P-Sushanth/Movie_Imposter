@@ -181,26 +181,13 @@ class SetupScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                'Number of Imposters',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.textPrimary,
-                                ),
-                              ),
-                              Text(
-                                '${players.length - numImposters} innocents • $numImposters imposter${numImposters > 1 ? 's' : ''}',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.textMuted,
-                                ),
-                              ),
-                            ],
+                          const Text(
+                            'Number of Imposters',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.textPrimary,
+                            ),
                           ),
                           const SizedBox(height: 14),
                           Row(
@@ -234,19 +221,6 @@ class SetupScreen extends StatelessWidget {
                                     onChangeNumImposters(numImposters + 1);
                                   }
                                 },
-                              ),
-                              const SizedBox(width: 14),
-                              Expanded(
-                                child: Text(
-                                  numImposters == 1
-                                      ? '1 player will receive a fake or clue role.'
-                                      : '$numImposters players will receive fake roles.',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                    height: 1.3,
-                                  ),
-                                ),
                               ),
                             ],
                           ),
