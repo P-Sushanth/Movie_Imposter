@@ -9,9 +9,9 @@ void main() {
       expect(validatePlayers([]).isValid, isFalse);
     });
 
-    test('rejects more than 10 players', () {
-      final eleven = List.generate(11, (i) => 'Player ${i + 1}');
-      expect(validatePlayers(eleven).isValid, isFalse);
+    test('accepts unlimited players (e.g. 15, 20, 50 players)', () {
+      final fifty = List.generate(50, (i) => 'Player ${i + 1}');
+      expect(validatePlayers(fifty).isValid, isTrue);
     });
 
     test('automatically resolves empty or whitespace-only names to Player X', () {

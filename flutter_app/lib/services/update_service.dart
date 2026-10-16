@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_colors.dart';
 
-const String kCurrentAppVersion = '1.0.8';
+const String kCurrentAppVersion = '1.0.9';
 const String kGithubReleasesApiUrl =
     'https://api.github.com/repos/P-Sushanth/Movie_Imposter/releases/latest';
 
@@ -407,22 +407,32 @@ class _UpdateDownloadDialogState extends State<_UpdateDownloadDialog> {
               Text(
                 _status,
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 13,
                   color: _errorMessage != null ? AppColors.danger : AppColors.textSecondary,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               if (_isDownloading && _totalBytes > 0)
                 Text(
-                  '${(_progress * 100).toInt()}% ($downloadedMb / $totalMb MB)',
+                  '${(_progress * 100).toInt()}%',
                   style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textMuted,
-                    fontFamily: 'Courier New',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.primary,
                   ),
                 ),
             ],
           ),
+          if (_isDownloading && _totalBytes > 0) ...[
+            const SizedBox(height: 4),
+            Text(
+              '$downloadedMb MB of $totalMb MB',
+              style: const TextStyle(
+                fontSize: 12,
+                color: AppColors.textMuted,
+              ),
+            ),
+          ],
           if (_errorMessage != null) ...[
             const SizedBox(height: 10),
             Text(

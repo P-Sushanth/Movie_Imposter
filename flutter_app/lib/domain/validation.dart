@@ -30,13 +30,6 @@ ValidationResult validatePlayers(List<String>? names) {
     );
   }
 
-  if (names.length > 10) {
-    return const ValidationResult(
-      isValid: false,
-      error: 'Maximum 10 players supported.',
-    );
-  }
-
   final resolved = resolvePlayerNames(names);
   final seen = <String>{};
 

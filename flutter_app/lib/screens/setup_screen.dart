@@ -35,8 +35,7 @@ class SetupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final maxImposters = (players.length ~/ 2).clamp(1, 5);
-    final canAddMorePlayers = players.length < 10;
+    final maxImposters = (players.length ~/ 2).clamp(1, 9999);
     final canRemovePlayer = players.length > 3;
 
     return Scaffold(
@@ -58,29 +57,29 @@ class SetupScreen extends StatelessWidget {
                         const Text(
                           'Movie Imposter',
                           style: TextStyle(
-                            fontSize: 28,
+                            fontSize: 26,
                             fontWeight: FontWeight.w800,
                             color: AppColors.textPrimary,
-                            letterSpacing: -0.5,
                           ),
                         ),
                         InkWell(
                           onTap: () {
                             UpdateService.checkAndShowUpdateDialog(context, showNoUpdateMessage: true);
                           },
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(20),
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                             decoration: BoxDecoration(
-                              color: AppColors.surfaceBorder.withOpacity(0.4),
-                              borderRadius: BorderRadius.circular(8),
+                              color: AppColors.surfaceElevated,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: AppColors.surfaceBorder),
                             ),
                             child: const Text(
                               'v$kCurrentAppVersion',
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w700,
-                                color: AppColors.textMuted,
+                                color: AppColors.textSecondary,
                               ),
                             ),
                           ),
@@ -105,47 +104,68 @@ class SetupScreen extends StatelessWidget {
                                   color: AppColors.textPrimary,
                                 ),
                               ),
-                              GestureDetector(
+                              InkWell(
                                 onTap: onSelectAllIndustries,
-                                child: const Text(
-                                  'Select All',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.primary,
+                                borderRadius: BorderRadius.circular(6),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.surfaceElevated,
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(color: AppColors.surfaceBorder),
+                                  ),
+                                  child: const Text(
+                                    'Select All',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.primary,
+                                    ),
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 14),
                           Wrap(
-                            spacing: 8,
-                            runSpacing: 8,
+                            spacing: 10,
+                            runSpacing: 10,
                             children: Industry.values.map((industry) {
                               final isSelected = selectedIndustries.contains(industry);
                               return InkWell(
                                 onTap: () => onToggleIndustry(industry),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(10),
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 10,
-                                    horizontal: 16,
+                                    horizontal: 14,
                                   ),
                                   decoration: BoxDecoration(
                                     color: isSelected ? AppColors.primary : AppColors.surfaceElevated,
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(10),
                                     border: Border.all(
                                       color: isSelected ? AppColors.primary : AppColors.surfaceBorder,
+                                      width: 1.5,
                                     ),
                                   ),
-                                  child: Text(
-                                    industry.label,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
-                                      color: isSelected ? AppColors.textOnPrimary : AppColors.textPrimary,
-                                    ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        isSelected ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded,
+                                        size: 16,
+                                        color: isSelected ? AppColors.textOnPrimary : AppColors.textMuted,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        industry.label,
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: isSelected ? AppColors.textOnPrimary : AppColors.textPrimary,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               );
@@ -161,19 +181,32 @@ class SetupScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            'Number of Imposters',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.textPrimary,
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Number of Imposters',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
+                              Text(
+                                '${players.length - numImposters} innocents • $numImposters imposter${numImposters > 1 ? 's' : ''}',
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.textMuted,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 14),
                           Row(
                             children: [
                               _buildStepperButton(
-                                icon: Icons.remove,
+                                icon: Icons.remove_rounded,
                                 enabled: numImposters > 1,
                                 onTap: () {
                                   if (numImposters > 1) {
@@ -187,20 +220,33 @@ class SetupScreen extends StatelessWidget {
                                 child: Text(
                                   '$numImposters',
                                   style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w800,
                                     color: AppColors.textPrimary,
                                   ),
                                 ),
                               ),
                               _buildStepperButton(
-                                icon: Icons.add,
+                                icon: Icons.add_rounded,
                                 enabled: numImposters < maxImposters,
                                 onTap: () {
                                   if (numImposters < maxImposters) {
                                     onChangeNumImposters(numImposters + 1);
                                   }
                                 },
+                              ),
+                              const SizedBox(width: 14),
+                              Expanded(
+                                child: Text(
+                                  numImposters == 1
+                                      ? '1 player will receive a fake or clue role.'
+                                      : '$numImposters players will receive fake roles.',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                    height: 1.3,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -228,10 +274,10 @@ class SetupScreen extends StatelessWidget {
                                 const SizedBox(height: 2),
                                 Text(
                                   imposterClueEnabled
-                                      ? 'Enabled — Imposter gets a subtle clue'
-                                      : 'Disabled — Imposter gets no clues',
+                                      ? 'Enabled — Imposter gets a subtle clue (decade, genre...)'
+                                      : 'Disabled — Imposter gets no clues at all',
                                   style: const TextStyle(
-                                    fontSize: 13,
+                                    fontSize: 12,
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
@@ -265,15 +311,16 @@ class SetupScreen extends StatelessWidget {
                                 ),
                               ),
                               const Text(
-                                'Leave blank for default',
+                                '3 minimum • No limit',
                                 style: TextStyle(
                                   fontSize: 12,
+                                  fontWeight: FontWeight.w600,
                                   color: AppColors.textMuted,
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 14),
                           ...players.asMap().entries.map((entry) {
                             final index = entry.key;
                             final name = entry.value;
@@ -283,12 +330,12 @@ class SetupScreen extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Container(
-                                    width: 32,
-                                    height: 32,
+                                    width: 34,
+                                    height: 38,
                                     alignment: Alignment.center,
                                     decoration: BoxDecoration(
                                       color: AppColors.surfaceElevated,
-                                      borderRadius: BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(8),
                                       border: Border.all(color: AppColors.surfaceBorder),
                                     ),
                                     child: Text(
@@ -305,12 +352,17 @@ class SetupScreen extends StatelessWidget {
                                     child: TextFormField(
                                       initialValue: name,
                                       onChanged: (text) => onChangePlayer(index, text),
-                                      maxLength: 20,
+                                      maxLength: 24,
+                                      style: const TextStyle(
+                                        fontSize: 14,
+                                        color: AppColors.textPrimary,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                       decoration: InputDecoration(
                                         counterText: '',
                                         hintText: 'Player ${index + 1}',
                                         hintStyle: const TextStyle(color: AppColors.textMuted),
-                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                                         filled: true,
                                         fillColor: AppColors.surfaceElevated,
                                         border: OutlineInputBorder(
@@ -329,42 +381,42 @@ class SetupScreen extends StatelessWidget {
                                     ),
                                   ),
                                   if (canRemovePlayer) ...[
-                                    const SizedBox(width: 8),
+                                    const SizedBox(width: 6),
                                     IconButton(
-                                      icon: const Icon(Icons.close, size: 20, color: AppColors.danger),
+                                      icon: const Icon(Icons.remove_circle_outline_rounded, size: 22, color: AppColors.danger),
                                       onPressed: () => onRemovePlayer(index),
                                       padding: EdgeInsets.zero,
                                       constraints: const BoxConstraints(),
+                                      splashRadius: 20,
                                     ),
                                   ],
                                 ],
                               ),
                             );
                           }),
-                          if (canAddMorePlayers) ...[
-                            const SizedBox(height: 6),
-                            SizedBox(
-                              width: double.infinity,
-                              child: OutlinedButton(
-                                onPressed: onAddPlayer,
-                                style: OutlinedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(vertical: 12),
-                                  side: const BorderSide(color: AppColors.surfaceBorderDark),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
+                          const SizedBox(height: 8),
+                          SizedBox(
+                            width: double.infinity,
+                            child: OutlinedButton.icon(
+                              onPressed: onAddPlayer,
+                              icon: const Icon(Icons.person_add_alt_1_rounded, size: 18),
+                              label: Text(
+                                'Add Player (${players.length + 1})',
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w700,
                                 ),
-                                child: const Text(
-                                  '+ Add Player',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.primary,
-                                  ),
+                              ),
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 13),
+                                foregroundColor: AppColors.primary,
+                                side: const BorderSide(color: AppColors.surfaceBorderDark, width: 1.5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
                             ),
-                          ],
+                          ),
                         ],
                       ),
                     ),

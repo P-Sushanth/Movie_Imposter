@@ -95,11 +95,9 @@ class _GameContainerState extends State<GameContainer> {
   }
 
   void _handleAddPlayer() {
-    if (_players.length < 10) {
-      setState(() {
-        _players.add('');
-      });
-    }
+    setState(() {
+      _players.add('');
+    });
   }
 
   void _handleRemovePlayer(int index) {
@@ -108,7 +106,7 @@ class _GameContainerState extends State<GameContainer> {
         _players.removeAt(index);
         final maxImposters = _players.length ~/ 2;
         if (_numImposters > maxImposters) {
-          _numImposters = maxImposters.clamp(1, 5);
+          _numImposters = maxImposters.clamp(1, 9999);
         }
       });
     }
