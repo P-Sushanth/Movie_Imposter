@@ -69,6 +69,9 @@ export default function App() {
     }
   };
 
+  // Track movies played in this session only
+  const [usedMovieIds, setUsedMovieIds] = useState<Set<string>>(new Set());
+
   // Start Game handler
   const handleStartGame = () => {
     try {
@@ -79,7 +82,9 @@ export default function App() {
         numImposters,
         imposterClueEnabled,
         previousMovieId: roundState?.movieId,
+        usedMovieIds,
       });
+      setUsedMovieIds((prev) => new Set(prev).add(newRound.movieId));
       setRoundState(newRound);
       setCurrentScreen("dealing");
     } catch (err: any) {
@@ -99,8 +104,11 @@ export default function App() {
 
   const handleFinishDealing = () => {
     if (roundState) {
+      const shuffled = [...roundState.players].sort(() => Math.random() - 0.5);
       setRoundState({
         ...roundState,
+        startingPlayer: shuffled[0],
+        discussionOrder: shuffled,
         phase: "discussion",
       });
       setCurrentScreen("discussion");
@@ -186,6 +194,8 @@ export default function App() {
             <DiscussionScreen
               movieTitle={roundState.movieTitle}
               imposters={roundState.imposters}
+              startingPlayer={roundState.startingPlayer}
+              discussionOrder={roundState.discussionOrder}
               onReturnToSetup={handleReturnToSetup}
             />
           )}

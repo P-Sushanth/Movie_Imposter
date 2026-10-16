@@ -12,6 +12,7 @@ class CreateRoundParams {
   final int numImposters;
   final bool imposterClueEnabled;
   final String? previousMovieId;
+  final Set<String>? usedMovieIds;
   final double Function()? random;
 
   CreateRoundParams({
@@ -21,6 +22,7 @@ class CreateRoundParams {
     this.numImposters = 1,
     this.imposterClueEnabled = true,
     this.previousMovieId,
+    this.usedMovieIds,
     this.random,
   });
 }
@@ -43,13 +45,24 @@ RoundState createRound(CreateRoundParams params) {
 
   // 4. Filter movies by selected industries
   final industrySet = params.selectedIndustries.toSet();
-  var eligibleMovies = params.moviePool.where((m) => industrySet.contains(m.industry)).toList();
+  final poolMatchingIndustries = params.moviePool.where((m) => industrySet.contains(m.industry)).toList();
 
-  if (eligibleMovies.isEmpty) {
+  if (poolMatchingIndustries.isEmpty) {
     throw StateError('No eligible movies found for the selected industries.');
   }
 
-  // 5. Avoid repeating previous movie if alternatives exist
+  // 5. Exclude movies already played in this session
+  var eligibleMovies = poolMatchingIndustries
+      .where((m) => !(params.usedMovieIds?.contains(m.id) ?? false))
+      .toList();
+
+  // If all movies for the selected industries have been used in this session, recycle pool
+  if (eligibleMovies.isEmpty) {
+    params.usedMovieIds?.removeWhere((id) => poolMatchingIndustries.any((m) => m.id == id));
+    eligibleMovies = poolMatchingIndustries;
+  }
+
+  // 6. Avoid repeating previous movie if alternatives exist
   if (params.previousMovieId != null && eligibleMovies.length > 1) {
     final withoutPrevious = eligibleMovies.where((m) => m.id != params.previousMovieId).toList();
     if (withoutPrevious.isNotEmpty) {
@@ -57,7 +70,7 @@ RoundState createRound(CreateRoundParams params) {
     }
   }
 
-  // 6. Select movie and (if clue enabled) generate clue
+  // 7. Select movie and (if clue enabled) generate clue
   Movie? selectedMovie;
   ClueItem? imposterClue;
 
@@ -84,7 +97,7 @@ RoundState createRound(CreateRoundParams params) {
     throw StateError('Failed to find an eligible movie.');
   }
 
-  // 7. Pick distinct imposter indices uniformly at random
+  // 8. Pick distinct imposter indices uniformly at random
   final allIndices = List<int>.generate(resolvedPlayers.length, (i) => i);
   final imposterIndices = <int>{};
 
@@ -94,16 +107,27 @@ RoundState createRound(CreateRoundParams params) {
     imposterIndices.add(chosen);
   }
 
-  // 8. Assign roles
-  final imposterNames = <String>[];
-  final assignments = <PlayerAssignment>[];
+  // 9. Always randomize the dealing order so no player always goes first or last
+  final dealingIndices = List<int>.generate(resolvedPlayers.length, (i) => i);
+  for (int i = dealingIndices.length - 1; i > 0; i--) {
+    final j = (rng() * (i + 1)).floor().clamp(0, i);
+    final temp = dealingIndices[i];
+    dealingIndices[i] = dealingIndices[j];
+    dealingIndices[j] = temp;
+  }
 
-  for (int i = 0; i < resolvedPlayers.length; i++) {
+  // 10. Assign roles in the randomized dealing order
+  final imposterNames = <String>[];
+  for (final idx in imposterIndices) {
+    imposterNames.add(resolvedPlayers[idx]);
+  }
+
+  final assignments = <PlayerAssignment>[];
+  for (final i in dealingIndices) {
     final name = resolvedPlayers[i];
     final playerId = 'player-${i + 1}';
 
     if (imposterIndices.contains(i)) {
-      imposterNames.add(name);
       assignments.add(
         PlayerAssignment(
           playerId: playerId,
@@ -128,6 +152,16 @@ RoundState createRound(CreateRoundParams params) {
     }
   }
 
+  // 11. Choose a random starting player and randomize discussion turn order
+  final discussionOrder = List<String>.from(resolvedPlayers);
+  for (int i = discussionOrder.length - 1; i > 0; i--) {
+    final j = (rng() * (i + 1)).floor().clamp(0, i);
+    final temp = discussionOrder[i];
+    discussionOrder[i] = discussionOrder[j];
+    discussionOrder[j] = temp;
+  }
+  final startingPlayer = discussionOrder.first;
+
   return RoundState(
     movieId: selectedMovie.id,
     movieTitle: selectedMovie.title,
@@ -137,6 +171,8 @@ RoundState createRound(CreateRoundParams params) {
     numImposters: safeNumImposters,
     imposterClueEnabled: params.imposterClueEnabled,
     assignments: assignments,
+    startingPlayer: startingPlayer,
+    discussionOrder: discussionOrder,
     currentCardIndex: 0,
     phase: RoundPhase.dealing,
   );

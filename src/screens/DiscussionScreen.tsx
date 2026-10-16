@@ -6,12 +6,16 @@ import { PrimaryButton } from "../components/PrimaryButton";
 interface DiscussionScreenProps {
   movieTitle: string;
   imposters: string[];
+  startingPlayer?: string;
+  discussionOrder?: string[];
   onReturnToSetup: () => void;
 }
 
 export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   movieTitle,
   imposters,
+  startingPlayer,
+  discussionOrder,
   onReturnToSetup,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -43,6 +47,50 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
             <Text style={styles.subtitle}>
               Discuss the movie, ask questions, and find the imposter.
             </Text>
+
+            {startingPlayer && (
+              <View style={styles.startingCard}>
+                <Text style={styles.startingBadge}>🎯 STARTS THE ROUND</Text>
+                <Text style={styles.startingName}>{startingPlayer}</Text>
+                <Text style={styles.startingDesc}>
+                  {startingPlayer} speaks first or asks the first question!
+                </Text>
+              </View>
+            )}
+
+            {discussionOrder && discussionOrder.length > 0 && (
+              <View style={styles.orderCard}>
+                <Text style={styles.orderHeader}>SPEAKING ORDER</Text>
+                <View style={styles.orderChips}>
+                  {discussionOrder.map((player, idx) => (
+                    <View
+                      key={player}
+                      style={[
+                        styles.orderChip,
+                        idx === 0 && styles.firstOrderChip,
+                      ]}
+                    >
+                      <Text
+                        style={[
+                          styles.orderIndex,
+                          idx === 0 && styles.firstOrderText,
+                        ]}
+                      >
+                        {idx + 1}.
+                      </Text>
+                      <Text
+                        style={[
+                          styles.orderPlayer,
+                          idx === 0 && styles.firstOrderText,
+                        ]}
+                      >
+                        {player}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            )}
           </>
         ) : (
           <View style={styles.revealedBox}>
@@ -109,6 +157,90 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 22,
     maxWidth: 280,
+    marginBottom: spacing.md,
+  },
+  startingCard: {
+    width: "100%",
+    backgroundColor: colors.surface,
+    borderWidth: 2,
+    borderColor: colors.surfaceBorder,
+    borderRadius: borderRadius.lg,
+    padding: spacing.md,
+    alignItems: "center",
+    marginVertical: spacing.sm,
+  },
+  startingBadge: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "800",
+    color: colors.primary,
+    letterSpacing: 1,
+    marginBottom: spacing.xs,
+  },
+  startingName: {
+    ...typography.h1,
+    fontSize: 26,
+    color: colors.textPrimary,
+    textAlign: "center",
+    marginBottom: 4,
+  },
+  startingDesc: {
+    ...typography.caption,
+    fontSize: 12,
+    color: colors.textSecondary,
+    textAlign: "center",
+  },
+  orderCard: {
+    width: "100%",
+    backgroundColor: colors.surface,
+    borderWidth: 1.5,
+    borderColor: colors.surfaceBorder,
+    borderRadius: borderRadius.lg,
+    padding: spacing.md,
+    marginTop: spacing.sm,
+  },
+  orderHeader: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "800",
+    color: colors.textMuted,
+    letterSpacing: 1,
+    marginBottom: spacing.sm,
+  },
+  orderChips: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
+  },
+  orderChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: colors.surfaceElevated,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: borderRadius.md,
+    borderWidth: 1,
+    borderColor: colors.surfaceBorder,
+  },
+  firstOrderChip: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  orderIndex: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "800",
+    color: colors.textMuted,
+    marginRight: 4,
+  },
+  orderPlayer: {
+    ...typography.body,
+    fontSize: 12,
+    fontWeight: "700",
+    color: colors.textPrimary,
+  },
+  firstOrderText: {
+    color: colors.textOnPrimary,
   },
   revealedBox: {
     width: "100%",

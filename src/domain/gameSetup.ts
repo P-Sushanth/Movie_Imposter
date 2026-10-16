@@ -10,6 +10,7 @@ export interface CreateRoundParams {
   numImposters?: number;
   imposterClueEnabled?: boolean;
   previousMovieId?: string;
+  usedMovieIds?: Set<string>;
   random?: () => number;
 }
 
@@ -20,6 +21,7 @@ export function createRound({
   numImposters = 1,
   imposterClueEnabled = true,
   previousMovieId,
+  usedMovieIds,
   random = Math.random,
 }: CreateRoundParams): RoundState {
   // 1. Resolve default player names (e.g. blank -> "Player 1")
@@ -39,13 +41,28 @@ export function createRound({
 
   // 4. Filter movies by selected industries
   const industrySet = new Set(selectedIndustries);
-  let eligibleMovies = moviePool.filter((m) => industrySet.has(m.industry));
+  const poolMatchingIndustries = moviePool.filter((m) => industrySet.has(m.industry));
 
-  if (eligibleMovies.length === 0) {
+  if (poolMatchingIndustries.length === 0) {
     throw new Error("No eligible movies found for the selected industries.");
   }
 
-  // 5. Avoid repeating previous movie if alternatives exist
+  // 5. Exclude movies already played in this session
+  let eligibleMovies = poolMatchingIndustries.filter(
+    (m) => !(usedMovieIds?.has(m.id) ?? false)
+  );
+
+  // If all movies for selected industries have been exhausted in this session, recycle pool
+  if (eligibleMovies.length === 0) {
+    if (usedMovieIds) {
+      for (const m of poolMatchingIndustries) {
+        usedMovieIds.delete(m.id);
+      }
+    }
+    eligibleMovies = poolMatchingIndustries;
+  }
+
+  // 6. Avoid repeating previous movie if alternatives exist
   if (previousMovieId && eligibleMovies.length > 1) {
     const withoutPrevious = eligibleMovies.filter((m) => m.id !== previousMovieId);
     if (withoutPrevious.length > 0) {
@@ -53,7 +70,7 @@ export function createRound({
     }
   }
 
-  // 6. Select movie and (if clue enabled) generate clue
+  // 7. Select movie and (if clue enabled) generate clue
   let selectedMovie: Movie | null = null;
   let imposterClue: ReturnType<typeof generateImposterClue> = null;
 
@@ -80,7 +97,7 @@ export function createRound({
     throw new Error("Failed to find an eligible movie.");
   }
 
-  // 7. Pick distinct imposter indices uniformly at random
+  // 8. Pick distinct imposter indices uniformly at random
   const allIndices = Array.from({ length: resolvedPlayers.length }, (_, i) => i);
   const imposterIndices = new Set<number>();
 
@@ -90,12 +107,25 @@ export function createRound({
     imposterIndices.add(chosen);
   }
 
-  // 8. Assign roles
+  // 9. Always randomize the dealing order so no player always goes first or last
+  const dealingIndices = Array.from({ length: resolvedPlayers.length }, (_, i) => i);
+  for (let i = dealingIndices.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    const temp = dealingIndices[i];
+    dealingIndices[i] = dealingIndices[j];
+    dealingIndices[j] = temp;
+  }
+
+  // 10. Assign roles in the randomized dealing order
   const imposterNames: string[] = [];
-  const assignments: PlayerAssignment[] = resolvedPlayers.map((name, index) => {
+  for (const idx of imposterIndices) {
+    imposterNames.push(resolvedPlayers[idx]);
+  }
+
+  const assignments: PlayerAssignment[] = dealingIndices.map((index) => {
+    const name = resolvedPlayers[index];
     const playerId = `player-${index + 1}`;
     if (imposterIndices.has(index)) {
-      imposterNames.push(name);
       return {
         playerId,
         playerName: name,
@@ -118,6 +148,16 @@ export function createRound({
     }
   });
 
+  // 11. Choose a random starting player and randomize discussion turn order
+  const discussionOrder = [...resolvedPlayers];
+  for (let i = discussionOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    const temp = discussionOrder[i];
+    discussionOrder[i] = discussionOrder[j];
+    discussionOrder[j] = temp;
+  }
+  const startingPlayer = discussionOrder[0];
+
   return {
     movieId: selectedMovie.id,
     movieTitle: selectedMovie.title,
@@ -127,6 +167,8 @@ export function createRound({
     numImposters: safeNumImposters,
     imposterClueEnabled,
     assignments,
+    startingPlayer,
+    discussionOrder,
     currentCardIndex: 0,
     phase: "dealing",
   };

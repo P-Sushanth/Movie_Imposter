@@ -15,6 +15,8 @@ class RoundState {
   final int numImposters;
   final bool imposterClueEnabled;
   final List<PlayerAssignment> assignments;
+  final String startingPlayer;
+  final List<String> discussionOrder;
   int currentCardIndex;
   RoundPhase phase;
 
@@ -27,6 +29,8 @@ class RoundState {
     required this.numImposters,
     required this.imposterClueEnabled,
     required this.assignments,
+    required this.startingPlayer,
+    required this.discussionOrder,
     this.currentCardIndex = 0,
     this.phase = RoundPhase.dealing,
   });
@@ -40,6 +44,8 @@ class RoundState {
     int? numImposters,
     bool? imposterClueEnabled,
     List<PlayerAssignment>? assignments,
+    String? startingPlayer,
+    List<String>? discussionOrder,
     int? currentCardIndex,
     RoundPhase? phase,
   }) {
@@ -52,6 +58,8 @@ class RoundState {
       numImposters: numImposters ?? this.numImposters,
       imposterClueEnabled: imposterClueEnabled ?? this.imposterClueEnabled,
       assignments: assignments ?? this.assignments,
+      startingPlayer: startingPlayer ?? this.startingPlayer,
+      discussionOrder: discussionOrder ?? this.discussionOrder,
       currentCardIndex: currentCardIndex ?? this.currentCardIndex,
       phase: phase ?? this.phase,
     );

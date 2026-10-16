@@ -31,6 +31,8 @@ export interface RoundState {
   numImposters: number;
   imposterClueEnabled: boolean;
   assignments: PlayerAssignment[];
+  startingPlayer: string;
+  discussionOrder: string[];
   currentCardIndex: number;
   phase: "dealing" | "discussion";
 }

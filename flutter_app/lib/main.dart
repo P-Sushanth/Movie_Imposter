@@ -65,6 +65,9 @@ class _GameContainerState extends State<GameContainer> {
   // Active round state
   RoundState? _roundState;
 
+  // Track movies played in this session only
+  final Set<String> _usedMovieIds = <String>{};
+
   // Industry handlers
   void _handleToggleIndustry(Industry ind) {
     setState(() {
@@ -122,8 +125,11 @@ class _GameContainerState extends State<GameContainer> {
           numImposters: _numImposters,
           imposterClueEnabled: _imposterClueEnabled,
           previousMovieId: _roundState?.movieId,
+          usedMovieIds: _usedMovieIds,
         ),
       );
+
+      _usedMovieIds.add(round.movieId);
 
       setState(() {
         _roundState = round;
@@ -150,8 +156,15 @@ class _GameContainerState extends State<GameContainer> {
 
   void _handleFinishDealing() {
     if (_roundState != null) {
+      // When clicked on start discussion, choose a random person from the players to start the round,
+      // and always randomize the speaking order.
+      final shuffled = List<String>.from(_roundState!.players)..shuffle();
       setState(() {
-        _roundState!.phase = RoundPhase.discussion;
+        _roundState = _roundState!.copyWith(
+          startingPlayer: shuffled.first,
+          discussionOrder: shuffled,
+          phase: RoundPhase.discussion,
+        );
         _currentScreen = ScreenState.discussion;
       });
     }
@@ -246,6 +259,18 @@ class _GameContainerState extends State<GameContainer> {
             });
           },
           onStartGame: _handleStartGame,
+          sessionMovieCount: _usedMovieIds.length,
+          onResetSession: () {
+            setState(() {
+              _usedMovieIds.clear();
+            });
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Session movie history reset!'),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
         );
 
       case ScreenState.dealing:
@@ -262,6 +287,8 @@ class _GameContainerState extends State<GameContainer> {
         return DiscussionScreen(
           movieTitle: _roundState!.movieTitle,
           imposters: _roundState!.imposters,
+          startingPlayer: _roundState!.startingPlayer,
+          discussionOrder: _roundState!.discussionOrder,
           onReturnToSetup: _handleReturnToSetup,
         );
     }

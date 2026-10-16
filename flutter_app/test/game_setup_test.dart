@@ -92,5 +92,63 @@ void main() {
 
       expect(round2.movieId, isNot(equals(round1.movieId)));
     });
+
+    test('excludes movies played in the current session', () {
+      final used = <String>{};
+      final round1 = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+          usedMovieIds: used,
+        ),
+      );
+      used.add(round1.movieId);
+
+      final round2 = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+          usedMovieIds: used,
+        ),
+      );
+      used.add(round2.movieId);
+
+      expect(round2.movieId, isNot(equals(round1.movieId)));
+      expect(used.contains(round1.movieId), isTrue);
+      expect(used.contains(round2.movieId), isTrue);
+    });
+
+    test('recycles session movies gracefully when all eligible movies are used', () {
+      final miniPool = kAllMovies.where((m) => m.industry == Industry.tollywood).take(2).toList();
+      final used = <String>{miniPool[0].id, miniPool[1].id};
+
+      final round = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: miniPool,
+          usedMovieIds: used,
+        ),
+      );
+
+      expect(miniPool.any((m) => m.id == round.movieId), isTrue);
+    });
+
+    test('assigns a valid starting player and discussion order', () {
+      final round = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+        ),
+      );
+
+      expect(players.contains(round.startingPlayer), isTrue);
+      expect(round.discussionOrder.length, equals(players.length));
+      expect(round.discussionOrder.first, equals(round.startingPlayer));
+      expect(round.discussionOrder.toSet(), equals(players.toSet()));
+    });
   });
 }
