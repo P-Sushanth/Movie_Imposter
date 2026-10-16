@@ -41,15 +41,29 @@ class GameContainer extends StatefulWidget {
   State<GameContainer> createState() => _GameContainerState();
 }
 
-class _GameContainerState extends State<GameContainer> {
+class _GameContainerState extends State<GameContainer> with WidgetsBindingObserver {
   ScreenState _currentScreen = ScreenState.setup;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       UpdateService.checkAndShowUpdateDialog(context);
     });
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && _currentScreen == ScreenState.setup) {
+      UpdateService.checkAndShowUpdateDialog(context);
+    }
   }
 
   // Setup state
@@ -172,6 +186,9 @@ class _GameContainerState extends State<GameContainer> {
     setState(() {
       _roundState = null;
       _currentScreen = ScreenState.setup;
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      UpdateService.checkAndShowUpdateDialog(context);
     });
   }
 

@@ -62,29 +62,155 @@ class SetupScreen extends StatelessWidget {
                             color: AppColors.textPrimary,
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            UpdateService.checkAndShowUpdateDialog(context, showNoUpdateMessage: true);
-                          },
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: AppColors.surfaceElevated,
+                        ValueListenableBuilder<UpdateInfo?>(
+                          valueListenable: UpdateService.availableUpdateNotifier,
+                          builder: (context, update, _) {
+                            final hasUpdate = update != null;
+                            return InkWell(
+                              onTap: () {
+                                if (hasUpdate) {
+                                  UpdateService.showUpdateDialog(context, update);
+                                } else {
+                                  UpdateService.checkAndShowUpdateDialog(context, showNoUpdateMessage: true);
+                                }
+                              },
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: AppColors.surfaceBorder),
-                            ),
-                            child: const Text(
-                              'v$kCurrentAppVersion',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.textSecondary,
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: hasUpdate ? AppColors.imposterRedBg : AppColors.surfaceElevated,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: hasUpdate ? AppColors.imposterRed.withOpacity(0.4) : AppColors.surfaceBorder,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (hasUpdate) ...[
+                                      Container(
+                                        width: 7,
+                                        height: 7,
+                                        decoration: const BoxDecoration(
+                                          color: AppColors.imposterRed,
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 5),
+                                    ],
+                                    Text(
+                                      hasUpdate ? 'Update ${update.version}' : 'v$kCurrentAppVersion',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w700,
+                                        color: hasUpdate ? AppColors.imposterRed : AppColors.textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+
+                    // Update Available Notification Banner (if update is ready)
+                    ValueListenableBuilder<UpdateInfo?>(
+                      valueListenable: UpdateService.availableUpdateNotifier,
+                      builder: (context, update, _) {
+                        if (update == null) return const SizedBox.shrink();
+                        return Padding(
+                          padding: const EdgeInsets.only(top: 14),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => UpdateService.showUpdateDialog(context, update),
+                              borderRadius: BorderRadius.circular(14),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                                decoration: BoxDecoration(
+                                  color: AppColors.surface,
+                                  borderRadius: BorderRadius.circular(14),
+                                  border: Border.all(color: AppColors.primary.withOpacity(0.2)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.04),
+                                      blurRadius: 6,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(7),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.primary.withOpacity(0.08),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: const Icon(
+                                        Icons.auto_awesome,
+                                        color: AppColors.primary,
+                                        size: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              const Text(
+                                                'New Update Available',
+                                                style: TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: AppColors.textPrimary,
+                                                ),
+                                              ),
+                                              const SizedBox(width: 6),
+                                              Container(
+                                                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                                                decoration: BoxDecoration(
+                                                  color: AppColors.primary,
+                                                  borderRadius: BorderRadius.circular(6),
+                                                ),
+                                                child: Text(
+                                                  update.version,
+                                                  style: const TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: AppColors.textOnPrimary,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 2),
+                                          const Text(
+                                            'Tap to view new features and update now',
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: AppColors.textSecondary,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      size: 14,
+                                      color: AppColors.textMuted,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
                     const SizedBox(height: 20),
 

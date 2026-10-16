@@ -23,4 +23,44 @@ void main() {
       expect(isVersionNewer('1.0', '1.0.0'), isFalse);
     });
   });
+
+  group('Release Notes Feature Parser', () {
+    test('parses markdown bullets and removes headers and bold tags', () {
+      const notes = '''
+### What's New in v1.0.10:
+- ♾️ **Unlimited player count**: Play with any number of friends
+- 🎨 **Warm off-white theme**: Easy on eyes
+- ⚡ **Instant In-App Updates**
+---
+Enjoy the game!
+''';
+      final features = parseReleaseFeatures(notes);
+      expect(features.length, 4);
+      expect(features[0], '♾️ Unlimited player count: Play with any number of friends');
+      expect(features[1], '🎨 Warm off-white theme: Easy on eyes');
+      expect(features[2], '⚡ Instant In-App Updates');
+      expect(features[3], 'Enjoy the game!');
+    });
+
+    test('provides clean defaults when release notes are null or empty', () {
+      expect(parseReleaseFeatures(null).isNotEmpty, isTrue);
+      expect(parseReleaseFeatures('').isNotEmpty, isTrue);
+      expect(parseReleaseFeatures('   \n\n  ').isNotEmpty, isTrue);
+    });
+
+    test('supports bullet asterisks and numbered lists', () {
+      const notes = '''
+* New sound effect
+* Improved card layout
+1. Bug fix for timers
+''';
+      final features = parseReleaseFeatures(notes);
+      expect(features, [
+        'New sound effect',
+        'Improved card layout',
+        'Bug fix for timers',
+      ]);
+    });
+  });
 }
+

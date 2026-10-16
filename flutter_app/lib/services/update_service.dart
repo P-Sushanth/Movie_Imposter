@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_colors.dart';
 
-const String kCurrentAppVersion = '1.0.10';
+const String kCurrentAppVersion = '1.0.11';
 const String kGithubReleasesApiUrl =
     'https://api.github.com/repos/P-Sushanth/Movie_Imposter/releases/latest';
 
@@ -41,7 +41,57 @@ bool isVersionNewer(String latest, String current) {
   return false;
 }
 
+/// Parses GitHub release notes into a clean list of feature highlights.
+List<String> parseReleaseFeatures(String? notes) {
+  if (notes == null || notes.trim().isEmpty) {
+    return const [
+      'Performance enhancements and stability fixes',
+      'Smoother game experience and UI refinements',
+    ];
+  }
+
+  final lines = notes.split(RegExp(r'\r?\n'));
+  final features = <String>[];
+
+  for (final rawLine in lines) {
+    final line = rawLine.trim();
+    if (line.isEmpty) continue;
+    // Skip markdown headers (# Header, ## Subheader)
+    if (line.startsWith('#')) continue;
+    // Skip horizontal divider lines
+    if (line.startsWith('---') || line.startsWith('***')) continue;
+
+    // Remove leading bullet characters: -, *, +, •, or numbers like 1.
+    var cleaned = line.replaceFirst(RegExp(r'^[-*+•\d\.)\s]+'), '').trim();
+
+    // Remove markdown bold/italic tags
+    cleaned = cleaned.replaceAll('**', '').replaceAll('__', '');
+
+    if (cleaned.isNotEmpty) {
+      features.add(cleaned);
+    }
+  }
+
+  if (features.isEmpty) {
+    return const [
+      'New improvements and bug fixes',
+    ];
+  }
+
+  return features;
+}
+
 class UpdateService {
+  /// Notifier tracking the latest update info found, if any.
+  static final ValueNotifier<UpdateInfo?> availableUpdateNotifier =
+      ValueNotifier<UpdateInfo?>(null);
+
+  /// Guard to prevent multiple update dialogs from stacking.
+  static bool _isDialogShowing = false;
+
+  /// Timestamp of the last check to prevent spamming GitHub API.
+  static DateTime? _lastCheckTime;
+
   /// Silently checks GitHub for a newer release.
   /// Returns null if offline or no update is found.
   static Future<UpdateInfo?> checkForUpdate() async {
@@ -64,6 +114,7 @@ class UpdateService {
       if (tagName == null) return null;
 
       if (!isVersionNewer(tagName, kCurrentAppVersion)) {
+        availableUpdateNotifier.value = null;
         return null; // Already on latest or newer version
       }
 
@@ -84,11 +135,14 @@ class UpdateService {
       downloadUrl ??= json['html_url'] as String?;
       if (downloadUrl == null) return null;
 
-      return UpdateInfo(
+      final update = UpdateInfo(
         version: tagName,
         downloadUrl: downloadUrl,
         releaseNotes: json['body'] as String?,
       );
+
+      availableUpdateNotifier.value = update;
+      return update;
     } catch (_) {
       // Always fail silently to ensure completely offline-safe gameplay
       return null;
@@ -102,6 +156,19 @@ class UpdateService {
     BuildContext context, {
     bool showNoUpdateMessage = false,
   }) async {
+    if (_isDialogShowing) return;
+
+    final now = DateTime.now();
+    if (!showNoUpdateMessage && _lastCheckTime != null) {
+      if (now.difference(_lastCheckTime!) < const Duration(seconds: 30)) {
+        if (availableUpdateNotifier.value != null && context.mounted) {
+          showUpdateDialog(context, availableUpdateNotifier.value!);
+        }
+        return;
+      }
+    }
+    _lastCheckTime = now;
+
     final update = await checkForUpdate();
     if (!context.mounted) return;
 
@@ -117,83 +184,192 @@ class UpdateService {
       return;
     }
 
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: AppColors.surface,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Row(
-          children: [
-            const Icon(Icons.system_update_rounded, color: AppColors.primary, size: 28),
-            const SizedBox(width: 12),
-            const Text(
-              'Update Available!',
-              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
-            ),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'A new version (${update.version}) of Movie Imposter is available.',
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.textPrimary,
-                height: 1.4,
-              ),
-            ),
-            if (update.releaseNotes != null && update.releaseNotes!.trim().isNotEmpty) ...[
-              const SizedBox(height: 12),
+    showUpdateDialog(context, update);
+  }
+
+  /// Explicitly presents the update dialog for an [UpdateInfo].
+  static Future<void> showUpdateDialog(
+    BuildContext context,
+    UpdateInfo update,
+  ) async {
+    if (_isDialogShowing || !context.mounted) return;
+    _isDialogShowing = true;
+
+    try {
+      await showDialog(
+        context: context,
+        builder: (ctx) => _UpdateAvailableDialog(update: update),
+      );
+    } finally {
+      _isDialogShowing = false;
+    }
+  }
+}
+
+class _UpdateAvailableDialog extends StatelessWidget {
+  final UpdateInfo update;
+
+  const _UpdateAvailableDialog({required this.update});
+
+  @override
+  Widget build(BuildContext context) {
+    final features = parseReleaseFeatures(update.releaseNotes);
+
+    return AlertDialog(
+      backgroundColor: AppColors.surface,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      contentPadding: const EdgeInsets.fromLTRB(22, 18, 22, 16),
+      titlePadding: const EdgeInsets.fromLTRB(22, 22, 22, 0),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
               Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: AppColors.surfaceElevated,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppColors.surfaceBorder),
+                  color: AppColors.primary.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: Text(
-                  update.releaseNotes!.trim(),
-                  maxLines: 4,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
-                  ),
+                child: const Icon(
+                  Icons.rocket_launch_rounded,
+                  color: AppColors.primary,
+                  size: 26,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'New Update Available!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 18,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 3),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: AppColors.surfaceElevated,
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: AppColors.surfaceBorder),
+                      ),
+                      child: Text(
+                        'v$kCurrentAppVersion  ➔  ${update.version}',
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: const Text(
-              'Later',
-              style: TextStyle(color: AppColors.textMuted, fontWeight: FontWeight.w600),
-            ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(ctx);
-              showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (dlCtx) => _UpdateDownloadDialog(update: update),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.textOnPrimary,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              elevation: 0,
+          const SizedBox(height: 16),
+          const Text(
+            'Update now for these features:',
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w700,
+              color: AppColors.textPrimary,
             ),
-            child: const Text('Update Now'),
           ),
         ],
       ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            constraints: const BoxConstraints(maxHeight: 220),
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: AppColors.surfaceElevated,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: AppColors.surfaceBorder),
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: features.map((feat) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(top: 2, right: 8),
+                          child: Icon(
+                            Icons.check_circle_rounded,
+                            size: 15,
+                            color: AppColors.success,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            feat,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: AppColors.textPrimary,
+                              height: 1.35,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+          ),
+        ],
+      ),
+      actionsAlignment: MainAxisAlignment.spaceBetween,
+      actionsPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text(
+            'Later',
+            style: TextStyle(
+              color: AppColors.textMuted,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        ElevatedButton.icon(
+          onPressed: () {
+            Navigator.pop(context);
+            showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (dlCtx) => _UpdateDownloadDialog(update: update),
+            );
+          },
+          icon: const Icon(Icons.download_rounded, size: 18),
+          label: const Text(
+            'Update Now',
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.textOnPrimary,
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            elevation: 0,
+          ),
+        ),
+      ],
     );
   }
 }
