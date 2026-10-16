@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Plain, clean light theme
-  static const Color background = Color(0xFFF8FAFC);
-  static const Color surface = Color(0xFFFFFFFF);
-  static const Color surfaceElevated = Color(0xFFF1F5F9);
-  static const Color surfaceBorder = Color(0xFFE2E8F0);
-  static const Color surfaceBorderDark = Color(0xFFCBD5E1);
+  // Warm off-white theme
+  static const Color background = Color(0xFFF4F3ED);
+  static const Color surface = Color(0xFFFAF9F5);
+  static const Color surfaceElevated = Color(0xFFEEECE4);
+  static const Color surfaceBorder = Color(0xFFE2E0D6);
+  static const Color surfaceBorderDark = Color(0xFFCDC7B8);
 
   // Crisp neutral primary
   static const Color primary = Color(0xFF0F172A);

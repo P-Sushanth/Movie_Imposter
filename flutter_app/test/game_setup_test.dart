@@ -136,6 +136,19 @@ void main() {
       expect(miniPool.any((m) => m.id == round.movieId), isTrue);
     });
 
+    test('preserves player ordering in card assignments', () {
+      final round = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+        ),
+      );
+
+      final assignedNames = round.assignments.map((a) => a.playerName).toList();
+      expect(assignedNames, equals(players));
+    });
+
     test('assigns a valid starting player and discussion order', () {
       final round = createRound(
         CreateRoundParams(

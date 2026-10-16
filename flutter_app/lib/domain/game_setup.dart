@@ -107,23 +107,14 @@ RoundState createRound(CreateRoundParams params) {
     imposterIndices.add(chosen);
   }
 
-  // 9. Always randomize the dealing order so no player always goes first or last
-  final dealingIndices = List<int>.generate(resolvedPlayers.length, (i) => i);
-  for (int i = dealingIndices.length - 1; i > 0; i--) {
-    final j = (rng() * (i + 1)).floor().clamp(0, i);
-    final temp = dealingIndices[i];
-    dealingIndices[i] = dealingIndices[j];
-    dealingIndices[j] = temp;
-  }
-
-  // 10. Assign roles in the randomized dealing order
+  // 9. Assign roles preserving natural player order for intuitive pass-and-play
   final imposterNames = <String>[];
   for (final idx in imposterIndices) {
     imposterNames.add(resolvedPlayers[idx]);
   }
 
   final assignments = <PlayerAssignment>[];
-  for (final i in dealingIndices) {
+  for (int i = 0; i < resolvedPlayers.length; i++) {
     final name = resolvedPlayers[i];
     final playerId = 'player-${i + 1}';
 
@@ -152,15 +143,13 @@ RoundState createRound(CreateRoundParams params) {
     }
   }
 
-  // 11. Choose a random starting player and randomize discussion turn order
-  final discussionOrder = List<String>.from(resolvedPlayers);
-  for (int i = discussionOrder.length - 1; i > 0; i--) {
-    final j = (rng() * (i + 1)).floor().clamp(0, i);
-    final temp = discussionOrder[i];
-    discussionOrder[i] = discussionOrder[j];
-    discussionOrder[j] = temp;
+  // 10. Choose a random starting player for discussion (circular order from that player)
+  final startingIndex = (rng() * resolvedPlayers.length).floor().clamp(0, resolvedPlayers.length - 1);
+  final startingPlayer = resolvedPlayers[startingIndex];
+  final discussionOrder = <String>[];
+  for (int i = 0; i < resolvedPlayers.length; i++) {
+    discussionOrder.add(resolvedPlayers[(startingIndex + i) % resolvedPlayers.length]);
   }
-  final startingPlayer = discussionOrder.first;
 
   return RoundState(
     movieId: selectedMovie.id,
