@@ -2,6 +2,7 @@ export type Industry =
   | "tollywood"
   | "bollywood"
   | "hollywood"
+  | "shows"
   | "kollywood"
   | "mollywood"
   | "sandalwood";
@@ -12,7 +13,13 @@ export type ClueFeatureKey =
   | "director"
   | "genre"
   | "is_adult"
-  | "is_remake";
+  | "is_remake"
+  | "production_house"
+  | "seasons_count"
+  | "start_year"
+  | "end_year"
+  | "adaptation_or_original"
+  | "release_medium";
 
 export interface Movie {
   id: string;
@@ -20,11 +27,17 @@ export interface Movie {
   industry: Industry;
   releaseYear: number;
   decade: string;
-  hero: string;
-  director: string;
-  genre: string;
-  isAdult: boolean;
-  isRemake: boolean;
+  hero?: string;
+  director?: string;
+  genre?: string;
+  isAdult?: boolean;
+  isRemake?: boolean;
+  productionHouse?: string;
+  seasonsCount?: number;
+  startYear?: number;
+  endYear?: string;
+  adaptationOrOriginal?: string;
+  releaseMedium?: string;
 }
 
 export interface ClueItem {

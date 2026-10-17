@@ -16,10 +16,85 @@ function clueContainsTitle(title: string, value: string): boolean {
 }
 
 /**
+ * Formats show features into show-specific clues:
+ * Production House, Number of Seasons, Start year, End year,
+ * Adaptation or Original, TV release or OTT release, and Premise line.
+ */
+export function getCluesForShow(show: Movie): ClueItem[] {
+  const clues: ClueItem[] = [];
+
+  // 1. Production House (Platform)
+  if (show.productionHouse && !clueContainsTitle(show.title, show.productionHouse)) {
+    clues.push({
+      key: "production_house",
+      label: "Production House",
+      value: show.productionHouse,
+      displayText: `Production House: ${show.productionHouse}`,
+    });
+  }
+
+  // 2. Number of Seasons
+  if (show.seasonsCount !== undefined && show.seasonsCount !== null) {
+    const sText = `${show.seasonsCount} ${show.seasonsCount === 1 ? "Season" : "Seasons"}`;
+    clues.push({
+      key: "seasons_count",
+      label: "Number of Seasons",
+      value: sText,
+      displayText: `Number of Seasons: ${sText}`,
+    });
+  }
+
+  // 3. Start Year
+  const startYr = show.startYear ?? show.releaseYear;
+  clues.push({
+    key: "start_year",
+    label: "Start Year",
+    value: `${startYr}`,
+    displayText: `Start Year: ${startYr}`,
+  });
+
+  // 4. End Year
+  if (show.endYear) {
+    clues.push({
+      key: "end_year",
+      label: "End Year",
+      value: show.endYear,
+      displayText: `End Year: ${show.endYear}`,
+    });
+  }
+
+  // 5. Adaptation or Original
+  if (show.adaptationOrOriginal) {
+    clues.push({
+      key: "adaptation_or_original",
+      label: "Adaptation / Original",
+      value: show.adaptationOrOriginal,
+      displayText: `Story: ${show.adaptationOrOriginal}`,
+    });
+  }
+
+  // 6. TV release or OTT release
+  if (show.releaseMedium) {
+    clues.push({
+      key: "release_medium",
+      label: "Release Type",
+      value: show.releaseMedium,
+      displayText: `Release: ${show.releaseMedium}`,
+    });
+  }
+
+  return clues;
+}
+
+/**
  * Formats individual movie features into punchy, keyword-based clues.
  * Uses concise labels and values instead of full sentences.
  */
 export function getCluesForMovie(movie: Movie): ClueItem[] {
+  if (movie.industry === "shows") {
+    return getCluesForShow(movie);
+  }
+
   const clues: ClueItem[] = [];
 
   // 1. Decade

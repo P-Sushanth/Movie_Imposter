@@ -2,6 +2,7 @@ import { Industry, Movie } from "./types";
 import tollywoodData from "./tollywood.json";
 import bollywoodData from "./bollywood.json";
 import hollywoodData from "./hollywood.json";
+import showsData from "./shows.json";
 
 export * from "./types";
 export * from "./clueTemplates";
@@ -10,6 +11,7 @@ export const ALL_MOVIES: Movie[] = [
   ...(tollywoodData as Movie[]),
   ...(bollywoodData as Movie[]),
   ...(hollywoodData as Movie[]),
+  ...(showsData as Movie[]),
 ];
 
 /**

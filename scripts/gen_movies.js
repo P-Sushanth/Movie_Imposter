@@ -5,8 +5,9 @@ const projectRoot = 'c:/Users/popur/Documents/Projects/Movie_Imposter';
 const t = require(path.join(projectRoot, 'src/data/movies/tollywood.json'));
 const b = require(path.join(projectRoot, 'src/data/movies/bollywood.json'));
 const h = require(path.join(projectRoot, 'src/data/movies/hollywood.json'));
+const s = require(path.join(projectRoot, 'src/data/movies/shows.json'));
 
-const all = [...t, ...b, ...h];
+const all = [...t, ...b, ...h, ...s];
 
 function escapeDart(str) {
   if (!str) return '';
@@ -23,11 +24,21 @@ for (const m of all) {
   out += '    industry: Industry.' + m.industry + ',\n';
   out += '    releaseYear: ' + m.releaseYear + ',\n';
   out += "    decade: '" + escapeDart(m.decade) + "',\n";
-  out += "    hero: '" + escapeDart(m.hero) + "',\n";
-  out += "    director: '" + escapeDart(m.director) + "',\n";
-  out += "    genre: '" + escapeDart(m.genre) + "',\n";
-  out += '    isAdult: ' + (m.isAdult ? 'true' : 'false') + ',\n';
-  out += '    isRemake: ' + (m.isRemake ? 'true' : 'false') + ',\n';
+  if (m.industry !== 'shows') {
+    out += "    hero: '" + escapeDart(m.hero) + "',\n";
+    out += "    director: '" + escapeDart(m.director) + "',\n";
+    out += "    genre: '" + escapeDart(m.genre) + "',\n";
+    out += '    isAdult: ' + (m.isAdult ? 'true' : 'false') + ',\n';
+    out += '    isRemake: ' + (m.isRemake ? 'true' : 'false') + ',\n';
+  } else {
+    if (m.genre) out += "    genre: '" + escapeDart(m.genre) + "',\n";
+    if (m.productionHouse) out += "    productionHouse: '" + escapeDart(m.productionHouse) + "',\n";
+    if (m.seasonsCount) out += '    seasonsCount: ' + m.seasonsCount + ',\n';
+    if (m.startYear) out += '    startYear: ' + m.startYear + ',\n';
+    if (m.endYear) out += "    endYear: '" + escapeDart(m.endYear) + "',\n";
+    if (m.adaptationOrOriginal) out += "    adaptationOrOriginal: '" + escapeDart(m.adaptationOrOriginal) + "',\n";
+    if (m.releaseMedium) out += "    releaseMedium: '" + escapeDart(m.releaseMedium) + "',\n";
+  }
   out += '  ),\n';
 }
 

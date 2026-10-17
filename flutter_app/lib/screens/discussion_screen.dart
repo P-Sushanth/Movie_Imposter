@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/movie.dart';
 import '../theme/app_colors.dart';
 import '../widgets/primary_button.dart';
 
@@ -7,6 +8,7 @@ class DiscussionScreen extends StatefulWidget {
   final List<String> imposters;
   final String startingPlayer;
   final VoidCallback onReturnToSetup;
+  final Industry? industry;
 
   const DiscussionScreen({
     super.key,
@@ -14,6 +16,7 @@ class DiscussionScreen extends StatefulWidget {
     required this.imposters,
     required this.startingPlayer,
     required this.onReturnToSetup,
+    this.industry,
   });
 
   @override
@@ -88,12 +91,14 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                 ),
                               ),
                               const SizedBox(height: 8),
-                              const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  'Discuss the movie, ask questions, and find the imposter.',
+                                  widget.industry == Industry.shows
+                                      ? 'Discuss the show, ask questions, and find the imposter.'
+                                      : 'Discuss the movie, ask questions, and find the imposter.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 14,
                                     color: AppColors.textSecondary,
                                     height: 1.4,
@@ -199,9 +204,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                 color: AppColors.surfaceBorderDark,
                               ),
                               const SizedBox(height: 24),
-                              const Text(
-                                'THE MOVIE',
-                                style: TextStyle(
+                              Text(
+                                widget.industry == Industry.shows ? 'THE SHOW' : 'THE MOVIE',
+                                style: const TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.textMuted,

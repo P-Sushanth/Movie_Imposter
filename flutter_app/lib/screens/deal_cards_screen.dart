@@ -267,7 +267,11 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              isImposter ? 'YOUR ROLE' : 'THE MOVIE',
+              isImposter
+                  ? 'YOUR ROLE'
+                  : ((role is NormalPlayerRole && role.industry == Industry.shows)
+                      ? 'THE SHOW'
+                      : 'THE MOVIE'),
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w800,

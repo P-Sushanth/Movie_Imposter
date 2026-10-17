@@ -71,6 +71,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
     Industry.tollywood,
     Industry.bollywood,
     Industry.hollywood,
+    Industry.shows,
   ];
   List<String> _players = ['', '', ''];
   int _numImposters = 1;
@@ -99,6 +100,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
         Industry.tollywood,
         Industry.bollywood,
         Industry.hollywood,
+        Industry.shows,
       ];
     });
   }
@@ -291,6 +293,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           movieTitle: _roundState!.movieTitle,
           imposters: _roundState!.imposters,
           startingPlayer: _roundState!.startingPlayer,
+          industry: _roundState!.industry,
           onReturnToSetup: _handleReturnToSetup,
         );
     }
