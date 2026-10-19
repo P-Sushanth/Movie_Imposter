@@ -137,24 +137,6 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
     });
   }
 
-  // 5. Is Adult
-  const adultValue = movie.isAdult ? "Adult (A)" : "Universal (U/UA)";
-  clues.push({
-    key: "is_adult",
-    label: "Rating",
-    value: adultValue,
-    displayText: `Rating: ${adultValue}`,
-  });
-
-  // 6. Is Remake
-  const remakeValue = movie.isRemake ? "Remake" : "Original";
-  clues.push({
-    key: "is_remake",
-    label: "Story Type",
-    value: remakeValue,
-    displayText: `Story Type: ${remakeValue}`,
-  });
-
   return clues;
 }
 

@@ -12,8 +12,6 @@ export type ClueFeatureKey =
   | "hero"
   | "director"
   | "genre"
-  | "is_adult"
-  | "is_remake"
   | "production_house"
   | "seasons_count"
   | "start_year"
@@ -30,8 +28,6 @@ export interface Movie {
   hero?: string;
   director?: string;
   genre?: string;
-  isAdult?: boolean;
-  isRemake?: boolean;
   productionHouse?: string;
   seasonsCount?: number;
   startYear?: number;

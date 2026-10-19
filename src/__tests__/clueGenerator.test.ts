@@ -11,8 +11,6 @@ describe("Clue Generation", () => {
     hero: "Mahesh Babu",
     director: "Puri Jagannadh",
     genre: "Action Thriller",
-    isAdult: false,
-    isRemake: false,
   };
 
   it("produces non-empty clues for all valid features", () => {
@@ -34,8 +32,6 @@ describe("Clue Generation", () => {
       hero: "Hero",
       director: "Subhash Ghai",
       genre: "Action Romance",
-      isAdult: false,
-      isRemake: false,
     };
 
     const clues = getCluesForMovie(movieWithTitleInHero);

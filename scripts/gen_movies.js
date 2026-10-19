@@ -28,8 +28,6 @@ for (const m of all) {
     out += "    hero: '" + escapeDart(m.hero) + "',\n";
     out += "    director: '" + escapeDart(m.director) + "',\n";
     out += "    genre: '" + escapeDart(m.genre) + "',\n";
-    out += '    isAdult: ' + (m.isAdult ? 'true' : 'false') + ',\n';
-    out += '    isRemake: ' + (m.isRemake ? 'true' : 'false') + ',\n';
   } else {
     if (m.genre) out += "    genre: '" + escapeDart(m.genre) + "',\n";
     if (m.productionHouse) out += "    productionHouse: '" + escapeDart(m.productionHouse) + "',\n";

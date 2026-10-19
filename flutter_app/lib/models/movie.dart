@@ -57,8 +57,6 @@ class Movie {
   final String hero;
   final String director;
   final String genre;
-  final bool isAdult;
-  final bool isRemake;
 
   // Show-specific fields (optional for movies, populated for shows):
   final String? productionHouse;
@@ -77,8 +75,6 @@ class Movie {
     this.hero = '',
     this.director = '',
     this.genre = '',
-    this.isAdult = false,
-    this.isRemake = false,
     this.productionHouse,
     this.seasonsCount,
     this.startYear,
@@ -97,8 +93,6 @@ class Movie {
       hero: (json['hero'] as String?) ?? '',
       director: (json['director'] as String?) ?? '',
       genre: (json['genre'] as String?) ?? '',
-      isAdult: (json['isAdult'] as bool?) ?? false,
-      isRemake: (json['isRemake'] as bool?) ?? false,
       productionHouse: json['productionHouse'] as String?,
       seasonsCount: json['seasonsCount'] as int?,
       startYear: json['startYear'] as int?,
@@ -118,8 +112,6 @@ class Movie {
       if (hero.isNotEmpty) 'hero': hero,
       if (director.isNotEmpty) 'director': director,
       if (genre.isNotEmpty) 'genre': genre,
-      if (industry != Industry.shows) 'isAdult': isAdult,
-      if (industry != Industry.shows) 'isRemake': isRemake,
       if (productionHouse != null) 'productionHouse': productionHouse,
       if (seasonsCount != null) 'seasonsCount': seasonsCount,
       if (startYear != null) 'startYear': startYear,

@@ -7,9 +7,7 @@
     "decade": "1940s",
     "hero": "Humphrey Bogart",
     "director": "Michael Curtiz",
-    "genre": "Romantic War Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic War Drama"
   },
   {
     "id": "hollywood-002",
@@ -19,9 +17,7 @@
     "decade": "1950s",
     "hero": "Henry Fonda",
     "director": "Sidney Lumet",
-    "genre": "Courtroom Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Courtroom Drama"
   },
   {
     "id": "hollywood-003",
@@ -31,9 +27,7 @@
     "decade": "1950s",
     "hero": "James Stewart",
     "director": "Alfred Hitchcock",
-    "genre": "Mystery Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Thriller"
   },
   {
     "id": "hollywood-004",
@@ -43,9 +37,7 @@
     "decade": "1950s",
     "hero": "James Stewart",
     "director": "Alfred Hitchcock",
-    "genre": "Psychological Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Psychological Thriller"
   },
   {
     "id": "hollywood-005",
@@ -55,9 +47,7 @@
     "decade": "1960s",
     "hero": "Anthony Perkins",
     "director": "Alfred Hitchcock",
-    "genre": "Psychological Horror",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Horror"
   },
   {
     "id": "hollywood-006",
@@ -67,9 +57,7 @@
     "decade": "1960s",
     "hero": "Peter O'Toole",
     "director": "David Lean",
-    "genre": "Historical Epic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Historical Epic Drama"
   },
   {
     "id": "hollywood-007",
@@ -79,9 +67,7 @@
     "decade": "1960s",
     "hero": "Clint Eastwood",
     "director": "Sergio Leone",
-    "genre": "Spaghetti Western",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Spaghetti Western"
   },
   {
     "id": "hollywood-008",
@@ -91,9 +77,7 @@
     "decade": "1960s",
     "hero": "Keir Dullea",
     "director": "Stanley Kubrick",
-    "genre": "Epic Sci-Fi",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Sci-Fi"
   },
   {
     "id": "hollywood-009",
@@ -103,9 +87,7 @@
     "decade": "1970s",
     "hero": "Marlon Brando",
     "director": "Francis Ford Coppola",
-    "genre": "Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Drama"
   },
   {
     "id": "hollywood-010",
@@ -115,9 +97,7 @@
     "decade": "1970s",
     "hero": "Al Pacino",
     "director": "Francis Ford Coppola",
-    "genre": "Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Drama"
   },
   {
     "id": "hollywood-011",
@@ -127,9 +107,7 @@
     "decade": "1970s",
     "hero": "Roy Scheider",
     "director": "Steven Spielberg",
-    "genre": "Thriller Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Thriller Adventure"
   },
   {
     "id": "hollywood-012",
@@ -139,9 +117,7 @@
     "decade": "1970s",
     "hero": "Robert De Niro",
     "director": "Martin Scorsese",
-    "genre": "Psychological Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Drama"
   },
   {
     "id": "hollywood-013",
@@ -151,9 +127,7 @@
     "decade": "1970s",
     "hero": "Sylvester Stallone",
     "director": "John G. Avildsen",
-    "genre": "Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sports Drama"
   },
   {
     "id": "hollywood-014",
@@ -163,9 +137,7 @@
     "decade": "1970s",
     "hero": "Mark Hamill",
     "director": "George Lucas",
-    "genre": "Space Opera Sci-Fi",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Space Opera Sci-Fi"
   },
   {
     "id": "hollywood-015",
@@ -175,9 +147,7 @@
     "decade": "1970s",
     "hero": "Sigourney Weaver",
     "director": "Ridley Scott",
-    "genre": "Sci-Fi Horror",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Sci-Fi Horror"
   },
   {
     "id": "hollywood-016",
@@ -187,9 +157,7 @@
     "decade": "1970s",
     "hero": "Martin Sheen",
     "director": "Francis Ford Coppola",
-    "genre": "Epic War Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Epic War Drama"
   },
   {
     "id": "hollywood-017",
@@ -199,9 +167,7 @@
     "decade": "1980s",
     "hero": "Jack Nicholson",
     "director": "Stanley Kubrick",
-    "genre": "Psychological Horror",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Horror"
   },
   {
     "id": "hollywood-018",
@@ -211,9 +177,7 @@
     "decade": "1980s",
     "hero": "Harrison Ford",
     "director": "Steven Spielberg",
-    "genre": "Action Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Adventure"
   },
   {
     "id": "hollywood-019",
@@ -223,9 +187,7 @@
     "decade": "1980s",
     "hero": "Harrison Ford",
     "director": "Ridley Scott",
-    "genre": "Neo-noir Sci-Fi",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Neo-noir Sci-Fi"
   },
   {
     "id": "hollywood-020",
@@ -235,9 +197,7 @@
     "decade": "1980s",
     "hero": "Al Pacino",
     "director": "Brian De Palma",
-    "genre": "Crime Drama",
-    "isAdult": true,
-    "isRemake": true
+    "genre": "Crime Drama"
   },
   {
     "id": "hollywood-021",
@@ -247,9 +207,7 @@
     "decade": "1980s",
     "hero": "Arnold Schwarzenegger",
     "director": "James Cameron",
-    "genre": "Sci-Fi Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Sci-Fi Action"
   },
   {
     "id": "hollywood-022",
@@ -259,9 +217,7 @@
     "decade": "1980s",
     "hero": "Michael J. Fox",
     "director": "Robert Zemeckis",
-    "genre": "Sci-Fi Adventure Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sci-Fi Adventure Comedy"
   },
   {
     "id": "hollywood-023",
@@ -271,9 +227,7 @@
     "decade": "1980s",
     "hero": "Bruce Willis",
     "director": "John McTiernan",
-    "genre": "Action Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
     "id": "hollywood-024",
@@ -283,9 +237,7 @@
     "decade": "1990s",
     "hero": "Ray Liotta",
     "director": "Martin Scorsese",
-    "genre": "Biographical Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Biographical Crime Drama"
   },
   {
     "id": "hollywood-025",
@@ -295,9 +247,7 @@
     "decade": "1990s",
     "hero": "Anthony Hopkins",
     "director": "Jonathan Demme",
-    "genre": "Psychological Horror Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Horror Thriller"
   },
   {
     "id": "hollywood-026",
@@ -307,9 +257,7 @@
     "decade": "1990s",
     "hero": "Arnold Schwarzenegger",
     "director": "James Cameron",
-    "genre": "Sci-Fi Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Sci-Fi Action"
   },
   {
     "id": "hollywood-027",
@@ -319,9 +267,7 @@
     "decade": "1990s",
     "hero": "Sam Neill",
     "director": "Steven Spielberg",
-    "genre": "Sci-Fi Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sci-Fi Adventure"
   },
   {
     "id": "hollywood-028",
@@ -331,9 +277,7 @@
     "decade": "1990s",
     "hero": "Liam Neeson",
     "director": "Steven Spielberg",
-    "genre": "Historical Epic Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Historical Epic Drama"
   },
   {
     "id": "hollywood-029",
@@ -343,9 +287,7 @@
     "decade": "1990s",
     "hero": "John Travolta",
     "director": "Quentin Tarantino",
-    "genre": "Crime Comedy Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Comedy Drama"
   },
   {
     "id": "hollywood-030",
@@ -355,9 +297,7 @@
     "decade": "1990s",
     "hero": "Tim Robbins",
     "director": "Frank Darabont",
-    "genre": "Prison Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Prison Drama"
   },
   {
     "id": "hollywood-031",
@@ -367,9 +307,7 @@
     "decade": "1990s",
     "hero": "Tom Hanks",
     "director": "Robert Zemeckis",
-    "genre": "Comedy Drama Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Drama Romance"
   },
   {
     "id": "hollywood-032",
@@ -379,9 +317,7 @@
     "decade": "1990s",
     "hero": "Matthew Broderick",
     "director": "Roger Allers",
-    "genre": "Animated Musical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Animated Musical Drama"
   },
   {
     "id": "hollywood-033",
@@ -391,9 +327,7 @@
     "decade": "1990s",
     "hero": "Mel Gibson",
     "director": "Mel Gibson",
-    "genre": "Historical Epic War",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Historical Epic War"
   },
   {
     "id": "hollywood-034",
@@ -403,9 +337,7 @@
     "decade": "1990s",
     "hero": "Brad Pitt",
     "director": "David Fincher",
-    "genre": "Crime Psychological Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Psychological Thriller"
   },
   {
     "id": "hollywood-035",
@@ -415,9 +347,7 @@
     "decade": "1990s",
     "hero": "Tom Cruise",
     "director": "Brian De Palma",
-    "genre": "Spy Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Spy Action Thriller"
   },
   {
     "id": "hollywood-036",
@@ -427,9 +357,7 @@
     "decade": "1990s",
     "hero": "Leonardo DiCaprio",
     "director": "James Cameron",
-    "genre": "Epic Romance Disaster",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Romance Disaster"
   },
   {
     "id": "hollywood-037",
@@ -439,9 +367,7 @@
     "decade": "1990s",
     "hero": "Tom Hanks",
     "director": "Steven Spielberg",
-    "genre": "Epic War Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Epic War Drama"
   },
   {
     "id": "hollywood-038",
@@ -451,9 +377,7 @@
     "decade": "1990s",
     "hero": "Jim Carrey",
     "director": "Peter Weir",
-    "genre": "Psychological Sci-Fi Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Psychological Sci-Fi Comedy"
   },
   {
     "id": "hollywood-039",
@@ -463,9 +387,7 @@
     "decade": "1990s",
     "hero": "Keanu Reeves",
     "director": "The Wachowskis",
-    "genre": "Sci-Fi Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Sci-Fi Action"
   },
   {
     "id": "hollywood-040",
@@ -475,9 +397,7 @@
     "decade": "1990s",
     "hero": "Brad Pitt",
     "director": "David Fincher",
-    "genre": "Psychological Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Drama"
   },
   {
     "id": "hollywood-041",
@@ -487,9 +407,7 @@
     "decade": "1990s",
     "hero": "Bruce Willis",
     "director": "M. Night Shyamalan",
-    "genre": "Psychological Horror Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Psychological Horror Thriller"
   },
   {
     "id": "hollywood-042",
@@ -499,9 +417,7 @@
     "decade": "2000s",
     "hero": "Russell Crowe",
     "director": "Ridley Scott",
-    "genre": "Historical Epic Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Historical Epic Action"
   },
   {
     "id": "hollywood-043",
@@ -511,9 +427,7 @@
     "decade": "2000s",
     "hero": "Guy Pearce",
     "director": "Christopher Nolan",
-    "genre": "Neo-noir Mystery Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Neo-noir Mystery Thriller"
   },
   {
     "id": "hollywood-044",
@@ -523,9 +437,7 @@
     "decade": "2000s",
     "hero": "Elijah Wood",
     "director": "Peter Jackson",
-    "genre": "Epic Fantasy Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Fantasy Adventure"
   },
   {
     "id": "hollywood-045",
@@ -535,9 +447,7 @@
     "decade": "2000s",
     "hero": "Tobey Maguire",
     "director": "Sam Raimi",
-    "genre": "Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action"
   },
   {
     "id": "hollywood-046",
@@ -547,9 +457,7 @@
     "decade": "2000s",
     "hero": "Johnny Depp",
     "director": "Gore Verbinski",
-    "genre": "Fantasy Swashbuckler Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Swashbuckler Action"
   },
   {
     "id": "hollywood-047",
@@ -559,9 +467,7 @@
     "decade": "2000s",
     "hero": "Elijah Wood",
     "director": "Peter Jackson",
-    "genre": "Epic Fantasy Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Fantasy Adventure"
   },
   {
     "id": "hollywood-048",
@@ -571,9 +477,7 @@
     "decade": "2000s",
     "hero": "Uma Thurman",
     "director": "Quentin Tarantino",
-    "genre": "Martial Arts Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Martial Arts Action"
   },
   {
     "id": "hollywood-049",
@@ -583,9 +487,7 @@
     "decade": "2000s",
     "hero": "Jim Carrey",
     "director": "Michel Gondry",
-    "genre": "Romantic Sci-Fi Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Romantic Sci-Fi Drama"
   },
   {
     "id": "hollywood-050",
@@ -595,9 +497,7 @@
     "decade": "2000s",
     "hero": "Tobey Maguire",
     "director": "Sam Raimi",
-    "genre": "Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action"
   },
   {
     "id": "hollywood-051",
@@ -607,9 +507,7 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action"
   },
   {
     "id": "hollywood-052",
@@ -619,9 +517,7 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Psychological Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Psychological Thriller"
   },
   {
     "id": "hollywood-053",
@@ -631,9 +527,7 @@
     "decade": "2000s",
     "hero": "Leonardo DiCaprio",
     "director": "Martin Scorsese",
-    "genre": "Crime Thriller",
-    "isAdult": true,
-    "isRemake": true
+    "genre": "Crime Thriller"
   },
   {
     "id": "hollywood-054",
@@ -643,9 +537,7 @@
     "decade": "2000s",
     "hero": "Daniel Craig",
     "director": "Martin Campbell",
-    "genre": "Spy Action Thriller",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Spy Action Thriller"
   },
   {
     "id": "hollywood-055",
@@ -655,9 +547,7 @@
     "decade": "2000s",
     "hero": "Josh Brolin",
     "director": "Coen Brothers",
-    "genre": "Neo-Western Crime Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Neo-Western Crime Thriller"
   },
   {
     "id": "hollywood-056",
@@ -667,9 +557,7 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Superhero Crime Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Crime Thriller"
   },
   {
     "id": "hollywood-057",
@@ -679,9 +567,7 @@
     "decade": "2000s",
     "hero": "Robert Downey Jr.",
     "director": "Jon Favreau",
-    "genre": "Superhero Action Sci-Fi",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action Sci-Fi"
   },
   {
     "id": "hollywood-058",
@@ -691,9 +577,7 @@
     "decade": "2000s",
     "hero": "Dev Patel",
     "director": "Danny Boyle",
-    "genre": "Drama Romance",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Drama Romance"
   },
   {
     "id": "hollywood-059",
@@ -703,9 +587,7 @@
     "decade": "2000s",
     "hero": "Brad Pitt",
     "director": "Quentin Tarantino",
-    "genre": "War Action Black Comedy",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "War Action Black Comedy"
   },
   {
     "id": "hollywood-060",
@@ -715,9 +597,7 @@
     "decade": "2000s",
     "hero": "Sam Worthington",
     "director": "James Cameron",
-    "genre": "Epic Sci-Fi Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Sci-Fi Action"
   },
   {
     "id": "hollywood-061",
@@ -727,9 +607,7 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Christopher Nolan",
-    "genre": "Sci-Fi Heist Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sci-Fi Heist Thriller"
   },
   {
     "id": "hollywood-062",
@@ -739,9 +617,7 @@
     "decade": "2010s",
     "hero": "Jesse Eisenberg",
     "director": "David Fincher",
-    "genre": "Biographical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Drama"
   },
   {
     "id": "hollywood-063",
@@ -751,9 +627,7 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Joss Whedon",
-    "genre": "Superhero Action Sci-Fi",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action Sci-Fi"
   },
   {
     "id": "hollywood-064",
@@ -763,9 +637,7 @@
     "decade": "2010s",
     "hero": "Jamie Foxx",
     "director": "Quentin Tarantino",
-    "genre": "Revisionist Western Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Revisionist Western Action"
   },
   {
     "id": "hollywood-065",
@@ -775,9 +647,7 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Martin Scorsese",
-    "genre": "Biographical Black Comedy Crime",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Biographical Black Comedy Crime"
   },
   {
     "id": "hollywood-066",
@@ -787,9 +657,7 @@
     "decade": "2010s",
     "hero": "Matthew McConaughey",
     "director": "Christopher Nolan",
-    "genre": "Epic Sci-Fi Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Sci-Fi Drama"
   },
   {
     "id": "hollywood-067",
@@ -799,9 +667,7 @@
     "decade": "2010s",
     "hero": "Miles Teller",
     "director": "Damien Chazelle",
-    "genre": "Psychological Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Drama"
   },
   {
     "id": "hollywood-068",
@@ -811,9 +677,7 @@
     "decade": "2010s",
     "hero": "Keanu Reeves",
     "director": "Chad Stahelski",
-    "genre": "Neo-noir Action Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Neo-noir Action Thriller"
   },
   {
     "id": "hollywood-069",
@@ -823,9 +687,7 @@
     "decade": "2010s",
     "hero": "Tom Hardy",
     "director": "George Miller",
-    "genre": "Post-apocalyptic Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Post-apocalyptic Action"
   },
   {
     "id": "hollywood-070",
@@ -835,9 +697,7 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Alejandro G. Iñárritu",
-    "genre": "Period Survival Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Period Survival Drama"
   },
   {
     "id": "hollywood-071",
@@ -847,9 +707,7 @@
     "decade": "2010s",
     "hero": "Ryan Gosling",
     "director": "Damien Chazelle",
-    "genre": "Musical Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Musical Romantic Drama"
   },
   {
     "id": "hollywood-072",
@@ -859,9 +717,7 @@
     "decade": "2010s",
     "hero": "Amy Adams",
     "director": "Denis Villeneuve",
-    "genre": "Sci-Fi Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sci-Fi Drama"
   },
   {
     "id": "hollywood-073",
@@ -871,9 +727,7 @@
     "decade": "2010s",
     "hero": "Daniel Kaluuya",
     "director": "Jordan Peele",
-    "genre": "Psychological Horror",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Horror"
   },
   {
     "id": "hollywood-074",
@@ -883,9 +737,7 @@
     "decade": "2010s",
     "hero": "Ryan Gosling",
     "director": "Denis Villeneuve",
-    "genre": "Neo-noir Sci-Fi",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Neo-noir Sci-Fi"
   },
   {
     "id": "hollywood-075",
@@ -895,9 +747,7 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Russo Brothers",
-    "genre": "Superhero Action Epic",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action Epic"
   },
   {
     "id": "hollywood-076",
@@ -907,9 +757,7 @@
     "decade": "2010s",
     "hero": "Shameik Moore",
     "director": "Bob Persichetti",
-    "genre": "Animated Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Animated Superhero Action"
   },
   {
     "id": "hollywood-077",
@@ -919,9 +767,7 @@
     "decade": "2010s",
     "hero": "Rami Malek",
     "director": "Bryan Singer",
-    "genre": "Biographical Musical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Musical Drama"
   },
   {
     "id": "hollywood-078",
@@ -931,9 +777,7 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Russo Brothers",
-    "genre": "Superhero Action Epic",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action Epic"
   },
   {
     "id": "hollywood-079",
@@ -943,9 +787,7 @@
     "decade": "2010s",
     "hero": "Song Kang-ho",
     "director": "Bong Joon-ho",
-    "genre": "Black Comedy Psychological Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Black Comedy Psychological Thriller"
   },
   {
     "id": "hollywood-080",
@@ -955,9 +797,7 @@
     "decade": "2010s",
     "hero": "Joaquin Phoenix",
     "director": "Todd Phillips",
-    "genre": "Psychological Crime Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Psychological Crime Thriller"
   },
   {
     "id": "hollywood-081",
@@ -967,9 +807,7 @@
     "decade": "2010s",
     "hero": "George MacKay",
     "director": "Sam Mendes",
-    "genre": "War Action Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "War Action Drama"
   },
   {
     "id": "hollywood-082",
@@ -979,9 +817,7 @@
     "decade": "2010s",
     "hero": "Daniel Craig",
     "director": "Rian Johnson",
-    "genre": "Mystery Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Comedy"
   },
   {
     "id": "hollywood-083",
@@ -991,9 +827,7 @@
     "decade": "2010s",
     "hero": "Christian Bale",
     "director": "James Mangold",
-    "genre": "Biographical Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Sports Drama"
   },
   {
     "id": "hollywood-084",
@@ -1003,9 +837,7 @@
     "decade": "2020s",
     "hero": "Timothée Chalamet",
     "director": "Denis Villeneuve",
-    "genre": "Epic Sci-Fi Adventure",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Epic Sci-Fi Adventure"
   },
   {
     "id": "hollywood-085",
@@ -1015,9 +847,7 @@
     "decade": "2020s",
     "hero": "Tom Holland",
     "director": "Jon Watts",
-    "genre": "Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Action"
   },
   {
     "id": "hollywood-086",
@@ -1027,9 +857,7 @@
     "decade": "2020s",
     "hero": "Robert Pattinson",
     "director": "Matt Reeves",
-    "genre": "Neo-noir Superhero Crime",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Neo-noir Superhero Crime"
   },
   {
     "id": "hollywood-087",
@@ -1039,9 +867,7 @@
     "decade": "2020s",
     "hero": "Tom Cruise",
     "director": "Joseph Kosinski",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
     "id": "hollywood-088",
@@ -1051,9 +877,7 @@
     "decade": "2020s",
     "hero": "Michelle Yeoh",
     "director": "Daniels",
-    "genre": "Absurdist Sci-Fi Comedy Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Absurdist Sci-Fi Comedy Drama"
   },
   {
     "id": "hollywood-089",
@@ -1063,9 +887,7 @@
     "decade": "2020s",
     "hero": "Sam Worthington",
     "director": "James Cameron",
-    "genre": "Epic Sci-Fi Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Sci-Fi Adventure"
   },
   {
     "id": "hollywood-090",
@@ -1075,9 +897,7 @@
     "decade": "2020s",
     "hero": "Cillian Murphy",
     "director": "Christopher Nolan",
-    "genre": "Biographical Historical Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Biographical Historical Drama"
   },
   {
     "id": "hollywood-091",
@@ -1087,9 +907,7 @@
     "decade": "2020s",
     "hero": "Margot Robbie",
     "director": "Greta Gerwig",
-    "genre": "Fantasy Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Comedy"
   },
   {
     "id": "hollywood-092",
@@ -1099,9 +917,7 @@
     "decade": "2020s",
     "hero": "Shameik Moore",
     "director": "Joaquim Dos Santos",
-    "genre": "Animated Superhero Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Animated Superhero Action"
   },
   {
     "id": "hollywood-093",
@@ -1111,9 +927,7 @@
     "decade": "2020s",
     "hero": "Tom Cruise",
     "director": "Christopher McQuarrie",
-    "genre": "Action Spy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Spy Thriller"
   },
   {
     "id": "hollywood-094",
@@ -1123,9 +937,7 @@
     "decade": "2020s",
     "hero": "Timothée Chalamet",
     "director": "Denis Villeneuve",
-    "genre": "Epic Sci-Fi Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Sci-Fi Adventure"
   },
   {
     "id": "hollywood-095",
@@ -1135,8 +947,6 @@
     "decade": "2020s",
     "hero": "Ryan Reynolds",
     "director": "Shawn Levy",
-    "genre": "Superhero Action Comedy",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Superhero Action Comedy"
   }
 ]

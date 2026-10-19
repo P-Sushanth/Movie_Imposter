@@ -135,24 +135,6 @@ List<ClueItem> getCluesForMovie(Movie movie) {
     ));
   }
 
-  // 5. Is Adult
-  final adultValue = movie.isAdult ? 'Adult (A)' : 'Universal (U/UA)';
-  clues.add(ClueItem(
-    key: 'is_adult',
-    label: 'Rating',
-    value: adultValue,
-    displayText: 'Rating: $adultValue',
-  ));
-
-  // 6. Is Remake
-  final remakeValue = movie.isRemake ? 'Remake' : 'Original';
-  clues.add(ClueItem(
-    key: 'is_remake',
-    label: 'Story Type',
-    value: remakeValue,
-    displayText: 'Story Type: $remakeValue',
-  ));
-
   return clues;
 }
 

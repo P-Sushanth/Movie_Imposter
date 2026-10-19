@@ -1,1262 +1,1022 @@
 [
   {
     "id": "bollywood-001",
-    "title": "Awaara",
-    "industry": "bollywood",
-    "releaseYear": 1951,
-    "decade": "1950s",
-    "hero": "Raj Kapoor",
-    "director": "Raj Kapoor",
-    "genre": "Musical Crime Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-002",
-    "title": "Shree 420",
-    "industry": "bollywood",
-    "releaseYear": 1955,
-    "decade": "1950s",
-    "hero": "Raj Kapoor",
-    "director": "Raj Kapoor",
-    "genre": "Comedy Drama Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-003",
-    "title": "Pyaasa",
-    "industry": "bollywood",
-    "releaseYear": 1957,
-    "decade": "1950s",
-    "hero": "Guru Dutt",
-    "director": "Guru Dutt",
-    "genre": "Musical Drama Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-004",
-    "title": "Mother India",
-    "industry": "bollywood",
-    "releaseYear": 1957,
-    "decade": "1950s",
-    "hero": "Sunil Dutt",
-    "director": "Mehboob Khan",
-    "genre": "Epic Social Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "bollywood-005",
-    "title": "Madhumati",
-    "industry": "bollywood",
-    "releaseYear": 1958,
-    "decade": "1950s",
-    "hero": "Dilip Kumar",
-    "director": "Bimal Roy",
-    "genre": "Paranormal Romance Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-006",
-    "title": "Mughal-e-Azam",
-    "industry": "bollywood",
-    "releaseYear": 1960,
-    "decade": "1960s",
-    "hero": "Dilip Kumar",
-    "director": "K. Asif",
-    "genre": "Historical Epic Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-007",
-    "title": "Guide",
-    "industry": "bollywood",
-    "releaseYear": 1965,
-    "decade": "1960s",
-    "hero": "Dev Anand",
-    "director": "Vijay Anand",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-008",
-    "title": "Padosan",
-    "industry": "bollywood",
-    "releaseYear": 1968,
-    "decade": "1960s",
-    "hero": "Sunil Dutt",
-    "director": "Jyoti Swaroop",
-    "genre": "Musical Comedy",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "bollywood-009",
-    "title": "Anand",
-    "industry": "bollywood",
-    "releaseYear": 1971,
-    "decade": "1970s",
-    "hero": "Rajesh Khanna",
-    "director": "Hrishikesh Mukherjee",
-    "genre": "Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-010",
-    "title": "Bobby",
-    "industry": "bollywood",
-    "releaseYear": 1973,
-    "decade": "1970s",
-    "hero": "Rishi Kapoor",
-    "director": "Raj Kapoor",
-    "genre": "Romantic Musical",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-011",
-    "title": "Zanjeer",
-    "industry": "bollywood",
-    "releaseYear": 1973,
-    "decade": "1970s",
-    "hero": "Amitabh Bachchan",
-    "director": "Prakash Mehra",
-    "genre": "Action Crime Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-012",
-    "title": "Deewaar",
-    "industry": "bollywood",
-    "releaseYear": 1975,
-    "decade": "1970s",
-    "hero": "Amitabh Bachchan",
-    "director": "Yash Chopra",
-    "genre": "Crime Action Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-013",
-    "title": "Sholay",
-    "industry": "bollywood",
-    "releaseYear": 1975,
-    "decade": "1970s",
-    "hero": "Amitabh Bachchan",
-    "director": "Ramesh Sippy",
-    "genre": "Action Adventure",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-014",
-    "title": "Amar Akbar Anthony",
-    "industry": "bollywood",
-    "releaseYear": 1977,
-    "decade": "1970s",
-    "hero": "Amitabh Bachchan",
-    "director": "Manmohan Desai",
-    "genre": "Masala Action Comedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-015",
-    "title": "Don",
-    "industry": "bollywood",
-    "releaseYear": 1978,
-    "decade": "1970s",
-    "hero": "Amitabh Bachchan",
-    "director": "Chandra Barot",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-016",
-    "title": "Gol Maal",
-    "industry": "bollywood",
-    "releaseYear": 1979,
-    "decade": "1970s",
-    "hero": "Amol Palekar",
-    "director": "Hrishikesh Mukherjee",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-017",
-    "title": "Karz",
-    "industry": "bollywood",
-    "releaseYear": 1980,
-    "decade": "1980s",
-    "hero": "Rishi Kapoor",
-    "director": "Subhash Ghai",
-    "genre": "Reincarnation Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-018",
-    "title": "Jaane Bhi Do Yaaro",
-    "industry": "bollywood",
-    "releaseYear": 1983,
-    "decade": "1980s",
-    "hero": "Naseeruddin Shah",
-    "director": "Kundan Shah",
-    "genre": "Satirical Black Comedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-019",
-    "title": "Mr. India",
-    "industry": "bollywood",
-    "releaseYear": 1987,
-    "decade": "1980s",
-    "hero": "Anil Kapoor",
-    "director": "Shekhar Kapur",
-    "genre": "Superhero Sci-Fi Comedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-020",
-    "title": "Tezaab",
-    "industry": "bollywood",
-    "releaseYear": 1988,
-    "decade": "1980s",
-    "hero": "Anil Kapoor",
-    "director": "N. Chandra",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-021",
-    "title": "Qayamat Se Qayamat Tak",
-    "industry": "bollywood",
-    "releaseYear": 1988,
-    "decade": "1980s",
-    "hero": "Aamir Khan",
-    "director": "Mansoor Khan",
-    "genre": "Romantic Tragedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-022",
-    "title": "Maine Pyar Kiya",
-    "industry": "bollywood",
-    "releaseYear": 1989,
-    "decade": "1980s",
-    "hero": "Salman Khan",
-    "director": "Sooraj Barjatya",
-    "genre": "Musical Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-023",
-    "title": "Agneepath",
-    "industry": "bollywood",
-    "releaseYear": 1990,
-    "decade": "1990s",
-    "hero": "Amitabh Bachchan",
-    "director": "Mukul S. Anand",
-    "genre": "Action Crime Drama",
-    "isAdult": true,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-024",
-    "title": "Aashiqui",
-    "industry": "bollywood",
-    "releaseYear": 1990,
-    "decade": "1990s",
-    "hero": "Rahul Roy",
-    "director": "Mahesh Bhatt",
-    "genre": "Musical Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-025",
-    "title": "Jo Jeeta Wohi Sikandar",
-    "industry": "bollywood",
-    "releaseYear": 1992,
-    "decade": "1990s",
-    "hero": "Aamir Khan",
-    "director": "Mansoor Khan",
-    "genre": "Sports Drama Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-026",
-    "title": "Baazigar",
-    "industry": "bollywood",
-    "releaseYear": 1993,
-    "decade": "1990s",
-    "hero": "Shah Rukh Khan",
-    "director": "Abbas-Mustan",
-    "genre": "Romantic Crime Thriller",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "bollywood-027",
-    "title": "Darr",
-    "industry": "bollywood",
-    "releaseYear": 1993,
-    "decade": "1990s",
-    "hero": "Shah Rukh Khan",
-    "director": "Yash Chopra",
-    "genre": "Psychological Romantic Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-028",
-    "title": "Hum Aapke Hain Koun..!",
-    "industry": "bollywood",
-    "releaseYear": 1994,
-    "decade": "1990s",
-    "hero": "Salman Khan",
-    "director": "Sooraj Barjatya",
-    "genre": "Musical Romantic Family",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "bollywood-029",
-    "title": "Andaz Apna Apna",
-    "industry": "bollywood",
-    "releaseYear": 1994,
-    "decade": "1990s",
-    "hero": "Aamir Khan",
-    "director": "Rajkumar Santoshi",
-    "genre": "Slapstick Comedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-030",
-    "title": "Dilwale Dulhania Le Jayenge",
-    "industry": "bollywood",
-    "releaseYear": 1995,
-    "decade": "1990s",
-    "hero": "Shah Rukh Khan",
-    "director": "Aditya Chopra",
-    "genre": "Musical Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-031",
-    "title": "Rangeela",
-    "industry": "bollywood",
-    "releaseYear": 1995,
-    "decade": "1990s",
-    "hero": "Aamir Khan",
-    "director": "Ram Gopal Varma",
-    "genre": "Romantic Comedy Musical",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-032",
-    "title": "Karan Arjun",
-    "industry": "bollywood",
-    "releaseYear": 1995,
-    "decade": "1990s",
-    "hero": "Salman Khan",
-    "director": "Rakesh Roshan",
-    "genre": "Action Fantasy Reincarnation",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-033",
-    "title": "Raja Hindustani",
-    "industry": "bollywood",
-    "releaseYear": 1996,
-    "decade": "1990s",
-    "hero": "Aamir Khan",
-    "director": "Dharmesh Darshan",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "bollywood-034",
-    "title": "Border",
-    "industry": "bollywood",
-    "releaseYear": 1997,
-    "decade": "1990s",
-    "hero": "Sunny Deol",
-    "director": "J. P. Dutta",
-    "genre": "War Action Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-035",
-    "title": "Dil To Pagal Hai",
-    "industry": "bollywood",
-    "releaseYear": 1997,
-    "decade": "1990s",
-    "hero": "Shah Rukh Khan",
-    "director": "Yash Chopra",
-    "genre": "Musical Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-036",
-    "title": "Satya",
-    "industry": "bollywood",
-    "releaseYear": 1998,
-    "decade": "1990s",
-    "hero": "Manoj Bajpayee",
-    "director": "Ram Gopal Varma",
-    "genre": "Gangster Crime Drama",
-    "isAdult": true,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-037",
-    "title": "Kuch Kuch Hota Hai",
-    "industry": "bollywood",
-    "releaseYear": 1998,
-    "decade": "1990s",
-    "hero": "Shah Rukh Khan",
-    "director": "Karan Johar",
-    "genre": "Romantic Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-038",
-    "title": "Sarfarosh",
-    "industry": "bollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Aamir Khan",
-    "director": "John Matthew Matthan",
-    "genre": "Action Crime Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-039",
-    "title": "Hum Dil De Chuke Sanam",
-    "industry": "bollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Salman Khan",
-    "director": "Sanjay Leela Bhansali",
-    "genre": "Musical Romance Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-040",
-    "title": "Vaastav: The Reality",
-    "industry": "bollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Sanjay Dutt",
-    "director": "Mahesh Manjrekar",
-    "genre": "Action Crime Drama",
-    "isAdult": true,
-    "isRemake": false
-  },
-  {
-    "id": "bollywood-041",
     "title": "Hera Pheri",
     "industry": "bollywood",
     "releaseYear": 2000,
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Priyadarshan",
-    "genre": "Comedy",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Comedy"
   },
   {
-    "id": "bollywood-042",
+    "id": "bollywood-002",
     "title": "Kaho Naa... Pyaar Hai",
     "industry": "bollywood",
     "releaseYear": 2000,
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Rakesh Roshan",
-    "genre": "Romantic Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Action Drama"
   },
   {
-    "id": "bollywood-043",
+    "id": "bollywood-003",
     "title": "Mohabbatein",
     "industry": "bollywood",
     "releaseYear": 2000,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Aditya Chopra",
-    "genre": "Musical Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Musical Romantic Drama"
   },
   {
-    "id": "bollywood-044",
+    "id": "bollywood-004",
     "title": "Gadar: Ek Prem Katha",
     "industry": "bollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Sunny Deol",
     "director": "Anil Sharma",
-    "genre": "Period Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Action Drama"
   },
   {
-    "id": "bollywood-045",
+    "id": "bollywood-005",
     "title": "Lagaan",
     "industry": "bollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Ashutosh Gowariker",
-    "genre": "Period Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Sports Drama"
   },
   {
-    "id": "bollywood-046",
+    "id": "bollywood-006",
     "title": "Dil Chahta Hai",
     "industry": "bollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Farhan Akhtar",
-    "genre": "Coming-of-age Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Coming-of-age Comedy Drama"
   },
   {
-    "id": "bollywood-047",
+    "id": "bollywood-007",
     "title": "Kabhi Khushi Kabhie Gham...",
     "industry": "bollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Karan Johar",
-    "genre": "Family Melodrama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Family Melodrama"
   },
   {
-    "id": "bollywood-048",
+    "id": "bollywood-008",
     "title": "Devdas",
     "industry": "bollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Romantic Drama"
   },
   {
-    "id": "bollywood-049",
+    "id": "bollywood-009",
     "title": "Munna Bhai M.B.B.S.",
     "industry": "bollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Sanjay Dutt",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Drama"
   },
   {
-    "id": "bollywood-050",
+    "id": "bollywood-010",
     "title": "Kal Ho Naa Ho",
     "industry": "bollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Nikkhil Advani",
-    "genre": "Romantic Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy Drama"
   },
   {
-    "id": "bollywood-051",
+    "id": "bollywood-011",
     "title": "Dhoom",
     "industry": "bollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "John Abraham",
     "director": "Sanjay Gadhvi",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
-    "id": "bollywood-052",
+    "id": "bollywood-012",
     "title": "Swades",
     "industry": "bollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Ashutosh Gowariker",
-    "genre": "Social Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Social Drama"
   },
   {
-    "id": "bollywood-053",
+    "id": "bollywood-013",
     "title": "Veer-Zaara",
     "industry": "bollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Yash Chopra",
-    "genre": "Period Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Romantic Drama"
   },
   {
-    "id": "bollywood-054",
+    "id": "bollywood-014",
     "title": "Black",
     "industry": "bollywood",
     "releaseYear": 2005,
     "decade": "2000s",
     "hero": "Amitabh Bachchan",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Drama"
   },
   {
-    "id": "bollywood-055",
+    "id": "bollywood-015",
     "title": "Rang De Basanti",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Rakeysh Omprakash Mehra",
-    "genre": "Political Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Political Drama"
   },
   {
-    "id": "bollywood-056",
+    "id": "bollywood-016",
     "title": "Omkara",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Ajay Devgn",
     "director": "Vishal Bhardwaj",
-    "genre": "Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Drama"
   },
   {
-    "id": "bollywood-057",
+    "id": "bollywood-017",
     "title": "Lage Raho Munna Bhai",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Sanjay Dutt",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Drama"
   },
   {
-    "id": "bollywood-058",
+    "id": "bollywood-018",
     "title": "Don: The Chase Begins Again",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Farhan Akhtar",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Action Thriller"
   },
   {
-    "id": "bollywood-059",
+    "id": "bollywood-019",
     "title": "Dhoom 2",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Sanjay Gadhvi",
-    "genre": "Action Heist Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Heist Thriller"
   },
   {
-    "id": "bollywood-060",
+    "id": "bollywood-020",
     "title": "Chak De! India",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Shimit Amin",
-    "genre": "Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sports Drama"
   },
   {
-    "id": "bollywood-061",
+    "id": "bollywood-021",
     "title": "Jab We Met",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Shahid Kapoor",
     "director": "Imtiaz Ali",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "bollywood-062",
+    "id": "bollywood-022",
     "title": "Taare Zameen Par",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Aamir Khan",
-    "genre": "Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Family Drama"
   },
   {
-    "id": "bollywood-063",
+    "id": "bollywood-023",
     "title": "Om Shanti Om",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Farah Khan",
-    "genre": "Masala Fantasy Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Masala Fantasy Romance"
   },
   {
-    "id": "bollywood-064",
+    "id": "bollywood-024",
     "title": "Jodhaa Akbar",
     "industry": "bollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Ashutosh Gowariker",
-    "genre": "Historical Romance Epic",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Historical Romance Epic"
   },
   {
-    "id": "bollywood-065",
+    "id": "bollywood-025",
     "title": "Ghajini",
     "industry": "bollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "A. R. Murugadoss",
-    "genre": "Action Psychological Thriller",
-    "isAdult": true,
-    "isRemake": true
+    "genre": "Action Psychological Thriller"
   },
   {
-    "id": "bollywood-066",
+    "id": "bollywood-026",
     "title": "Dev.D",
     "industry": "bollywood",
     "releaseYear": 2009,
     "decade": "2000s",
     "hero": "Abhay Deol",
     "director": "Anurag Kashyap",
-    "genre": "Romantic Black Comedy Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Romantic Black Comedy Drama"
   },
   {
-    "id": "bollywood-067",
+    "id": "bollywood-027",
     "title": "3 Idiots",
     "industry": "bollywood",
     "releaseYear": 2009,
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Coming-of-age Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Coming-of-age Comedy Drama"
   },
   {
-    "id": "bollywood-068",
+    "id": "bollywood-028",
     "title": "Dabangg",
     "industry": "bollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "Salman Khan",
     "director": "Abhinav Kashyap",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "bollywood-069",
+    "id": "bollywood-029",
     "title": "Zindagi Na Milegi Dobara",
     "industry": "bollywood",
     "releaseYear": 2011,
     "decade": "2010s",
     "hero": "Hrithik Roshan",
     "director": "Zoya Akhtar",
-    "genre": "Road Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Road Comedy Drama"
   },
   {
-    "id": "bollywood-070",
+    "id": "bollywood-030",
     "title": "Rockstar",
     "industry": "bollywood",
     "releaseYear": 2011,
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Imtiaz Ali",
-    "genre": "Musical Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Musical Romantic Drama"
   },
   {
-    "id": "bollywood-071",
+    "id": "bollywood-031",
     "title": "Gangs of Wasseypur",
     "industry": "bollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Manoj Bajpayee",
     "director": "Anurag Kashyap",
-    "genre": "Epic Crime Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Epic Crime Action"
   },
   {
-    "id": "bollywood-072",
+    "id": "bollywood-032",
     "title": "Kahaani",
     "industry": "bollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Nawazuddin Siddiqui",
     "director": "Sujoy Ghosh",
-    "genre": "Mystery Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Thriller"
   },
   {
-    "id": "bollywood-073",
+    "id": "bollywood-033",
     "title": "Barfi!",
     "industry": "bollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Anurag Basu",
-    "genre": "Romantic Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy Drama"
   },
   {
-    "id": "bollywood-074",
+    "id": "bollywood-034",
     "title": "Yeh Jawaani Hai Deewani",
     "industry": "bollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Ayan Mukerji",
-    "genre": "Coming-of-age Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Coming-of-age Romantic Drama"
   },
   {
-    "id": "bollywood-075",
+    "id": "bollywood-035",
     "title": "Bhaag Milkha Bhaag",
     "industry": "bollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Farhan Akhtar",
     "director": "Rakeysh Omprakash Mehra",
-    "genre": "Biographical Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Sports Drama"
   },
   {
-    "id": "bollywood-076",
+    "id": "bollywood-036",
     "title": "Queen",
     "industry": "bollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Rajkummar Rao",
     "director": "Vikas Bahl",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Drama"
   },
   {
-    "id": "bollywood-077",
+    "id": "bollywood-037",
     "title": "Haider",
     "industry": "bollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Shahid Kapoor",
     "director": "Vishal Bhardwaj",
-    "genre": "Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Drama"
   },
   {
-    "id": "bollywood-078",
+    "id": "bollywood-038",
     "title": "PK",
     "industry": "bollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Aamir Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Satirical Sci-Fi Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Satirical Sci-Fi Comedy"
   },
   {
-    "id": "bollywood-079",
+    "id": "bollywood-039",
     "title": "Piku",
     "industry": "bollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Irrfan Khan",
     "director": "Shoojit Sircar",
-    "genre": "Road Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Road Comedy Drama"
   },
   {
-    "id": "bollywood-080",
+    "id": "bollywood-040",
     "title": "Bajrangi Bhaijaan",
     "industry": "bollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Salman Khan",
     "director": "Kabir Khan",
-    "genre": "Action Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy Drama"
   },
   {
-    "id": "bollywood-081",
+    "id": "bollywood-041",
     "title": "Drishyam",
     "industry": "bollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Ajay Devgn",
     "director": "Nishikant Kamat",
-    "genre": "Crime Thriller",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Crime Thriller"
   },
   {
-    "id": "bollywood-082",
+    "id": "bollywood-042",
     "title": "Dangal",
     "industry": "bollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Aamir Khan",
     "director": "Nitesh Tiwari",
-    "genre": "Biographical Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Sports Drama"
   },
   {
-    "id": "bollywood-083",
+    "id": "bollywood-043",
     "title": "Pink",
     "industry": "bollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Amitabh Bachchan",
     "director": "Aniruddha Roy Chowdhury",
-    "genre": "Legal Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Legal Thriller"
   },
   {
-    "id": "bollywood-084",
+    "id": "bollywood-044",
     "title": "Padmaavat",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Ranveer Singh",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Period Epic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Epic Drama"
   },
   {
-    "id": "bollywood-085",
+    "id": "bollywood-045",
     "title": "Raazi",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Vicky Kaushal",
     "director": "Meghna Gulzar",
-    "genre": "Spy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Spy Thriller"
   },
   {
-    "id": "bollywood-086",
+    "id": "bollywood-046",
     "title": "Sanju",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Rajkumar Hirani",
-    "genre": "Biographical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Drama"
   },
   {
-    "id": "bollywood-087",
+    "id": "bollywood-047",
     "title": "Stree",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Rajkummar Rao",
     "director": "Amar Kaushik",
-    "genre": "Comedy Horror",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Horror"
   },
   {
-    "id": "bollywood-088",
+    "id": "bollywood-048",
     "title": "Andhadhun",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Ayushmann Khurrana",
     "director": "Sriram Raghavan",
-    "genre": "Black Comedy Crime Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Black Comedy Crime Thriller"
   },
   {
-    "id": "bollywood-089",
+    "id": "bollywood-049",
     "title": "Tumbbad",
     "industry": "bollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Sohum Shah",
     "director": "Rahi Anil Barve",
-    "genre": "Period Folk Horror",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Period Folk Horror"
   },
   {
-    "id": "bollywood-090",
+    "id": "bollywood-050",
     "title": "Uri: The Surgical Strike",
     "industry": "bollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Vicky Kaushal",
     "director": "Aditya Dhar",
-    "genre": "Military Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Military Action Drama"
   },
   {
-    "id": "bollywood-091",
+    "id": "bollywood-051",
     "title": "Gully Boy",
     "industry": "bollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Ranveer Singh",
     "director": "Zoya Akhtar",
-    "genre": "Musical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Musical Drama"
   },
   {
-    "id": "bollywood-092",
+    "id": "bollywood-052",
     "title": "Kabir Singh",
     "industry": "bollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Shahid Kapoor",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Romantic Drama",
-    "isAdult": true,
-    "isRemake": true
+    "genre": "Romantic Drama"
   },
   {
-    "id": "bollywood-093",
+    "id": "bollywood-053",
     "title": "Chhichhore",
     "industry": "bollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Sushant Singh Rajput",
     "director": "Nitesh Tiwari",
-    "genre": "Coming-of-age Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Coming-of-age Comedy Drama"
   },
   {
-    "id": "bollywood-094",
+    "id": "bollywood-054",
     "title": "War",
     "industry": "bollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Hrithik Roshan",
     "director": "Siddharth Anand",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
-    "id": "bollywood-095",
+    "id": "bollywood-055",
     "title": "Tanhaji: The Unsung Warrior",
     "industry": "bollywood",
     "releaseYear": 2020,
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Om Raut",
-    "genre": "Historical Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Historical Action"
   },
   {
-    "id": "bollywood-096",
+    "id": "bollywood-056",
     "title": "Shershaah",
     "industry": "bollywood",
     "releaseYear": 2021,
     "decade": "2020s",
     "hero": "Sidharth Malhotra",
     "director": "Vishnuvardhan",
-    "genre": "Biographical War",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical War"
   },
   {
-    "id": "bollywood-097",
+    "id": "bollywood-057",
     "title": "Gangubai Kathiawadi",
     "industry": "bollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Biographical Crime Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Crime Drama"
   },
   {
-    "id": "bollywood-098",
+    "id": "bollywood-058",
     "title": "Brahmāstra: Part One – Shiva",
     "industry": "bollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Ranbir Kapoor",
     "director": "Ayan Mukerji",
-    "genre": "Fantasy Action Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Action Adventure"
   },
   {
-    "id": "bollywood-099",
+    "id": "bollywood-059",
     "title": "Pathaan",
     "industry": "bollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Siddharth Anand",
-    "genre": "Spy Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Spy Action Thriller"
   },
   {
-    "id": "bollywood-0100",
+    "id": "bollywood-060",
     "title": "Jawan",
     "industry": "bollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Atlee",
-    "genre": "Action Vigilante Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Vigilante Thriller"
   },
   {
-    "id": "bollywood-0101",
+    "id": "bollywood-061",
     "title": "12th Fail",
     "industry": "bollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Vikrant Massey",
     "director": "Vidhu Vinod Chopra",
-    "genre": "Biographical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Drama"
   },
   {
-    "id": "bollywood-0102",
+    "id": "bollywood-062",
     "title": "Animal",
     "industry": "bollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Ranbir Kapoor",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Action Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Action Crime Drama"
   },
   {
-    "id": "bollywood-0103",
+    "id": "bollywood-063",
     "title": "Dunki",
     "industry": "bollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Drama"
   },
   {
-    "id": "bollywood-0104",
+    "id": "bollywood-064",
     "title": "Fighter",
     "industry": "bollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Hrithik Roshan",
     "director": "Siddharth Anand",
-    "genre": "Aerial Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Aerial Action"
   },
   {
-    "id": "bollywood-0105",
+    "id": "bollywood-065",
     "title": "Stree 2",
     "industry": "bollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Rajkummar Rao",
     "director": "Amar Kaushik",
-    "genre": "Comedy Horror",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Horror"
+  },
+  {
+    "id": "bollywood-066",
+    "title": "Bhool Bhulaiyaa 3",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Kartik Aaryan",
+    "director": "Anees Bazmee",
+    "genre": "Comedy Horror"
+  },
+  {
+    "id": "bollywood-067",
+    "title": "Singham Again",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Ajay Devgn",
+    "director": "Rohit Shetty",
+    "genre": "Action Drama"
+  },
+  {
+    "id": "bollywood-068",
+    "title": "Munjya",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Abhay Verma",
+    "director": "Aditya Sarpotdar",
+    "genre": "Comedy Horror"
+  },
+  {
+    "id": "bollywood-069",
+    "title": "Article 370",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Yami Gautam",
+    "director": "Aditya Suhas Jambhale",
+    "genre": "Political Action Thriller"
+  },
+  {
+    "id": "bollywood-070",
+    "title": "Laapataa Ladies",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Nitanshi Goel",
+    "director": "Kiran Rao",
+    "genre": "Social Comedy Drama"
+  },
+  {
+    "id": "bollywood-071",
+    "title": "Crew",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Tabu",
+    "director": "Rajesh A Krishnan",
+    "genre": "Heist Comedy"
+  },
+  {
+    "id": "bollywood-072",
+    "title": "Shaitaan",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Ajay Devgn",
+    "director": "Vikas Bahl",
+    "genre": "Supernatural Horror Thriller"
+  },
+  {
+    "id": "bollywood-073",
+    "title": "Bad Newz",
+    "industry": "bollywood",
+    "releaseYear": 2024,
+    "decade": "2020s",
+    "hero": "Vicky Kaushal",
+    "director": "Anand Tiwari",
+    "genre": "Romantic Comedy"
+  },
+  {
+    "id": "bollywood-074",
+    "title": "Chhaava",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Vicky Kaushal",
+    "director": "Laxman Utekar",
+    "genre": "Historical Action Epic"
+  },
+  {
+    "id": "bollywood-075",
+    "title": "War 2",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Hrithik Roshan",
+    "director": "Ayan Mukerji",
+    "genre": "Action Spy Thriller"
+  },
+  {
+    "id": "bollywood-076",
+    "title": "Alpha",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Alia Bhatt",
+    "director": "Shiv Rawail",
+    "genre": "Action Spy Thriller"
+  },
+  {
+    "id": "bollywood-077",
+    "title": "Sikandar",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Salman Khan",
+    "director": "AR Murugadoss",
+    "genre": "Action Drama"
+  },
+  {
+    "id": "bollywood-078",
+    "title": "Housefull 5",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Akshay Kumar",
+    "director": "Tarun Mansukhani",
+    "genre": "Comedy Drama"
+  },
+  {
+    "id": "bollywood-079",
+    "title": "Jolly LLB 3",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Akshay Kumar",
+    "director": "Subhash Kapoor",
+    "genre": "Courtroom Comedy Drama"
+  },
+  {
+    "id": "bollywood-080",
+    "title": "Sky Force",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Akshay Kumar",
+    "director": "Sandeep Kewlani",
+    "genre": "Aviation Action Drama"
+  },
+  {
+    "id": "bollywood-081",
+    "title": "Welcome to the Jungle",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Akshay Kumar",
+    "director": "Ahmed Khan",
+    "genre": "Adventure Comedy"
+  },
+  {
+    "id": "bollywood-082",
+    "title": "Deva",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Shahid Kapoor",
+    "director": "Rosshan Andrrews",
+    "genre": "Action Thriller"
+  },
+  {
+    "id": "bollywood-083",
+    "title": "Metro... In Dino",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Aditya Roy Kapur",
+    "director": "Anurag Basu",
+    "genre": "Romantic Anthology Drama"
+  },
+  {
+    "id": "bollywood-084",
+    "title": "Sunny Sanskari Ki Tulsi Kumari",
+    "industry": "bollywood",
+    "releaseYear": 2025,
+    "decade": "2020s",
+    "hero": "Varun Dhawan",
+    "director": "Shashank Khaitan",
+    "genre": "Romantic Comedy Drama"
+  },
+  {
+    "id": "bollywood-085",
+    "title": "King",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Shah Rukh Khan",
+    "director": "Sujoy Ghosh",
+    "genre": "Action Crime Thriller"
+  },
+  {
+    "id": "bollywood-086",
+    "title": "Love & War",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Ranbir Kapoor",
+    "director": "Sanjay Leela Bhansali",
+    "genre": "Epic Romantic Drama"
+  },
+  {
+    "id": "bollywood-087",
+    "title": "Ramayana: Part 1",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Ranbir Kapoor",
+    "director": "Nitesh Tiwari",
+    "genre": "Mythological Epic"
+  },
+  {
+    "id": "bollywood-088",
+    "title": "Toxic",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Yash",
+    "director": "Geethu Mohandas",
+    "genre": "Action Crime Drama"
+  },
+  {
+    "id": "bollywood-089",
+    "title": "Border 2",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Sunny Deol",
+    "director": "Anurag Singh",
+    "genre": "War Action Drama"
+  },
+  {
+    "id": "bollywood-090",
+    "title": "Brahmāstra: Part Two – Dev",
+    "industry": "bollywood",
+    "releaseYear": 2026,
+    "decade": "2020s",
+    "hero": "Ranbir Kapoor",
+    "director": "Ayan Mukerji",
+    "genre": "Fantasy Action Adventure"
+  },
+  {
+    "id": "bollywood-091",
+    "title": "Welcome",
+    "industry": "bollywood",
+    "releaseYear": 2007,
+    "decade": "2000s",
+    "hero": "Akshay Kumar",
+    "director": "Anees Bazmee",
+    "genre": "Comedy Masala"
+  },
+  {
+    "id": "bollywood-092",
+    "title": "Phir Hera Pheri",
+    "industry": "bollywood",
+    "releaseYear": 2006,
+    "decade": "2000s",
+    "hero": "Akshay Kumar",
+    "director": "Neeraj Vora",
+    "genre": "Crime Comedy"
+  },
+  {
+    "id": "bollywood-093",
+    "title": "Bhagam Bhag",
+    "industry": "bollywood",
+    "releaseYear": 2006,
+    "decade": "2000s",
+    "hero": "Akshay Kumar",
+    "director": "Priyadarshan",
+    "genre": "Mystery Comedy"
+  },
+  {
+    "id": "bollywood-094",
+    "title": "Dhol",
+    "industry": "bollywood",
+    "releaseYear": 2007,
+    "decade": "2000s",
+    "hero": "Tusshar Kapoor",
+    "director": "Priyadarshan",
+    "genre": "Comedy Thriller"
+  },
+  {
+    "id": "bollywood-095",
+    "title": "Bhool Bhulaiyaa",
+    "industry": "bollywood",
+    "releaseYear": 2007,
+    "decade": "2000s",
+    "hero": "Akshay Kumar",
+    "director": "Priyadarshan",
+    "genre": "Psychological Horror Comedy"
+  },
+  {
+    "id": "bollywood-096",
+    "title": "Golmaal: Fun Unlimited",
+    "industry": "bollywood",
+    "releaseYear": 2006,
+    "decade": "2000s",
+    "hero": "Ajay Devgn",
+    "director": "Rohit Shetty",
+    "genre": "Comedy Drama"
+  },
+  {
+    "id": "bollywood-097",
+    "title": "Main Hoon Na",
+    "industry": "bollywood",
+    "releaseYear": 2004,
+    "decade": "2000s",
+    "hero": "Shah Rukh Khan",
+    "director": "Farah Khan",
+    "genre": "Action Comedy Drama"
+  },
+  {
+    "id": "bollywood-098",
+    "title": "Koi... Mil Gaya",
+    "industry": "bollywood",
+    "releaseYear": 2003,
+    "decade": "2000s",
+    "hero": "Hrithik Roshan",
+    "director": "Rakesh Roshan",
+    "genre": "Sci-Fi Fantasy"
+  },
+  {
+    "id": "bollywood-099",
+    "title": "Krrish",
+    "industry": "bollywood",
+    "releaseYear": 2006,
+    "decade": "2000s",
+    "hero": "Hrithik Roshan",
+    "director": "Rakesh Roshan",
+    "genre": "Superhero Sci-Fi"
+  },
+  {
+    "id": "bollywood-100",
+    "title": "Chennai Express",
+    "industry": "bollywood",
+    "releaseYear": 2013,
+    "decade": "2010s",
+    "hero": "Shah Rukh Khan",
+    "director": "Rohit Shetty",
+    "genre": "Action Romantic Comedy"
+  },
+  {
+    "id": "bollywood-101",
+    "title": "Singham",
+    "industry": "bollywood",
+    "releaseYear": 2011,
+    "decade": "2010s",
+    "hero": "Ajay Devgn",
+    "director": "Rohit Shetty",
+    "genre": "Action Masala"
+  },
+  {
+    "id": "bollywood-102",
+    "title": "Drishyam 2",
+    "industry": "bollywood",
+    "releaseYear": 2022,
+    "decade": "2020s",
+    "hero": "Ajay Devgn",
+    "director": "Abhishek Pathak",
+    "genre": "Crime Thriller"
   }
 ]

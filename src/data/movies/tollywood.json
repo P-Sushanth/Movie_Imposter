@@ -1,1934 +1,1242 @@
 [
   {
     "id": "tollywood-001",
-    "title": "Patala Bhairavi",
-    "industry": "tollywood",
-    "releaseYear": 1951,
-    "decade": "1950s",
-    "hero": "N. T. Rama Rao",
-    "director": "K. V. Reddy",
-    "genre": "Fantasy Adventure",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-002",
-    "title": "Devadasu",
-    "industry": "tollywood",
-    "releaseYear": 1953,
-    "decade": "1950s",
-    "hero": "A. Nageswara Rao",
-    "director": "Vedantam Raghavayya",
-    "genre": "Romantic Tragedy",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-003",
-    "title": "Missamma",
-    "industry": "tollywood",
-    "releaseYear": 1955,
-    "decade": "1950s",
-    "hero": "N. T. Rama Rao",
-    "director": "L. V. Prasad",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-004",
-    "title": "Mayabazar",
-    "industry": "tollywood",
-    "releaseYear": 1957,
-    "decade": "1950s",
-    "hero": "N. T. Rama Rao",
-    "director": "K. V. Reddy",
-    "genre": "Mythological Fantasy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-005",
-    "title": "Gundamma Katha",
-    "industry": "tollywood",
-    "releaseYear": 1962,
-    "decade": "1960s",
-    "hero": "N. T. Rama Rao",
-    "director": "Kamalakara Kameswara Rao",
-    "genre": "Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-006",
-    "title": "Lava Kusa",
-    "industry": "tollywood",
-    "releaseYear": 1963,
-    "decade": "1960s",
-    "hero": "N. T. Rama Rao",
-    "director": "C. Pullaiah",
-    "genre": "Mythological Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-007",
-    "title": "Mooga Manasulu",
-    "industry": "tollywood",
-    "releaseYear": 1964,
-    "decade": "1960s",
-    "hero": "A. Nageswara Rao",
-    "director": "Adurthi Subba Rao",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-008",
-    "title": "Alluri Seetharama Raju",
-    "industry": "tollywood",
-    "releaseYear": 1974,
-    "decade": "1970s",
-    "hero": "Krishna",
-    "director": "V. Ramachandra Rao",
-    "genre": "Historical Biography",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-009",
-    "title": "Dana Veera Soora Karna",
-    "industry": "tollywood",
-    "releaseYear": 1977,
-    "decade": "1970s",
-    "hero": "N. T. Rama Rao",
-    "director": "N. T. Rama Rao",
-    "genre": "Mythological Epic",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-010",
-    "title": "Yamagola",
-    "industry": "tollywood",
-    "releaseYear": 1977,
-    "decade": "1970s",
-    "hero": "N. T. Rama Rao",
-    "director": "T. Rama Rao",
-    "genre": "Fantasy Comedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-011",
-    "title": "Maro Charitra",
-    "industry": "tollywood",
-    "releaseYear": 1978,
-    "decade": "1970s",
-    "hero": "Kamal Haasan",
-    "director": "K. Balachander",
-    "genre": "Romantic Tragedy",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-012",
-    "title": "Sankarabharanam",
-    "industry": "tollywood",
-    "releaseYear": 1980,
-    "decade": "1980s",
-    "hero": "J. V. Somayajulu",
-    "director": "K. Viswanath",
-    "genre": "Musical Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-013",
-    "title": "Sagara Sangamam",
-    "industry": "tollywood",
-    "releaseYear": 1983,
-    "decade": "1980s",
-    "hero": "Kamal Haasan",
-    "director": "K. Viswanath",
-    "genre": "Musical Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-014",
-    "title": "Khaidi",
-    "industry": "tollywood",
-    "releaseYear": 1983,
-    "decade": "1980s",
-    "hero": "Chiranjeevi",
-    "director": "A. Kodandarami Reddy",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-015",
-    "title": "Swathi Muthyam",
-    "industry": "tollywood",
-    "releaseYear": 1986,
-    "decade": "1980s",
-    "hero": "Kamal Haasan",
-    "director": "K. Viswanath",
-    "genre": "Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-016",
-    "title": "Pasivadi Pranam",
-    "industry": "tollywood",
-    "releaseYear": 1987,
-    "decade": "1980s",
-    "hero": "Chiranjeevi",
-    "director": "A. Kodandarami Reddy",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-017",
-    "title": "Rudraveena",
-    "industry": "tollywood",
-    "releaseYear": 1988,
-    "decade": "1980s",
-    "hero": "Chiranjeevi",
-    "director": "K. Balachander",
-    "genre": "Musical Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-018",
-    "title": "Geethanjali",
-    "industry": "tollywood",
-    "releaseYear": 1989,
-    "decade": "1980s",
-    "hero": "Nagarjuna",
-    "director": "Mani Ratnam",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-019",
-    "title": "Shiva",
-    "industry": "tollywood",
-    "releaseYear": 1989,
-    "decade": "1980s",
-    "hero": "Nagarjuna",
-    "director": "Ram Gopal Varma",
-    "genre": "Crime Action",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-020",
-    "title": "Jagadeka Veerudu Athiloka Sundari",
-    "industry": "tollywood",
-    "releaseYear": 1990,
-    "decade": "1990s",
-    "hero": "Chiranjeevi",
-    "director": "K. Raghavendra Rao",
-    "genre": "Fantasy Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-021",
-    "title": "Kshana Kshanam",
-    "industry": "tollywood",
-    "releaseYear": 1991,
-    "decade": "1990s",
-    "hero": "Venkatesh",
-    "director": "Ram Gopal Varma",
-    "genre": "Road Thriller",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-022",
-    "title": "Gang Leader",
-    "industry": "tollywood",
-    "releaseYear": 1991,
-    "decade": "1990s",
-    "hero": "Chiranjeevi",
-    "director": "Vijaya Bapineedu",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-023",
-    "title": "Chanti",
-    "industry": "tollywood",
-    "releaseYear": 1992,
-    "decade": "1990s",
-    "hero": "Venkatesh",
-    "director": "Ravi Raja Pinisetty",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-024",
-    "title": "Gharana Mogudu",
-    "industry": "tollywood",
-    "releaseYear": 1992,
-    "decade": "1990s",
-    "hero": "Chiranjeevi",
-    "director": "K. Raghavendra Rao",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-025",
-    "title": "Gaayam",
-    "industry": "tollywood",
-    "releaseYear": 1993,
-    "decade": "1990s",
-    "hero": "Jagapathi Babu",
-    "director": "Ram Gopal Varma",
-    "genre": "Political Crime",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-026",
-    "title": "Hello Brother",
-    "industry": "tollywood",
-    "releaseYear": 1994,
-    "decade": "1990s",
-    "hero": "Nagarjuna",
-    "director": "E. V. V. Satyanarayana",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-027",
-    "title": "Subhalagnam",
-    "industry": "tollywood",
-    "releaseYear": 1994,
-    "decade": "1990s",
-    "hero": "Jagapathi Babu",
-    "director": "S. V. Krishna Reddy",
-    "genre": "Family Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-028",
-    "title": "Pelli Sandadi",
-    "industry": "tollywood",
-    "releaseYear": 1996,
-    "decade": "1990s",
-    "hero": "Srikanth",
-    "director": "K. Raghavendra Rao",
-    "genre": "Musical Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-029",
-    "title": "Ninne Pelladata",
-    "industry": "tollywood",
-    "releaseYear": 1996,
-    "decade": "1990s",
-    "hero": "Nagarjuna",
-    "director": "Krishna Vamsi",
-    "genre": "Romantic Family",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-030",
-    "title": "Annamayya",
-    "industry": "tollywood",
-    "releaseYear": 1997,
-    "decade": "1990s",
-    "hero": "Nagarjuna",
-    "director": "K. Raghavendra Rao",
-    "genre": "Biographical Devotional",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-031",
-    "title": "Preminchukundam Raa",
-    "industry": "tollywood",
-    "releaseYear": 1997,
-    "decade": "1990s",
-    "hero": "Venkatesh",
-    "director": "Jayanth C. Paranjee",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-032",
-    "title": "Sindhooram",
-    "industry": "tollywood",
-    "releaseYear": 1997,
-    "decade": "1990s",
-    "hero": "Ravi Teja",
-    "director": "Krishna Vamsi",
-    "genre": "Crime Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-033",
-    "title": "Suryavamsam",
-    "industry": "tollywood",
-    "releaseYear": 1998,
-    "decade": "1990s",
-    "hero": "Venkatesh",
-    "director": "Bhimaneni Srinivasa Rao",
-    "genre": "Family Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-034",
-    "title": "Tholi Prema",
-    "industry": "tollywood",
-    "releaseYear": 1998,
-    "decade": "1990s",
-    "hero": "Pawan Kalyan",
-    "director": "A. Karunakaran",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-035",
-    "title": "Samarasimha Reddy",
-    "industry": "tollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Nandamuri Balakrishna",
-    "director": "B. Gopal",
-    "genre": "Faction Action",
-    "isAdult": false,
-    "isRemake": false
-  },
-  {
-    "id": "tollywood-036",
-    "title": "Raja",
-    "industry": "tollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Venkatesh",
-    "director": "Muppalaneni Shiva",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-037",
-    "title": "Thammudu",
-    "industry": "tollywood",
-    "releaseYear": 1999,
-    "decade": "1990s",
-    "hero": "Pawan Kalyan",
-    "director": "P. A. Arun Prasad",
-    "genre": "Sports Action Drama",
-    "isAdult": false,
-    "isRemake": true
-  },
-  {
-    "id": "tollywood-038",
     "title": "Badri",
     "industry": "tollywood",
     "releaseYear": 2000,
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Romance"
   },
   {
-    "id": "tollywood-039",
+    "id": "tollywood-002",
     "title": "Nuvve Kavali",
     "industry": "tollywood",
     "releaseYear": 2000,
     "decade": "2000s",
     "hero": "Tarun",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-040",
+    "id": "tollywood-003",
     "title": "Kushi",
     "industry": "tollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "S. J. Suryah",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-041",
+    "id": "tollywood-004",
     "title": "Murari",
     "industry": "tollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Krishna Vamsi",
-    "genre": "Supernatural Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Supernatural Family Drama"
   },
   {
-    "id": "tollywood-042",
+    "id": "tollywood-005",
     "title": "Narasimha Naidu",
     "industry": "tollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Nandamuri Balakrishna",
     "director": "B. Gopal",
-    "genre": "Faction Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Faction Action"
   },
   {
-    "id": "tollywood-043",
+    "id": "tollywood-006",
     "title": "Nuvvu Naaku Nachav",
     "industry": "tollywood",
     "releaseYear": 2001,
     "decade": "2000s",
     "hero": "Venkatesh",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-044",
+    "id": "tollywood-007",
     "title": "Manmadhudu",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Nagarjuna",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-045",
+    "id": "tollywood-008",
     "title": "Aadi",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "V. V. Vinayak",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-046",
+    "id": "tollywood-009",
     "title": "Indra",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Chiranjeevi",
     "director": "B. Gopal",
-    "genre": "Faction Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Faction Action Drama"
   },
   {
-    "id": "tollywood-047",
+    "id": "tollywood-010",
     "title": "Idiot",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Action Romance"
   },
   {
-    "id": "tollywood-048",
+    "id": "tollywood-011",
     "title": "Okkadu",
     "industry": "tollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Gunasekhar",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Romance"
   },
   {
-    "id": "tollywood-049",
+    "id": "tollywood-012",
     "title": "Simhadri",
     "industry": "tollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-050",
+    "id": "tollywood-013",
     "title": "Tagore",
     "industry": "tollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Chiranjeevi",
     "director": "V. V. Vinayak",
-    "genre": "Vigilante Action",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Vigilante Action"
   },
   {
-    "id": "tollywood-051",
+    "id": "tollywood-014",
     "title": "Amma Nanna O Tamila Ammayi",
     "industry": "tollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
-    "genre": "Sports Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sports Action Drama"
   },
   {
-    "id": "tollywood-052",
+    "id": "tollywood-015",
     "title": "Arya",
     "industry": "tollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Romantic Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Action"
   },
   {
-    "id": "tollywood-053",
+    "id": "tollywood-016",
     "title": "Varsham",
     "industry": "tollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Prabhas",
     "director": "Sobhan",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Romance"
   },
   {
-    "id": "tollywood-054",
+    "id": "tollywood-017",
     "title": "Venky",
     "industry": "tollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
-    "genre": "Comedy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Thriller"
   },
   {
-    "id": "tollywood-055",
+    "id": "tollywood-018",
     "title": "7G Brindavan Colony",
     "industry": "tollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Ravi Krishna",
     "director": "Selvaraghavan",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Drama"
   },
   {
-    "id": "tollywood-056",
+    "id": "tollywood-019",
     "title": "Athadu",
     "industry": "tollywood",
     "releaseYear": 2005,
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
-    "id": "tollywood-057",
+    "id": "tollywood-020",
     "title": "Chatrapathi",
     "industry": "tollywood",
     "releaseYear": 2005,
     "decade": "2000s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-058",
+    "id": "tollywood-021",
     "title": "Anukokunda Oka Roju",
     "industry": "tollywood",
     "releaseYear": 2005,
     "decade": "2000s",
     "hero": "Jagapathi Babu",
     "director": "Chandra Sekhar Yeleti",
-    "genre": "Mystery Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Thriller"
   },
   {
-    "id": "tollywood-059",
+    "id": "tollywood-022",
     "title": "Pokiri",
     "industry": "tollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
-    "id": "tollywood-060",
+    "id": "tollywood-023",
     "title": "Bommarillu",
     "industry": "tollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Siddharth",
     "director": "Bhaskar",
-    "genre": "Romantic Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Family Drama"
   },
   {
-    "id": "tollywood-061",
+    "id": "tollywood-024",
     "title": "Vikramarkudu",
     "industry": "tollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-062",
+    "id": "tollywood-025",
     "title": "Desamuduru",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Allu Arjun",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Romance"
   },
   {
-    "id": "tollywood-063",
+    "id": "tollywood-026",
     "title": "Yamadonga",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Fantasy Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Action"
   },
   {
-    "id": "tollywood-064",
+    "id": "tollywood-027",
     "title": "Happy Days",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Varun Sandesh",
     "director": "Sekhar Kammula",
-    "genre": "College Drama Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "College Drama Romance"
   },
   {
-    "id": "tollywood-065",
+    "id": "tollywood-028",
     "title": "Jalsa",
     "industry": "tollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-066",
+    "id": "tollywood-029",
     "title": "Magadheera",
     "industry": "tollywood",
     "releaseYear": 2009,
     "decade": "2000s",
     "hero": "Ram Charan",
     "director": "S. S. Rajamouli",
-    "genre": "Reincarnation Fantasy Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Reincarnation Fantasy Action"
   },
   {
-    "id": "tollywood-067",
+    "id": "tollywood-030",
     "title": "Kick",
     "industry": "tollywood",
     "releaseYear": 2009,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Surender Reddy",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-068",
+    "id": "tollywood-031",
     "title": "Arundhati",
     "industry": "tollywood",
     "releaseYear": 2009,
     "decade": "2000s",
     "hero": "Sonu Sood",
     "director": "Kodi Ramakrishna",
-    "genre": "Dark Fantasy Horror",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Dark Fantasy Horror"
   },
   {
-    "id": "tollywood-069",
+    "id": "tollywood-032",
     "title": "Leader",
     "industry": "tollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "Rana Daggubati",
     "director": "Sekhar Kammula",
-    "genre": "Political Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Political Drama"
   },
   {
-    "id": "tollywood-070",
+    "id": "tollywood-033",
     "title": "Vedam",
     "industry": "tollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Krish Jagarlamudi",
-    "genre": "Anthology Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Anthology Drama"
   },
   {
-    "id": "tollywood-071",
+    "id": "tollywood-034",
     "title": "Maryada Ramanna",
     "industry": "tollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "Sunil",
     "director": "S. S. Rajamouli",
-    "genre": "Comedy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Thriller"
   },
   {
-    "id": "tollywood-072",
+    "id": "tollywood-035",
     "title": "Dookudu",
     "industry": "tollywood",
     "releaseYear": 2011,
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-073",
+    "id": "tollywood-036",
     "title": "Businessman",
     "industry": "tollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
-    "genre": "Crime Action",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Crime Action"
   },
   {
-    "id": "tollywood-074",
+    "id": "tollywood-037",
     "title": "Eega",
     "industry": "tollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Nani",
     "director": "S. S. Rajamouli",
-    "genre": "Fantasy Revenge",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Revenge"
   },
   {
-    "id": "tollywood-075",
+    "id": "tollywood-038",
     "title": "Gabbar Singh",
     "industry": "tollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Pawan Kalyan",
     "director": "Harish Shankar",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-076",
+    "id": "tollywood-039",
     "title": "Julayi",
     "industry": "tollywood",
     "releaseYear": 2012,
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
-    "genre": "Action Comedy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy Thriller"
   },
   {
-    "id": "tollywood-077",
+    "id": "tollywood-040",
     "title": "Seethamma Vakitlo Sirimalle Chettu",
     "industry": "tollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Venkatesh",
     "director": "Srikanth Addala",
-    "genre": "Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Family Drama"
   },
   {
-    "id": "tollywood-078",
+    "id": "tollywood-041",
     "title": "Mirchi",
     "industry": "tollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "Koratala Siva",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-079",
+    "id": "tollywood-042",
     "title": "Attarintiki Daredi",
     "industry": "tollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
-    "genre": "Family Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Family Comedy Drama"
   },
   {
-    "id": "tollywood-080",
+    "id": "tollywood-043",
     "title": "1: Nenokkadine",
     "industry": "tollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Sukumar",
-    "genre": "Psychological Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Psychological Action Thriller"
   },
   {
-    "id": "tollywood-081",
+    "id": "tollywood-044",
     "title": "Race Gurram",
     "industry": "tollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Surender Reddy",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-082",
+    "id": "tollywood-045",
     "title": "Manam",
     "industry": "tollywood",
     "releaseYear": 2014,
     "decade": "2010s",
     "hero": "Nagarjuna",
     "director": "Vikram Kumar",
-    "genre": "Fantasy Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Fantasy Family Drama"
   },
   {
-    "id": "tollywood-083",
+    "id": "tollywood-046",
     "title": "Srimanthudu",
     "industry": "tollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-084",
+    "id": "tollywood-047",
     "title": "Baahubali: The Beginning",
     "industry": "tollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Historical Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Historical Action"
   },
   {
-    "id": "tollywood-085",
+    "id": "tollywood-048",
     "title": "Bhale Bhale Magadivoy",
     "industry": "tollywood",
     "releaseYear": 2015,
     "decade": "2010s",
     "hero": "Nani",
     "director": "Maruthi",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-086",
+    "id": "tollywood-049",
     "title": "Nannaku Prematho",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Sukumar",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Thriller"
   },
   {
-    "id": "tollywood-087",
+    "id": "tollywood-050",
     "title": "Kshanam",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Ravikanth Perepu",
-    "genre": "Mystery Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Thriller"
   },
   {
-    "id": "tollywood-088",
+    "id": "tollywood-051",
     "title": "Pelli Choopulu",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Tharun Bhascker",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-089",
+    "id": "tollywood-052",
     "title": "Janatha Garage",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Koratala Siva",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-090",
+    "id": "tollywood-053",
     "title": "Dhruva",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Ram Charan",
     "director": "Surender Reddy",
-    "genre": "Action Thriller",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Action Thriller"
   },
   {
-    "id": "tollywood-091",
+    "id": "tollywood-054",
     "title": "Baahubali 2: The Conclusion",
     "industry": "tollywood",
     "releaseYear": 2017,
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Historical Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Historical Action"
   },
   {
-    "id": "tollywood-092",
+    "id": "tollywood-055",
     "title": "Fidaa",
     "industry": "tollywood",
     "releaseYear": 2017,
     "decade": "2010s",
     "hero": "Varun Tej",
     "director": "Sekhar Kammula",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Drama"
   },
   {
-    "id": "tollywood-093",
+    "id": "tollywood-056",
     "title": "Arjun Reddy",
     "industry": "tollywood",
     "releaseYear": 2017,
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Romantic Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Romantic Drama"
   },
   {
-    "id": "tollywood-094",
+    "id": "tollywood-057",
     "title": "Rangasthalam",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Ram Charan",
     "director": "Sukumar",
-    "genre": "Period Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Action Drama"
   },
   {
-    "id": "tollywood-095",
+    "id": "tollywood-058",
     "title": "Mahanati",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Dulquer Salmaan",
     "director": "Nag Ashwin",
-    "genre": "Biographical Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Drama"
   },
   {
-    "id": "tollywood-096",
+    "id": "tollywood-059",
     "title": "Bharat Ane Nenu",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
-    "genre": "Political Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Political Action"
   },
   {
-    "id": "tollywood-097",
+    "id": "tollywood-060",
     "title": "Goodachari",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
-    "genre": "Spy Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Spy Thriller"
   },
   {
-    "id": "tollywood-098",
+    "id": "tollywood-061",
     "title": "Geetha Govindam",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Parasuram",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-099",
+    "id": "tollywood-062",
     "title": "Aravinda Sametha Veera Raghava",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Trivikram Srinivas",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-100",
+    "id": "tollywood-063",
     "title": "Jersey",
     "industry": "tollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Nani",
     "director": "Gowtam Tinnanuri",
-    "genre": "Sports Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Sports Drama"
   },
   {
-    "id": "tollywood-101",
+    "id": "tollywood-064",
     "title": "Agent Sai Srinivasa Athreya",
     "industry": "tollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Naveen Polishetty",
     "director": "Swaroop RSJ",
-    "genre": "Comedy Detective Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy Detective Thriller"
   },
   {
-    "id": "tollywood-102",
+    "id": "tollywood-065",
     "title": "Evaru",
     "industry": "tollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Venkat Ramji",
-    "genre": "Crime Mystery Thriller",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Crime Mystery Thriller"
   },
   {
-    "id": "tollywood-103",
+    "id": "tollywood-066",
     "title": "Ala Vaikunthapurramuloo",
     "industry": "tollywood",
     "releaseYear": 2020,
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
-    "genre": "Action Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Family Drama"
   },
   {
-    "id": "tollywood-104",
+    "id": "tollywood-067",
     "title": "Sarileru Neekevvaru",
     "industry": "tollywood",
     "releaseYear": 2020,
     "decade": "2020s",
     "hero": "Mahesh Babu",
     "director": "Anil Ravipudi",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-105",
+    "id": "tollywood-068",
     "title": "Color Photo",
     "industry": "tollywood",
     "releaseYear": 2020,
     "decade": "2020s",
     "hero": "Suhas",
     "director": "Sandeep Raj",
-    "genre": "Period Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Romantic Drama"
   },
   {
-    "id": "tollywood-106",
+    "id": "tollywood-069",
     "title": "Jathi Ratnalu",
     "industry": "tollywood",
     "releaseYear": 2021,
-    "decade": "2021s",
+    "decade": "2020s",
     "hero": "Naveen Polishetty",
     "director": "Anudeep K. V.",
-    "genre": "Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Comedy"
   },
   {
-    "id": "tollywood-107",
+    "id": "tollywood-070",
     "title": "Vakeel Saab",
     "industry": "tollywood",
     "releaseYear": 2021,
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Venu Sriram",
-    "genre": "Legal Action Drama",
-    "isAdult": false,
-    "isRemake": true
+    "genre": "Legal Action Drama"
   },
   {
-    "id": "tollywood-108",
+    "id": "tollywood-071",
     "title": "Pushpa: The Rise",
     "industry": "tollywood",
     "releaseYear": 2021,
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Action Crime Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Crime Drama"
   },
   {
-    "id": "tollywood-109",
+    "id": "tollywood-072",
     "title": "Shyam Singha Roy",
     "industry": "tollywood",
     "releaseYear": 2021,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Rahul Sankrityan",
-    "genre": "Period Supernatural Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Supernatural Drama"
   },
   {
-    "id": "tollywood-110",
+    "id": "tollywood-073",
     "title": "Akhanda",
     "industry": "tollywood",
     "releaseYear": 2021,
     "decade": "2020s",
     "hero": "Nandamuri Balakrishna",
     "director": "Boyapati Srinu",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-111",
+    "id": "tollywood-074",
     "title": "DJ Tillu",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Siddhu Jonnalagadda",
     "director": "Vimal Krishna",
-    "genre": "Crime Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Crime Comedy"
   },
   {
-    "id": "tollywood-112",
+    "id": "tollywood-075",
     "title": "RRR",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Period Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Epic Period Action"
   },
   {
-    "id": "tollywood-113",
+    "id": "tollywood-076",
     "title": "Major",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
-    "genre": "Biographical Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Biographical Action"
   },
   {
-    "id": "tollywood-114",
+    "id": "tollywood-077",
     "title": "Sita Ramam",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Dulquer Salmaan",
     "director": "Hanu Raghavapudi",
-    "genre": "Period Romance Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Romance Drama"
   },
   {
-    "id": "tollywood-115",
+    "id": "tollywood-078",
     "title": "Karthikeya 2",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Nikhil Siddharth",
     "director": "Chandoo Mondeti",
-    "genre": "Mystery Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Adventure"
   },
   {
-    "id": "tollywood-116",
+    "id": "tollywood-079",
     "title": "Waltair Veerayya",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Chiranjeevi",
     "director": "Bobby Kolli",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-117",
+    "id": "tollywood-080",
     "title": "Balagam",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Priyadarshi",
     "director": "Venu Yeldandi",
-    "genre": "Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Family Drama"
   },
   {
-    "id": "tollywood-118",
+    "id": "tollywood-081",
     "title": "Dasara",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Srikanth Odela",
-    "genre": "Period Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Action Drama"
   },
   {
-    "id": "tollywood-119",
+    "id": "tollywood-082",
     "title": "Hi Nanna",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Shouryuv",
-    "genre": "Romantic Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Family Drama"
   },
   {
-    "id": "tollywood-120",
+    "id": "tollywood-083",
     "title": "Salaar: Part 1 - Ceasefire",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Prashanth Neel",
-    "genre": "Action Crime Drama",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Action Crime Drama"
   },
   {
-    "id": "tollywood-121",
+    "id": "tollywood-084",
     "title": "Hanu-Man",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Teja Sajja",
     "director": "Prasanth Varma",
-    "genre": "Superhero Fantasy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Superhero Fantasy"
   },
   {
-    "id": "tollywood-122",
+    "id": "tollywood-085",
     "title": "Tillu Square",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Siddhu Jonnalagadda",
     "director": "Mallik Ram",
-    "genre": "Crime Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Crime Comedy"
   },
   {
-    "id": "tollywood-123",
+    "id": "tollywood-086",
     "title": "Kalki 2898 AD",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Nag Ashwin",
-    "genre": "Post-apocalyptic Sci-Fi",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Post-apocalyptic Sci-Fi"
   },
   {
-    "id": "tollywood-124",
+    "id": "tollywood-087",
     "title": "Pushpa 2: The Rule",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-125",
+    "id": "tollywood-088",
     "title": "Devara: Part 1",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "N. T. Rama Rao Jr.",
     "director": "Koratala Siva",
-    "genre": "Action Coastal Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Coastal Drama"
   },
   {
-    "id": "tollywood-126",
+    "id": "tollywood-089",
     "title": "Guntur Kaaram",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
-    "genre": "Action Family Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Family Drama"
   },
   {
-    "id": "tollywood-127",
+    "id": "tollywood-090",
     "title": "Saripodhaa Sanivaaram",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Vivek Athreya",
-    "genre": "Action Vigilante Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Vigilante Thriller"
   },
   {
-    "id": "tollywood-128",
+    "id": "tollywood-091",
     "title": "Lucky Baskhar",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Dulquer Salmaan",
     "director": "Venky Atluri",
-    "genre": "Financial Crime Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Financial Crime Thriller"
   },
   {
-    "id": "tollywood-129",
+    "id": "tollywood-092",
     "title": "Mathu Vadalara 2",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Sri Simha Koduri",
     "director": "Ritesh Rana",
-    "genre": "Crime Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Crime Comedy"
   },
   {
-    "id": "tollywood-130",
+    "id": "tollywood-093",
     "title": "Aay",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Narne Nithin",
     "director": "Anji K. Maniputhra",
-    "genre": "Romantic Rural Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Rural Comedy"
   },
   {
-    "id": "tollywood-131",
+    "id": "tollywood-094",
     "title": "Committee Kurrollu",
     "industry": "tollywood",
     "releaseYear": 2024,
     "decade": "2020s",
     "hero": "Sandeep Saroj",
     "director": "Yadhu Vamsi",
-    "genre": "Village Youth Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Village Youth Drama"
   },
   {
-    "id": "tollywood-132",
+    "id": "tollywood-095",
     "title": "Game Changer",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Ram Charan",
     "director": "S. Shankar",
-    "genre": "Political Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Political Action Drama"
   },
   {
-    "id": "tollywood-133",
+    "id": "tollywood-096",
     "title": "Daaku Maharaaj",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Nandamuri Balakrishna",
     "director": "Bobby Kolli",
-    "genre": "Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Drama"
   },
   {
-    "id": "tollywood-134",
+    "id": "tollywood-097",
     "title": "Sankranthiki Vasthunam",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Venkatesh",
     "director": "Anil Ravipudi",
-    "genre": "Action Crime Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Crime Comedy"
   },
   {
-    "id": "tollywood-135",
+    "id": "tollywood-098",
     "title": "Thandel",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Naga Chaitanya",
     "director": "Chandoo Mondeti",
-    "genre": "Romantic Survival Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Survival Drama"
   },
   {
-    "id": "tollywood-136",
+    "id": "tollywood-099",
     "title": "The Raja Saab",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Maruthi",
-    "genre": "Romantic Horror Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Horror Comedy"
   },
   {
-    "id": "tollywood-137",
+    "id": "tollywood-100",
     "title": "Hari Hara Veera Mallu",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Jyothi Krishna",
-    "genre": "Period Action Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Period Action Adventure"
   },
   {
-    "id": "tollywood-138",
+    "id": "tollywood-101",
     "title": "They Call Him OG",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Sujeeth",
-    "genre": "Neo-Noir Gangster Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Neo-Noir Gangster Action"
   },
   {
-    "id": "tollywood-139",
+    "id": "tollywood-102",
     "title": "Vishwambhara",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Chiranjeevi",
     "director": "Mallidi Vassishta",
-    "genre": "Socio-Fantasy Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Socio-Fantasy Action"
   },
   {
-    "id": "tollywood-140",
+    "id": "tollywood-103",
     "title": "Mirai",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Teja Sajja",
     "director": "Karthik Gattamneni",
-    "genre": "Mythological Action Adventure",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mythological Action Adventure"
   },
   {
-    "id": "tollywood-141",
+    "id": "tollywood-104",
     "title": "Hit: The 3rd Case",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Sailesh Kolanu",
-    "genre": "Action Crime Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Crime Thriller"
   },
   {
-    "id": "tollywood-142",
+    "id": "tollywood-105",
     "title": "Kubera",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Dhanush",
     "director": "Sekhar Kammula",
-    "genre": "Social Drama Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Social Drama Thriller"
   },
   {
-    "id": "tollywood-143",
+    "id": "tollywood-106",
     "title": "Robinhood",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Nithiin",
     "director": "Venky Kudumula",
-    "genre": "Action Heist Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Heist Comedy"
   },
   {
-    "id": "tollywood-144",
+    "id": "tollywood-107",
     "title": "Spirit",
     "industry": "tollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Action Crime Thriller",
-    "isAdult": true,
-    "isRemake": false
+    "genre": "Action Crime Thriller"
   },
   {
-    "id": "tollywood-145",
+    "id": "tollywood-108",
     "title": "Salaar: Part 2 – Shouryaanga Parvam",
     "industry": "tollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Prashanth Neel",
-    "genre": "Dystopian Action Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Dystopian Action Drama"
   },
   {
-    "id": "tollywood-146",
+    "id": "tollywood-109",
     "title": "SSMB29",
     "industry": "tollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Mahesh Babu",
     "director": "S. S. Rajamouli",
-    "genre": "Jungle Adventure Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Jungle Adventure Action"
   },
   {
-    "id": "tollywood-147",
+    "id": "tollywood-110",
     "title": "Jai Hanuman",
     "industry": "tollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Rishab Shetty",
     "director": "Prasanth Varma",
-    "genre": "Mythological Superhero Fantasy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mythological Superhero Fantasy"
   },
   {
-    "id": "tollywood-148",
+    "id": "tollywood-111",
     "title": "Fauji",
     "industry": "tollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Hanu Raghavapudi",
-    "genre": "Historical Period Romance",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Historical Period Romance"
   },
   {
-    "id": "tollywood-149",
+    "id": "tollywood-112",
     "title": "Virupaksha",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Sai Dharam Tej",
     "director": "Karthik Varma Dandu",
-    "genre": "Mystery Horror Thriller",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Mystery Horror Thriller"
   },
   {
-    "id": "tollywood-150",
+    "id": "tollywood-113",
     "title": "Baby",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Anand Deverakonda",
     "director": "Sai Rajesh",
-    "genre": "Romantic Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Drama"
   },
   {
-    "id": "tollywood-151",
+    "id": "tollywood-114",
     "title": "MAD",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Narne Nithin",
     "director": "Kalyan Shankar",
-    "genre": "Campus Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Campus Comedy"
   },
   {
-    "id": "tollywood-152",
+    "id": "tollywood-115",
     "title": "Bimbisara",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Nandamuri Kalyan Ram",
     "director": "Mallidi Vashist",
-    "genre": "Time Travel Fantasy Action",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Time Travel Fantasy Action"
   },
   {
-    "id": "tollywood-153",
+    "id": "tollywood-116",
     "title": "Brochevarevarura",
     "industry": "tollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Sree Vishnu",
     "director": "Vivek Athreya",
-    "genre": "Crime Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Crime Comedy"
   },
   {
-    "id": "tollywood-154",
+    "id": "tollywood-117",
     "title": "Ee Nagaraniki Emaindi",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Vishwak Sen",
     "director": "Tharun Bhascker",
-    "genre": "Buddy Comedy Drama",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Buddy Comedy Drama"
   },
   {
-    "id": "tollywood-155",
+    "id": "tollywood-118",
     "title": "Ashta Chamma",
     "industry": "tollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Nani",
     "director": "Mohana Krishna Indraganti",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-156",
+    "id": "tollywood-119",
     "title": "Adhurs",
     "industry": "tollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "N. T. Rama Rao Jr.",
     "director": "V. V. Vinayak",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-157",
+    "id": "tollywood-120",
     "title": "Dhee",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Vishnu Manchu",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   },
   {
-    "id": "tollywood-158",
+    "id": "tollywood-121",
     "title": "Ready",
     "industry": "tollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Ram Pothineni",
     "director": "Srinu Vaitla",
-    "genre": "Romantic Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Action Comedy"
   },
   {
-    "id": "tollywood-159",
+    "id": "tollywood-122",
     "title": "Sontham",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Aryan Rajesh",
     "director": "Srinu Vaitla",
-    "genre": "Romantic Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Romantic Comedy"
   },
   {
-    "id": "tollywood-160",
+    "id": "tollywood-123",
     "title": "Sarrainodu",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Boyapati Srinu",
-    "genre": "Action Masala",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Masala"
   },
   {
-    "id": "tollywood-161",
+    "id": "tollywood-124",
     "title": "Dubai Seenu",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy",
-    "isAdult": false,
-    "isRemake": false
+    "genre": "Action Comedy"
   }
 ]

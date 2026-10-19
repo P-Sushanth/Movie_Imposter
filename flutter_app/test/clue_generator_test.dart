@@ -13,8 +13,6 @@ void main() {
       hero: 'Mahesh Babu',
       director: 'Puri Jagannadh',
       genre: 'Action Thriller',
-      isAdult: false,
-      isRemake: false,
     );
 
     test('produces non-empty clues for all valid features', () {
@@ -35,8 +33,6 @@ void main() {
         hero: 'Hero',
         director: 'Subhash Ghai',
         genre: 'Action Romance',
-        isAdult: false,
-        isRemake: false,
       );
 
       final clues = getCluesForMovie(movieWithTitleInHero);
