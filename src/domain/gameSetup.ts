@@ -10,6 +10,7 @@ export interface CreateRoundParams {
   numImposters?: number;
   imposterClueEnabled?: boolean;
   previousMovieId?: string;
+  previousClueKey?: string;
   usedMovieIds?: Set<string>;
   random?: () => number;
 }
@@ -21,6 +22,7 @@ export function createRound({
   numImposters = 1,
   imposterClueEnabled = true,
   previousMovieId,
+  previousClueKey,
   usedMovieIds,
   random = Math.random,
 }: CreateRoundParams): RoundState {
@@ -81,7 +83,12 @@ export function createRound({
     const candidate = candidatePool.splice(movieIndex, 1)[0];
 
     if (imposterClueEnabled) {
-      const clue = generateImposterClue(candidate, random);
+      const clue = generateImposterClue(
+        candidate,
+        random,
+        resolvedPlayers.length,
+        previousClueKey
+      );
       if (clue) {
         selectedMovie = candidate;
         imposterClue = clue;
@@ -166,6 +173,7 @@ export function createRound({
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled,
+    imposterClueKey: imposterClue?.key,
     assignments,
     startingPlayer,
     discussionOrder,
