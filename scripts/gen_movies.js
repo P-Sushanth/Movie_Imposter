@@ -7,8 +7,9 @@ const b = require(path.join(projectRoot, 'src/data/movies/bollywood.json'));
 const h = require(path.join(projectRoot, 'src/data/movies/hollywood.json'));
 const s = require(path.join(projectRoot, 'src/data/movies/shows.json'));
 const k = require(path.join(projectRoot, 'src/data/movies/kdrama.json'));
+const c = require(path.join(projectRoot, 'src/data/movies/cartoons.json'));
 
-const all = [...t, ...b, ...h, ...s, ...k];
+const all = [...t, ...b, ...h, ...s, ...k, ...c];
 
 function escapeDart(str) {
   if (!str) return '';
@@ -25,7 +26,11 @@ for (const m of all) {
   out += '    industry: Industry.' + m.industry.toLowerCase() + ',\n';
   out += '    releaseYear: ' + m.releaseYear + ',\n';
   out += "    decade: '" + escapeDart(m.decade) + "',\n";
-  if (m.industry !== 'shows' && m.industry !== 'kdrama') {
+  if (m.industry === 'cartoons') {
+    if (m.channel) out += "    channel: '" + escapeDart(m.channel) + "',\n";
+    if (m.countryOfOrigin) out += "    countryOfOrigin: '" + escapeDart(m.countryOfOrigin) + "',\n";
+    if (m.hint) out += "    hint: '" + escapeDart(m.hint) + "',\n";
+  } else if (m.industry !== 'shows' && m.industry !== 'kdrama') {
     out += "    hero: '" + escapeDart(m.hero) + "',\n";
     out += "    director: '" + escapeDart(m.director) + "',\n";
     out += "    genre: '" + escapeDart(m.genre) + "',\n";
