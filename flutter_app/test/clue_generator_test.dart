@@ -49,6 +49,26 @@ void main() {
       expect(clueFirst?.displayText.isNotEmpty, isTrue);
     });
 
+    test('produces all 6 clues (releaseYear, decade, hero, director, genre, hint) for movies with hint', () {
+      const movieWithHint = Movie(
+        id: 'tollywood-001',
+        title: 'Badri',
+        industry: Industry.tollywood,
+        releaseYear: 2000,
+        decade: '2000s',
+        hero: 'Pawan Kalyan',
+        director: 'Puri Jagannadh',
+        genre: 'Action Romance',
+        hint: 'Bay Of Bengal',
+      );
+
+      final clues = getCluesForMovie(movieWithHint);
+      final keys = clues.map((c) => c.key).toList();
+      expect(keys, equals(['release_year', 'decade', 'hero', 'director', 'genre', 'hint']));
+      expect(clues.firstWhere((c) => c.key == 'release_year').displayText, 'Release Year: 2000');
+      expect(clues.firstWhere((c) => c.key == 'hint').displayText, 'Hint: Bay Of Bengal');
+    });
+
     test('generates show-specific clues for Industry.shows', () {
       const sampleShow = Movie(
         id: 'show-001',
@@ -122,6 +142,33 @@ void main() {
       final clues = getCluesForMovie(showWithTitleInPlatform);
       final prodClues = clues.where((c) => c.key == 'production_house');
       expect(prodClues.isEmpty, isTrue); // Safely omitted because it leaked the title!
+    });
+
+    test('generates show-specific clues for Industry.kdrama', () {
+      const sampleKdrama = Movie(
+        id: 'kdrama-001',
+        title: 'Squid Game',
+        industry: Industry.kdrama,
+        releaseYear: 2021,
+        decade: '2020s',
+        genre: 'Survival Dystopian Thriller',
+        productionHouse: 'Netflix',
+        seasonsCount: 2,
+        startYear: 2021,
+        endYear: 'Ongoing',
+        adaptationOrOriginal: 'Original',
+        releaseMedium: 'OTT Release',
+      );
+
+      final clues = getCluesForMovie(sampleKdrama);
+      final keys = clues.map((c) => c.key).toSet();
+
+      expect(keys.contains('production_house'), isTrue);
+      expect(keys.contains('seasons_count'), isTrue);
+      expect(keys.contains('start_year'), isTrue);
+      expect(keys.contains('end_year'), isTrue);
+      expect(keys.contains('adaptation_or_original'), isTrue);
+      expect(keys.contains('release_medium'), isTrue);
     });
   });
 }
