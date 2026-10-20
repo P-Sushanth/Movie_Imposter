@@ -4,6 +4,7 @@ enum Industry {
   hollywood,
   shows,
   kdrama,
+  cartoons,
 }
 
 extension IndustryExtension on Industry {
@@ -19,6 +20,8 @@ extension IndustryExtension on Industry {
         return 'shows';
       case Industry.kdrama:
         return 'kdrama';
+      case Industry.cartoons:
+        return 'cartoons';
     }
   }
 
@@ -34,6 +37,8 @@ extension IndustryExtension on Industry {
         return 'Shows';
       case Industry.kdrama:
         return 'K-Drama';
+      case Industry.cartoons:
+        return 'Cartoons';
     }
   }
 
@@ -49,6 +54,8 @@ extension IndustryExtension on Industry {
         return Industry.shows;
       case 'kdrama':
         return Industry.kdrama;
+      case 'cartoons':
+        return Industry.cartoons;
       default:
         throw ArgumentError('Unknown industry: $str');
     }
@@ -65,6 +72,10 @@ class Movie {
   final String director;
   final String genre;
   final String? hint;
+
+  // Cartoon-specific fields:
+  final String? channel;
+  final String? countryOfOrigin;
 
   // Show-specific fields (optional for movies, populated for shows):
   final String? productionHouse;
@@ -84,6 +95,8 @@ class Movie {
     this.director = '',
     this.genre = '',
     this.hint,
+    this.channel,
+    this.countryOfOrigin,
     this.productionHouse,
     this.seasonsCount,
     this.startYear,
@@ -103,6 +116,8 @@ class Movie {
       director: (json['director'] as String?) ?? '',
       genre: (json['genre'] as String?) ?? '',
       hint: json['hint'] as String?,
+      channel: json['channel'] as String?,
+      countryOfOrigin: json['countryOfOrigin'] as String?,
       productionHouse: json['productionHouse'] as String?,
       seasonsCount: json['seasonsCount'] as int?,
       startYear: json['startYear'] as int?,
@@ -123,6 +138,8 @@ class Movie {
       if (director.isNotEmpty) 'director': director,
       if (genre.isNotEmpty) 'genre': genre,
       if (hint != null && hint!.isNotEmpty) 'hint': hint,
+      if (channel != null) 'channel': channel,
+      if (countryOfOrigin != null) 'countryOfOrigin': countryOfOrigin,
       if (productionHouse != null) 'productionHouse': productionHouse,
       if (seasonsCount != null) 'seasonsCount': seasonsCount,
       if (startYear != null) 'startYear': startYear,
