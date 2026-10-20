@@ -94,9 +94,11 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  widget.industry == Industry.shows
-                                      ? 'Discuss the show, ask questions, and find the imposter.'
-                                      : 'Discuss the movie, ask questions, and find the imposter.',
+                                  widget.industry == Industry.kdrama
+                                      ? 'Discuss the K-drama, ask questions, and find the imposter.'
+                                      : (widget.industry == Industry.shows
+                                          ? 'Discuss the show, ask questions, and find the imposter.'
+                                          : 'Discuss the movie, ask questions, and find the imposter.'),
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
                                     fontSize: 14,
@@ -205,7 +207,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                               ),
                               const SizedBox(height: 24),
                               Text(
-                                widget.industry == Industry.shows ? 'THE SHOW' : 'THE MOVIE',
+                                widget.industry == Industry.kdrama
+                                    ? 'THE K-DRAMA'
+                                    : (widget.industry == Industry.shows ? 'THE SHOW' : 'THE MOVIE'),
                                 style: const TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w700,
