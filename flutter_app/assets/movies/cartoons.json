@@ -6,7 +6,8 @@
     "releaseYear": 2005,
     "decade": "2000s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Pipes"
   },
   {
     "id": "cartoons-002",
@@ -15,7 +16,8 @@
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Butt"
   },
   {
     "id": "cartoons-003",
@@ -24,7 +26,8 @@
     "releaseYear": 2009,
     "decade": "2000s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "P"
   },
   {
     "id": "cartoons-004",
@@ -33,7 +36,8 @@
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Glasses"
   },
   {
     "id": "cartoons-005",
@@ -42,7 +46,8 @@
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Station"
   },
   {
     "id": "cartoons-006",
@@ -51,7 +56,8 @@
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "star mole"
   },
   {
     "id": "cartoons-007",
@@ -60,7 +66,8 @@
     "releaseYear": 2007,
     "decade": "2000s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Sun"
   },
   {
     "id": "cartoons-008",
@@ -69,7 +76,8 @@
     "releaseYear": 2013,
     "decade": "2010s",
     "channel": "Hungama TV",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Surgery"
   },
   {
     "id": "cartoons-009",
@@ -78,7 +86,8 @@
     "releaseYear": 2008,
     "decade": "2000s",
     "channel": "Kushi TV",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Caveman"
   },
   {
     "id": "cartoons-010",
@@ -87,7 +96,8 @@
     "releaseYear": 1999,
     "decade": "1990s",
     "channel": "Kushi TV",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Fix"
   },
   {
     "id": "cartoons-011",
@@ -96,7 +106,8 @@
     "releaseYear": 2000,
     "decade": "2000s",
     "channel": "Kushi TV",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Stones"
   },
   {
     "id": "cartoons-012",
@@ -105,7 +116,8 @@
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Octopus"
   },
   {
     "id": "cartoons-013",
@@ -114,7 +126,8 @@
     "releaseYear": 1990,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Faceless"
   },
   {
     "id": "cartoons-014",
@@ -123,7 +136,8 @@
     "releaseYear": 1991,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Dog"
   },
   {
     "id": "cartoons-015",
@@ -132,7 +146,8 @@
     "releaseYear": 1990,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Fast"
   },
   {
     "id": "cartoons-016",
@@ -141,7 +156,8 @@
     "releaseYear": 1996,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Sister"
   },
   {
     "id": "cartoons-017",
@@ -150,7 +166,8 @@
     "releaseYear": 1998,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Father"
   },
   {
     "id": "cartoons-018",
@@ -159,7 +176,8 @@
     "releaseYear": 1997,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Dance"
   },
   {
     "id": "cartoons-019",
@@ -168,7 +186,8 @@
     "releaseYear": 1999,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "AI"
   },
   {
     "id": "cartoons-020",
@@ -177,7 +196,8 @@
     "releaseYear": 1999,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Dumb"
   },
   {
     "id": "cartoons-021",
@@ -186,7 +206,8 @@
     "releaseYear": 2003,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Brother Sister"
   },
   {
     "id": "cartoons-022",
@@ -195,7 +216,8 @@
     "releaseYear": 2001,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Future"
   },
   {
     "id": "cartoons-023",
@@ -204,7 +226,8 @@
     "releaseYear": 2003,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Leader"
   },
   {
     "id": "cartoons-024",
@@ -213,7 +236,8 @@
     "releaseYear": 2001,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Mature"
   },
   {
     "id": "cartoons-025",
@@ -222,7 +246,8 @@
     "releaseYear": 1992,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Dark"
   },
   {
     "id": "cartoons-026",
@@ -231,7 +256,8 @@
     "releaseYear": 1996,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Green"
   },
   {
     "id": "cartoons-027",
@@ -240,438 +266,477 @@
     "releaseYear": 1994,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Team"
   },
   {
     "id": "cartoons-028",
-    "title": "X-Men: The Animated Series",
-    "industry": "cartoons",
-    "releaseYear": 1992,
-    "decade": "1990s",
-    "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
-  },
-  {
-    "id": "cartoons-029",
     "title": "Adventure Time",
     "industry": "cartoons",
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Yellow"
   },
   {
-    "id": "cartoons-030",
+    "id": "cartoons-029",
     "title": "The Amazing World of Gumball",
     "industry": "cartoons",
     "releaseYear": 2011,
     "decade": "2010s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Cat"
   },
   {
-    "id": "cartoons-031",
+    "id": "cartoons-030",
     "title": "We Bare Bears",
     "industry": "cartoons",
     "releaseYear": 2015,
     "decade": "2010s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Friends"
   },
   {
-    "id": "cartoons-032",
+    "id": "cartoons-031",
     "title": "Oggy and the Cockroaches",
     "industry": "cartoons",
     "releaseYear": 1998,
     "decade": "1990s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "France"
+    "countryOfOrigin": "France",
+    "hint": "Brothers"
   },
   {
-    "id": "cartoons-033",
+    "id": "cartoons-032",
     "title": "Horrid Henry",
     "industry": "cartoons",
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Chaos"
   },
   {
-    "id": "cartoons-034",
+    "id": "cartoons-033",
     "title": "The Garfield Show",
     "industry": "cartoons",
     "releaseYear": 2008,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Cat"
   },
   {
-    "id": "cartoons-035",
+    "id": "cartoons-034",
     "title": "Johnny Test",
     "industry": "cartoons",
     "releaseYear": 2005,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Sisters"
   },
   {
-    "id": "cartoons-036",
+    "id": "cartoons-035",
     "title": "Ninjago: Masters of Spinjitzu",
     "industry": "cartoons",
     "releaseYear": 2011,
     "decade": "2010s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "Denmark"
+    "countryOfOrigin": "Denmark",
+    "hint": "Team"
   },
   {
-    "id": "cartoons-037",
+    "id": "cartoons-036",
     "title": "Roll No 21",
     "industry": "cartoons",
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "School"
   },
   {
-    "id": "cartoons-038",
+    "id": "cartoons-037",
     "title": "The Adventures of Tenali Raman",
     "industry": "cartoons",
     "releaseYear": 2003,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Real"
   },
   {
-    "id": "cartoons-039",
+    "id": "cartoons-038",
     "title": "Pokemon",
     "industry": "cartoons",
     "releaseYear": 2003,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Gym"
   },
   {
-    "id": "cartoons-040",
+    "id": "cartoons-039",
     "title": "Dragon Ball Z",
     "industry": "cartoons",
     "releaseYear": 2001,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Wish"
   },
   {
-    "id": "cartoons-041",
+    "id": "cartoons-040",
     "title": "Beyblade",
     "industry": "cartoons",
     "releaseYear": 2004,
     "decade": "2000s",
     "channel": "Cartoon Network",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Top"
   },
   {
-    "id": "cartoons-042",
+    "id": "cartoons-041",
     "title": "Chhota Bheem",
     "industry": "cartoons",
     "releaseYear": 2008,
     "decade": "2000s",
     "channel": "Pogo",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Ladoo"
   },
   {
-    "id": "cartoons-043",
+    "id": "cartoons-042",
     "title": "Mr. Bean: The Animated Series",
     "industry": "cartoons",
     "releaseYear": 2002,
     "decade": "2000s",
     "channel": "Pogo",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Teddy"
   },
   {
-    "id": "cartoons-044",
+    "id": "cartoons-043",
     "title": "Oswald",
     "industry": "cartoons",
     "releaseYear": 2001,
     "decade": "2000s",
     "channel": "Pogo",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Egg"
   },
   {
-    "id": "cartoons-045",
+    "id": "cartoons-044",
     "title": "Noddy",
     "industry": "cartoons",
     "releaseYear": 1992,
     "decade": "1990s",
     "channel": "Pogo",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Plum"
   },
   {
-    "id": "cartoons-046",
+    "id": "cartoons-045",
     "title": "Thomas & Friends",
     "industry": "cartoons",
     "releaseYear": 1990,
     "decade": "1990s",
     "channel": "Pogo",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "tank"
   },
   {
-    "id": "cartoons-047",
+    "id": "cartoons-046",
     "title": "Pingu",
     "industry": "cartoons",
     "releaseYear": 1990,
     "decade": "1990s",
     "channel": "Pogo",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Noot Noot"
   },
   {
-    "id": "cartoons-048",
+    "id": "cartoons-047",
     "title": "Phineas and Ferb",
     "industry": "cartoons",
     "releaseYear": 2007,
     "decade": "2000s",
     "channel": "Disney Channel",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Summer"
   },
   {
-    "id": "cartoons-049",
+    "id": "cartoons-048",
     "title": "Gravity Falls",
     "industry": "cartoons",
     "releaseYear": 2012,
     "decade": "2010s",
     "channel": "Disney Channel",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Lore"
   },
   {
-    "id": "cartoons-050",
+    "id": "cartoons-049",
     "title": "Kim Possible",
     "industry": "cartoons",
     "releaseYear": 2002,
     "decade": "2000s",
     "channel": "Disney Channel",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Undercover"
   },
   {
-    "id": "cartoons-051",
+    "id": "cartoons-050",
     "title": "DuckTales",
     "industry": "cartoons",
     "releaseYear": 1990,
     "decade": "1990s",
     "channel": "Disney Channel",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Money"
   },
   {
-    "id": "cartoons-052",
+    "id": "cartoons-051",
     "title": "Mickey Mouse Clubhouse",
     "industry": "cartoons",
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Disney Channel",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Hot Dog"
   },
   {
-    "id": "cartoons-053",
+    "id": "cartoons-052",
     "title": "Kick Buttowski",
     "industry": "cartoons",
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Disney XD",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Energy Drink"
   },
   {
-    "id": "cartoons-054",
+    "id": "cartoons-053",
     "title": "Kid vs. Kat",
     "industry": "cartoons",
     "releaseYear": 2008,
     "decade": "2000s",
     "channel": "Disney XD",
-    "countryOfOrigin": "Canada"
+    "countryOfOrigin": "Canada",
+    "hint": "Alien"
   },
   {
-    "id": "cartoons-055",
+    "id": "cartoons-054",
     "title": "Slugterra",
     "industry": "cartoons",
     "releaseYear": 2012,
     "decade": "2010s",
     "channel": "Disney XD",
-    "countryOfOrigin": "Canada"
+    "countryOfOrigin": "Canada",
+    "hint": "Gun"
   },
   {
-    "id": "cartoons-056",
+    "id": "cartoons-055",
     "title": "Avengers: Earth's Mightiest Heroes",
     "industry": "cartoons",
     "releaseYear": 2010,
     "decade": "2010s",
     "channel": "Disney XD",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Team"
   },
   {
-    "id": "cartoons-057",
+    "id": "cartoons-056",
     "title": "Iron Man: Armored Adventures",
     "industry": "cartoons",
     "releaseYear": 2009,
     "decade": "2000s",
     "channel": "Disney XD",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Arc Reactor"
   },
   {
-    "id": "cartoons-058",
+    "id": "cartoons-057",
     "title": "Ninja Hattori",
     "industry": "cartoons",
     "releaseYear": 2006,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "Japan"
+    "countryOfOrigin": "Japan",
+    "hint": "Brother"
   },
   {
-    "id": "cartoons-059",
+    "id": "cartoons-058",
     "title": "Motu Patlu",
     "industry": "cartoons",
     "releaseYear": 2012,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Samosa"
   },
   {
-    "id": "cartoons-060",
+    "id": "cartoons-059",
     "title": "Shiva",
     "industry": "cartoons",
     "releaseYear": 2015,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Cycle"
   },
   {
-    "id": "cartoons-061",
+    "id": "cartoons-060",
     "title": "Keymon Ache",
     "industry": "cartoons",
     "releaseYear": 2011,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Bag"
   },
   {
-    "id": "cartoons-062",
+    "id": "cartoons-061",
     "title": "Little Krishna",
     "industry": "cartoons",
     "releaseYear": 2009,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "India"
+    "countryOfOrigin": "India",
+    "hint": "Flute"
   },
   {
-    "id": "cartoons-063",
+    "id": "cartoons-062",
     "title": "SpongeBob SquarePants",
     "industry": "cartoons",
     "releaseYear": 1999,
     "decade": "1990s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Burger"
   },
   {
-    "id": "cartoons-064",
+    "id": "cartoons-063",
     "title": "Avatar: The Last Airbender",
     "industry": "cartoons",
     "releaseYear": 2005,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Nature"
   },
   {
-    "id": "cartoons-065",
+    "id": "cartoons-064",
     "title": "Teenage Mutant Ninja Turtles",
     "industry": "cartoons",
     "releaseYear": 2012,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Pizza"
   },
   {
-    "id": "cartoons-066",
+    "id": "cartoons-065",
     "title": "Danny Phantom",
     "industry": "cartoons",
     "releaseYear": 2004,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Ghost"
   },
   {
-    "id": "cartoons-067",
+    "id": "cartoons-066",
     "title": "The Fairly OddParents",
     "industry": "cartoons",
     "releaseYear": 2001,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Fairy"
   },
   {
-    "id": "cartoons-068",
+    "id": "cartoons-067",
     "title": "The Adventures of Jimmy Neutron, Boy Genius",
     "industry": "cartoons",
     "releaseYear": 2002,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Brain"
   },
   {
-    "id": "cartoons-069",
+    "id": "cartoons-068",
     "title": "Hey Arnold!",
     "industry": "cartoons",
     "releaseYear": 1996,
     "decade": "1990s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Football Head"
   },
   {
-    "id": "cartoons-070",
+    "id": "cartoons-069",
     "title": "Kung Fu Panda: Legends of Awesomeness",
     "industry": "cartoons",
     "releaseYear": 2011,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Master"
   },
   {
-    "id": "cartoons-071",
+    "id": "cartoons-070",
     "title": "The Penguins of Madagascar",
     "industry": "cartoons",
     "releaseYear": 2008,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "King"
   },
   {
-    "id": "cartoons-072",
+    "id": "cartoons-071",
     "title": "Dora the Explorer",
     "industry": "cartoons",
     "releaseYear": 2000,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "US"
+    "countryOfOrigin": "US",
+    "hint": "Backpack"
   },
   {
-    "id": "cartoons-073",
+    "id": "cartoons-072",
     "title": "Shaun the Sheep",
     "industry": "cartoons",
     "releaseYear": 2007,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "UK"
+    "countryOfOrigin": "UK",
+    "hint": "Baa Baa"
   },
   {
-    "id": "cartoons-074",
+    "id": "cartoons-073",
     "title": "Masha and the Bear",
     "industry": "cartoons",
     "releaseYear": 2009,
     "decade": "2000s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "Russia"
+    "countryOfOrigin": "Russia",
+    "hint": "Forest Animal"
   },
   {
-    "id": "cartoons-075",
+    "id": "cartoons-074",
     "title": "PAW Patrol",
     "industry": "cartoons",
     "releaseYear": 2013,
     "decade": "2010s",
     "channel": "Nickelodeon",
-    "countryOfOrigin": "Canada"
+    "countryOfOrigin": "Canada",
+    "hint": "Police"
   }
 ]
