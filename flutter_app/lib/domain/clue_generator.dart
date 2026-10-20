@@ -89,13 +89,23 @@ List<ClueItem> getCluesForShow(Movie show) {
 /// Formats individual movie features into punchy, keyword-based clues.
 /// Uses concise labels and values instead of full sentences.
 List<ClueItem> getCluesForMovie(Movie movie) {
-  if (movie.industry == Industry.shows) {
+  if (movie.industry == Industry.shows || movie.industry == Industry.kdrama) {
     return getCluesForShow(movie);
   }
 
   final clues = <ClueItem>[];
 
-  // 1. Decade
+  // 1. Release Year
+  if (movie.releaseYear > 0 && !clueContainsTitle(movie.title, movie.releaseYear.toString())) {
+    clues.add(ClueItem(
+      key: 'release_year',
+      label: 'Release Year',
+      value: movie.releaseYear.toString(),
+      displayText: 'Release Year: ${movie.releaseYear}',
+    ));
+  }
+
+  // 2. Decade
   if (movie.decade.isNotEmpty && !clueContainsTitle(movie.title, movie.decade)) {
     clues.add(ClueItem(
       key: 'decade',
@@ -105,7 +115,7 @@ List<ClueItem> getCluesForMovie(Movie movie) {
     ));
   }
 
-  // 2. Hero
+  // 3. Hero
   if (movie.hero.isNotEmpty && !clueContainsTitle(movie.title, movie.hero)) {
     clues.add(ClueItem(
       key: 'hero',
@@ -115,7 +125,7 @@ List<ClueItem> getCluesForMovie(Movie movie) {
     ));
   }
 
-  // 3. Director
+  // 4. Director
   if (movie.director.isNotEmpty && !clueContainsTitle(movie.title, movie.director)) {
     clues.add(ClueItem(
       key: 'director',
@@ -125,13 +135,23 @@ List<ClueItem> getCluesForMovie(Movie movie) {
     ));
   }
 
-  // 4. Genre
+  // 5. Genre
   if (movie.genre.isNotEmpty && !clueContainsTitle(movie.title, movie.genre)) {
     clues.add(ClueItem(
       key: 'genre',
       label: 'Genre',
       value: movie.genre,
       displayText: 'Genre: ${movie.genre}',
+    ));
+  }
+
+  // 6. Hint
+  if (movie.hint != null && movie.hint!.isNotEmpty && !clueContainsTitle(movie.title, movie.hint!)) {
+    clues.add(ClueItem(
+      key: 'hint',
+      label: 'Hint',
+      value: movie.hint!,
+      displayText: 'Hint: ${movie.hint}',
     ));
   }
 
