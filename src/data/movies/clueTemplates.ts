@@ -20,8 +20,9 @@ function clueContainsTitle(title: string, value: string): boolean {
  * Production House, Number of Seasons, Start year, End year,
  * Adaptation or Original, TV release or OTT release, and Premise line.
  */
-export function getCluesForShow(show: Movie): ClueItem[] {
+export function getCluesForShow(show: Movie, playerCount?: number): ClueItem[] {
   const clues: ClueItem[] = [];
+  const canIncludeYear = playerCount === undefined || playerCount > 4;
 
   // 1. Production House (Platform)
   if (show.productionHouse && !clueContainsTitle(show.title, show.productionHouse)) {
@@ -44,17 +45,19 @@ export function getCluesForShow(show: Movie): ClueItem[] {
     });
   }
 
-  // 3. Start Year
-  const startYr = show.startYear ?? show.releaseYear;
-  clues.push({
-    key: "start_year",
-    label: "Start Year",
-    value: `${startYr}`,
-    displayText: `Start Year: ${startYr}`,
-  });
+  // 3. Start Year (only included when player count is > 4)
+  if (canIncludeYear) {
+    const startYr = show.startYear ?? show.releaseYear;
+    clues.push({
+      key: "start_year",
+      label: "Start Year",
+      value: `${startYr}`,
+      displayText: `Start Year: ${startYr}`,
+    });
+  }
 
-  // 4. End Year
-  if (show.endYear) {
+  // 4. End Year (only included when player count is > 4)
+  if (canIncludeYear && show.endYear) {
     clues.push({
       key: "end_year",
       label: "End Year",
@@ -87,18 +90,83 @@ export function getCluesForShow(show: Movie): ClueItem[] {
 }
 
 /**
+ * Formats cartoon features into cartoon-specific clues:
+ * Release Year, Decade, Channel, Country of Origin, and Hint.
+ */
+export function getCluesForCartoon(cartoon: Movie, playerCount?: number): ClueItem[] {
+  const clues: ClueItem[] = [];
+  const canIncludeYear = playerCount === undefined || playerCount > 4;
+
+  // 1. Release Year (disabled when playerCount is 3 or 4)
+  if (canIncludeYear && cartoon.releaseYear && !clueContainsTitle(cartoon.title, String(cartoon.releaseYear))) {
+    clues.push({
+      key: "release_year",
+      label: "Release Year",
+      value: String(cartoon.releaseYear),
+      displayText: `Release Year: ${cartoon.releaseYear}`,
+    });
+  }
+
+  // 2. Decade (disabled when playerCount is 3 or 4)
+  if (canIncludeYear && cartoon.decade && !clueContainsTitle(cartoon.title, cartoon.decade)) {
+    clues.push({
+      key: "decade",
+      label: "Decade",
+      value: cartoon.decade,
+      displayText: `Decade: ${cartoon.decade}`,
+    });
+  }
+
+  // 3. Channel
+  if (cartoon.channel && !clueContainsTitle(cartoon.title, cartoon.channel)) {
+    clues.push({
+      key: "channel",
+      label: "Channel",
+      value: cartoon.channel,
+      displayText: `Channel: ${cartoon.channel}`,
+    });
+  }
+
+  // 4. Country of Origin
+  if (cartoon.countryOfOrigin && !clueContainsTitle(cartoon.title, cartoon.countryOfOrigin)) {
+    clues.push({
+      key: "country_of_origin",
+      label: "Country of Origin",
+      value: cartoon.countryOfOrigin,
+      displayText: `Country: ${cartoon.countryOfOrigin}`,
+    });
+  }
+
+  // 5. Hint
+  if (cartoon.hint && !clueContainsTitle(cartoon.title, cartoon.hint)) {
+    clues.push({
+      key: "hint",
+      label: "Hint",
+      value: cartoon.hint,
+      displayText: `Hint: ${cartoon.hint}`,
+    });
+  }
+
+  return clues;
+}
+
+/**
  * Formats individual movie features into punchy, keyword-based clues.
  * Uses concise labels and values instead of full sentences.
  */
-export function getCluesForMovie(movie: Movie): ClueItem[] {
+export function getCluesForMovie(movie: Movie, playerCount?: number): ClueItem[] {
   if (movie.industry === "shows" || movie.industry === "kdrama") {
-    return getCluesForShow(movie);
+    return getCluesForShow(movie, playerCount);
+  }
+  if (movie.industry === "cartoons") {
+    return getCluesForCartoon(movie, playerCount);
   }
 
   const clues: ClueItem[] = [];
+  const canIncludeYear = playerCount === undefined || playerCount > 4;
 
-  // 1. Release Year
-  if (movie.releaseYear && !clueContainsTitle(movie.title, String(movie.releaseYear))) {
+  // 1. Release Year (only included when player count is > 4)
+  if (canIncludeYear && movie.releaseYear && !clueContainsTitle(movie.title, String(movie.releaseYear))) {
     clues.push({
       key: "release_year",
       label: "Release Year",
@@ -107,8 +175,8 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
     });
   }
 
-  // 2. Decade
-  if (movie.decade && !clueContainsTitle(movie.title, movie.decade)) {
+  // 2. Decade (only included when player count is > 4)
+  if (canIncludeYear && movie.decade && !clueContainsTitle(movie.title, movie.decade)) {
     clues.push({
       key: "decade",
       label: "Decade",
@@ -161,15 +229,23 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
 }
 
 /**
- * Picks one clue for the imposter, avoiding title leaks and allowing an injectable random function.
+ * Picks one clue for the imposter, avoiding title leaks, ensuring true randomization,
+ * and avoiding consecutive clue repeats when multiple options exist.
  */
 export function generateImposterClue(
   movie: Movie,
-  random: () => number = Math.random
+  random: () => number = Math.random,
+  playerCount?: number,
+  previousClueKey?: string
 ): ClueItem | null {
-  const validClues = getCluesForMovie(movie);
+  const validClues = getCluesForMovie(movie, playerCount);
   if (validClues.length === 0) return null;
 
-  const index = Math.floor(random() * validClues.length);
-  return validClues[index];
+  let pool = validClues;
+  if (previousClueKey && validClues.some((c) => c.key !== previousClueKey)) {
+    pool = validClues.filter((c) => c.key !== previousClueKey);
+  }
+
+  const index = Math.floor(random() * pool.length);
+  return pool[index];
 }
