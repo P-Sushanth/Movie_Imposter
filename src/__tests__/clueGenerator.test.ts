@@ -47,4 +47,50 @@ describe("Clue Generation", () => {
     expect(clueLast).toBeDefined();
     expect(clueFirst?.displayText).toBeTruthy();
   });
+
+  it("produces all 6 clues (releaseYear, decade, hero, director, genre, hint) for movies with hint", () => {
+    const movieWithHint: Movie = {
+      id: "tollywood-001",
+      title: "Badri",
+      industry: "tollywood",
+      releaseYear: 2000,
+      decade: "2000s",
+      hero: "Pawan Kalyan",
+      director: "Puri Jagannadh",
+      genre: "Action Romance",
+      hint: "Bay Of Bengal",
+    };
+
+    const clues = getCluesForMovie(movieWithHint);
+    const keys = clues.map((c) => c.key);
+    expect(keys).toEqual(["release_year", "decade", "hero", "director", "genre", "hint"]);
+    expect(clues.find((c) => c.key === "release_year")?.displayText).toBe("Release Year: 2000");
+    expect(clues.find((c) => c.key === "hint")?.displayText).toBe("Hint: Bay Of Bengal");
+  });
+
+  it("generates show clues for kdrama", () => {
+    const sampleKdrama: Movie = {
+      id: "kdrama-001",
+      title: "Squid Game",
+      industry: "kdrama",
+      releaseYear: 2021,
+      decade: "2020s",
+      genre: "Survival Dystopian Thriller",
+      productionHouse: "Netflix",
+      seasonsCount: 2,
+      startYear: 2021,
+      endYear: "Ongoing",
+      adaptationOrOriginal: "Original",
+      releaseMedium: "OTT Release",
+    };
+
+    const clues = getCluesForMovie(sampleKdrama);
+    const keys = clues.map((c) => c.key);
+    expect(keys).toContain("production_house");
+    expect(keys).toContain("seasons_count");
+    expect(keys).toContain("start_year");
+    expect(keys).toContain("end_year");
+    expect(keys).toContain("adaptation_or_original");
+    expect(keys).toContain("release_medium");
+  });
 });
