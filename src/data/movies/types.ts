@@ -4,6 +4,7 @@ export type Industry =
   | "hollywood"
   | "shows"
   | "kdrama"
+  | "cartoons"
   | "kollywood"
   | "mollywood"
   | "sandalwood";
@@ -15,6 +16,8 @@ export type ClueFeatureKey =
   | "director"
   | "genre"
   | "hint"
+  | "channel"
+  | "country_of_origin"
   | "production_house"
   | "seasons_count"
   | "start_year"
@@ -32,6 +35,8 @@ export interface Movie {
   director?: string;
   genre?: string;
   hint?: string;
+  channel?: string;
+  countryOfOrigin?: string;
   productionHouse?: string;
   seasonsCount?: number;
   startYear?: number;
