@@ -7,7 +7,8 @@
     "decade": "1940s",
     "hero": "Humphrey Bogart",
     "director": "Michael Curtiz",
-    "genre": "Romantic War Drama"
+    "genre": "Romantic War Drama",
+    "hint": "Triangle Love Story"
   },
   {
     "id": "hollywood-002",
@@ -17,7 +18,8 @@
     "decade": "1950s",
     "hero": "Henry Fonda",
     "director": "Sidney Lumet",
-    "genre": "Courtroom Drama"
+    "genre": "Courtroom Drama",
+    "hint": "Knife"
   },
   {
     "id": "hollywood-003",
@@ -27,7 +29,8 @@
     "decade": "1950s",
     "hero": "James Stewart",
     "director": "Alfred Hitchcock",
-    "genre": "Mystery Thriller"
+    "genre": "Mystery Thriller",
+    "hint": "Wheelchair"
   },
   {
     "id": "hollywood-004",
@@ -37,7 +40,8 @@
     "decade": "1950s",
     "hero": "James Stewart",
     "director": "Alfred Hitchcock",
-    "genre": "Psychological Thriller"
+    "genre": "Psychological Thriller",
+    "hint": "Spiral Staircase"
   },
   {
     "id": "hollywood-005",
@@ -47,7 +51,8 @@
     "decade": "1960s",
     "hero": "Anthony Perkins",
     "director": "Alfred Hitchcock",
-    "genre": "Psychological Horror"
+    "genre": "Psychological Horror",
+    "hint": "Multi-layered Personality"
   },
   {
     "id": "hollywood-006",
@@ -57,7 +62,8 @@
     "decade": "1960s",
     "hero": "Peter O'Toole",
     "director": "David Lean",
-    "genre": "Historical Epic Drama"
+    "genre": "Historical Epic Drama",
+    "hint": "Wide Angles"
   },
   {
     "id": "hollywood-007",
@@ -67,7 +73,8 @@
     "decade": "1960s",
     "hero": "Clint Eastwood",
     "director": "Sergio Leone",
-    "genre": "Spaghetti Western"
+    "genre": "Spaghetti Western",
+    "hint": "American Civil War"
   },
   {
     "id": "hollywood-008",
@@ -77,7 +84,8 @@
     "decade": "1960s",
     "hero": "Keir Dullea",
     "director": "Stanley Kubrick",
-    "genre": "Epic Sci-Fi"
+    "genre": "Epic Sci-Fi",
+    "hint": "Super Computer"
   },
   {
     "id": "hollywood-009",
@@ -87,7 +95,8 @@
     "decade": "1970s",
     "hero": "Marlon Brando",
     "director": "Francis Ford Coppola",
-    "genre": "Crime Drama"
+    "genre": "Crime Drama",
+    "hint": "Oranges"
   },
   {
     "id": "hollywood-010",
@@ -97,7 +106,8 @@
     "decade": "1970s",
     "hero": "Al Pacino",
     "director": "Francis Ford Coppola",
-    "genre": "Crime Drama"
+    "genre": "Crime Drama",
+    "hint": "Sequel"
   },
   {
     "id": "hollywood-011",
@@ -107,7 +117,8 @@
     "decade": "1970s",
     "hero": "Roy Scheider",
     "director": "Steven Spielberg",
-    "genre": "Thriller Adventure"
+    "genre": "Thriller Adventure",
+    "hint": "Beach"
   },
   {
     "id": "hollywood-012",
@@ -117,7 +128,8 @@
     "decade": "1970s",
     "hero": "Robert De Niro",
     "director": "Martin Scorsese",
-    "genre": "Psychological Drama"
+    "genre": "Psychological Drama",
+    "hint": "Neo Noir"
   },
   {
     "id": "hollywood-013",
@@ -127,7 +139,8 @@
     "decade": "1970s",
     "hero": "Sylvester Stallone",
     "director": "John G. Avildsen",
-    "genre": "Sports Drama"
+    "genre": "Sports Drama",
+    "hint": "Under Dog"
   },
   {
     "id": "hollywood-014",
@@ -137,7 +150,8 @@
     "decade": "1970s",
     "hero": "Mark Hamill",
     "director": "George Lucas",
-    "genre": "Space Opera Sci-Fi"
+    "genre": "Space Opera Sci-Fi",
+    "hint": "Space Opera"
   },
   {
     "id": "hollywood-015",
@@ -147,7 +161,8 @@
     "decade": "1970s",
     "hero": "Sigourney Weaver",
     "director": "Ridley Scott",
-    "genre": "Sci-Fi Horror"
+    "genre": "Sci-Fi Horror",
+    "hint": "No Running"
   },
   {
     "id": "hollywood-016",
@@ -157,7 +172,8 @@
     "decade": "1970s",
     "hero": "Martin Sheen",
     "director": "Francis Ford Coppola",
-    "genre": "Epic War Drama"
+    "genre": "Epic War Drama",
+    "hint": "Surfing"
   },
   {
     "id": "hollywood-017",
@@ -167,7 +183,8 @@
     "decade": "1980s",
     "hero": "Jack Nicholson",
     "director": "Stanley Kubrick",
-    "genre": "Psychological Horror"
+    "genre": "Psychological Horror",
+    "hint": "Colorado Hotel"
   },
   {
     "id": "hollywood-018",
@@ -177,7 +194,8 @@
     "decade": "1980s",
     "hero": "Harrison Ford",
     "director": "Steven Spielberg",
-    "genre": "Action Adventure"
+    "genre": "Action Adventure",
+    "hint": "Snakes"
   },
   {
     "id": "hollywood-019",
@@ -187,7 +205,8 @@
     "decade": "1980s",
     "hero": "Harrison Ford",
     "director": "Ridley Scott",
-    "genre": "Neo-noir Sci-Fi"
+    "genre": "Neo-noir Sci-Fi",
+    "hint": "2019"
   },
   {
     "id": "hollywood-020",
@@ -197,7 +216,8 @@
     "decade": "1980s",
     "hero": "Al Pacino",
     "director": "Brian De Palma",
-    "genre": "Crime Drama"
+    "genre": "Crime Drama",
+    "hint": "Eyes"
   },
   {
     "id": "hollywood-021",
@@ -207,7 +227,8 @@
     "decade": "1980s",
     "hero": "Arnold Schwarzenegger",
     "director": "James Cameron",
-    "genre": "Sci-Fi Action"
+    "genre": "Sci-Fi Action",
+    "hint": "Glasses"
   },
   {
     "id": "hollywood-022",
@@ -217,7 +238,8 @@
     "decade": "1980s",
     "hero": "Michael J. Fox",
     "director": "Robert Zemeckis",
-    "genre": "Sci-Fi Adventure Comedy"
+    "genre": "Sci-Fi Adventure Comedy",
+    "hint": "DeLorean"
   },
   {
     "id": "hollywood-023",
@@ -227,7 +249,8 @@
     "decade": "1980s",
     "hero": "Bruce Willis",
     "director": "John McTiernan",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Christmas"
   },
   {
     "id": "hollywood-024",
@@ -237,7 +260,8 @@
     "decade": "1990s",
     "hero": "Ray Liotta",
     "director": "Martin Scorsese",
-    "genre": "Biographical Crime Drama"
+    "genre": "Biographical Crime Drama",
+    "hint": "Mafia"
   },
   {
     "id": "hollywood-025",
@@ -247,7 +271,8 @@
     "decade": "1990s",
     "hero": "Anthony Hopkins",
     "director": "Jonathan Demme",
-    "genre": "Psychological Horror Thriller"
+    "genre": "Psychological Horror Thriller",
+    "hint": "Fava Beans"
   },
   {
     "id": "hollywood-026",
@@ -257,7 +282,8 @@
     "decade": "1990s",
     "hero": "Arnold Schwarzenegger",
     "director": "James Cameron",
-    "genre": "Sci-Fi Action"
+    "genre": "Sci-Fi Action",
+    "hint": "Liquid Metal"
   },
   {
     "id": "hollywood-027",
@@ -267,7 +293,8 @@
     "decade": "1990s",
     "hero": "Sam Neill",
     "director": "Steven Spielberg",
-    "genre": "Sci-Fi Adventure"
+    "genre": "Sci-Fi Adventure",
+    "hint": "Single Night"
   },
   {
     "id": "hollywood-028",
@@ -277,7 +304,8 @@
     "decade": "1990s",
     "hero": "Liam Neeson",
     "director": "Steven Spielberg",
-    "genre": "Historical Epic Drama"
+    "genre": "Historical Epic Drama",
+    "hint": "Red Jacket"
   },
   {
     "id": "hollywood-029",
@@ -287,7 +315,8 @@
     "decade": "1990s",
     "hero": "John Travolta",
     "director": "Quentin Tarantino",
-    "genre": "Crime Comedy Drama"
+    "genre": "Crime Comedy Drama",
+    "hint": "Suitcase"
   },
   {
     "id": "hollywood-030",
@@ -297,7 +326,8 @@
     "decade": "1990s",
     "hero": "Tim Robbins",
     "director": "Frank Darabont",
-    "genre": "Prison Drama"
+    "genre": "Prison Drama",
+    "hint": "Raquel Welch"
   },
   {
     "id": "hollywood-031",
@@ -307,7 +337,8 @@
     "decade": "1990s",
     "hero": "Tom Hanks",
     "director": "Robert Zemeckis",
-    "genre": "Comedy Drama Romance"
+    "genre": "Comedy Drama Romance",
+    "hint": "Shrimp"
   },
   {
     "id": "hollywood-032",
@@ -317,7 +348,8 @@
     "decade": "1990s",
     "hero": "Matthew Broderick",
     "director": "Roger Allers",
-    "genre": "Animated Musical Drama"
+    "genre": "Animated Musical Drama",
+    "hint": "Uncle"
   },
   {
     "id": "hollywood-033",
@@ -327,7 +359,8 @@
     "decade": "1990s",
     "hero": "Mel Gibson",
     "director": "Mel Gibson",
-    "genre": "Historical Epic War"
+    "genre": "Historical Epic War",
+    "hint": "Longshanks"
   },
   {
     "id": "hollywood-034",
@@ -337,7 +370,8 @@
     "decade": "1990s",
     "hero": "Brad Pitt",
     "director": "David Fincher",
-    "genre": "Crime Psychological Thriller"
+    "genre": "Crime Psychological Thriller",
+    "hint": "Unnamed City"
   },
   {
     "id": "hollywood-035",
@@ -347,7 +381,8 @@
     "decade": "1990s",
     "hero": "Tom Cruise",
     "director": "Brian De Palma",
-    "genre": "Spy Action Thriller"
+    "genre": "Spy Action Thriller",
+    "hint": "Hanging"
   },
   {
     "id": "hollywood-036",
@@ -357,7 +392,8 @@
     "decade": "1990s",
     "hero": "Leonardo DiCaprio",
     "director": "James Cameron",
-    "genre": "Epic Romance Disaster"
+    "genre": "Epic Romance Disaster",
+    "hint": "Lottery"
   },
   {
     "id": "hollywood-037",
@@ -367,7 +403,8 @@
     "decade": "1990s",
     "hero": "Tom Hanks",
     "director": "Steven Spielberg",
-    "genre": "Epic War Drama"
+    "genre": "Epic War Drama",
+    "hint": "Brothers"
   },
   {
     "id": "hollywood-038",
@@ -377,7 +414,8 @@
     "decade": "1990s",
     "hero": "Jim Carrey",
     "director": "Peter Weir",
-    "genre": "Psychological Sci-Fi Comedy"
+    "genre": "Psychological Sci-Fi Comedy",
+    "hint": "Fiction"
   },
   {
     "id": "hollywood-039",
@@ -387,7 +425,8 @@
     "decade": "1990s",
     "hero": "Keanu Reeves",
     "director": "The Wachowskis",
-    "genre": "Sci-Fi Action"
+    "genre": "Sci-Fi Action",
+    "hint": "Simulation"
   },
   {
     "id": "hollywood-040",
@@ -397,7 +436,8 @@
     "decade": "1990s",
     "hero": "Brad Pitt",
     "director": "David Fincher",
-    "genre": "Psychological Drama"
+    "genre": "Psychological Drama",
+    "hint": "Headshot"
   },
   {
     "id": "hollywood-041",
@@ -407,7 +447,8 @@
     "decade": "1990s",
     "hero": "Bruce Willis",
     "director": "M. Night Shyamalan",
-    "genre": "Psychological Horror Thriller"
+    "genre": "Psychological Horror Thriller",
+    "hint": "Dead People"
   },
   {
     "id": "hollywood-042",
@@ -417,7 +458,8 @@
     "decade": "2000s",
     "hero": "Russell Crowe",
     "director": "Ridley Scott",
-    "genre": "Historical Epic Action"
+    "genre": "Historical Epic Action",
+    "hint": "General"
   },
   {
     "id": "hollywood-043",
@@ -427,7 +469,8 @@
     "decade": "2000s",
     "hero": "Guy Pearce",
     "director": "Christopher Nolan",
-    "genre": "Neo-noir Mystery Thriller"
+    "genre": "Neo-noir Mystery Thriller",
+    "hint": "Revenge"
   },
   {
     "id": "hollywood-044",
@@ -437,7 +480,8 @@
     "decade": "2000s",
     "hero": "Elijah Wood",
     "director": "Peter Jackson",
-    "genre": "Epic Fantasy Adventure"
+    "genre": "Epic Fantasy Adventure",
+    "hint": "Ring"
   },
   {
     "id": "hollywood-045",
@@ -447,7 +491,8 @@
     "decade": "2000s",
     "hero": "Tobey Maguire",
     "director": "Sam Raimi",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Alter Ego"
   },
   {
     "id": "hollywood-046",
@@ -457,7 +502,8 @@
     "decade": "2000s",
     "hero": "Johnny Depp",
     "director": "Gore Verbinski",
-    "genre": "Fantasy Swashbuckler Action"
+    "genre": "Fantasy Swashbuckler Action",
+    "hint": "Captain"
   },
   {
     "id": "hollywood-047",
@@ -467,7 +513,8 @@
     "decade": "2000s",
     "hero": "Elijah Wood",
     "director": "Peter Jackson",
-    "genre": "Epic Fantasy Adventure"
+    "genre": "Epic Fantasy Adventure",
+    "hint": "King"
   },
   {
     "id": "hollywood-048",
@@ -477,7 +524,8 @@
     "decade": "2000s",
     "hero": "Uma Thurman",
     "director": "Quentin Tarantino",
-    "genre": "Martial Arts Action"
+    "genre": "Martial Arts Action",
+    "hint": "Eye Patch"
   },
   {
     "id": "hollywood-049",
@@ -487,7 +535,8 @@
     "decade": "2000s",
     "hero": "Jim Carrey",
     "director": "Michel Gondry",
-    "genre": "Romantic Sci-Fi Drama"
+    "genre": "Romantic Sci-Fi Drama",
+    "hint": "Memory Gone"
   },
   {
     "id": "hollywood-050",
@@ -497,7 +546,8 @@
     "decade": "2000s",
     "hero": "Tobey Maguire",
     "director": "Sam Raimi",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Artificial Sun"
   },
   {
     "id": "hollywood-051",
@@ -507,7 +557,8 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Tree Log"
   },
   {
     "id": "hollywood-052",
@@ -517,7 +568,8 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Psychological Thriller"
+    "genre": "Psychological Thriller",
+    "hint": "3 acts"
   },
   {
     "id": "hollywood-053",
@@ -527,7 +579,8 @@
     "decade": "2000s",
     "hero": "Leonardo DiCaprio",
     "director": "Martin Scorsese",
-    "genre": "Crime Thriller"
+    "genre": "Crime Thriller",
+    "hint": "Rat"
   },
   {
     "id": "hollywood-054",
@@ -537,7 +590,8 @@
     "decade": "2000s",
     "hero": "Daniel Craig",
     "director": "Martin Campbell",
-    "genre": "Spy Action Thriller"
+    "genre": "Spy Action Thriller",
+    "hint": "BlackJack"
   },
   {
     "id": "hollywood-055",
@@ -547,7 +601,8 @@
     "decade": "2000s",
     "hero": "Josh Brolin",
     "director": "Coen Brothers",
-    "genre": "Neo-Western Crime Thriller"
+    "genre": "Neo-Western Crime Thriller",
+    "hint": "Milk"
   },
   {
     "id": "hollywood-056",
@@ -557,7 +612,8 @@
     "decade": "2000s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Superhero Crime Thriller"
+    "genre": "Superhero Crime Thriller",
+    "hint": "Unbeaten"
   },
   {
     "id": "hollywood-057",
@@ -567,7 +623,8 @@
     "decade": "2000s",
     "hero": "Robert Downey Jr.",
     "director": "Jon Favreau",
-    "genre": "Superhero Action Sci-Fi"
+    "genre": "Superhero Action Sci-Fi",
+    "hint": "Cave"
   },
   {
     "id": "hollywood-058",
@@ -577,7 +634,8 @@
     "decade": "2000s",
     "hero": "Dev Patel",
     "director": "Danny Boyle",
-    "genre": "Drama Romance"
+    "genre": "Drama Romance",
+    "hint": "Hot Seat"
   },
   {
     "id": "hollywood-059",
@@ -587,7 +645,8 @@
     "decade": "2000s",
     "hero": "Brad Pitt",
     "director": "Quentin Tarantino",
-    "genre": "War Action Black Comedy"
+    "genre": "War Action Black Comedy",
+    "hint": "Theater"
   },
   {
     "id": "hollywood-060",
@@ -597,7 +656,8 @@
     "decade": "2000s",
     "hero": "Sam Worthington",
     "director": "James Cameron",
-    "genre": "Epic Sci-Fi Action"
+    "genre": "Epic Sci-Fi Action",
+    "hint": "Brain Transfer"
   },
   {
     "id": "hollywood-061",
@@ -607,7 +667,8 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Christopher Nolan",
-    "genre": "Sci-Fi Heist Thriller"
+    "genre": "Sci-Fi Heist Thriller",
+    "hint": "Top"
   },
   {
     "id": "hollywood-062",
@@ -617,7 +678,8 @@
     "decade": "2010s",
     "hero": "Jesse Eisenberg",
     "director": "David Fincher",
-    "genre": "Biographical Drama"
+    "genre": "Biographical Drama",
+    "hint": "Friends"
   },
   {
     "id": "hollywood-063",
@@ -627,7 +689,8 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Joss Whedon",
-    "genre": "Superhero Action Sci-Fi"
+    "genre": "Superhero Action Sci-Fi",
+    "hint": "Mind Control"
   },
   {
     "id": "hollywood-064",
@@ -637,7 +700,8 @@
     "decade": "2010s",
     "hero": "Jamie Foxx",
     "director": "Quentin Tarantino",
-    "genre": "Revisionist Western Action"
+    "genre": "Revisionist Western Action",
+    "hint": "Dentist"
   },
   {
     "id": "hollywood-065",
@@ -647,7 +711,8 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Martin Scorsese",
-    "genre": "Biographical Black Comedy Crime"
+    "genre": "Biographical Black Comedy Crime",
+    "hint": "Money Laundering"
   },
   {
     "id": "hollywood-066",
@@ -657,7 +722,8 @@
     "decade": "2010s",
     "hero": "Matthew McConaughey",
     "director": "Christopher Nolan",
-    "genre": "Epic Sci-Fi Drama"
+    "genre": "Epic Sci-Fi Drama",
+    "hint": "Father Daughter Dynamic"
   },
   {
     "id": "hollywood-067",
@@ -667,7 +733,8 @@
     "decade": "2010s",
     "hero": "Miles Teller",
     "director": "Damien Chazelle",
-    "genre": "Psychological Drama"
+    "genre": "Psychological Drama",
+    "hint": "Teacher"
   },
   {
     "id": "hollywood-068",
@@ -677,7 +744,8 @@
     "decade": "2010s",
     "hero": "Keanu Reeves",
     "director": "Chad Stahelski",
-    "genre": "Neo-noir Action Thriller"
+    "genre": "Neo-noir Action Thriller",
+    "hint": "Dog"
   },
   {
     "id": "hollywood-069",
@@ -687,7 +755,8 @@
     "decade": "2010s",
     "hero": "Tom Hardy",
     "director": "George Miller",
-    "genre": "Post-apocalyptic Action"
+    "genre": "Post-apocalyptic Action",
+    "hint": "Milk"
   },
   {
     "id": "hollywood-070",
@@ -697,7 +766,8 @@
     "decade": "2010s",
     "hero": "Leonardo DiCaprio",
     "director": "Alejandro G. Iñárritu",
-    "genre": "Period Survival Drama"
+    "genre": "Period Survival Drama",
+    "hint": "Bear"
   },
   {
     "id": "hollywood-071",
@@ -707,7 +777,8 @@
     "decade": "2010s",
     "hero": "Ryan Gosling",
     "director": "Damien Chazelle",
-    "genre": "Musical Romantic Drama"
+    "genre": "Musical Romantic Drama",
+    "hint": "Jazz"
   },
   {
     "id": "hollywood-072",
@@ -717,7 +788,8 @@
     "decade": "2010s",
     "hero": "Amy Adams",
     "director": "Denis Villeneuve",
-    "genre": "Sci-Fi Drama"
+    "genre": "Sci-Fi Drama",
+    "hint": "Hepta"
   },
   {
     "id": "hollywood-073",
@@ -727,7 +799,8 @@
     "decade": "2010s",
     "hero": "Daniel Kaluuya",
     "director": "Jordan Peele",
-    "genre": "Psychological Horror"
+    "genre": "Psychological Horror",
+    "hint": "Tea"
   },
   {
     "id": "hollywood-074",
@@ -737,7 +810,8 @@
     "decade": "2010s",
     "hero": "Ryan Gosling",
     "director": "Denis Villeneuve",
-    "genre": "Neo-noir Sci-Fi"
+    "genre": "Neo-Noir Sci-Fi",
+    "hint": "Tears"
   },
   {
     "id": "hollywood-075",
@@ -747,7 +821,8 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Russo Brothers",
-    "genre": "Superhero Action Epic"
+    "genre": "Superhero Action Epic",
+    "hint": "Head"
   },
   {
     "id": "hollywood-076",
@@ -757,7 +832,8 @@
     "decade": "2010s",
     "hero": "Shameik Moore",
     "director": "Bob Persichetti",
-    "genre": "Animated Superhero Action"
+    "genre": "Animated Superhero Action",
+    "hint": "Glitch"
   },
   {
     "id": "hollywood-077",
@@ -767,7 +843,8 @@
     "decade": "2010s",
     "hero": "Rami Malek",
     "director": "Bryan Singer",
-    "genre": "Biographical Musical Drama"
+    "genre": "Biographical Musical Drama",
+    "hint": "Concert"
   },
   {
     "id": "hollywood-078",
@@ -777,7 +854,8 @@
     "decade": "2010s",
     "hero": "Robert Downey Jr.",
     "director": "Russo Brothers",
-    "genre": "Superhero Action Epic"
+    "genre": "Superhero Action Epic",
+    "hint": "End"
   },
   {
     "id": "hollywood-079",
@@ -787,7 +865,8 @@
     "decade": "2010s",
     "hero": "Song Kang-ho",
     "director": "Bong Joon-ho",
-    "genre": "Black Comedy Psychological Thriller"
+    "genre": "Black Comedy Psychological Thriller",
+    "hint": "Stairs"
   },
   {
     "id": "hollywood-080",
@@ -797,7 +876,8 @@
     "decade": "2010s",
     "hero": "Joaquin Phoenix",
     "director": "Todd Phillips",
-    "genre": "Psychological Crime Thriller"
+    "genre": "Psychological Crime Thriller",
+    "hint": "Laughing"
   },
   {
     "id": "hollywood-081",
@@ -807,7 +887,8 @@
     "decade": "2010s",
     "hero": "George MacKay",
     "director": "Sam Mendes",
-    "genre": "War Action Drama"
+    "genre": "War Action Drama",
+    "hint": "One Shot"
   },
   {
     "id": "hollywood-082",
@@ -817,7 +898,8 @@
     "decade": "2010s",
     "hero": "Daniel Craig",
     "director": "Rian Johnson",
-    "genre": "Mystery Comedy"
+    "genre": "Mystery Comedy",
+    "hint": "Thrombosis"
   },
   {
     "id": "hollywood-083",
@@ -827,7 +909,8 @@
     "decade": "2010s",
     "hero": "Christian Bale",
     "director": "James Mangold",
-    "genre": "Biographical Sports Drama"
+    "genre": "Biographical Sports Drama",
+    "hint": "Bolo Beaten"
   },
   {
     "id": "hollywood-084",
@@ -837,7 +920,8 @@
     "decade": "2020s",
     "hero": "Timothée Chalamet",
     "director": "Denis Villeneuve",
-    "genre": "Epic Sci-Fi Adventure"
+    "genre": "Epic Sci-Fi Adventure",
+    "hint": "Kin Slay"
   },
   {
     "id": "hollywood-085",
@@ -847,7 +931,8 @@
     "decade": "2020s",
     "hero": "Tom Holland",
     "director": "Jon Watts",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Curse"
   },
   {
     "id": "hollywood-086",
@@ -857,7 +942,8 @@
     "decade": "2020s",
     "hero": "Robert Pattinson",
     "director": "Matt Reeves",
-    "genre": "Neo-noir Superhero Crime"
+    "genre": "Neo-noir Superhero Crime",
+    "hint": "Carpet Tucker"
   },
   {
     "id": "hollywood-087",
@@ -867,7 +953,8 @@
     "decade": "2020s",
     "hero": "Tom Cruise",
     "director": "Joseph Kosinski",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Teacher"
   },
   {
     "id": "hollywood-088",
@@ -877,7 +964,8 @@
     "decade": "2020s",
     "hero": "Michelle Yeoh",
     "director": "Daniels",
-    "genre": "Absurdist Sci-Fi Comedy Drama"
+    "genre": "Absurdist Sci-Fi Comedy Drama",
+    "hint": "Bagel"
   },
   {
     "id": "hollywood-089",
@@ -887,7 +975,8 @@
     "decade": "2020s",
     "hero": "Sam Worthington",
     "director": "James Cameron",
-    "genre": "Epic Sci-Fi Adventure"
+    "genre": "Epic Sci-Fi Adventure",
+    "hint": "Eye Treat"
   },
   {
     "id": "hollywood-090",
@@ -897,7 +986,8 @@
     "decade": "2020s",
     "hero": "Cillian Murphy",
     "director": "Christopher Nolan",
-    "genre": "Biographical Historical Drama"
+    "genre": "Biographical Historical Drama",
+    "hint": "Death"
   },
   {
     "id": "hollywood-091",
@@ -907,7 +997,8 @@
     "decade": "2020s",
     "hero": "Margot Robbie",
     "director": "Greta Gerwig",
-    "genre": "Fantasy Comedy"
+    "genre": "Fantasy Comedy",
+    "hint": "Stereo Type"
   },
   {
     "id": "hollywood-092",
@@ -917,7 +1008,8 @@
     "decade": "2020s",
     "hero": "Shameik Moore",
     "director": "Joaquim Dos Santos",
-    "genre": "Animated Superhero Action"
+    "genre": "Animated Superhero Action",
+    "hint": "Nahh"
   },
   {
     "id": "hollywood-093",
@@ -927,7 +1019,8 @@
     "decade": "2020s",
     "hero": "Tom Cruise",
     "director": "Christopher McQuarrie",
-    "genre": "Action Spy Thriller"
+    "genre": "Action Spy Thriller",
+    "hint": "AI"
   },
   {
     "id": "hollywood-094",
@@ -937,7 +1030,8 @@
     "decade": "2020s",
     "hero": "Timothée Chalamet",
     "director": "Denis Villeneuve",
-    "genre": "Epic Sci-Fi Adventure"
+    "genre": "Epic Sci-Fi Adventure",
+    "hint": "Riding"
   },
   {
     "id": "hollywood-095",
@@ -947,7 +1041,8 @@
     "decade": "2020s",
     "hero": "Ryan Reynolds",
     "director": "Shawn Levy",
-    "genre": "Superhero Action Comedy"
+    "genre": "Superhero Action Comedy",
+    "hint": "Flame"
   },
   {
     "id": "hollywood-096",
@@ -957,7 +1052,8 @@
     "decade": "2020s",
     "hero": "Paul Mescal",
     "director": "Ridley Scott",
-    "genre": "Historical Action Epic"
+    "genre": "Historical Action Epic",
+    "hint": "Fatherless"
   },
   {
     "id": "hollywood-097",
@@ -967,7 +1063,8 @@
     "decade": "2020s",
     "hero": "Cynthia Erivo",
     "director": "Jon M. Chu",
-    "genre": "Musical Fantasy"
+    "genre": "Musical Fantasy",
+    "hint": "Witch"
   },
   {
     "id": "hollywood-098",
@@ -977,7 +1074,8 @@
     "decade": "2020s",
     "hero": "Amy Poehler",
     "director": "Kelsey Mann",
-    "genre": "Animated Comedy Drama"
+    "genre": "Animated Comedy Drama",
+    "hint": "Anxiety"
   },
   {
     "id": "hollywood-099",
@@ -987,7 +1085,8 @@
     "decade": "2020s",
     "hero": "Auli'i Cravalho",
     "director": "David G. Derrick Jr.",
-    "genre": "Animated Musical Adventure"
+    "genre": "Animated Musical Adventure",
+    "hint": "Ocean"
   },
   {
     "id": "hollywood-100",
@@ -997,7 +1096,8 @@
     "decade": "2020s",
     "hero": "Cailee Spaeny",
     "director": "Fede Álvarez",
-    "genre": "Sci-Fi Horror"
+    "genre": "Sci-Fi Horror",
+    "hint": "Chestburster"
   },
   {
     "id": "hollywood-101",
@@ -1007,7 +1107,8 @@
     "decade": "2020s",
     "hero": "Glen Powell",
     "director": "Lee Isaac Chung",
-    "genre": "Disaster Action Thriller"
+    "genre": "Disaster Action Thriller",
+    "hint": "F5"
   },
   {
     "id": "hollywood-102",
@@ -1017,7 +1118,8 @@
     "decade": "2020s",
     "hero": "Michael Keaton",
     "director": "Tim Burton",
-    "genre": "Fantasy Comedy Horror"
+    "genre": "Fantasy Comedy Horror",
+    "hint": "Bettle"
   },
   {
     "id": "hollywood-103",
@@ -1027,7 +1129,8 @@
     "decade": "2020s",
     "hero": "Anya Taylor-Joy",
     "director": "George Miller",
-    "genre": "Post-Apocalyptic Action"
+    "genre": "Post-Apocalyptic Action",
+    "hint": "Dementus"
   },
   {
     "id": "hollywood-104",
@@ -1037,7 +1140,8 @@
     "decade": "2020s",
     "hero": "Anthony Mackie",
     "director": "Julius Onah",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Cherry Blossom"
   },
   {
     "id": "hollywood-105",
@@ -1047,7 +1151,8 @@
     "decade": "2020s",
     "hero": "David Corenswet",
     "director": "James Gunn",
-    "genre": "Superhero Action Adventure"
+    "genre": "Superhero Action Adventure",
+    "hint": "Haircut"
   },
   {
     "id": "hollywood-106",
@@ -1057,7 +1162,8 @@
     "decade": "2020s",
     "hero": "Tom Cruise",
     "director": "Christopher McQuarrie",
-    "genre": "Action Spy Thriller"
+    "genre": "Action Spy Thriller",
+    "hint": "Skiing"
   },
   {
     "id": "hollywood-107",
@@ -1067,7 +1173,8 @@
     "decade": "2020s",
     "hero": "Sam Worthington",
     "director": "James Cameron",
-    "genre": "Epic Sci-Fi Adventure"
+    "genre": "Epic Sci-Fi Adventure",
+    "hint": "Spider"
   },
   {
     "id": "hollywood-108",
@@ -1077,7 +1184,8 @@
     "decade": "2020s",
     "hero": "Pedro Pascal",
     "director": "Matt Shakman",
-    "genre": "Superhero Sci-Fi"
+    "genre": "Superhero Sci-Fi",
+    "hint": "Family"
   },
   {
     "id": "hollywood-109",
@@ -1087,7 +1195,8 @@
     "decade": "2020s",
     "hero": "Scarlett Johansson",
     "director": "Gareth Edwards",
-    "genre": "Sci-Fi Action Adventure"
+    "genre": "Sci-Fi Action Adventure",
+    "hint": "Dino"
   },
   {
     "id": "hollywood-110",
@@ -1097,7 +1206,8 @@
     "decade": "2020s",
     "hero": "Florence Pugh",
     "director": "Jake Schreier",
-    "genre": "Superhero Action"
+    "genre": "Superhero Action",
+    "hint": "Group"
   },
   {
     "id": "hollywood-111",
@@ -1107,7 +1217,8 @@
     "decade": "2020s",
     "hero": "Jack Black",
     "director": "Jared Hess",
-    "genre": "Video Game Adventure Comedy"
+    "genre": "Video Game Adventure Comedy",
+    "hint": "Chicken"
   },
   {
     "id": "hollywood-112",
@@ -1117,7 +1228,8 @@
     "decade": "2020s",
     "hero": "Robert Pattinson",
     "director": "Bong Joon-ho",
-    "genre": "Sci-Fi Dark Comedy"
+    "genre": "Sci-Fi Dark Comedy",
+    "hint": "Identity"
   },
   {
     "id": "hollywood-113",
@@ -1127,7 +1239,8 @@
     "decade": "2020s",
     "hero": "Mason Thames",
     "director": "Dean DeBlois",
-    "genre": "Fantasy Action Adventure"
+    "genre": "Fantasy Action Adventure",
+    "hint": "Night Fury"
   },
   {
     "id": "hollywood-114",
@@ -1137,7 +1250,8 @@
     "decade": "2020s",
     "hero": "Ginnifer Goodwin",
     "director": "Byron Howard",
-    "genre": "Animated Buddy Comedy"
+    "genre": "Animated Buddy Comedy",
+    "hint": "reptile"
   },
   {
     "id": "hollywood-115",
@@ -1147,47 +1261,8 @@
     "decade": "2020s",
     "hero": "Cillian Murphy",
     "director": "Danny Boyle",
-    "genre": "Post-Apocalyptic Horror"
-  },
-  {
-    "id": "hollywood-116",
-    "title": "Avengers: Doomsday",
-    "industry": "hollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Robert Downey Jr.",
-    "director": "Anthony Russo",
-    "genre": "Superhero Epic Action"
-  },
-  {
-    "id": "hollywood-117",
-    "title": "The Batman Part II",
-    "industry": "hollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Robert Pattinson",
-    "director": "Matt Reeves",
-    "genre": "Neo-Noir Crime Thriller"
-  },
-  {
-    "id": "hollywood-118",
-    "title": "Spider-Man 4",
-    "industry": "hollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Tom Holland",
-    "director": "Destin Daniel Cretton",
-    "genre": "Superhero Action Adventure"
-  },
-  {
-    "id": "hollywood-119",
-    "title": "Shrek 5",
-    "industry": "hollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Mike Myers",
-    "director": "Walt Dohrn",
-    "genre": "Animated Fantasy Comedy"
+    "genre": "Post-Apocalyptic Horror",
+    "hint": "Zombie"
   },
   {
     "id": "hollywood-120",
@@ -1197,7 +1272,8 @@
     "decade": "2020s",
     "hero": "Tom Hanks",
     "director": "Andrew Stanton",
-    "genre": "Animated Comedy Adventure"
+    "genre": "Animated Comedy Adventure",
+    "hint": "Tech"
   },
   {
     "id": "hollywood-121",
@@ -1207,7 +1283,8 @@
     "decade": "2020s",
     "hero": "Pedro Pascal",
     "director": "Jon Favreau",
-    "genre": "Sci-Fi Space Opera"
+    "genre": "Sci-Fi Space Opera",
+    "hint": "Baby"
   },
   {
     "id": "hollywood-122",
@@ -1217,7 +1294,8 @@
     "decade": "2000s",
     "hero": "Mike Myers",
     "director": "Andrew Adamson",
-    "genre": "Animated Fantasy Comedy"
+    "genre": "Animated Fantasy Comedy",
+    "hint": "Parody"
   },
   {
     "id": "hollywood-123",
@@ -1227,7 +1305,8 @@
     "decade": "2000s",
     "hero": "Albert Brooks",
     "director": "Andrew Stanton",
-    "genre": "Animated Adventure Comedy"
+    "genre": "Animated Adventure Comedy",
+    "hint": "Father Son Dynamic"
   },
   {
     "id": "hollywood-124",
@@ -1237,7 +1316,8 @@
     "decade": "2000s",
     "hero": "Craig T. Nelson",
     "director": "Brad Bird",
-    "genre": "Animated Superhero Action"
+    "genre": "Animated Superhero Action",
+    "hint": "Family"
   },
   {
     "id": "hollywood-125",
@@ -1247,7 +1327,8 @@
     "decade": "2000s",
     "hero": "Ed Asner",
     "director": "Pete Docter",
-    "genre": "Animated Adventure Drama"
+    "genre": "Animated Adventure Drama",
+    "hint": "House"
   },
   {
     "id": "hollywood-126",
@@ -1257,7 +1338,8 @@
     "decade": "2010s",
     "hero": "Anthony Gonzalez",
     "director": "Lee Unkrich",
-    "genre": "Animated Musical Fantasy"
+    "genre": "Animated Musical Fantasy",
+    "hint": "Flowers"
   },
   {
     "id": "hollywood-127",
@@ -1267,7 +1349,8 @@
     "decade": "2000s",
     "hero": "Patton Oswalt",
     "director": "Brad Bird",
-    "genre": "Animated Comedy Drama"
+    "genre": "Animated Comedy Drama",
+    "hint": "Paris"
   },
   {
     "id": "hollywood-128",
@@ -1277,7 +1360,8 @@
     "decade": "2000s",
     "hero": "John Goodman",
     "director": "Pete Docter",
-    "genre": "Animated Comedy Fantasy"
+    "genre": "Animated Comedy Fantasy",
+    "hint": "Doors"
   },
   {
     "id": "hollywood-129",
@@ -1287,7 +1371,8 @@
     "decade": "2020s",
     "hero": "Keanu Reeves",
     "director": "Chad Stahelski",
-    "genre": "Neo-Noir Action Thriller"
+    "genre": "Neo-Noir Action Thriller",
+    "hint": "Dog"
   },
   {
     "id": "hollywood-130",
@@ -1297,7 +1382,8 @@
     "decade": "2010s",
     "hero": "Chris Pratt",
     "director": "James Gunn",
-    "genre": "Superhero Sci-Fi Comedy"
+    "genre": "Superhero Sci-Fi Comedy",
+    "hint": "Accuser"
   },
   {
     "id": "hollywood-131",
@@ -1307,7 +1393,8 @@
     "decade": "2010s",
     "hero": "Chris Hemsworth",
     "director": "Taika Waititi",
-    "genre": "Superhero Action Comedy"
+    "genre": "Superhero Action Comedy",
+    "hint": "Sister"
   },
   {
     "id": "hollywood-132",
@@ -1317,7 +1404,8 @@
     "decade": "2010s",
     "hero": "Chadwick Boseman",
     "director": "Ryan Coogler",
-    "genre": "Superhero Action Drama"
+    "genre": "Superhero Action Drama",
+    "hint": "Opening Up"
   },
   {
     "id": "hollywood-133",
@@ -1327,7 +1415,8 @@
     "decade": "2010s",
     "hero": "Christian Bale",
     "director": "Christopher Nolan",
-    "genre": "Superhero Action Thriller"
+    "genre": "Superhero Action Thriller",
+    "hint": "Darkness"
   },
   {
     "id": "hollywood-134",
@@ -1337,7 +1426,8 @@
     "decade": "2000s",
     "hero": "Bradley Cooper",
     "director": "Todd Phillips",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "hint": "Tooth"
   },
   {
     "id": "hollywood-135",
@@ -1347,6 +1437,7 @@
     "decade": "2010s",
     "hero": "Patrick Wilson",
     "director": "James Wan",
-    "genre": "Supernatural Horror"
+    "genre": "Supernatural Horror",
+    "hint": "House"
   }
 ]
