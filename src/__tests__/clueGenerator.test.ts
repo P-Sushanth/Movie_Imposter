@@ -93,4 +93,98 @@ describe("Clue Generation", () => {
     expect(keys).toContain("adaptation_or_original");
     expect(keys).toContain("release_medium");
   });
+
+  it("excludes releaseYear and decade when playerCount <= 4 (e.g. 3 or 4 players)", () => {
+    const movieWithHint: Movie = {
+      id: "tollywood-001",
+      title: "Badri",
+      industry: "tollywood",
+      releaseYear: 2000,
+      decade: "2000s",
+      hero: "Pawan Kalyan",
+      director: "Puri Jagannadh",
+      genre: "Action Romance",
+      hint: "Bay Of Bengal",
+    };
+
+    const clues3 = getCluesForMovie(movieWithHint, 3);
+    const keys3 = clues3.map((c) => c.key);
+    expect(keys3).not.toContain("release_year");
+    expect(keys3).not.toContain("decade");
+    expect(keys3).toEqual(["hero", "director", "genre", "hint"]);
+
+    const clues4 = getCluesForMovie(movieWithHint, 4);
+    const keys4 = clues4.map((c) => c.key);
+    expect(keys4).not.toContain("release_year");
+    expect(keys4).not.toContain("decade");
+  });
+
+  it("includes releaseYear and decade when playerCount > 4 (e.g. 5+ players)", () => {
+    const movieWithHint: Movie = {
+      id: "tollywood-001",
+      title: "Badri",
+      industry: "tollywood",
+      releaseYear: 2000,
+      decade: "2000s",
+      hero: "Pawan Kalyan",
+      director: "Puri Jagannadh",
+      genre: "Action Romance",
+      hint: "Bay Of Bengal",
+    };
+
+    const clues5 = getCluesForMovie(movieWithHint, 5);
+    const keys5 = clues5.map((c) => c.key);
+    expect(keys5).toContain("release_year");
+    expect(keys5).toContain("decade");
+    expect(keys5).toEqual(["release_year", "decade", "hero", "director", "genre", "hint"]);
+  });
+
+  it("avoids repeating previousClueKey when multiple clues are available", () => {
+    const movieWithHint: Movie = {
+      id: "tollywood-001",
+      title: "Badri",
+      industry: "tollywood",
+      releaseYear: 2000,
+      decade: "2000s",
+      hero: "Pawan Kalyan",
+      director: "Puri Jagannadh",
+      genre: "Action Romance",
+      hint: "Bay Of Bengal",
+    };
+
+    for (let i = 0; i < 20; i++) {
+      const clue = generateImposterClue(movieWithHint, Math.random, 5, "decade");
+      expect(clue?.key).not.toBe("decade");
+    }
+  });
+
+  it("generates cartoon clues (releaseYear, decade, channel, countryOfOrigin, hint) for cartoons", () => {
+    const sampleCartoon: Movie = {
+      id: "cartoons-001",
+      title: "Doraemon",
+      industry: "cartoons",
+      releaseYear: 2005,
+      decade: "2000s",
+      channel: "Hungama TV",
+      countryOfOrigin: "Japan",
+      hint: "Pipes",
+    };
+
+    // 5+ players: all 5 clues present
+    const clues5 = getCluesForMovie(sampleCartoon, 5);
+    const keys5 = clues5.map((c) => c.key);
+    expect(keys5).toEqual(["release_year", "decade", "channel", "country_of_origin", "hint"]);
+    expect(clues5.find((c) => c.key === "channel")?.displayText).toBe("Channel: Hungama TV");
+    expect(clues5.find((c) => c.key === "country_of_origin")?.displayText).toBe("Country: Japan");
+    expect(clues5.find((c) => c.key === "hint")?.displayText).toBe("Hint: Pipes");
+
+    // 3 or 4 players: release_year and decade excluded
+    const clues3 = getCluesForMovie(sampleCartoon, 3);
+    const keys3 = clues3.map((c) => c.key);
+    expect(keys3).toEqual(["channel", "country_of_origin", "hint"]);
+
+    const clues4 = getCluesForMovie(sampleCartoon, 4);
+    const keys4 = clues4.map((c) => c.key);
+    expect(keys4).toEqual(["channel", "country_of_origin", "hint"]);
+  });
 });
