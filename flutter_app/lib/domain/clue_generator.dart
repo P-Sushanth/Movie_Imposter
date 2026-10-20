@@ -18,8 +18,9 @@ bool clueContainsTitle(String title, String value) {
 /// Formats show features into show-specific clues:
 /// Production House, Number of Seasons, Start year, End year,
 /// Adaptation or Original, and TV release or OTT release.
-List<ClueItem> getCluesForShow(Movie show) {
+List<ClueItem> getCluesForShow(Movie show, {int? playerCount}) {
   final clues = <ClueItem>[];
+  final canIncludeYear = playerCount == null || playerCount > 4;
 
   // 1. Production House (Platform)
   if (show.productionHouse != null &&
@@ -44,17 +45,19 @@ List<ClueItem> getCluesForShow(Movie show) {
     ));
   }
 
-  // 3. Start Year
-  final startYr = show.startYear ?? show.releaseYear;
-  clues.add(ClueItem(
-    key: 'start_year',
-    label: 'Start Year',
-    value: '$startYr',
-    displayText: 'Start Year: $startYr',
-  ));
+  // 3. Start Year (only included when player count is > 4)
+  if (canIncludeYear) {
+    final startYr = show.startYear ?? show.releaseYear;
+    clues.add(ClueItem(
+      key: 'start_year',
+      label: 'Start Year',
+      value: '$startYr',
+      displayText: 'Start Year: $startYr',
+    ));
+  }
 
-  // 4. End Year
-  if (show.endYear != null && show.endYear!.isNotEmpty) {
+  // 4. End Year (only included when player count is > 4)
+  if (canIncludeYear && show.endYear != null && show.endYear!.isNotEmpty) {
     clues.add(ClueItem(
       key: 'end_year',
       label: 'End Year',
@@ -86,17 +89,86 @@ List<ClueItem> getCluesForShow(Movie show) {
   return clues;
 }
 
+/// Formats cartoon features into cartoon-specific clues:
+/// Release Year, Decade, Channel, Country of Origin, and Hint.
+List<ClueItem> getCluesForCartoon(Movie cartoon, {int? playerCount}) {
+  final clues = <ClueItem>[];
+  final canIncludeYear = playerCount == null || playerCount > 4;
+
+  // 1. Release Year (disabled when playerCount is 3 or 4)
+  if (canIncludeYear && cartoon.releaseYear > 0 && !clueContainsTitle(cartoon.title, cartoon.releaseYear.toString())) {
+    clues.add(ClueItem(
+      key: 'release_year',
+      label: 'Release Year',
+      value: cartoon.releaseYear.toString(),
+      displayText: 'Release Year: ${cartoon.releaseYear}',
+    ));
+  }
+
+  // 2. Decade (disabled when playerCount is 3 or 4)
+  if (canIncludeYear && cartoon.decade.isNotEmpty && !clueContainsTitle(cartoon.title, cartoon.decade)) {
+    clues.add(ClueItem(
+      key: 'decade',
+      label: 'Decade',
+      value: cartoon.decade,
+      displayText: 'Decade: ${cartoon.decade}',
+    ));
+  }
+
+  // 3. Channel
+  if (cartoon.channel != null &&
+      cartoon.channel!.isNotEmpty &&
+      !clueContainsTitle(cartoon.title, cartoon.channel!)) {
+    clues.add(ClueItem(
+      key: 'channel',
+      label: 'Channel',
+      value: cartoon.channel!,
+      displayText: 'Channel: ${cartoon.channel}',
+    ));
+  }
+
+  // 4. Country of Origin
+  if (cartoon.countryOfOrigin != null &&
+      cartoon.countryOfOrigin!.isNotEmpty &&
+      !clueContainsTitle(cartoon.title, cartoon.countryOfOrigin!)) {
+    clues.add(ClueItem(
+      key: 'country_of_origin',
+      label: 'Country of Origin',
+      value: cartoon.countryOfOrigin!,
+      displayText: 'Country: ${cartoon.countryOfOrigin}',
+    ));
+  }
+
+  // 5. Hint
+  if (cartoon.hint != null &&
+      cartoon.hint!.isNotEmpty &&
+      !clueContainsTitle(cartoon.title, cartoon.hint!)) {
+    clues.add(ClueItem(
+      key: 'hint',
+      label: 'Hint',
+      value: cartoon.hint!,
+      displayText: 'Hint: ${cartoon.hint}',
+    ));
+  }
+
+  return clues;
+}
+
 /// Formats individual movie features into punchy, keyword-based clues.
 /// Uses concise labels and values instead of full sentences.
-List<ClueItem> getCluesForMovie(Movie movie) {
+List<ClueItem> getCluesForMovie(Movie movie, {int? playerCount}) {
   if (movie.industry == Industry.shows || movie.industry == Industry.kdrama) {
-    return getCluesForShow(movie);
+    return getCluesForShow(movie, playerCount: playerCount);
+  }
+  if (movie.industry == Industry.cartoons) {
+    return getCluesForCartoon(movie, playerCount: playerCount);
   }
 
   final clues = <ClueItem>[];
+  final canIncludeYear = playerCount == null || playerCount > 4;
 
-  // 1. Release Year
-  if (movie.releaseYear > 0 && !clueContainsTitle(movie.title, movie.releaseYear.toString())) {
+  // 1. Release Year (only included when player count is > 4)
+  if (canIncludeYear && movie.releaseYear > 0 && !clueContainsTitle(movie.title, movie.releaseYear.toString())) {
     clues.add(ClueItem(
       key: 'release_year',
       label: 'Release Year',
@@ -105,8 +177,8 @@ List<ClueItem> getCluesForMovie(Movie movie) {
     ));
   }
 
-  // 2. Decade
-  if (movie.decade.isNotEmpty && !clueContainsTitle(movie.title, movie.decade)) {
+  // 2. Decade (only included when player count is > 4)
+  if (canIncludeYear && movie.decade.isNotEmpty && !clueContainsTitle(movie.title, movie.decade)) {
     clues.add(ClueItem(
       key: 'decade',
       label: 'Decade',
@@ -158,15 +230,23 @@ List<ClueItem> getCluesForMovie(Movie movie) {
   return clues;
 }
 
-/// Picks one clue for the imposter, avoiding title leaks and allowing an injectable random function.
+/// Picks one clue for the imposter, avoiding title leaks, ensuring true randomization,
+/// and avoiding consecutive clue repeats when multiple options exist.
 ClueItem? generateImposterClue(
   Movie movie, {
   double Function()? random,
+  int? playerCount,
+  String? previousClueKey,
 }) {
-  final validClues = getCluesForMovie(movie);
+  final validClues = getCluesForMovie(movie, playerCount: playerCount);
   if (validClues.isEmpty) return null;
 
-  final rng = random ?? () => Random().nextDouble();
-  final index = (rng() * validClues.length).floor().clamp(0, validClues.length - 1);
-  return validClues[index];
+  var pool = validClues;
+  if (previousClueKey != null && validClues.any((c) => c.key != previousClueKey)) {
+    pool = validClues.where((c) => c.key != previousClueKey).toList();
+  }
+
+  final rng = random ?? Random().nextDouble;
+  final index = (rng() * pool.length).floor().clamp(0, pool.length - 1);
+  return pool[index];
 }
