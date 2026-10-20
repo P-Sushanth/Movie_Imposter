@@ -269,11 +269,13 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
             child: Text(
               isImposter
                   ? 'YOUR ROLE'
-                  : ((role is NormalPlayerRole && role.industry == Industry.kdrama)
-                      ? 'THE K-DRAMA'
-                      : ((role is NormalPlayerRole && role.industry == Industry.shows)
-                          ? 'THE SHOW'
-                          : 'THE MOVIE')),
+                  : ((role is NormalPlayerRole && role.industry == Industry.cartoons)
+                      ? 'THE CARTOON'
+                      : ((role is NormalPlayerRole && role.industry == Industry.kdrama)
+                          ? 'THE K-DRAMA'
+                          : ((role is NormalPlayerRole && role.industry == Industry.shows)
+                              ? 'THE SHOW'
+                              : 'THE MOVIE'))),
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w800,
