@@ -3,6 +3,7 @@ enum Industry {
   bollywood,
   hollywood,
   shows,
+  kdrama,
 }
 
 extension IndustryExtension on Industry {
@@ -16,6 +17,8 @@ extension IndustryExtension on Industry {
         return 'hollywood';
       case Industry.shows:
         return 'shows';
+      case Industry.kdrama:
+        return 'kdrama';
     }
   }
 
@@ -29,6 +32,8 @@ extension IndustryExtension on Industry {
         return 'Hollywood';
       case Industry.shows:
         return 'Shows';
+      case Industry.kdrama:
+        return 'K-Drama';
     }
   }
 
@@ -42,6 +47,8 @@ extension IndustryExtension on Industry {
         return Industry.hollywood;
       case 'shows':
         return Industry.shows;
+      case 'kdrama':
+        return Industry.kdrama;
       default:
         throw ArgumentError('Unknown industry: $str');
     }
@@ -57,6 +64,7 @@ class Movie {
   final String hero;
   final String director;
   final String genre;
+  final String? hint;
 
   // Show-specific fields (optional for movies, populated for shows):
   final String? productionHouse;
@@ -75,6 +83,7 @@ class Movie {
     this.hero = '',
     this.director = '',
     this.genre = '',
+    this.hint,
     this.productionHouse,
     this.seasonsCount,
     this.startYear,
@@ -93,6 +102,7 @@ class Movie {
       hero: (json['hero'] as String?) ?? '',
       director: (json['director'] as String?) ?? '',
       genre: (json['genre'] as String?) ?? '',
+      hint: json['hint'] as String?,
       productionHouse: json['productionHouse'] as String?,
       seasonsCount: json['seasonsCount'] as int?,
       startYear: json['startYear'] as int?,
@@ -112,6 +122,7 @@ class Movie {
       if (hero.isNotEmpty) 'hero': hero,
       if (director.isNotEmpty) 'director': director,
       if (genre.isNotEmpty) 'genre': genre,
+      if (hint != null && hint!.isNotEmpty) 'hint': hint,
       if (productionHouse != null) 'productionHouse': productionHouse,
       if (seasonsCount != null) 'seasonsCount': seasonsCount,
       if (startYear != null) 'startYear': startYear,
