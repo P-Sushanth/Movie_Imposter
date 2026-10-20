@@ -7,7 +7,8 @@
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance"
+    "genre": "Action Romance",
+    "hint": "Bay Of Bengal"
   },
   {
     "id": "tollywood-002",
@@ -17,7 +18,8 @@
     "decade": "2000s",
     "hero": "Tarun",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Friendship is Love"
   },
   {
     "id": "tollywood-003",
@@ -27,7 +29,8 @@
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "S. J. Suryah",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Slim girl"
   },
   {
     "id": "tollywood-004",
@@ -37,7 +40,8 @@
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Krishna Vamsi",
-    "genre": "Supernatural Family Drama"
+    "genre": "Supernatural Family Drama",
+    "hint": "Goddess Curse"
   },
   {
     "id": "tollywood-005",
@@ -47,7 +51,8 @@
     "decade": "2000s",
     "hero": "Nandamuri Balakrishna",
     "director": "B. Gopal",
-    "genre": "Faction Action"
+    "genre": "Faction Action",
+    "hint": "Soap Girl"
   },
   {
     "id": "tollywood-006",
@@ -57,7 +62,8 @@
     "decade": "2000s",
     "hero": "Venkatesh",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Swimming"
   },
   {
     "id": "tollywood-007",
@@ -67,7 +73,8 @@
     "decade": "2000s",
     "hero": "Nagarjuna",
     "director": "K. Vijaya Bhaskar",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Red Sky"
   },
   {
     "id": "tollywood-008",
@@ -77,7 +84,8 @@
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "V. V. Vinayak",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Rayalseema Backdrop"
   },
   {
     "id": "tollywood-009",
@@ -87,7 +95,8 @@
     "decade": "2000s",
     "hero": "Chiranjeevi",
     "director": "B. Gopal",
-    "genre": "Faction Action Drama"
+    "genre": "Faction Action Drama",
+    "hint": "Chordophone Step"
   },
   {
     "id": "tollywood-010",
@@ -97,7 +106,8 @@
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance"
+    "genre": "Action Romance",
+    "hint": "Poking Eyes"
   },
   {
     "id": "tollywood-011",
@@ -107,7 +117,8 @@
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Gunasekhar",
-    "genre": "Action Romance"
+    "genre": "Action Romance",
+    "hint": "Kabbadi"
   },
   {
     "id": "tollywood-012",
@@ -117,7 +128,8 @@
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Golf ball"
   },
   {
     "id": "tollywood-013",
@@ -127,7 +139,8 @@
     "decade": "2000s",
     "hero": "Chiranjeevi",
     "director": "V. V. Vinayak",
-    "genre": "Vigilante Action"
+    "genre": "Vigilante Action",
+    "hint": "Building Collapse"
   },
   {
     "id": "tollywood-014",
@@ -137,7 +150,8 @@
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
-    "genre": "Sports Action Drama"
+    "genre": "Sports Action Drama",
+    "hint": "Martial Arts"
   },
   {
     "id": "tollywood-015",
@@ -147,7 +161,8 @@
     "decade": "2000s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Romantic Action"
+    "genre": "Romantic Action",
+    "hint": "Anklet"
   },
   {
     "id": "tollywood-016",
@@ -157,7 +172,8 @@
     "decade": "2000s",
     "hero": "Prabhas",
     "director": "Sobhan",
-    "genre": "Action Romance"
+    "genre": "Action Romance",
+    "hint": "Warangal train"
   },
   {
     "id": "tollywood-017",
@@ -167,7 +183,8 @@
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
-    "genre": "Comedy Thriller"
+    "genre": "Comedy Thriller",
+    "hint": "Cold Drink"
   },
   {
     "id": "tollywood-018",
@@ -177,7 +194,8 @@
     "decade": "2000s",
     "hero": "Ravi Krishna",
     "director": "Selvaraghavan",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-019",
@@ -187,7 +205,8 @@
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Betrayal"
   },
   {
     "id": "tollywood-020",
@@ -197,7 +216,8 @@
     "decade": "2000s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Sun"
   },
   {
     "id": "tollywood-021",
@@ -207,7 +227,8 @@
     "decade": "2000s",
     "hero": "Jagapathi Babu",
     "director": "Chandra Sekhar Yeleti",
-    "genre": "Mystery Thriller"
+    "genre": "Mystery Thriller",
+    "hint": "Rave Party"
   },
   {
     "id": "tollywood-022",
@@ -217,7 +238,8 @@
     "decade": "2000s",
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Tiles"
   },
   {
     "id": "tollywood-023",
@@ -227,7 +249,8 @@
     "decade": "2000s",
     "hero": "Siddharth",
     "director": "Bhaskar",
-    "genre": "Romantic Family Drama"
+    "genre": "Romantic Family Drama",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-024",
@@ -237,7 +260,8 @@
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "S. S. Rajamouli",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Suitcase Girl"
   },
   {
     "id": "tollywood-025",
@@ -247,7 +271,8 @@
     "decade": "2000s",
     "hero": "Allu Arjun",
     "director": "Puri Jagannadh",
-    "genre": "Action Romance"
+    "genre": "Action Romance",
+    "hint": "You You"
   },
   {
     "id": "tollywood-026",
@@ -257,7 +282,8 @@
     "decade": "2000s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Fantasy Action"
+    "genre": "Fantasy Action",
+    "hint": "Maid"
   },
   {
     "id": "tollywood-027",
@@ -267,7 +293,8 @@
     "decade": "2000s",
     "hero": "Varun Sandesh",
     "director": "Sekhar Kammula",
-    "genre": "College Drama Romance"
+    "genre": "College Drama Romance",
+    "hint": "Friends"
   },
   {
     "id": "tollywood-028",
@@ -277,7 +304,8 @@
     "decade": "2000s",
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Rich Father"
   },
   {
     "id": "tollywood-029",
@@ -287,7 +315,8 @@
     "decade": "2000s",
     "hero": "Ram Charan",
     "director": "S. S. Rajamouli",
-    "genre": "Reincarnation Fantasy Action"
+    "genre": "Reincarnation Fantasy Action",
+    "hint": "Shiva Temple"
   },
   {
     "id": "tollywood-030",
@@ -297,7 +326,8 @@
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Surender Reddy",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Thief"
   },
   {
     "id": "tollywood-031",
@@ -305,9 +335,10 @@
     "industry": "tollywood",
     "releaseYear": 2009,
     "decade": "2000s",
-    "hero": "Sonu Sood",
+    "hero": "Anushka",
     "director": "Kodi Ramakrishna",
-    "genre": "Dark Fantasy Horror"
+    "genre": "Dark Fantasy Horror",
+    "hint": "Female warrior"
   },
   {
     "id": "tollywood-032",
@@ -317,7 +348,8 @@
     "decade": "2010s",
     "hero": "Rana Daggubati",
     "director": "Sekhar Kammula",
-    "genre": "Political Drama"
+    "genre": "Political Drama",
+    "hint": "Antaranitanam"
   },
   {
     "id": "tollywood-033",
@@ -327,7 +359,8 @@
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Krish Jagarlamudi",
-    "genre": "Anthology Drama"
+    "genre": "Anthology Drama",
+    "hint": "Dual Protagonists"
   },
   {
     "id": "tollywood-034",
@@ -337,7 +370,8 @@
     "decade": "2010s",
     "hero": "Sunil",
     "director": "S. S. Rajamouli",
-    "genre": "Comedy Thriller"
+    "genre": "Comedy Thriller",
+    "hint": "One Step"
   },
   {
     "id": "tollywood-035",
@@ -347,7 +381,8 @@
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Pen Camera"
   },
   {
     "id": "tollywood-036",
@@ -357,7 +392,8 @@
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
-    "genre": "Crime Action"
+    "genre": "Crime Action",
+    "hint": "Milk"
   },
   {
     "id": "tollywood-037",
@@ -367,7 +403,8 @@
     "decade": "2010s",
     "hero": "Nani",
     "director": "S. S. Rajamouli",
-    "genre": "Fantasy Revenge"
+    "genre": "Fantasy Revenge",
+    "hint": "Reincarnation"
   },
   {
     "id": "tollywood-038",
@@ -377,7 +414,8 @@
     "decade": "2010s",
     "hero": "Pawan Kalyan",
     "director": "Harish Shankar",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Sholay"
   },
   {
     "id": "tollywood-039",
@@ -387,7 +425,8 @@
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
-    "genre": "Action Comedy Thriller"
+    "genre": "Action Comedy Thriller",
+    "hint": "Container"
   },
   {
     "id": "tollywood-040",
@@ -397,7 +436,8 @@
     "decade": "2010s",
     "hero": "Venkatesh",
     "director": "Srikanth Addala",
-    "genre": "Family Drama"
+    "genre": "Family Drama",
+    "hint": "Pot"
   },
   {
     "id": "tollywood-041",
@@ -407,7 +447,8 @@
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "Koratala Siva",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "One Chance"
   },
   {
     "id": "tollywood-042",
@@ -417,7 +458,8 @@
     "decade": "2010s",
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
-    "genre": "Family Comedy Drama"
+    "genre": "Family Comedy Drama",
+    "hint": "Dinosaur"
   },
   {
     "id": "tollywood-043",
@@ -427,7 +469,8 @@
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Sukumar",
-    "genre": "Psychological Action Thriller"
+    "genre": "Psychological Action Thriller",
+    "hint": "Rice"
   },
   {
     "id": "tollywood-044",
@@ -437,7 +480,8 @@
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Surender Reddy",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Brothers"
   },
   {
     "id": "tollywood-045",
@@ -447,7 +491,8 @@
     "decade": "2010s",
     "hero": "Nagarjuna",
     "director": "Vikram Kumar",
-    "genre": "Fantasy Family Drama"
+    "genre": "Fantasy Family Drama",
+    "hint": "All Generations"
   },
   {
     "id": "tollywood-046",
@@ -457,7 +502,8 @@
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Cycle"
   },
   {
     "id": "tollywood-047",
@@ -467,7 +513,8 @@
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Historical Action"
+    "genre": "Epic Historical Action",
+    "hint": "Brothers"
   },
   {
     "id": "tollywood-048",
@@ -477,7 +524,8 @@
     "decade": "2010s",
     "hero": "Nani",
     "director": "Maruthi",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Alzeimer's"
   },
   {
     "id": "tollywood-049",
@@ -487,7 +535,8 @@
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Sukumar",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Balls"
   },
   {
     "id": "tollywood-050",
@@ -497,7 +546,8 @@
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Ravikanth Perepu",
-    "genre": "Mystery Thriller"
+    "genre": "Mystery Thriller",
+    "hint": "MBBS Banker"
   },
   {
     "id": "tollywood-051",
@@ -507,7 +557,8 @@
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Tharun Bhascker",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Writing A Book"
   },
   {
     "id": "tollywood-052",
@@ -517,7 +568,8 @@
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Koratala Siva",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Environment"
   },
   {
     "id": "tollywood-053",
@@ -527,7 +579,8 @@
     "decade": "2010s",
     "hero": "Ram Charan",
     "director": "Surender Reddy",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "S"
   },
   {
     "id": "tollywood-054",
@@ -537,7 +590,8 @@
     "decade": "2010s",
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Historical Action"
+    "genre": "Epic Historical Action",
+    "hint": "Statue"
   },
   {
     "id": "tollywood-055",
@@ -547,7 +601,8 @@
     "decade": "2010s",
     "hero": "Varun Tej",
     "director": "Sekhar Kammula",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Hybrid"
   },
   {
     "id": "tollywood-056",
@@ -557,7 +612,8 @@
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Ice"
   },
   {
     "id": "tollywood-057",
@@ -567,7 +623,8 @@
     "decade": "2010s",
     "hero": "Ram Charan",
     "director": "Sukumar",
-    "genre": "Period Action Drama"
+    "genre": "Period Action Drama",
+    "hint": "Politics"
   },
   {
     "id": "tollywood-058",
@@ -577,7 +634,8 @@
     "decade": "2010s",
     "hero": "Dulquer Salmaan",
     "director": "Nag Ashwin",
-    "genre": "Biographical Drama"
+    "genre": "Biographical Drama",
+    "hint": "GOAT"
   },
   {
     "id": "tollywood-059",
@@ -587,7 +645,8 @@
     "decade": "2010s",
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
-    "genre": "Political Action"
+    "genre": "Political Action",
+    "hint": "Friendship"
   },
   {
     "id": "tollywood-060",
@@ -597,7 +656,8 @@
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
-    "genre": "Spy Thriller"
+    "genre": "Spy Thriller",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-061",
@@ -607,7 +667,8 @@
     "decade": "2010s",
     "hero": "Vijay Deverakonda",
     "director": "Parasuram",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Marriage"
   },
   {
     "id": "tollywood-062",
@@ -617,7 +678,8 @@
     "decade": "2010s",
     "hero": "Jr. NTR",
     "director": "Trivikram Srinivas",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Blunt Knife"
   },
   {
     "id": "tollywood-063",
@@ -627,7 +689,8 @@
     "decade": "2010s",
     "hero": "Nani",
     "director": "Gowtam Tinnanuri",
-    "genre": "Sports Drama"
+    "genre": "Sports Drama",
+    "hint": "36 Years"
   },
   {
     "id": "tollywood-064",
@@ -637,7 +700,8 @@
     "decade": "2010s",
     "hero": "Naveen Polishetty",
     "director": "Swaroop RSJ",
-    "genre": "Comedy Detective Thriller"
+    "genre": "Comedy Detective Thriller",
+    "hint": "Mother-Son Dynamic"
   },
   {
     "id": "tollywood-065",
@@ -647,7 +711,8 @@
     "decade": "2010s",
     "hero": "Adivi Sesh",
     "director": "Venkat Ramji",
-    "genre": "Crime Mystery Thriller"
+    "genre": "Crime Mystery Thriller",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-066",
@@ -657,7 +722,8 @@
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
-    "genre": "Action Family Drama"
+    "genre": "Action Family Drama",
+    "hint": "Gap"
   },
   {
     "id": "tollywood-067",
@@ -667,7 +733,8 @@
     "decade": "2020s",
     "hero": "Mahesh Babu",
     "director": "Anil Ravipudi",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Puff"
   },
   {
     "id": "tollywood-068",
@@ -677,7 +744,8 @@
     "decade": "2020s",
     "hero": "Suhas",
     "director": "Sandeep Raj",
-    "genre": "Period Romantic Drama"
+    "genre": "Period Romantic Drama",
+    "hint": "Shirt"
   },
   {
     "id": "tollywood-069",
@@ -687,7 +755,8 @@
     "decade": "2020s",
     "hero": "Naveen Polishetty",
     "director": "Anudeep K. V.",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "hint": "Goalkeeper"
   },
   {
     "id": "tollywood-070",
@@ -697,7 +766,8 @@
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Venu Sriram",
-    "genre": "Legal Action Drama"
+    "genre": "Legal Action Drama",
+    "hint": "Objection"
   },
   {
     "id": "tollywood-071",
@@ -707,7 +777,8 @@
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Action Crime Drama"
+    "genre": "Action Crime Drama",
+    "hint": "Flower"
   },
   {
     "id": "tollywood-072",
@@ -717,7 +788,8 @@
     "decade": "2020s",
     "hero": "Nani",
     "director": "Rahul Sankrityan",
-    "genre": "Period Supernatural Drama"
+    "genre": "Period Supernatural Drama",
+    "hint": "Reincarnation"
   },
   {
     "id": "tollywood-073",
@@ -727,7 +799,8 @@
     "decade": "2020s",
     "hero": "Nandamuri Balakrishna",
     "director": "Boyapati Srinu",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Dual Role"
   },
   {
     "id": "tollywood-074",
@@ -737,7 +810,8 @@
     "decade": "2020s",
     "hero": "Siddhu Jonnalagadda",
     "director": "Vimal Krishna",
-    "genre": "Crime Comedy"
+    "genre": "Crime Comedy",
+    "hint": "Dead Body"
   },
   {
     "id": "tollywood-075",
@@ -747,7 +821,8 @@
     "decade": "2020s",
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
-    "genre": "Epic Period Action"
+    "genre": "Epic Period Action",
+    "hint": "Friends"
   },
   {
     "id": "tollywood-076",
@@ -757,7 +832,8 @@
     "decade": "2020s",
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
-    "genre": "Biographical Action"
+    "genre": "Biographical Action",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-077",
@@ -767,7 +843,8 @@
     "decade": "2020s",
     "hero": "Dulquer Salmaan",
     "director": "Hanu Raghavapudi",
-    "genre": "Period Romance Drama"
+    "genre": "Period Romance Drama",
+    "hint": "Letter"
   },
   {
     "id": "tollywood-078",
@@ -777,7 +854,8 @@
     "decade": "2020s",
     "hero": "Nikhil Siddharth",
     "director": "Chandoo Mondeti",
-    "genre": "Mystery Adventure"
+    "genre": "Mystery Adventure",
+    "hint": "Anklet"
   },
   {
     "id": "tollywood-079",
@@ -787,7 +865,8 @@
     "decade": "2020s",
     "hero": "Chiranjeevi",
     "director": "Bobby Kolli",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Dual Protagonists"
   },
   {
     "id": "tollywood-080",
@@ -797,7 +876,8 @@
     "decade": "2020s",
     "hero": "Priyadarshi",
     "director": "Venu Yeldandi",
-    "genre": "Family Drama"
+    "genre": "Family Drama",
+    "hint": "Comedian"
   },
   {
     "id": "tollywood-081",
@@ -807,7 +887,8 @@
     "decade": "2020s",
     "hero": "Nani",
     "director": "Srikanth Odela",
-    "genre": "Period Action Drama"
+    "genre": "Period Action Drama",
+    "hint": "Festival"
   },
   {
     "id": "tollywood-082",
@@ -817,7 +898,8 @@
     "decade": "2020s",
     "hero": "Nani",
     "director": "Shouryuv",
-    "genre": "Romantic Family Drama"
+    "genre": "Romantic Family Drama",
+    "hint": "Roses"
   },
   {
     "id": "tollywood-083",
@@ -827,7 +909,8 @@
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Prashanth Neel",
-    "genre": "Action Crime Drama"
+    "genre": "Action Crime Drama",
+    "hint": "Friends"
   },
   {
     "id": "tollywood-084",
@@ -837,7 +920,8 @@
     "decade": "2020s",
     "hero": "Teja Sajja",
     "director": "Prasanth Varma",
-    "genre": "Superhero Fantasy"
+    "genre": "Superhero Fantasy",
+    "hint": "Stone"
   },
   {
     "id": "tollywood-085",
@@ -847,7 +931,8 @@
     "decade": "2020s",
     "hero": "Siddhu Jonnalagadda",
     "director": "Mallik Ram",
-    "genre": "Crime Comedy"
+    "genre": "Crime Comedy",
+    "hint": "University"
   },
   {
     "id": "tollywood-086",
@@ -857,7 +942,8 @@
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Nag Ashwin",
-    "genre": "Post-apocalyptic Sci-Fi"
+    "genre": "Post-apocalyptic Sci-Fi",
+    "hint": "Reincarnation"
   },
   {
     "id": "tollywood-087",
@@ -867,7 +953,8 @@
     "decade": "2020s",
     "hero": "Allu Arjun",
     "director": "Sukumar",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Photo"
   },
   {
     "id": "tollywood-088",
@@ -877,7 +964,8 @@
     "decade": "2020s",
     "hero": "N. T. Rama Rao Jr.",
     "director": "Koratala Siva",
-    "genre": "Action Coastal Drama"
+    "genre": "Action Coastal Drama",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-089",
@@ -887,7 +975,8 @@
     "decade": "2020s",
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
-    "genre": "Action Family Drama"
+    "genre": "Action Family Drama",
+    "hint": "Mother-Son Dynamic"
   },
   {
     "id": "tollywood-090",
@@ -897,7 +986,8 @@
     "decade": "2020s",
     "hero": "Nani",
     "director": "Vivek Athreya",
-    "genre": "Action Vigilante Thriller"
+    "genre": "Action Vigilante Thriller",
+    "hint": "Half Beard"
   },
   {
     "id": "tollywood-091",
@@ -907,7 +997,8 @@
     "decade": "2020s",
     "hero": "Dulquer Salmaan",
     "director": "Venky Atluri",
-    "genre": "Financial Crime Thriller"
+    "genre": "Financial Crime Thriller",
+    "hint": "Insider Trading"
   },
   {
     "id": "tollywood-092",
@@ -917,7 +1008,8 @@
     "decade": "2020s",
     "hero": "Sri Simha Koduri",
     "director": "Ritesh Rana",
-    "genre": "Crime Comedy"
+    "genre": "Crime Comedy",
+    "hint": "Honey in Tea"
   },
   {
     "id": "tollywood-093",
@@ -927,7 +1019,8 @@
     "decade": "2020s",
     "hero": "Narne Nithin",
     "director": "Anji K. Maniputhra",
-    "genre": "Romantic Rural Comedy"
+    "genre": "Romantic Rural Comedy",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-094",
@@ -937,7 +1030,8 @@
     "decade": "2020s",
     "hero": "Sandeep Saroj",
     "director": "Yadhu Vamsi",
-    "genre": "Village Youth Drama"
+    "genre": "Village Youth Drama",
+    "hint": "East Godavari"
   },
   {
     "id": "tollywood-095",
@@ -947,7 +1041,8 @@
     "decade": "2020s",
     "hero": "Ram Charan",
     "director": "S. Shankar",
-    "genre": "Political Action Drama"
+    "genre": "Political Action Drama",
+    "hint": "Father-Son Dynamic"
   },
   {
     "id": "tollywood-096",
@@ -957,7 +1052,8 @@
     "decade": "2020s",
     "hero": "Nandamuri Balakrishna",
     "director": "Bobby Kolli",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Water"
   },
   {
     "id": "tollywood-097",
@@ -967,7 +1063,8 @@
     "decade": "2020s",
     "hero": "Venkatesh",
     "director": "Anil Ravipudi",
-    "genre": "Action Crime Comedy"
+    "genre": "Action Crime Comedy",
+    "hint": "Teacher"
   },
   {
     "id": "tollywood-098",
@@ -977,7 +1074,8 @@
     "decade": "2020s",
     "hero": "Naga Chaitanya",
     "director": "Chandoo Mondeti",
-    "genre": "Romantic Survival Drama"
+    "genre": "Romantic Survival Drama",
+    "hint": "Patriotic"
   },
   {
     "id": "tollywood-099",
@@ -987,7 +1085,8 @@
     "decade": "2020s",
     "hero": "Prabhas",
     "director": "Maruthi",
-    "genre": "Romantic Horror Comedy"
+    "genre": "Romantic Horror Comedy",
+    "hint": "Marwadi Girl"
   },
   {
     "id": "tollywood-100",
@@ -997,7 +1096,8 @@
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Jyothi Krishna",
-    "genre": "Period Action Adventure"
+    "genre": "Period Action Adventure",
+    "hint": "Droplet"
   },
   {
     "id": "tollywood-101",
@@ -1007,236 +1107,194 @@
     "decade": "2020s",
     "hero": "Pawan Kalyan",
     "director": "Sujeeth",
-    "genre": "Neo-Noir Gangster Action"
+    "genre": "Neo-Noir Gangster Action",
+    "hint": "Gangster"
   },
   {
     "id": "tollywood-102",
-    "title": "Vishwambhara",
-    "industry": "tollywood",
-    "releaseYear": 2025,
-    "decade": "2020s",
-    "hero": "Chiranjeevi",
-    "director": "Mallidi Vassishta",
-    "genre": "Socio-Fantasy Action"
-  },
-  {
-    "id": "tollywood-103",
     "title": "Mirai",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Teja Sajja",
     "director": "Karthik Gattamneni",
-    "genre": "Mythological Action Adventure"
+    "genre": "Mythological Action Adventure",
+    "hint": "Books"
   },
   {
-    "id": "tollywood-104",
+    "id": "tollywood-103",
     "title": "Hit: The 3rd Case",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Nani",
     "director": "Sailesh Kolanu",
-    "genre": "Action Crime Thriller"
+    "genre": "Action Crime Thriller",
+    "hint": "Baby"
   },
   {
-    "id": "tollywood-105",
+    "id": "tollywood-104",
     "title": "Kubera",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Dhanush",
     "director": "Sekhar Kammula",
-    "genre": "Social Drama Thriller"
+    "genre": "Social Drama Thriller",
+    "hint": "Dumpyard"
   },
   {
-    "id": "tollywood-106",
+    "id": "tollywood-105",
     "title": "Robinhood",
     "industry": "tollywood",
     "releaseYear": 2025,
     "decade": "2020s",
     "hero": "Nithiin",
     "director": "Venky Kudumula",
-    "genre": "Action Heist Comedy"
+    "genre": "Action Heist Comedy",
+    "hint": "Cricketer"
   },
   {
-    "id": "tollywood-107",
-    "title": "Spirit",
-    "industry": "tollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Prabhas",
-    "director": "Sandeep Reddy Vanga",
-    "genre": "Action Crime Thriller"
-  },
-  {
-    "id": "tollywood-108",
-    "title": "Salaar: Part 2 – Shouryaanga Parvam",
-    "industry": "tollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Prabhas",
-    "director": "Prashanth Neel",
-    "genre": "Dystopian Action Drama"
-  },
-  {
-    "id": "tollywood-109",
-    "title": "SSMB29",
-    "industry": "tollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Mahesh Babu",
-    "director": "S. S. Rajamouli",
-    "genre": "Jungle Adventure Action"
-  },
-  {
-    "id": "tollywood-110",
-    "title": "Jai Hanuman",
-    "industry": "tollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Rishab Shetty",
-    "director": "Prasanth Varma",
-    "genre": "Mythological Superhero Fantasy"
-  },
-  {
-    "id": "tollywood-111",
-    "title": "Fauji",
-    "industry": "tollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Prabhas",
-    "director": "Hanu Raghavapudi",
-    "genre": "Historical Period Romance"
-  },
-  {
-    "id": "tollywood-112",
+    "id": "tollywood-106",
     "title": "Virupaksha",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Sai Dharam Tej",
     "director": "Karthik Varma Dandu",
-    "genre": "Mystery Horror Thriller"
+    "genre": "Mystery Horror Thriller",
+    "hint": "Crow"
   },
   {
-    "id": "tollywood-113",
+    "id": "tollywood-107",
     "title": "Baby",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Anand Deverakonda",
     "director": "Sai Rajesh",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Auto"
   },
   {
-    "id": "tollywood-114",
+    "id": "tollywood-108",
     "title": "MAD",
     "industry": "tollywood",
     "releaseYear": 2023,
     "decade": "2020s",
     "hero": "Narne Nithin",
     "director": "Kalyan Shankar",
-    "genre": "Campus Comedy"
+    "genre": "Campus Comedy",
+    "hint": "Guava Tree"
   },
   {
-    "id": "tollywood-115",
+    "id": "tollywood-109",
     "title": "Bimbisara",
     "industry": "tollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Nandamuri Kalyan Ram",
     "director": "Mallidi Vashist",
-    "genre": "Time Travel Fantasy Action"
+    "genre": "Time Travel Fantasy Action",
+    "hint": "Little Girl"
   },
   {
-    "id": "tollywood-116",
+    "id": "tollywood-110",
     "title": "Brochevarevarura",
     "industry": "tollywood",
     "releaseYear": 2019,
     "decade": "2010s",
     "hero": "Sree Vishnu",
     "director": "Vivek Athreya",
-    "genre": "Crime Comedy"
+    "genre": "Crime Comedy",
+    "hint": "Dumb Girl"
   },
   {
-    "id": "tollywood-117",
+    "id": "tollywood-111",
     "title": "Ee Nagaraniki Emaindi",
     "industry": "tollywood",
     "releaseYear": 2018,
     "decade": "2010s",
     "hero": "Vishwak Sen",
     "director": "Tharun Bhascker",
-    "genre": "Buddy Comedy Drama"
+    "genre": "Buddy Comedy Drama",
+    "hint": "Ring"
   },
   {
-    "id": "tollywood-118",
+    "id": "tollywood-112",
     "title": "Ashta Chamma",
     "industry": "tollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Nani",
     "director": "Mohana Krishna Indraganti",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Mahesh"
   },
   {
-    "id": "tollywood-119",
+    "id": "tollywood-113",
     "title": "Adhurs",
     "industry": "tollywood",
     "releaseYear": 2010,
     "decade": "2010s",
     "hero": "N. T. Rama Rao Jr.",
     "director": "V. V. Vinayak",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Double Role"
   },
   {
-    "id": "tollywood-120",
+    "id": "tollywood-114",
     "title": "Dhee",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Vishnu Manchu",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Painting"
   },
   {
-    "id": "tollywood-121",
+    "id": "tollywood-115",
     "title": "Ready",
     "industry": "tollywood",
     "releaseYear": 2008,
     "decade": "2000s",
     "hero": "Ram Pothineni",
     "director": "Srinu Vaitla",
-    "genre": "Romantic Action Comedy"
+    "genre": "Romantic Action Comedy",
+    "hint": "Families"
   },
   {
-    "id": "tollywood-122",
+    "id": "tollywood-116",
     "title": "Sontham",
     "industry": "tollywood",
     "releaseYear": 2002,
     "decade": "2000s",
     "hero": "Aryan Rajesh",
     "director": "Srinu Vaitla",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "College Friends"
   },
   {
-    "id": "tollywood-123",
+    "id": "tollywood-117",
     "title": "Sarrainodu",
     "industry": "tollywood",
     "releaseYear": 2016,
     "decade": "2010s",
     "hero": "Allu Arjun",
     "director": "Boyapati Srinu",
-    "genre": "Action Masala"
+    "genre": "Action Masala",
+    "hint": "Sambar"
   },
   {
-    "id": "tollywood-124",
+    "id": "tollywood-118",
     "title": "Dubai Seenu",
     "industry": "tollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Paav Bhaji"
   }
 ]
