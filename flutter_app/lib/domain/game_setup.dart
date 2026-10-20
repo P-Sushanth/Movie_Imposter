@@ -12,6 +12,7 @@ class CreateRoundParams {
   final int numImposters;
   final bool imposterClueEnabled;
   final String? previousMovieId;
+  final String? previousClueKey;
   final Set<String>? usedMovieIds;
   final double Function()? random;
 
@@ -22,13 +23,15 @@ class CreateRoundParams {
     this.numImposters = 1,
     this.imposterClueEnabled = true,
     this.previousMovieId,
+    this.previousClueKey,
     this.usedMovieIds,
     this.random,
   });
 }
 
 RoundState createRound(CreateRoundParams params) {
-  final rng = params.random ?? () => Random().nextDouble();
+  final randomInstance = Random();
+  final rng = params.random ?? randomInstance.nextDouble;
 
   // 1. Resolve default player names (e.g. blank -> "Player 1")
   final resolvedPlayers = resolvePlayerNames(params.players);
@@ -81,7 +84,12 @@ RoundState createRound(CreateRoundParams params) {
     final candidate = candidatePool.removeAt(movieIndex);
 
     if (params.imposterClueEnabled) {
-      final clue = generateImposterClue(candidate, random: rng);
+      final clue = generateImposterClue(
+        candidate,
+        random: rng,
+        playerCount: resolvedPlayers.length,
+        previousClueKey: params.previousClueKey,
+      );
       if (clue != null) {
         selectedMovie = candidate;
         imposterClue = clue;
@@ -159,6 +167,7 @@ RoundState createRound(CreateRoundParams params) {
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled: params.imposterClueEnabled,
+    imposterClueKey: imposterClue?.key,
     assignments: assignments,
     startingPlayer: startingPlayer,
     discussionOrder: discussionOrder,
