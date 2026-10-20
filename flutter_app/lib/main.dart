@@ -72,6 +72,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
     Industry.bollywood,
     Industry.hollywood,
     Industry.shows,
+    Industry.kdrama,
   ];
   List<String> _players = ['', '', ''];
   int _numImposters = 1;
@@ -101,6 +102,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
         Industry.bollywood,
         Industry.hollywood,
         Industry.shows,
+        Industry.kdrama,
       ];
     });
   }
