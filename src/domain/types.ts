@@ -30,6 +30,7 @@ export interface RoundState {
   imposters: string[]; // names of the imposters
   numImposters: number;
   imposterClueEnabled: boolean;
+  imposterClueKey?: string;
   assignments: PlayerAssignment[];
   startingPlayer: string;
   discussionOrder: string[];
