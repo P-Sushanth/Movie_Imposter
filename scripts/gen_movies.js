@@ -6,8 +6,9 @@ const t = require(path.join(projectRoot, 'src/data/movies/tollywood.json'));
 const b = require(path.join(projectRoot, 'src/data/movies/bollywood.json'));
 const h = require(path.join(projectRoot, 'src/data/movies/hollywood.json'));
 const s = require(path.join(projectRoot, 'src/data/movies/shows.json'));
+const k = require(path.join(projectRoot, 'src/data/movies/kdrama.json'));
 
-const all = [...t, ...b, ...h, ...s];
+const all = [...t, ...b, ...h, ...s, ...k];
 
 function escapeDart(str) {
   if (!str) return '';
@@ -21,13 +22,14 @@ for (const m of all) {
   out += '  Movie(\n';
   out += "    id: '" + escapeDart(m.id) + "',\n";
   out += "    title: '" + escapeDart(m.title) + "',\n";
-  out += '    industry: Industry.' + m.industry + ',\n';
+  out += '    industry: Industry.' + m.industry.toLowerCase() + ',\n';
   out += '    releaseYear: ' + m.releaseYear + ',\n';
   out += "    decade: '" + escapeDart(m.decade) + "',\n";
-  if (m.industry !== 'shows') {
+  if (m.industry !== 'shows' && m.industry !== 'kdrama') {
     out += "    hero: '" + escapeDart(m.hero) + "',\n";
     out += "    director: '" + escapeDart(m.director) + "',\n";
     out += "    genre: '" + escapeDart(m.genre) + "',\n";
+    if (m.hint) out += "    hint: '" + escapeDart(m.hint) + "',\n";
   } else {
     if (m.genre) out += "    genre: '" + escapeDart(m.genre) + "',\n";
     if (m.productionHouse) out += "    productionHouse: '" + escapeDart(m.productionHouse) + "',\n";
