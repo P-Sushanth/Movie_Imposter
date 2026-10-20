@@ -7,7 +7,8 @@
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Priyadarshan",
-    "genre": "Comedy"
+    "genre": "Comedy",
+    "hint": "Telephone"
   },
   {
     "id": "bollywood-002",
@@ -17,7 +18,8 @@
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Rakesh Roshan",
-    "genre": "Romantic Action Drama"
+    "genre": "Romantic Action Drama",
+    "hint": "Singer"
   },
   {
     "id": "bollywood-003",
@@ -27,7 +29,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Aditya Chopra",
-    "genre": "Musical Romantic Drama"
+    "genre": "Musical Romantic Drama",
+    "hint": "Music Teacher"
   },
   {
     "id": "bollywood-004",
@@ -37,7 +40,8 @@
     "decade": "2000s",
     "hero": "Sunny Deol",
     "director": "Anil Sharma",
-    "genre": "Period Action Drama"
+    "genre": "Period Action Drama",
+    "hint": "India Pakistan"
   },
   {
     "id": "bollywood-005",
@@ -47,7 +51,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Ashutosh Gowariker",
-    "genre": "Period Sports Drama"
+    "genre": "Period Sports Drama",
+    "hint": "Cricket"
   },
   {
     "id": "bollywood-006",
@@ -57,7 +62,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Farhan Akhtar",
-    "genre": "Coming-of-age Comedy Drama"
+    "genre": "Coming-of-age Comedy Drama",
+    "hint": "Friends"
   },
   {
     "id": "bollywood-007",
@@ -67,7 +73,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Karan Johar",
-    "genre": "Family Melodrama"
+    "genre": "Family Melodrama",
+    "hint": "3 Heroes"
   },
   {
     "id": "bollywood-008",
@@ -77,7 +84,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Drunkard"
   },
   {
     "id": "bollywood-009",
@@ -87,7 +95,8 @@
     "decade": "2000s",
     "hero": "Sanjay Dutt",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "Juice"
   },
   {
     "id": "bollywood-010",
@@ -97,7 +106,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Nikkhil Advani",
-    "genre": "Romantic Comedy Drama"
+    "genre": "Romantic Comedy Drama",
+    "hint": "New York"
   },
   {
     "id": "bollywood-011",
@@ -107,7 +117,8 @@
     "decade": "2000s",
     "hero": "John Abraham",
     "director": "Sanjay Gadhvi",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Theif"
   },
   {
     "id": "bollywood-012",
@@ -117,7 +128,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Ashutosh Gowariker",
-    "genre": "Social Drama"
+    "genre": "Social Drama",
+    "hint": "Gandhi"
   },
   {
     "id": "bollywood-013",
@@ -127,7 +139,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Yash Chopra",
-    "genre": "Period Romantic Drama"
+    "genre": "Period Romantic Drama",
+    "hint": "Cross Border"
   },
   {
     "id": "bollywood-014",
@@ -137,7 +150,8 @@
     "decade": "2000s",
     "hero": "Amitabh Bachchan",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Drama"
+    "genre": "Drama",
+    "hint": "Deaf Mute"
   },
   {
     "id": "bollywood-015",
@@ -147,7 +161,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Rakeysh Omprakash Mehra",
-    "genre": "Political Drama"
+    "genre": "Political Drama",
+    "hint": "Film Student"
   },
   {
     "id": "bollywood-016",
@@ -157,7 +172,8 @@
     "decade": "2000s",
     "hero": "Ajay Devgn",
     "director": "Vishal Bhardwaj",
-    "genre": "Crime Drama"
+    "genre": "Crime Drama",
+    "hint": "Adaptation"
   },
   {
     "id": "bollywood-017",
@@ -167,7 +183,8 @@
     "decade": "2000s",
     "hero": "Sanjay Dutt",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "Sequel"
   },
   {
     "id": "bollywood-018",
@@ -177,7 +194,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Farhan Akhtar",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Remake"
   },
   {
     "id": "bollywood-019",
@@ -187,7 +205,8 @@
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Sanjay Gadhvi",
-    "genre": "Action Heist Thriller"
+    "genre": "Action Heist Thriller",
+    "hint": "Sequel"
   },
   {
     "id": "bollywood-020",
@@ -197,7 +216,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Shimit Amin",
-    "genre": "Sports Drama"
+    "genre": "Sports Drama",
+    "hint": "Traitor"
   },
   {
     "id": "bollywood-021",
@@ -207,7 +227,8 @@
     "decade": "2000s",
     "hero": "Shahid Kapoor",
     "director": "Imtiaz Ali",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Train"
   },
   {
     "id": "bollywood-022",
@@ -217,7 +238,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Aamir Khan",
-    "genre": "Family Drama"
+    "genre": "Family Drama",
+    "hint": "Painting"
   },
   {
     "id": "bollywood-023",
@@ -227,7 +249,8 @@
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Farah Khan",
-    "genre": "Masala Fantasy Romance"
+    "genre": "Masala Fantasy Romance",
+    "hint": "Rebirth"
   },
   {
     "id": "bollywood-024",
@@ -237,7 +260,8 @@
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Ashutosh Gowariker",
-    "genre": "Historical Romance Epic"
+    "genre": "Historical Romance Epic",
+    "hint": "Mughal"
   },
   {
     "id": "bollywood-025",
@@ -247,7 +271,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "A. R. Murugadoss",
-    "genre": "Action Psychological Thriller"
+    "genre": "Action Psychological Thriller",
+    "hint": "Twins"
   },
   {
     "id": "bollywood-026",
@@ -257,7 +282,8 @@
     "decade": "2000s",
     "hero": "Abhay Deol",
     "director": "Anurag Kashyap",
-    "genre": "Romantic Black Comedy Drama"
+    "genre": "Romantic Black Comedy Drama",
+    "hint": "Taboo"
   },
   {
     "id": "bollywood-027",
@@ -267,7 +293,8 @@
     "decade": "2000s",
     "hero": "Aamir Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Coming-of-age Comedy Drama"
+    "genre": "Coming-of-age Comedy Drama",
+    "hint": "Hairy Food"
   },
   {
     "id": "bollywood-028",
@@ -277,7 +304,8 @@
     "decade": "2010s",
     "hero": "Salman Khan",
     "director": "Abhinav Kashyap",
-    "genre": "Action Comedy"
+    "genre": "Action Comedy",
+    "hint": "Tractor"
   },
   {
     "id": "bollywood-029",
@@ -287,7 +315,8 @@
     "decade": "2010s",
     "hero": "Hrithik Roshan",
     "director": "Zoya Akhtar",
-    "genre": "Road Comedy Drama"
+    "genre": "Road Comedy Drama",
+    "hint": "Bag"
   },
   {
     "id": "bollywood-030",
@@ -297,7 +326,8 @@
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Imtiaz Ali",
-    "genre": "Musical Romantic Drama"
+    "genre": "Musical Romantic Drama",
+    "hint": "Rise And Fall"
   },
   {
     "id": "bollywood-031",
@@ -307,7 +337,8 @@
     "decade": "2010s",
     "hero": "Manoj Bajpayee",
     "director": "Anurag Kashyap",
-    "genre": "Epic Crime Action"
+    "genre": "Epic Crime Action",
+    "hint": "Generational Drama"
   },
   {
     "id": "bollywood-032",
@@ -317,7 +348,8 @@
     "decade": "2010s",
     "hero": "Nawazuddin Siddiqui",
     "director": "Sujoy Ghosh",
-    "genre": "Mystery Thriller"
+    "genre": "Mystery Thriller",
+    "hint": "Pregnant"
   },
   {
     "id": "bollywood-033",
@@ -327,7 +359,8 @@
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Anurag Basu",
-    "genre": "Romantic Comedy Drama"
+    "genre": "Romantic Comedy Drama",
+    "hint": "Dumb"
   },
   {
     "id": "bollywood-034",
@@ -337,7 +370,8 @@
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Ayan Mukerji",
-    "genre": "Coming-of-age Romantic Drama"
+    "genre": "Coming-of-age Romantic Drama",
+    "hint": "Destination Wedding"
   },
   {
     "id": "bollywood-035",
@@ -347,7 +381,8 @@
     "decade": "2010s",
     "hero": "Farhan Akhtar",
     "director": "Rakeysh Omprakash Mehra",
-    "genre": "Biographical Sports Drama"
+    "genre": "Biographical Sports Drama",
+    "hint": "Partition"
   },
   {
     "id": "bollywood-036",
@@ -357,7 +392,8 @@
     "decade": "2010s",
     "hero": "Rajkummar Rao",
     "director": "Vikas Bahl",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "Honeymoon"
   },
   {
     "id": "bollywood-037",
@@ -367,7 +403,8 @@
     "decade": "2010s",
     "hero": "Shahid Kapoor",
     "director": "Vishal Bhardwaj",
-    "genre": "Crime Drama"
+    "genre": "Crime Drama",
+    "hint": "Adaptation"
   },
   {
     "id": "bollywood-038",
@@ -377,7 +414,8 @@
     "decade": "2010s",
     "hero": "Aamir Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Satirical Sci-Fi Comedy"
+    "genre": "Satirical Sci-Fi Comedy",
+    "hint": "GodMen"
   },
   {
     "id": "bollywood-039",
@@ -387,7 +425,8 @@
     "decade": "2010s",
     "hero": "Irrfan Khan",
     "director": "Shoojit Sircar",
-    "genre": "Road Comedy Drama"
+    "genre": "Road Comedy Drama",
+    "hint": "Bathroom"
   },
   {
     "id": "bollywood-040",
@@ -397,7 +436,8 @@
     "decade": "2010s",
     "hero": "Salman Khan",
     "director": "Kabir Khan",
-    "genre": "Action Comedy Drama"
+    "genre": "Action Comedy Drama",
+    "hint": "Girl"
   },
   {
     "id": "bollywood-041",
@@ -407,7 +447,8 @@
     "decade": "2010s",
     "hero": "Ajay Devgn",
     "director": "Nishikant Kamat",
-    "genre": "Crime Thriller"
+    "genre": "Crime Thriller",
+    "hint": "Family"
   },
   {
     "id": "bollywood-042",
@@ -417,7 +458,8 @@
     "decade": "2010s",
     "hero": "Aamir Khan",
     "director": "Nitesh Tiwari",
-    "genre": "Biographical Sports Drama"
+    "genre": "Biographical Sports Drama",
+    "hint": "Daugthers"
   },
   {
     "id": "bollywood-043",
@@ -427,7 +469,8 @@
     "decade": "2010s",
     "hero": "Amitabh Bachchan",
     "director": "Aniruddha Roy Chowdhury",
-    "genre": "Legal Thriller"
+    "genre": "Legal Thriller",
+    "hint": "No"
   },
   {
     "id": "bollywood-044",
@@ -437,7 +480,8 @@
     "decade": "2010s",
     "hero": "Ranveer Singh",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Period Epic Drama"
+    "genre": "Period Epic Drama",
+    "hint": "Queen"
   },
   {
     "id": "bollywood-045",
@@ -447,7 +491,8 @@
     "decade": "2010s",
     "hero": "Vicky Kaushal",
     "director": "Meghna Gulzar",
-    "genre": "Spy Thriller"
+    "genre": "Spy Thriller",
+    "hint": "Spy"
   },
   {
     "id": "bollywood-046",
@@ -457,7 +502,8 @@
     "decade": "2010s",
     "hero": "Ranbir Kapoor",
     "director": "Rajkumar Hirani",
-    "genre": "Biographical Drama"
+    "genre": "Biographical Drama",
+    "hint": "Shit"
   },
   {
     "id": "bollywood-047",
@@ -467,7 +513,8 @@
     "decade": "2010s",
     "hero": "Rajkummar Rao",
     "director": "Amar Kaushik",
-    "genre": "Comedy Horror"
+    "genre": "Comedy Horror",
+    "hint": "Waist"
   },
   {
     "id": "bollywood-048",
@@ -477,7 +524,8 @@
     "decade": "2010s",
     "hero": "Ayushmann Khurrana",
     "director": "Sriram Raghavan",
-    "genre": "Black Comedy Crime Thriller"
+    "genre": "Black Comedy Crime Thriller",
+    "hint": "Piano"
   },
   {
     "id": "bollywood-049",
@@ -487,7 +535,8 @@
     "decade": "2010s",
     "hero": "Sohum Shah",
     "director": "Rahi Anil Barve",
-    "genre": "Period Folk Horror"
+    "genre": "Period Folk Horror",
+    "hint": "Gold"
   },
   {
     "id": "bollywood-050",
@@ -497,7 +546,8 @@
     "decade": "2010s",
     "hero": "Vicky Kaushal",
     "director": "Aditya Dhar",
-    "genre": "Military Action Drama"
+    "genre": "Military Action Drama",
+    "hint": "Single Night"
   },
   {
     "id": "bollywood-051",
@@ -507,7 +557,8 @@
     "decade": "2010s",
     "hero": "Ranveer Singh",
     "director": "Zoya Akhtar",
-    "genre": "Musical Drama"
+    "genre": "Musical Drama",
+    "hint": "Street"
   },
   {
     "id": "bollywood-052",
@@ -517,7 +568,8 @@
     "decade": "2010s",
     "hero": "Shahid Kapoor",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Romantic Drama"
+    "genre": "Romantic Drama",
+    "hint": "Ice"
   },
   {
     "id": "bollywood-053",
@@ -527,7 +579,8 @@
     "decade": "2010s",
     "hero": "Sushant Singh Rajput",
     "director": "Nitesh Tiwari",
-    "genre": "Coming-of-age Comedy Drama"
+    "genre": "Coming-of-age Comedy Drama",
+    "hint": "Sports"
   },
   {
     "id": "bollywood-054",
@@ -537,7 +590,8 @@
     "decade": "2010s",
     "hero": "Hrithik Roshan",
     "director": "Siddharth Anand",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Dual Protagonist"
   },
   {
     "id": "bollywood-055",
@@ -547,7 +601,8 @@
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Om Raut",
-    "genre": "Historical Action"
+    "genre": "Historical Action",
+    "hint": "Directoral Debut"
   },
   {
     "id": "bollywood-056",
@@ -557,7 +612,8 @@
     "decade": "2020s",
     "hero": "Sidharth Malhotra",
     "director": "Vishnuvardhan",
-    "genre": "Biographical War"
+    "genre": "Biographical War",
+    "hint": "Biopic"
   },
   {
     "id": "bollywood-057",
@@ -567,7 +623,8 @@
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Sanjay Leela Bhansali",
-    "genre": "Biographical Crime Drama"
+    "genre": "Biographical Crime Drama",
+    "hint": "Biopic"
   },
   {
     "id": "bollywood-058",
@@ -577,7 +634,8 @@
     "decade": "2020s",
     "hero": "Ranbir Kapoor",
     "director": "Ayan Mukerji",
-    "genre": "Fantasy Action Adventure"
+    "genre": "Fantasy Action Adventure",
+    "hint": "Ornament"
   },
   {
     "id": "bollywood-059",
@@ -587,7 +645,8 @@
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Siddharth Anand",
-    "genre": "Spy Action Thriller"
+    "genre": "Spy Action Thriller",
+    "hint": "MilkShake"
   },
   {
     "id": "bollywood-060",
@@ -597,7 +656,8 @@
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Atlee",
-    "genre": "Action Vigilante Thriller"
+    "genre": "Action Vigilante Thriller",
+    "hint": "Father Son Dynamic"
   },
   {
     "id": "bollywood-061",
@@ -607,7 +667,8 @@
     "decade": "2020s",
     "hero": "Vikrant Massey",
     "director": "Vidhu Vinod Chopra",
-    "genre": "Biographical Drama"
+    "genre": "Biographical Drama",
+    "hint": "Biopic"
   },
   {
     "id": "bollywood-062",
@@ -617,7 +678,8 @@
     "decade": "2020s",
     "hero": "Ranbir Kapoor",
     "director": "Sandeep Reddy Vanga",
-    "genre": "Action Crime Drama"
+    "genre": "Action Crime Drama",
+    "hint": "Father Son Dynamic"
   },
   {
     "id": "bollywood-063",
@@ -627,7 +689,8 @@
     "decade": "2020s",
     "hero": "Shah Rukh Khan",
     "director": "Rajkumar Hirani",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "English"
   },
   {
     "id": "bollywood-064",
@@ -637,7 +700,8 @@
     "decade": "2020s",
     "hero": "Hrithik Roshan",
     "director": "Siddharth Anand",
-    "genre": "Aerial Action"
+    "genre": "Aerial Action",
+    "hint": "Army"
   },
   {
     "id": "bollywood-065",
@@ -647,7 +711,8 @@
     "decade": "2020s",
     "hero": "Rajkummar Rao",
     "director": "Amar Kaushik",
-    "genre": "Comedy Horror"
+    "genre": "Comedy Horror",
+    "hint": "Universe"
   },
   {
     "id": "bollywood-066",
@@ -657,7 +722,8 @@
     "decade": "2020s",
     "hero": "Kartik Aaryan",
     "director": "Anees Bazmee",
-    "genre": "Comedy Horror"
+    "genre": "Comedy Horror",
+    "hint": "Milking"
   },
   {
     "id": "bollywood-067",
@@ -667,7 +733,8 @@
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Rohit Shetty",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Ramayan"
   },
   {
     "id": "bollywood-068",
@@ -677,7 +744,8 @@
     "decade": "2020s",
     "hero": "Abhay Verma",
     "director": "Aditya Sarpotdar",
-    "genre": "Comedy Horror"
+    "genre": "Comedy Horror",
+    "hint": "Universe"
   },
   {
     "id": "bollywood-069",
@@ -687,7 +755,8 @@
     "decade": "2020s",
     "hero": "Yami Gautam",
     "director": "Aditya Suhas Jambhale",
-    "genre": "Political Action Thriller"
+    "genre": "Political Action Thriller",
+    "hint": "Female Protagonist"
   },
   {
     "id": "bollywood-070",
@@ -697,7 +766,8 @@
     "decade": "2020s",
     "hero": "Nitanshi Goel",
     "director": "Kiran Rao",
-    "genre": "Social Comedy Drama"
+    "genre": "Social Comedy Drama",
+    "hint": "Flower"
   },
   {
     "id": "bollywood-071",
@@ -707,7 +777,8 @@
     "decade": "2020s",
     "hero": "Tabu",
     "director": "Rajesh A Krishnan",
-    "genre": "Heist Comedy"
+    "genre": "Heist Comedy",
+    "hint": "Multiple Heroines"
   },
   {
     "id": "bollywood-072",
@@ -717,7 +788,8 @@
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Vikas Bahl",
-    "genre": "Supernatural Horror Thriller"
+    "genre": "Supernatural Horror Thriller",
+    "hint": "Mind Control"
   },
   {
     "id": "bollywood-073",
@@ -727,7 +799,8 @@
     "decade": "2020s",
     "hero": "Vicky Kaushal",
     "director": "Anand Tiwari",
-    "genre": "Romantic Comedy"
+    "genre": "Romantic Comedy",
+    "hint": "Two Night Stand"
   },
   {
     "id": "bollywood-074",
@@ -737,7 +810,8 @@
     "decade": "2020s",
     "hero": "Vicky Kaushal",
     "director": "Laxman Utekar",
-    "genre": "Historical Action Epic"
+    "genre": "Historical Action Epic",
+    "hint": "Biopic"
   },
   {
     "id": "bollywood-075",
@@ -747,7 +821,8 @@
     "decade": "2020s",
     "hero": "Hrithik Roshan",
     "director": "Ayan Mukerji",
-    "genre": "Action Spy Thriller"
+    "genre": "Action Spy Thriller",
+    "hint": "Tiger"
   },
   {
     "id": "bollywood-076",
@@ -757,7 +832,8 @@
     "decade": "2020s",
     "hero": "Alia Bhatt",
     "director": "Shiv Rawail",
-    "genre": "Action Spy Thriller"
+    "genre": "Action Spy Thriller",
+    "hint": "Female Protagonist"
   },
   {
     "id": "bollywood-077",
@@ -767,7 +843,8 @@
     "decade": "2020s",
     "hero": "Salman Khan",
     "director": "AR Murugadoss",
-    "genre": "Action Drama"
+    "genre": "Action Drama",
+    "hint": "Lungs"
   },
   {
     "id": "bollywood-078",
@@ -777,7 +854,8 @@
     "decade": "2020s",
     "hero": "Akshay Kumar",
     "director": "Tarun Mansukhani",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "Cruise"
   },
   {
     "id": "bollywood-079",
@@ -787,7 +865,8 @@
     "decade": "2020s",
     "hero": "Akshay Kumar",
     "director": "Subhash Kapoor",
-    "genre": "Courtroom Comedy Drama"
+    "genre": "Courtroom Comedy Drama",
+    "hint": "Dual Protagonist"
   },
   {
     "id": "bollywood-080",
@@ -797,7 +876,8 @@
     "decade": "2020s",
     "hero": "Akshay Kumar",
     "director": "Sandeep Kewlani",
-    "genre": "Aviation Action Drama"
+    "genre": "Aviation Action Drama",
+    "hint": "Dual Protagonist"
   },
   {
     "id": "bollywood-081",
@@ -807,7 +887,8 @@
     "decade": "2020s",
     "hero": "Akshay Kumar",
     "director": "Ahmed Khan",
-    "genre": "Adventure Comedy"
+    "genre": "Adventure Comedy",
+    "hint": "Multi Protagonist"
   },
   {
     "id": "bollywood-082",
@@ -817,7 +898,8 @@
     "decade": "2020s",
     "hero": "Shahid Kapoor",
     "director": "Rosshan Andrrews",
-    "genre": "Action Thriller"
+    "genre": "Action Thriller",
+    "hint": "Memory Loss"
   },
   {
     "id": "bollywood-083",
@@ -827,7 +909,8 @@
     "decade": "2020s",
     "hero": "Aditya Roy Kapur",
     "director": "Anurag Basu",
-    "genre": "Romantic Anthology Drama"
+    "genre": "Romantic Anthology Drama",
+    "hint": "Musical"
   },
   {
     "id": "bollywood-084",
@@ -837,186 +920,172 @@
     "decade": "2020s",
     "hero": "Varun Dhawan",
     "director": "Shashank Khaitan",
-    "genre": "Romantic Comedy Drama"
+    "genre": "Romantic Comedy Drama",
+    "hint": "Baahubali"
   },
   {
     "id": "bollywood-085",
-    "title": "King",
-    "industry": "bollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Shah Rukh Khan",
-    "director": "Sujoy Ghosh",
-    "genre": "Action Crime Thriller"
-  },
-  {
-    "id": "bollywood-086",
-    "title": "Love & War",
-    "industry": "bollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Ranbir Kapoor",
-    "director": "Sanjay Leela Bhansali",
-    "genre": "Epic Romantic Drama"
-  },
-  {
-    "id": "bollywood-087",
     "title": "Ramayana: Part 1",
     "industry": "bollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Ranbir Kapoor",
     "director": "Nitesh Tiwari",
-    "genre": "Mythological Epic"
+    "genre": "Mythological Epic",
+    "hint": "VFX"
   },
   {
-    "id": "bollywood-088",
+    "id": "bollywood-086",
     "title": "Toxic",
     "industry": "bollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Yash",
     "director": "Geethu Mohandas",
-    "genre": "Action Crime Drama"
+    "genre": "Action Crime Drama",
+    "hint": "English Dub"
   },
   {
-    "id": "bollywood-089",
+    "id": "bollywood-087",
     "title": "Border 2",
     "industry": "bollywood",
     "releaseYear": 2026,
     "decade": "2020s",
     "hero": "Sunny Deol",
     "director": "Anurag Singh",
-    "genre": "War Action Drama"
+    "genre": "War Action Drama",
+    "hint": "India Pakistan"
   },
   {
-    "id": "bollywood-090",
-    "title": "Brahmāstra: Part Two – Dev",
-    "industry": "bollywood",
-    "releaseYear": 2026,
-    "decade": "2020s",
-    "hero": "Ranbir Kapoor",
-    "director": "Ayan Mukerji",
-    "genre": "Fantasy Action Adventure"
-  },
-  {
-    "id": "bollywood-091",
+    "id": "bollywood-088",
     "title": "Welcome",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Anees Bazmee",
-    "genre": "Comedy Masala"
+    "genre": "Comedy Masala",
+    "hint": "Miracle"
   },
   {
-    "id": "bollywood-092",
+    "id": "bollywood-089",
     "title": "Phir Hera Pheri",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Neeraj Vora",
-    "genre": "Crime Comedy"
+    "genre": "Crime Comedy",
+    "hint": "Sequel"
   },
   {
-    "id": "bollywood-093",
+    "id": "bollywood-090",
     "title": "Bhagam Bhag",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Priyadarshan",
-    "genre": "Mystery Comedy"
+    "genre": "Mystery Comedy",
+    "hint": "Theater"
   },
   {
-    "id": "bollywood-094",
+    "id": "bollywood-091",
     "title": "Dhol",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Tusshar Kapoor",
     "director": "Priyadarshan",
-    "genre": "Comedy Thriller"
+    "genre": "Comedy Thriller",
+    "hint": "Four Friends"
   },
   {
-    "id": "bollywood-095",
+    "id": "bollywood-092",
     "title": "Bhool Bhulaiyaa",
     "industry": "bollywood",
     "releaseYear": 2007,
     "decade": "2000s",
     "hero": "Akshay Kumar",
     "director": "Priyadarshan",
-    "genre": "Psychological Horror Comedy"
+    "genre": "Psychological Horror Comedy",
+    "hint": "Yellow Dress"
   },
   {
-    "id": "bollywood-096",
+    "id": "bollywood-093",
     "title": "Golmaal: Fun Unlimited",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Ajay Devgn",
     "director": "Rohit Shetty",
-    "genre": "Comedy Drama"
+    "genre": "Comedy Drama",
+    "hint": "Blind"
   },
   {
-    "id": "bollywood-097",
+    "id": "bollywood-094",
     "title": "Main Hoon Na",
     "industry": "bollywood",
     "releaseYear": 2004,
     "decade": "2000s",
     "hero": "Shah Rukh Khan",
     "director": "Farah Khan",
-    "genre": "Action Comedy Drama"
+    "genre": "Action Comedy Drama",
+    "hint": "Brothers"
   },
   {
-    "id": "bollywood-098",
+    "id": "bollywood-095",
     "title": "Koi... Mil Gaya",
     "industry": "bollywood",
     "releaseYear": 2003,
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Rakesh Roshan",
-    "genre": "Sci-Fi Fantasy"
+    "genre": "Sci-Fi Fantasy",
+    "hint": "Basketball"
   },
   {
-    "id": "bollywood-099",
+    "id": "bollywood-096",
     "title": "Krrish",
     "industry": "bollywood",
     "releaseYear": 2006,
     "decade": "2000s",
     "hero": "Hrithik Roshan",
     "director": "Rakesh Roshan",
-    "genre": "Superhero Sci-Fi"
+    "genre": "Superhero Sci-Fi",
+    "hint": "Father Son Dynamic"
   },
   {
-    "id": "bollywood-100",
+    "id": "bollywood-097",
     "title": "Chennai Express",
     "industry": "bollywood",
     "releaseYear": 2013,
     "decade": "2010s",
     "hero": "Shah Rukh Khan",
     "director": "Rohit Shetty",
-    "genre": "Action Romantic Comedy"
+    "genre": "Action Romantic Comedy",
+    "hint": "Train"
   },
   {
-    "id": "bollywood-101",
+    "id": "bollywood-098",
     "title": "Singham",
     "industry": "bollywood",
     "releaseYear": 2011,
     "decade": "2010s",
     "hero": "Ajay Devgn",
     "director": "Rohit Shetty",
-    "genre": "Action Masala"
+    "genre": "Action Masala",
+    "hint": "Cheating"
   },
   {
-    "id": "bollywood-102",
+    "id": "bollywood-099",
     "title": "Drishyam 2",
     "industry": "bollywood",
     "releaseYear": 2022,
     "decade": "2020s",
     "hero": "Ajay Devgn",
     "director": "Abhishek Pathak",
-    "genre": "Crime Thriller"
+    "genre": "Crime Thriller",
+    "hint": "Sequel"
   }
 ]
