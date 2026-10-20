@@ -73,6 +73,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
     Industry.hollywood,
     Industry.shows,
     Industry.kdrama,
+    Industry.cartoons,
   ];
   List<String> _players = ['', '', ''];
   int _numImposters = 1;
@@ -83,6 +84,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
 
   // Track movies played in this session only
   final Set<String> _usedMovieIds = <String>{};
+  String? _previousClueKey;
 
   // Industry handlers
   void _handleToggleIndustry(Industry ind) {
@@ -103,6 +105,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
         Industry.hollywood,
         Industry.shows,
         Industry.kdrama,
+        Industry.cartoons,
       ];
     });
   }
@@ -141,11 +144,13 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           numImposters: _numImposters,
           imposterClueEnabled: _imposterClueEnabled,
           previousMovieId: _roundState?.movieId,
+          previousClueKey: _previousClueKey,
           usedMovieIds: _usedMovieIds,
         ),
       );
 
       _usedMovieIds.add(round.movieId);
+      _previousClueKey = round.imposterClueKey;
 
       setState(() {
         _roundState = round;
