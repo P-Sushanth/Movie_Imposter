@@ -170,6 +170,113 @@ void main() {
       expect(keys.contains('adaptation_or_original'), isTrue);
       expect(keys.contains('release_medium'), isTrue);
     });
+
+    test('excludes releaseYear and decade when playerCount <= 4 (e.g. 3 or 4 players)', () {
+      const movie = Movie(
+        id: 'tollywood-001',
+        title: 'Badri',
+        industry: Industry.tollywood,
+        releaseYear: 2000,
+        decade: '2000s',
+        hero: 'Pawan Kalyan',
+        director: 'Puri Jagannadh',
+        genre: 'Action Romance',
+        hint: 'Bay Of Bengal',
+      );
+
+      // 3 players
+      final clues3 = getCluesForMovie(movie, playerCount: 3);
+      final keys3 = clues3.map((c) => c.key).toSet();
+      expect(keys3.contains('release_year'), isFalse);
+      expect(keys3.contains('decade'), isFalse);
+      expect(keys3.contains('hero'), isTrue);
+      expect(keys3.contains('director'), isTrue);
+      expect(keys3.contains('genre'), isTrue);
+      expect(keys3.contains('hint'), isTrue);
+
+      // 4 players
+      final clues4 = getCluesForMovie(movie, playerCount: 4);
+      final keys4 = clues4.map((c) => c.key).toSet();
+      expect(keys4.contains('release_year'), isFalse);
+      expect(keys4.contains('decade'), isFalse);
+    });
+
+    test('includes releaseYear and decade when playerCount > 4 (e.g. 5+ players)', () {
+      const movie = Movie(
+        id: 'tollywood-001',
+        title: 'Badri',
+        industry: Industry.tollywood,
+        releaseYear: 2000,
+        decade: '2000s',
+        hero: 'Pawan Kalyan',
+        director: 'Puri Jagannadh',
+        genre: 'Action Romance',
+        hint: 'Bay Of Bengal',
+      );
+
+      final clues5 = getCluesForMovie(movie, playerCount: 5);
+      final keys5 = clues5.map((c) => c.key).toSet();
+      expect(keys5.contains('release_year'), isTrue);
+      expect(keys5.contains('decade'), isTrue);
+      expect(keys5.contains('hero'), isTrue);
+      expect(keys5.contains('director'), isTrue);
+      expect(keys5.contains('genre'), isTrue);
+      expect(keys5.contains('hint'), isTrue);
+    });
+
+    test('generateImposterClue avoids repeating previousClueKey when other clues exist', () {
+      const movie = Movie(
+        id: 'tollywood-001',
+        title: 'Badri',
+        industry: Industry.tollywood,
+        releaseYear: 2000,
+        decade: '2000s',
+        hero: 'Pawan Kalyan',
+        director: 'Puri Jagannadh',
+        genre: 'Action Romance',
+        hint: 'Bay Of Bengal',
+      );
+
+      // If previous clue was 'decade', generated clue must NOT be 'decade'
+      for (int i = 0; i < 20; i++) {
+        final clue = generateImposterClue(
+          movie,
+          playerCount: 5,
+          previousClueKey: 'decade',
+        );
+        expect(clue?.key, isNot(equals('decade')));
+      }
+    });
+
+    test('generates cartoon clues (releaseYear, decade, channel, countryOfOrigin, hint) for Industry.cartoons', () {
+      const cartoon = Movie(
+        id: 'cartoons-001',
+        title: 'Doraemon',
+        industry: Industry.cartoons,
+        releaseYear: 2005,
+        decade: '2000s',
+        channel: 'Hungama TV',
+        countryOfOrigin: 'Japan',
+        hint: 'Pipes',
+      );
+
+      // Player count > 4: all 5 clues present
+      final clues5 = getCluesForMovie(cartoon, playerCount: 5);
+      final keys5 = clues5.map((c) => c.key).toList();
+      expect(keys5, equals(['release_year', 'decade', 'channel', 'country_of_origin', 'hint']));
+      expect(clues5.firstWhere((c) => c.key == 'channel').displayText, 'Channel: Hungama TV');
+      expect(clues5.firstWhere((c) => c.key == 'country_of_origin').displayText, 'Country: Japan');
+      expect(clues5.firstWhere((c) => c.key == 'hint').displayText, 'Hint: Pipes');
+
+      // Player count <= 4: release_year and decade are disabled
+      final clues3 = getCluesForMovie(cartoon, playerCount: 3);
+      final keys3 = clues3.map((c) => c.key).toList();
+      expect(keys3, equals(['channel', 'country_of_origin', 'hint']));
+
+      final clues4 = getCluesForMovie(cartoon, playerCount: 4);
+      final keys4 = clues4.map((c) => c.key).toList();
+      expect(keys4, equals(['channel', 'country_of_origin', 'hint']));
+    });
   });
 }
 
