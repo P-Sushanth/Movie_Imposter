@@ -91,13 +91,23 @@ export function getCluesForShow(show: Movie): ClueItem[] {
  * Uses concise labels and values instead of full sentences.
  */
 export function getCluesForMovie(movie: Movie): ClueItem[] {
-  if (movie.industry === "shows") {
+  if (movie.industry === "shows" || movie.industry === "kdrama") {
     return getCluesForShow(movie);
   }
 
   const clues: ClueItem[] = [];
 
-  // 1. Decade
+  // 1. Release Year
+  if (movie.releaseYear && !clueContainsTitle(movie.title, String(movie.releaseYear))) {
+    clues.push({
+      key: "release_year",
+      label: "Release Year",
+      value: String(movie.releaseYear),
+      displayText: `Release Year: ${movie.releaseYear}`,
+    });
+  }
+
+  // 2. Decade
   if (movie.decade && !clueContainsTitle(movie.title, movie.decade)) {
     clues.push({
       key: "decade",
@@ -107,7 +117,7 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
     });
   }
 
-  // 2. Hero
+  // 3. Hero
   if (movie.hero && !clueContainsTitle(movie.title, movie.hero)) {
     clues.push({
       key: "hero",
@@ -117,7 +127,7 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
     });
   }
 
-  // 3. Director
+  // 4. Director
   if (movie.director && !clueContainsTitle(movie.title, movie.director)) {
     clues.push({
       key: "director",
@@ -127,13 +137,23 @@ export function getCluesForMovie(movie: Movie): ClueItem[] {
     });
   }
 
-  // 4. Genre
+  // 5. Genre
   if (movie.genre && !clueContainsTitle(movie.title, movie.genre)) {
     clues.push({
       key: "genre",
       label: "Genre",
       value: movie.genre,
       displayText: `Genre: ${movie.genre}`,
+    });
+  }
+
+  // 6. Hint
+  if (movie.hint && !clueContainsTitle(movie.title, movie.hint)) {
+    clues.push({
+      key: "hint",
+      label: "Hint",
+      value: movie.hint,
+      displayText: `Hint: ${movie.hint}`,
     });
   }
 
