@@ -19,6 +19,12 @@ class AppColors {
   static const Color movieBlue = Color(0xFF2563EB);
   static const Color movieBlueBg = Color(0xFFEFF6FF);
 
+  // Flame Orange (Spice It Up section)
+  static const Color flameOrange = Color(0xFFFF5722);
+  static const Color flameOrangeDark = Color(0xFFD84315);
+  static const Color flameOrangeBg = Color(0xFFFFF7F2);
+  static const Color flameOrangeBorder = Color(0xFFFFAB91);
+
   // Typography colors
   static const Color textPrimary = Color(0xFF0F172A);
   static const Color textSecondary = Color(0xFF475569);
