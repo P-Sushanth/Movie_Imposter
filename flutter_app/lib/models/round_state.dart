@@ -14,6 +14,7 @@ class RoundState {
   final List<String> imposters;
   final int numImposters;
   final bool imposterClueEnabled;
+  final bool revealNameToImposter;
   final String? imposterClueKey;
   final List<PlayerAssignment> assignments;
   final String startingPlayer;
@@ -29,6 +30,7 @@ class RoundState {
     required this.imposters,
     required this.numImposters,
     required this.imposterClueEnabled,
+    this.revealNameToImposter = false,
     this.imposterClueKey,
     required this.assignments,
     required this.startingPlayer,
@@ -45,6 +47,7 @@ class RoundState {
     List<String>? imposters,
     int? numImposters,
     bool? imposterClueEnabled,
+    bool? revealNameToImposter,
     String? imposterClueKey,
     List<PlayerAssignment>? assignments,
     String? startingPlayer,
@@ -60,6 +63,7 @@ class RoundState {
       imposters: imposters ?? this.imposters,
       numImposters: numImposters ?? this.numImposters,
       imposterClueEnabled: imposterClueEnabled ?? this.imposterClueEnabled,
+      revealNameToImposter: revealNameToImposter ?? this.revealNameToImposter,
       imposterClueKey: imposterClueKey ?? this.imposterClueKey,
       assignments: assignments ?? this.assignments,
       startingPlayer: startingPlayer ?? this.startingPlayer,

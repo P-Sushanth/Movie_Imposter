@@ -25,10 +25,12 @@ class NormalPlayerRole extends PlayerRole {
 class ImposterRole extends PlayerRole {
   final String? clueText;
   final String? clueLabel;
+  final String? revealedMovieTitle;
 
   ImposterRole({
     this.clueText,
     this.clueLabel,
+    this.revealedMovieTitle,
   });
 
   @override

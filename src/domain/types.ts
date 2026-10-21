@@ -12,6 +12,7 @@ export interface ImposterRole {
   kind: "imposter";
   clueText?: string;
   clueLabel?: string;
+  revealedMovieTitle?: string;
 }
 
 export type PlayerRole = NormalPlayerRole | ImposterRole;
@@ -30,6 +31,7 @@ export interface RoundState {
   imposters: string[]; // names of the imposters
   numImposters: number;
   imposterClueEnabled: boolean;
+  revealNameToImposter: boolean;
   imposterClueKey?: string;
   assignments: PlayerAssignment[];
   startingPlayer: string;
