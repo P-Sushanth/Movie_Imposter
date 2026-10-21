@@ -24,6 +24,8 @@ interface SetupScreenProps {
   onChangeNumImposters: (count: number) => void;
   imposterClueEnabled: boolean;
   onToggleClueEnabled: (enabled: boolean) => void;
+  revealNameToImposter: boolean;
+  onToggleRevealNameToImposter: (enabled: boolean) => void;
   onStartGame: () => void;
 }
 
@@ -45,6 +47,8 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
   onChangeNumImposters,
   imposterClueEnabled,
   onToggleClueEnabled,
+  revealNameToImposter,
+  onToggleRevealNameToImposter,
   onStartGame,
 }) => {
   const maxImposters = Math.max(1, Math.floor(players.length / 2));
@@ -112,59 +116,75 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
           </View>
         </View>
 
-        {/* 2. Number of Imposters Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Number of Imposters</Text>
-          <View style={styles.stepperContainer}>
-            <Pressable
-              onPress={handleDecrementImposters}
-              disabled={numImposters <= 1}
-              style={[
-                styles.stepperButton,
-                numImposters <= 1 && styles.stepperButtonDisabled,
-              ]}
-              hitSlop={8}
-            >
-              <Text
-                style={[
-                  styles.stepperButtonText,
-                  numImposters <= 1 && styles.stepperButtonTextDisabled,
-                ]}
-              >
-                −
-              </Text>
-            </Pressable>
-
-            <View style={styles.stepperValueContainer}>
-              <Text style={styles.stepperValueText}>{numImposters}</Text>
-            </View>
-
-            <Pressable
-              onPress={handleIncrementImposters}
-              disabled={numImposters >= maxImposters}
-              style={[
-                styles.stepperButton,
-                numImposters >= maxImposters && styles.stepperButtonDisabled,
-              ]}
-              hitSlop={8}
-            >
-              <Text
-                style={[
-                  styles.stepperButtonText,
-                  numImposters >= maxImposters && styles.stepperButtonTextDisabled,
-                ]}
-              >
-                +
-              </Text>
-            </Pressable>
+        {/* 2. Spice It Up Section (Flame Orange) */}
+        <View style={styles.spicedSection}>
+          <View style={styles.spicedHeaderRow}>
+            <Text style={styles.spicedHeaderTitle}>🔥 Spice It Up</Text>
           </View>
-        </View>
 
-        {/* 3. Imposter Hint Section */}
-        <View style={styles.section}>
+          <View style={styles.spicedDivider} />
+
+          {/* Option 1: Number of Imposters */}
+          <View style={styles.spicedOptionRow}>
+            <View style={styles.switchTextContainer}>
+              <Text style={styles.sectionTitle}>Number of Imposters</Text>
+              <Text style={styles.sectionSubtitle}>
+                Max {maxImposters} for {players.length} players
+              </Text>
+            </View>
+            <View style={styles.stepperContainer}>
+              <Pressable
+                onPress={handleDecrementImposters}
+                disabled={numImposters <= 1}
+                style={[
+                  styles.stepperButton,
+                  numImposters <= 1 && styles.stepperButtonDisabled,
+                ]}
+                hitSlop={8}
+              >
+                <Text
+                  style={[
+                    styles.stepperButtonText,
+                    numImposters <= 1 && styles.stepperButtonTextDisabled,
+                  ]}
+                >
+                  −
+                </Text>
+              </Pressable>
+
+              <View style={styles.stepperValueContainer}>
+                <Text style={[styles.stepperValueText, { color: "#D84315" }]}>
+                  {numImposters}
+                </Text>
+              </View>
+
+              <Pressable
+                onPress={handleIncrementImposters}
+                disabled={numImposters >= maxImposters}
+                style={[
+                  styles.stepperButton,
+                  numImposters >= maxImposters && styles.stepperButtonDisabled,
+                ]}
+                hitSlop={8}
+              >
+                <Text
+                  style={[
+                    styles.stepperButtonText,
+                    numImposters >= maxImposters && styles.stepperButtonTextDisabled,
+                  ]}
+                >
+                  +
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+
+          <View style={styles.spicedDivider} />
+
+          {/* Option 2: Give hint to imposter */}
           <View style={styles.switchRow}>
             <View style={styles.switchTextContainer}>
-              <Text style={styles.sectionTitle}>Imposter Hint</Text>
+              <Text style={styles.sectionTitle}>Give hint to imposter</Text>
               <Text style={styles.sectionSubtitle}>
                 {imposterClueEnabled
                   ? "Enabled — Imposter gets a subtle clue"
@@ -174,7 +194,27 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
             <Switch
               value={imposterClueEnabled}
               onValueChange={onToggleClueEnabled}
-              trackColor={{ false: "#CBD5E1", true: colors.primary }}
+              trackColor={{ false: "#CBD5E1", true: "#FF5722" }}
+              thumbColor={colors.surface}
+            />
+          </View>
+
+          <View style={styles.spicedDivider} />
+
+          {/* Option 3: Reveal Name to Imposter */}
+          <View style={styles.switchRow}>
+            <View style={styles.switchTextContainer}>
+              <Text style={styles.sectionTitle}>Reveal Name to Imposter</Text>
+              <Text style={styles.sectionSubtitle}>
+                {revealNameToImposter
+                  ? "Enabled — Imposter also sees the Name"
+                  : "Disabled — Imposter does not know the Name"}
+              </Text>
+            </View>
+            <Switch
+              value={revealNameToImposter}
+              onValueChange={onToggleRevealNameToImposter}
+              trackColor={{ false: "#CBD5E1", true: "#FF5722" }}
               thumbColor={colors.surface}
             />
           </View>
@@ -264,6 +304,51 @@ const styles = StyleSheet.create({
     borderRadius: borderRadius.lg,
     padding: spacing.lg,
     marginBottom: spacing.lg,
+  },
+  spicedSection: {
+    backgroundColor: "#FFF7F2",
+    borderColor: "#FF5722",
+    borderWidth: 2,
+    borderRadius: borderRadius.lg,
+    padding: spacing.lg,
+    marginBottom: spacing.lg,
+  },
+  spicedHeaderRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  spicedHeaderTitle: {
+    fontFamily: courierFont,
+    fontSize: 18,
+    fontWeight: "800",
+    color: "#D84315",
+    letterSpacing: -0.3,
+  },
+  spicedBadge: {
+    backgroundColor: "rgba(255, 87, 34, 0.15)",
+    borderColor: "rgba(255, 87, 34, 0.4)",
+    borderWidth: 1,
+    borderRadius: 100,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+  },
+  spicedBadgeText: {
+    fontFamily: courierFont,
+    fontSize: 10,
+    fontWeight: "800",
+    color: "#D84315",
+    letterSpacing: 0.8,
+  },
+  spicedDivider: {
+    height: 1,
+    backgroundColor: "#FFD0B8",
+    marginVertical: spacing.md,
+  },
+  spicedOptionRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   sectionHeaderRow: {
     flexDirection: "row",

@@ -16,6 +16,8 @@ class SetupScreen extends StatelessWidget {
   final void Function(int count) onChangeNumImposters;
   final bool imposterClueEnabled;
   final void Function(bool enabled) onToggleClueEnabled;
+  final bool revealNameToImposter;
+  final void Function(bool enabled) onToggleRevealNameToImposter;
   final VoidCallback onStartGame;
   const SetupScreen({
     super.key,
@@ -30,6 +32,8 @@ class SetupScreen extends StatelessWidget {
     required this.onChangeNumImposters,
     required this.imposterClueEnabled,
     required this.onToggleClueEnabled,
+    required this.revealNameToImposter,
+    required this.onToggleRevealNameToImposter,
     required this.onStartGame,
   });
 
@@ -302,92 +306,193 @@ class SetupScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    // 2. Number of Imposters Section
-                    _buildCardSection(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Number of Imposters',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.textPrimary,
-                            ),
-                          ),
-                          const SizedBox(height: 14),
-                          Row(
-                            children: [
-                              _buildStepperButton(
-                                icon: Icons.remove_rounded,
-                                enabled: numImposters > 1,
-                                onTap: () {
-                                  if (numImposters > 1) {
-                                    onChangeNumImposters(numImposters - 1);
-                                  }
-                                },
-                              ),
-                              Container(
-                                width: 56,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  '$numImposters',
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w800,
-                                    color: AppColors.textPrimary,
-                                  ),
-                                ),
-                              ),
-                              _buildStepperButton(
-                                icon: Icons.add_rounded,
-                                enabled: numImposters < maxImposters,
-                                onTap: () {
-                                  if (numImposters < maxImposters) {
-                                    onChangeNumImposters(numImposters + 1);
-                                  }
-                                },
-                              ),
-                            ],
+                    // 2. Spice It Up Section (Flame Orange)
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        color: AppColors.flameOrangeBg,
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: AppColors.flameOrange, width: 2),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.flameOrange.withOpacity(0.12),
+                            blurRadius: 16,
+                            offset: const Offset(0, 4),
                           ),
                         ],
                       ),
-                    ),
-                    const SizedBox(height: 16),
-
-                    // 3. Imposter Hint Section
-                    _buildCardSection(
-                      child: Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Imposter Hint',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: AppColors.textPrimary,
-                                  ),
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  color: AppColors.flameOrange.withOpacity(0.15),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  imposterClueEnabled
-                                      ? 'Enabled — Imposter gets a subtle clue (decade, genre...)'
-                                      : 'Disabled — Imposter gets no clues at all',
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                  ),
+                                child: const Icon(
+                                  Icons.local_fire_department_rounded,
+                                  color: AppColors.flameOrange,
+                                  size: 22,
                                 ),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(width: 10),
+                              const Text(
+                                'Spice It Up',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800,
+                                  color: AppColors.flameOrangeDark,
+                                  letterSpacing: -0.3,
+                                ),
+                              ),
+                            ],
                           ),
-                          Switch(
-                            value: imposterClueEnabled,
-                            onChanged: onToggleClueEnabled,
-                            activeColor: AppColors.primary,
+                          const SizedBox(height: 16),
+                          Divider(color: AppColors.flameOrangeBorder.withOpacity(0.7), height: 1),
+                          const SizedBox(height: 14),
+
+                          // Option 1: Number of Imposters
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Number of Imposters',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.textPrimary,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 2),
+                                  Text(
+                                    'Max $maxImposters for ${players.length} players',
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  _buildStepperButton(
+                                    icon: Icons.remove_rounded,
+                                    enabled: numImposters > 1,
+                                    onTap: () {
+                                      if (numImposters > 1) {
+                                        onChangeNumImposters(numImposters - 1);
+                                      }
+                                    },
+                                  ),
+                                  Container(
+                                    width: 44,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      '$numImposters',
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800,
+                                        color: AppColors.flameOrangeDark,
+                                      ),
+                                    ),
+                                  ),
+                                  _buildStepperButton(
+                                    icon: Icons.add_rounded,
+                                    enabled: numImposters < maxImposters,
+                                    onTap: () {
+                                      if (numImposters < maxImposters) {
+                                        onChangeNumImposters(numImposters + 1);
+                                      }
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14),
+                          Divider(color: AppColors.flameOrangeBorder.withOpacity(0.7), height: 1),
+                          const SizedBox(height: 14),
+
+                          // Option 2: Give hint to imposter
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Give hint to imposter',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w700,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      imposterClueEnabled
+                                          ? 'Enabled — Imposter gets a subtle clue (genre, hint...)'
+                                          : 'Disabled — Imposter gets no clues at all',
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Switch(
+                                value: imposterClueEnabled,
+                                onChanged: onToggleClueEnabled,
+                                activeColor: AppColors.flameOrange,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14),
+                          Divider(color: AppColors.flameOrangeBorder.withOpacity(0.7), height: 1),
+                          const SizedBox(height: 14),
+
+                          // Option 3: Reveal Name to Imposter
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Reveal Name to Imposter',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w700,
+                                        color: AppColors.textPrimary,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      revealNameToImposter
+                                          ? 'Enabled — Imposter also sees the Name'
+                                          : 'Disabled — Imposter does not know the Name',
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Switch(
+                                value: revealNameToImposter,
+                                onChanged: onToggleRevealNameToImposter,
+                                activeColor: AppColors.flameOrange,
+                              ),
+                            ],
                           ),
                         ],
                       ),
