@@ -78,6 +78,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
   List<String> _players = ['', '', ''];
   int _numImposters = 1;
   bool _imposterClueEnabled = true;
+  bool _revealNameToImposter = false;
 
   // Active round state
   RoundState? _roundState;
@@ -143,6 +144,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           moviePool: kAllMovies,
           numImposters: _numImposters,
           imposterClueEnabled: _imposterClueEnabled,
+          revealNameToImposter: _revealNameToImposter,
           previousMovieId: _roundState?.movieId,
           previousClueKey: _previousClueKey,
           usedMovieIds: _usedMovieIds,
@@ -280,6 +282,12 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           onToggleClueEnabled: (enabled) {
             setState(() {
               _imposterClueEnabled = enabled;
+            });
+          },
+          revealNameToImposter: _revealNameToImposter,
+          onToggleRevealNameToImposter: (enabled) {
+            setState(() {
+              _revealNameToImposter = enabled;
             });
           },
           onStartGame: _handleStartGame,

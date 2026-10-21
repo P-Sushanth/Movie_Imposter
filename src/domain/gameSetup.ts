@@ -9,6 +9,7 @@ export interface CreateRoundParams {
   moviePool: Movie[];
   numImposters?: number;
   imposterClueEnabled?: boolean;
+  revealNameToImposter?: boolean;
   previousMovieId?: string;
   previousClueKey?: string;
   usedMovieIds?: Set<string>;
@@ -21,6 +22,7 @@ export function createRound({
   moviePool,
   numImposters = 1,
   imposterClueEnabled = true,
+  revealNameToImposter = false,
   previousMovieId,
   previousClueKey,
   usedMovieIds,
@@ -140,6 +142,7 @@ export function createRound({
           kind: "imposter",
           clueText: imposterClueEnabled && imposterClue ? imposterClue.displayText : undefined,
           clueLabel: imposterClueEnabled && imposterClue ? imposterClue.label : undefined,
+          revealedMovieTitle: revealNameToImposter ? selectedMovie!.title : undefined,
         },
       };
     } else {
@@ -173,6 +176,7 @@ export function createRound({
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled,
+    revealNameToImposter,
     imposterClueKey: imposterClue?.key,
     assignments,
     startingPlayer,

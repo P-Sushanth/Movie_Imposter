@@ -11,6 +11,7 @@ class CreateRoundParams {
   final List<Movie> moviePool;
   final int numImposters;
   final bool imposterClueEnabled;
+  final bool revealNameToImposter;
   final String? previousMovieId;
   final String? previousClueKey;
   final Set<String>? usedMovieIds;
@@ -22,6 +23,7 @@ class CreateRoundParams {
     required this.moviePool,
     this.numImposters = 1,
     this.imposterClueEnabled = true,
+    this.revealNameToImposter = false,
     this.previousMovieId,
     this.previousClueKey,
     this.usedMovieIds,
@@ -134,6 +136,7 @@ RoundState createRound(CreateRoundParams params) {
           role: ImposterRole(
             clueText: params.imposterClueEnabled && imposterClue != null ? imposterClue.displayText : null,
             clueLabel: params.imposterClueEnabled && imposterClue != null ? imposterClue.label : null,
+            revealedMovieTitle: params.revealNameToImposter ? selectedMovie.title : null,
           ),
         ),
       );
@@ -167,6 +170,7 @@ RoundState createRound(CreateRoundParams params) {
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled: params.imposterClueEnabled,
+    revealNameToImposter: params.revealNameToImposter,
     imposterClueKey: imposterClue?.key,
     assignments: assignments,
     startingPlayer: startingPlayer,

@@ -27,6 +27,7 @@ export default function App() {
   const [players, setPlayers] = useState<string[]>(["", "", ""]);
   const [numImposters, setNumImposters] = useState<number>(1);
   const [imposterClueEnabled, setImposterClueEnabled] = useState<boolean>(true);
+  const [revealNameToImposter, setRevealNameToImposter] = useState<boolean>(false);
 
   // Active round state
   const [roundState, setRoundState] = useState<RoundState | null>(null);
@@ -81,6 +82,7 @@ export default function App() {
         moviePool: ALL_MOVIES,
         numImposters,
         imposterClueEnabled,
+        revealNameToImposter,
         previousMovieId: roundState?.movieId,
         usedMovieIds,
       });
@@ -177,6 +179,8 @@ export default function App() {
               onChangeNumImposters={setNumImposters}
               imposterClueEnabled={imposterClueEnabled}
               onToggleClueEnabled={setImposterClueEnabled}
+              revealNameToImposter={revealNameToImposter}
+              onToggleRevealNameToImposter={setRevealNameToImposter}
               onStartGame={handleStartGame}
             />
           )}
