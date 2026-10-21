@@ -297,6 +297,41 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
               ),
             ),
             const SizedBox(height: 16),
+            if (role is ImposterRole && role.revealedMovieTitle != null) ...[
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                decoration: BoxDecoration(
+                  color: AppColors.flameOrangeBg,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: AppColors.flameOrange, width: 1.5),
+                ),
+                child: Column(
+                  children: [
+                    const Text(
+                      'TITLE',
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.flameOrangeDark,
+                        letterSpacing: 0.8,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      role.revealedMovieTitle!,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.textPrimary,
+                        letterSpacing: -0.3,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
             if (role is ImposterRole && role.clueText != null) ...[
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

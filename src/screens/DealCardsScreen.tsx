@@ -131,6 +131,12 @@ export const DealCardsScreen: React.FC<DealCardsScreenProps> = ({
                   <Text style={styles.roleBadgeText}>YOUR ROLE</Text>
                 </View>
                 <Text style={styles.imposterTitle}>IMPOSTER</Text>
+                {role.revealedMovieTitle ? (
+                  <View style={styles.revealedTitleBox}>
+                    <Text style={styles.revealedTitleLabel}>TITLE</Text>
+                    <Text style={styles.revealedTitleText}>{role.revealedMovieTitle}</Text>
+                  </View>
+                ) : null}
                 {role.clueText ? (
                   <View style={styles.clueBox}>
                     <Text style={styles.clueText}>{role.clueText}</Text>
@@ -255,6 +261,31 @@ const styles = StyleSheet.create({
     ...typography.h1,
     fontSize: 32,
     lineHeight: 40,
+    color: colors.textPrimary,
+    textAlign: "center",
+  },
+  revealedTitleBox: {
+    backgroundColor: "#FFF7F2",
+    borderColor: "#FF5722",
+    borderWidth: 1.5,
+    borderRadius: borderRadius.md,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.lg,
+    width: "100%",
+    alignItems: "center",
+    marginBottom: spacing.md,
+  },
+  revealedTitleLabel: {
+    fontSize: 10,
+    fontWeight: "800",
+    color: "#D84315",
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  revealedTitleText: {
+    ...typography.h3,
+    fontSize: 20,
+    fontWeight: "800",
     color: colors.textPrimary,
     textAlign: "center",
   },
