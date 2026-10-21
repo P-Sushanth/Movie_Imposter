@@ -37,6 +37,36 @@ describe("Game Setup & Role Assignment", () => {
     }
   });
 
+  it("handles revealNameToImposter option properly", () => {
+    // Disabled by default
+    const roundDefault = createRound({
+      players,
+      selectedIndustries: ["tollywood"],
+      moviePool: ALL_MOVIES,
+      revealNameToImposter: false,
+    });
+    const imposterDefault = roundDefault.assignments.find((a) => a.role.kind === "imposter");
+    expect(imposterDefault).toBeDefined();
+    if (imposterDefault && imposterDefault.role.kind === "imposter") {
+      expect(imposterDefault.role.revealedMovieTitle).toBeUndefined();
+    }
+    expect(roundDefault.revealNameToImposter).toBe(false);
+
+    // Enabled
+    const roundRevealed = createRound({
+      players,
+      selectedIndustries: ["tollywood"],
+      moviePool: ALL_MOVIES,
+      revealNameToImposter: true,
+    });
+    const imposterRevealed = roundRevealed.assignments.find((a) => a.role.kind === "imposter");
+    expect(imposterRevealed).toBeDefined();
+    if (imposterRevealed && imposterRevealed.role.kind === "imposter") {
+      expect(imposterRevealed.role.revealedMovieTitle).toBe(roundRevealed.movieTitle);
+    }
+    expect(roundRevealed.revealNameToImposter).toBe(true);
+  });
+
   it("assigns the exact same movie to all non-imposters", () => {
     const round = createRound({
       players,

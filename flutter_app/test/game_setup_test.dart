@@ -44,6 +44,34 @@ void main() {
       expect((imposter.role as ImposterRole).clueText, isNull);
     });
 
+    test('handles revealNameToImposter option properly', () {
+      // Disabled by default
+      final roundDefault = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+          revealNameToImposter: false,
+        ),
+      );
+      final imposterDefault = roundDefault.assignments.firstWhere((a) => a.role is ImposterRole);
+      expect((imposterDefault.role as ImposterRole).revealedMovieTitle, isNull);
+      expect(roundDefault.revealNameToImposter, isFalse);
+
+      // Enabled
+      final roundWithTitle = createRound(
+        CreateRoundParams(
+          players: players,
+          selectedIndustries: [Industry.tollywood],
+          moviePool: kAllMovies,
+          revealNameToImposter: true,
+        ),
+      );
+      final imposterRevealed = roundWithTitle.assignments.firstWhere((a) => a.role is ImposterRole);
+      expect((imposterRevealed.role as ImposterRole).revealedMovieTitle, equals(roundWithTitle.movieTitle));
+      expect(roundWithTitle.revealNameToImposter, isTrue);
+    });
+
     test('assigns the exact same movie to all non-imposters', () {
       final round = createRound(
         CreateRoundParams(
