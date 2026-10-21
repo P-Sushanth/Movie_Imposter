@@ -6,8 +6,6 @@ describe("Clue Generation", () => {
     id: "test-001",
     title: "Pokiri",
     industry: "tollywood",
-    releaseYear: 2006,
-    decade: "2000s",
     hero: "Mahesh Babu",
     director: "Puri Jagannadh",
     genre: "Action Thriller",
@@ -27,8 +25,6 @@ describe("Clue Generation", () => {
       id: "test-002",
       title: "Hero",
       industry: "bollywood",
-      releaseYear: 1983,
-      decade: "1980s",
       hero: "Hero",
       director: "Subhash Ghai",
       genre: "Action Romance",
@@ -48,13 +44,11 @@ describe("Clue Generation", () => {
     expect(clueFirst?.displayText).toBeTruthy();
   });
 
-  it("produces all 6 clues (releaseYear, decade, hero, director, genre, hint) for movies with hint", () => {
+  it("produces all 4 clues (hero, director, genre, hint) for movies with hint", () => {
     const movieWithHint: Movie = {
       id: "tollywood-001",
       title: "Badri",
       industry: "tollywood",
-      releaseYear: 2000,
-      decade: "2000s",
       hero: "Pawan Kalyan",
       director: "Puri Jagannadh",
       genre: "Action Romance",
@@ -63,9 +57,10 @@ describe("Clue Generation", () => {
 
     const clues = getCluesForMovie(movieWithHint);
     const keys = clues.map((c) => c.key);
-    expect(keys).toEqual(["release_year", "decade", "hero", "director", "genre", "hint"]);
-    expect(clues.find((c) => c.key === "release_year")?.displayText).toBe("Release Year: 2000");
+    expect(keys).toEqual(["hero", "director", "genre", "hint"]);
     expect(clues.find((c) => c.key === "hint")?.displayText).toBe("Hint: Bay Of Bengal");
+    expect(keys).not.toContain("release_year");
+    expect(keys).not.toContain("decade");
   });
 
   it("generates show clues for kdrama", () => {
@@ -73,8 +68,6 @@ describe("Clue Generation", () => {
       id: "kdrama-001",
       title: "Squid Game",
       industry: "kdrama",
-      releaseYear: 2021,
-      decade: "2020s",
       genre: "Survival Dystopian Thriller",
       productionHouse: "Netflix",
       seasonsCount: 2,
@@ -92,51 +85,28 @@ describe("Clue Generation", () => {
     expect(keys).toContain("end_year");
     expect(keys).toContain("adaptation_or_original");
     expect(keys).toContain("release_medium");
+    expect(keys).not.toContain("release_year");
+    expect(keys).not.toContain("decade");
   });
 
-  it("excludes releaseYear and decade when playerCount <= 4 (e.g. 3 or 4 players)", () => {
+  it("never includes release_year or decade regardless of player count", () => {
     const movieWithHint: Movie = {
       id: "tollywood-001",
       title: "Badri",
       industry: "tollywood",
-      releaseYear: 2000,
-      decade: "2000s",
       hero: "Pawan Kalyan",
       director: "Puri Jagannadh",
       genre: "Action Romance",
       hint: "Bay Of Bengal",
     };
 
-    const clues3 = getCluesForMovie(movieWithHint, 3);
-    const keys3 = clues3.map((c) => c.key);
-    expect(keys3).not.toContain("release_year");
-    expect(keys3).not.toContain("decade");
-    expect(keys3).toEqual(["hero", "director", "genre", "hint"]);
-
-    const clues4 = getCluesForMovie(movieWithHint, 4);
-    const keys4 = clues4.map((c) => c.key);
-    expect(keys4).not.toContain("release_year");
-    expect(keys4).not.toContain("decade");
-  });
-
-  it("includes releaseYear and decade when playerCount > 4 (e.g. 5+ players)", () => {
-    const movieWithHint: Movie = {
-      id: "tollywood-001",
-      title: "Badri",
-      industry: "tollywood",
-      releaseYear: 2000,
-      decade: "2000s",
-      hero: "Pawan Kalyan",
-      director: "Puri Jagannadh",
-      genre: "Action Romance",
-      hint: "Bay Of Bengal",
-    };
-
-    const clues5 = getCluesForMovie(movieWithHint, 5);
-    const keys5 = clues5.map((c) => c.key);
-    expect(keys5).toContain("release_year");
-    expect(keys5).toContain("decade");
-    expect(keys5).toEqual(["release_year", "decade", "hero", "director", "genre", "hint"]);
+    for (const pCount of [3, 4, 5, 8]) {
+      const clues = getCluesForMovie(movieWithHint, pCount);
+      const keys = clues.map((c) => c.key);
+      expect(keys).not.toContain("release_year");
+      expect(keys).not.toContain("decade");
+      expect(keys).toEqual(["hero", "director", "genre", "hint"]);
+    }
   });
 
   it("avoids repeating previousClueKey when multiple clues are available", () => {
@@ -144,8 +114,6 @@ describe("Clue Generation", () => {
       id: "tollywood-001",
       title: "Badri",
       industry: "tollywood",
-      releaseYear: 2000,
-      decade: "2000s",
       hero: "Pawan Kalyan",
       director: "Puri Jagannadh",
       genre: "Action Romance",
@@ -153,38 +121,28 @@ describe("Clue Generation", () => {
     };
 
     for (let i = 0; i < 20; i++) {
-      const clue = generateImposterClue(movieWithHint, Math.random, 5, "decade");
-      expect(clue?.key).not.toBe("decade");
+      const clue = generateImposterClue(movieWithHint, Math.random, 5, "genre");
+      expect(clue?.key).not.toBe("genre");
     }
   });
 
-  it("generates cartoon clues (releaseYear, decade, channel, countryOfOrigin, hint) for cartoons", () => {
+  it("generates cartoon clues (channel, countryOfOrigin, hint) for cartoons", () => {
     const sampleCartoon: Movie = {
       id: "cartoons-001",
       title: "Doraemon",
       industry: "cartoons",
-      releaseYear: 2005,
-      decade: "2000s",
       channel: "Hungama TV",
       countryOfOrigin: "Japan",
       hint: "Pipes",
     };
 
-    // 5+ players: all 5 clues present
-    const clues5 = getCluesForMovie(sampleCartoon, 5);
-    const keys5 = clues5.map((c) => c.key);
-    expect(keys5).toEqual(["release_year", "decade", "channel", "country_of_origin", "hint"]);
-    expect(clues5.find((c) => c.key === "channel")?.displayText).toBe("Channel: Hungama TV");
-    expect(clues5.find((c) => c.key === "country_of_origin")?.displayText).toBe("Country: Japan");
-    expect(clues5.find((c) => c.key === "hint")?.displayText).toBe("Hint: Pipes");
-
-    // 3 or 4 players: release_year and decade excluded
-    const clues3 = getCluesForMovie(sampleCartoon, 3);
-    const keys3 = clues3.map((c) => c.key);
-    expect(keys3).toEqual(["channel", "country_of_origin", "hint"]);
-
-    const clues4 = getCluesForMovie(sampleCartoon, 4);
-    const keys4 = clues4.map((c) => c.key);
-    expect(keys4).toEqual(["channel", "country_of_origin", "hint"]);
+    const clues = getCluesForMovie(sampleCartoon);
+    const keys = clues.map((c) => c.key);
+    expect(keys).toEqual(["channel", "country_of_origin", "hint"]);
+    expect(clues.find((c) => c.key === "channel")?.displayText).toBe("Channel: Hungama TV");
+    expect(clues.find((c) => c.key === "country_of_origin")?.displayText).toBe("Country: Japan");
+    expect(clues.find((c) => c.key === "hint")?.displayText).toBe("Hint: Pipes");
+    expect(keys).not.toContain("release_year");
+    expect(keys).not.toContain("decade");
   });
 });

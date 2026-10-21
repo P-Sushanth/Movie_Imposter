@@ -46,13 +46,12 @@ export function getCluesForShow(show: Movie, playerCount?: number): ClueItem[] {
   }
 
   // 3. Start Year (only included when player count is > 4)
-  if (canIncludeYear) {
-    const startYr = show.startYear ?? show.releaseYear;
+  if (canIncludeYear && show.startYear) {
     clues.push({
       key: "start_year",
       label: "Start Year",
-      value: `${startYr}`,
-      displayText: `Start Year: ${startYr}`,
+      value: `${show.startYear}`,
+      displayText: `Start Year: ${show.startYear}`,
     });
   }
 
@@ -91,33 +90,12 @@ export function getCluesForShow(show: Movie, playerCount?: number): ClueItem[] {
 
 /**
  * Formats cartoon features into cartoon-specific clues:
- * Release Year, Decade, Channel, Country of Origin, and Hint.
+ * Channel, Country of Origin, and Hint.
  */
 export function getCluesForCartoon(cartoon: Movie, playerCount?: number): ClueItem[] {
   const clues: ClueItem[] = [];
-  const canIncludeYear = playerCount === undefined || playerCount > 4;
 
-  // 1. Release Year (disabled when playerCount is 3 or 4)
-  if (canIncludeYear && cartoon.releaseYear && !clueContainsTitle(cartoon.title, String(cartoon.releaseYear))) {
-    clues.push({
-      key: "release_year",
-      label: "Release Year",
-      value: String(cartoon.releaseYear),
-      displayText: `Release Year: ${cartoon.releaseYear}`,
-    });
-  }
-
-  // 2. Decade (disabled when playerCount is 3 or 4)
-  if (canIncludeYear && cartoon.decade && !clueContainsTitle(cartoon.title, cartoon.decade)) {
-    clues.push({
-      key: "decade",
-      label: "Decade",
-      value: cartoon.decade,
-      displayText: `Decade: ${cartoon.decade}`,
-    });
-  }
-
-  // 3. Channel
+  // 1. Channel
   if (cartoon.channel && !clueContainsTitle(cartoon.title, cartoon.channel)) {
     clues.push({
       key: "channel",
@@ -127,7 +105,7 @@ export function getCluesForCartoon(cartoon: Movie, playerCount?: number): ClueIt
     });
   }
 
-  // 4. Country of Origin
+  // 2. Country of Origin
   if (cartoon.countryOfOrigin && !clueContainsTitle(cartoon.title, cartoon.countryOfOrigin)) {
     clues.push({
       key: "country_of_origin",
@@ -137,7 +115,7 @@ export function getCluesForCartoon(cartoon: Movie, playerCount?: number): ClueIt
     });
   }
 
-  // 5. Hint
+  // 3. Hint
   if (cartoon.hint && !clueContainsTitle(cartoon.title, cartoon.hint)) {
     clues.push({
       key: "hint",
@@ -163,29 +141,8 @@ export function getCluesForMovie(movie: Movie, playerCount?: number): ClueItem[]
   }
 
   const clues: ClueItem[] = [];
-  const canIncludeYear = playerCount === undefined || playerCount > 4;
 
-  // 1. Release Year (only included when player count is > 4)
-  if (canIncludeYear && movie.releaseYear && !clueContainsTitle(movie.title, String(movie.releaseYear))) {
-    clues.push({
-      key: "release_year",
-      label: "Release Year",
-      value: String(movie.releaseYear),
-      displayText: `Release Year: ${movie.releaseYear}`,
-    });
-  }
-
-  // 2. Decade (only included when player count is > 4)
-  if (canIncludeYear && movie.decade && !clueContainsTitle(movie.title, movie.decade)) {
-    clues.push({
-      key: "decade",
-      label: "Decade",
-      value: movie.decade,
-      displayText: `Decade: ${movie.decade}`,
-    });
-  }
-
-  // 3. Hero
+  // 1. Hero
   if (movie.hero && !clueContainsTitle(movie.title, movie.hero)) {
     clues.push({
       key: "hero",
@@ -195,7 +152,7 @@ export function getCluesForMovie(movie: Movie, playerCount?: number): ClueItem[]
     });
   }
 
-  // 4. Director
+  // 2. Director
   if (movie.director && !clueContainsTitle(movie.title, movie.director)) {
     clues.push({
       key: "director",
@@ -205,7 +162,7 @@ export function getCluesForMovie(movie: Movie, playerCount?: number): ClueItem[]
     });
   }
 
-  // 5. Genre
+  // 3. Genre
   if (movie.genre && !clueContainsTitle(movie.title, movie.genre)) {
     clues.push({
       key: "genre",
@@ -215,7 +172,7 @@ export function getCluesForMovie(movie: Movie, playerCount?: number): ClueItem[]
     });
   }
 
-  // 6. Hint
+  // 4. Hint
   if (movie.hint && !clueContainsTitle(movie.title, movie.hint)) {
     clues.push({
       key: "hint",

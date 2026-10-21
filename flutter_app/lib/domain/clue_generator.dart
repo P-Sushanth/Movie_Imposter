@@ -46,13 +46,12 @@ List<ClueItem> getCluesForShow(Movie show, {int? playerCount}) {
   }
 
   // 3. Start Year (only included when player count is > 4)
-  if (canIncludeYear) {
-    final startYr = show.startYear ?? show.releaseYear;
+  if (canIncludeYear && show.startYear != null) {
     clues.add(ClueItem(
       key: 'start_year',
       label: 'Start Year',
-      value: '$startYr',
-      displayText: 'Start Year: $startYr',
+      value: '${show.startYear}',
+      displayText: 'Start Year: ${show.startYear}',
     ));
   }
 
@@ -90,32 +89,11 @@ List<ClueItem> getCluesForShow(Movie show, {int? playerCount}) {
 }
 
 /// Formats cartoon features into cartoon-specific clues:
-/// Release Year, Decade, Channel, Country of Origin, and Hint.
+/// Channel, Country of Origin, and Hint.
 List<ClueItem> getCluesForCartoon(Movie cartoon, {int? playerCount}) {
   final clues = <ClueItem>[];
-  final canIncludeYear = playerCount == null || playerCount > 4;
 
-  // 1. Release Year (disabled when playerCount is 3 or 4)
-  if (canIncludeYear && cartoon.releaseYear > 0 && !clueContainsTitle(cartoon.title, cartoon.releaseYear.toString())) {
-    clues.add(ClueItem(
-      key: 'release_year',
-      label: 'Release Year',
-      value: cartoon.releaseYear.toString(),
-      displayText: 'Release Year: ${cartoon.releaseYear}',
-    ));
-  }
-
-  // 2. Decade (disabled when playerCount is 3 or 4)
-  if (canIncludeYear && cartoon.decade.isNotEmpty && !clueContainsTitle(cartoon.title, cartoon.decade)) {
-    clues.add(ClueItem(
-      key: 'decade',
-      label: 'Decade',
-      value: cartoon.decade,
-      displayText: 'Decade: ${cartoon.decade}',
-    ));
-  }
-
-  // 3. Channel
+  // 1. Channel
   if (cartoon.channel != null &&
       cartoon.channel!.isNotEmpty &&
       !clueContainsTitle(cartoon.title, cartoon.channel!)) {
@@ -127,7 +105,7 @@ List<ClueItem> getCluesForCartoon(Movie cartoon, {int? playerCount}) {
     ));
   }
 
-  // 4. Country of Origin
+  // 2. Country of Origin
   if (cartoon.countryOfOrigin != null &&
       cartoon.countryOfOrigin!.isNotEmpty &&
       !clueContainsTitle(cartoon.title, cartoon.countryOfOrigin!)) {
@@ -139,7 +117,7 @@ List<ClueItem> getCluesForCartoon(Movie cartoon, {int? playerCount}) {
     ));
   }
 
-  // 5. Hint
+  // 3. Hint
   if (cartoon.hint != null &&
       cartoon.hint!.isNotEmpty &&
       !clueContainsTitle(cartoon.title, cartoon.hint!)) {
@@ -165,29 +143,8 @@ List<ClueItem> getCluesForMovie(Movie movie, {int? playerCount}) {
   }
 
   final clues = <ClueItem>[];
-  final canIncludeYear = playerCount == null || playerCount > 4;
 
-  // 1. Release Year (only included when player count is > 4)
-  if (canIncludeYear && movie.releaseYear > 0 && !clueContainsTitle(movie.title, movie.releaseYear.toString())) {
-    clues.add(ClueItem(
-      key: 'release_year',
-      label: 'Release Year',
-      value: movie.releaseYear.toString(),
-      displayText: 'Release Year: ${movie.releaseYear}',
-    ));
-  }
-
-  // 2. Decade (only included when player count is > 4)
-  if (canIncludeYear && movie.decade.isNotEmpty && !clueContainsTitle(movie.title, movie.decade)) {
-    clues.add(ClueItem(
-      key: 'decade',
-      label: 'Decade',
-      value: movie.decade,
-      displayText: 'Decade: ${movie.decade}',
-    ));
-  }
-
-  // 3. Hero
+  // 1. Hero
   if (movie.hero.isNotEmpty && !clueContainsTitle(movie.title, movie.hero)) {
     clues.add(ClueItem(
       key: 'hero',
@@ -197,7 +154,7 @@ List<ClueItem> getCluesForMovie(Movie movie, {int? playerCount}) {
     ));
   }
 
-  // 4. Director
+  // 2. Director
   if (movie.director.isNotEmpty && !clueContainsTitle(movie.title, movie.director)) {
     clues.add(ClueItem(
       key: 'director',
@@ -207,7 +164,7 @@ List<ClueItem> getCluesForMovie(Movie movie, {int? playerCount}) {
     ));
   }
 
-  // 5. Genre
+  // 3. Genre
   if (movie.genre.isNotEmpty && !clueContainsTitle(movie.title, movie.genre)) {
     clues.add(ClueItem(
       key: 'genre',
@@ -217,7 +174,7 @@ List<ClueItem> getCluesForMovie(Movie movie, {int? playerCount}) {
     ));
   }
 
-  // 6. Hint
+  // 4. Hint
   if (movie.hint != null && movie.hint!.isNotEmpty && !clueContainsTitle(movie.title, movie.hint!)) {
     clues.add(ClueItem(
       key: 'hint',
