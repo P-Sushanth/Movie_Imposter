@@ -24,8 +24,6 @@ for (const m of all) {
   out += "    id: '" + escapeDart(m.id) + "',\n";
   out += "    title: '" + escapeDart(m.title) + "',\n";
   out += '    industry: Industry.' + m.industry.toLowerCase() + ',\n';
-  out += '    releaseYear: ' + m.releaseYear + ',\n';
-  out += "    decade: '" + escapeDart(m.decade) + "',\n";
   if (m.industry === 'cartoons') {
     if (m.channel) out += "    channel: '" + escapeDart(m.channel) + "',\n";
     if (m.countryOfOrigin) out += "    countryOfOrigin: '" + escapeDart(m.countryOfOrigin) + "',\n";

@@ -10,8 +10,6 @@ export type Industry =
   | "sandalwood";
 
 export type ClueFeatureKey =
-  | "release_year"
-  | "decade"
   | "hero"
   | "director"
   | "genre"
@@ -29,8 +27,6 @@ export interface Movie {
   id: string;
   title: string;
   industry: Industry;
-  releaseYear: number;
-  decade: string;
   hero?: string;
   director?: string;
   genre?: string;

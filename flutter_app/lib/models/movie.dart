@@ -66,8 +66,6 @@ class Movie {
   final String id;
   final String title;
   final Industry industry;
-  final int releaseYear;
-  final String decade;
   final String hero;
   final String director;
   final String genre;
@@ -89,8 +87,6 @@ class Movie {
     required this.id,
     required this.title,
     required this.industry,
-    required this.releaseYear,
-    required this.decade,
     this.hero = '',
     this.director = '',
     this.genre = '',
@@ -110,8 +106,6 @@ class Movie {
       id: json['id'] as String,
       title: json['title'] as String,
       industry: IndustryExtension.fromString(json['industry'] as String),
-      releaseYear: json['releaseYear'] as int,
-      decade: json['decade'] as String,
       hero: (json['hero'] as String?) ?? '',
       director: (json['director'] as String?) ?? '',
       genre: (json['genre'] as String?) ?? '',
@@ -132,8 +126,6 @@ class Movie {
       'id': id,
       'title': title,
       'industry': industry.id,
-      'releaseYear': releaseYear,
-      'decade': decade,
       if (hero.isNotEmpty) 'hero': hero,
       if (director.isNotEmpty) 'director': director,
       if (genre.isNotEmpty) 'genre': genre,
