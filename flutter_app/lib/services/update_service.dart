@@ -70,8 +70,9 @@ bool isVersionNewer(String latest, String current) {
 List<String> parseReleaseFeatures(String? notes) {
   if (notes == null || notes.trim().isEmpty) {
     return const [
-      'Performance enhancements and stability fixes',
-      'Smoother game experience and UI refinements',
+      'App package size reduction & performance optimizations',
+      'Smoother 60fps animations and faster app startup',
+      'Bug fixes and offline gameplay improvements',
     ];
   }
 
