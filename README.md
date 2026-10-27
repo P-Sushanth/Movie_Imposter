@@ -70,9 +70,16 @@ flutter test
 flutter run
 ```
 
-To build a new standalone APK:
+To build the standalone APK:
 ```bash
-flutter build apk --release --android-skip-build-dependency-validation
+# Lightweight APK for modern phones (~16MB, recommended)
+flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/app/outputs/symbols --android-skip-build-dependency-validation
+
+# Universal APK (~45MB)
+flutter build apk --release --obfuscate --split-debug-info=build/app/outputs/symbols --android-skip-build-dependency-validation
+
+# Or use automated multi-target build script:
+python scripts/build_optimized_apks.py
 ```
 
 ### React Native / Expo App
