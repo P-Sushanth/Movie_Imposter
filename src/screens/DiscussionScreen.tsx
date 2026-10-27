@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, Alert } from "react-native";
-import { colors, spacing, typography, borderRadius } from "../theme";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, Alert, Vibration } from "react-native";
+import { colors, spacing, typography, borderRadius, courierFont } from "../theme";
 import { PrimaryButton } from "../components/PrimaryButton";
 
 interface DiscussionScreenProps {
@@ -8,6 +8,7 @@ interface DiscussionScreenProps {
   imposters: string[];
   startingPlayer?: string;
   discussionOrder?: string[];
+  discussionTimerMinutes?: number;
   onReturnToSetup: () => void;
   onNextRound: () => void;
 }
@@ -17,15 +18,45 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   imposters,
   startingPlayer,
   discussionOrder,
+  discussionTimerMinutes = 0,
   onReturnToSetup,
   onNextRound,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
+  const [remainingSeconds, setRemainingSeconds] = useState(
+    discussionTimerMinutes > 0 ? discussionTimerMinutes * 60 : 0
+  );
+
+  useEffect(() => {
+    if (!discussionTimerMinutes || discussionTimerMinutes <= 0 || isRevealed) {
+      return;
+    }
+    setRemainingSeconds(discussionTimerMinutes * 60);
+    const interval = setInterval(() => {
+      setRemainingSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          try {
+            Vibration.vibrate([0, 500, 200, 500]);
+          } catch (_) {}
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [discussionTimerMinutes, isRevealed]);
+
+  const formatTimer = (totalSeconds: number) => {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
 
   const handleNextRoundClick = () => {
     Alert.alert(
       "Start Next Round?",
-      "Are you sure you want to start the next round? The phone will be passed around from the first player again with the same imposter and title.",
+      "Are you sure you want to start the next round? The phone will be passed around from the first player again with a new name and the same imposter.",
       [
         { text: "Cancel", style: "cancel" },
         {
@@ -70,6 +101,46 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
                 <Text style={styles.startingName}>{startingPlayer}</Text>
                 <Text style={styles.startingDesc}>
                   {startingPlayer} speaks first or asks the first question!
+                </Text>
+              </View>
+            )}
+
+            {discussionTimerMinutes > 0 && (
+              <View
+                style={[
+                  styles.timerCard,
+                  remainingSeconds === 0
+                    ? styles.timerCardExpired
+                    : remainingSeconds <= 30
+                    ? styles.timerCardWarning
+                    : null,
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.timerBadge,
+                    remainingSeconds === 0
+                      ? styles.timerBadgeExpired
+                      : remainingSeconds <= 30
+                      ? styles.timerBadgeWarning
+                      : null,
+                  ]}
+                >
+                  {remainingSeconds === 0
+                    ? "⏱️ TIME'S UP! VOTE NOW"
+                    : "⏱️ DISCUSSION TIME REMAINING"}
+                </Text>
+                <Text
+                  style={[
+                    styles.timerText,
+                    remainingSeconds === 0
+                      ? styles.timerTextExpired
+                      : remainingSeconds <= 30
+                      ? styles.timerTextWarning
+                      : null,
+                  ]}
+                >
+                  {formatTimer(remainingSeconds)}
                 </Text>
               </View>
             )}
@@ -317,5 +388,50 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     width: "100%",
+  },
+  timerCard: {
+    width: "100%",
+    backgroundColor: colors.surface,
+    borderWidth: 2,
+    borderColor: colors.surfaceBorder,
+    borderRadius: borderRadius.lg,
+    padding: spacing.md,
+    alignItems: "center",
+    marginVertical: spacing.sm,
+  },
+  timerCardWarning: {
+    backgroundColor: "#FFF7F2",
+    borderColor: "#FF5722",
+  },
+  timerCardExpired: {
+    backgroundColor: colors.imposterRedBg,
+    borderColor: colors.imposterRed,
+  },
+  timerBadge: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "800",
+    color: colors.textSecondary,
+    letterSpacing: 1,
+    marginBottom: spacing.xs,
+  },
+  timerBadgeWarning: {
+    color: "#D84315",
+  },
+  timerBadgeExpired: {
+    color: colors.imposterRed,
+  },
+  timerText: {
+    fontSize: 36,
+    fontWeight: "900",
+    color: colors.textPrimary,
+    fontFamily: courierFont,
+    letterSpacing: 1.5,
+  },
+  timerTextWarning: {
+    color: "#D84315",
+  },
+  timerTextExpired: {
+    color: colors.imposterRed,
   },
 });
