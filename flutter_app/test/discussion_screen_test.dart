@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:movie_imposter/domain/game_setup.dart';
 import 'package:movie_imposter/models/movie.dart';
+import 'package:movie_imposter/models/role.dart';
 import 'package:movie_imposter/screens/discussion_screen.dart';
 
 void main() {
@@ -63,7 +65,7 @@ void main() {
       expect(find.text('Start Next Round?'), findsOneWidget);
       expect(
         find.text(
-          'Are you sure you want to start the next round? The phone will be passed around from the first player again with the same imposter and title.',
+          'Are you sure you want to start the next round? The phone will be passed around from the first player again with a new name and the same imposter.',
         ),
         findsOneWidget,
       );
@@ -130,6 +132,94 @@ void main() {
       // Tap Back to Setup
       await tester.tap(find.text('Back to Setup'));
       expect(returnToSetupCalled, isTrue);
+    });
+
+    testWidgets('discussion timer is hidden when discussionTimerMinutes is 0', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: DiscussionScreen(
+            movieTitle: 'Inception',
+            imposters: const ['Alice'],
+            startingPlayer: 'Bob',
+            industry: Industry.hollywood,
+            discussionTimerMinutes: 0,
+            onReturnToSetup: () {},
+            onNextRound: () {},
+          ),
+        ),
+      );
+
+      expect(find.text('DISCUSSION TIME REMAINING'), findsNothing);
+    });
+
+    testWidgets('discussion timer counts down and displays times up message when expired', (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: DiscussionScreen(
+            movieTitle: 'Inception',
+            imposters: const ['Alice'],
+            startingPlayer: 'Bob',
+            industry: Industry.hollywood,
+            discussionTimerMinutes: 1,
+            onReturnToSetup: () {},
+            onNextRound: () {},
+          ),
+        ),
+      );
+
+      expect(find.text('DISCUSSION TIME REMAINING'), findsOneWidget);
+      expect(find.text('01:00'), findsOneWidget);
+
+      // Advance 1 second
+      await tester.pump(const Duration(seconds: 1));
+      expect(find.text('00:59'), findsOneWidget);
+
+      // Advance 59 more seconds to hit 0
+      await tester.pump(const Duration(seconds: 59));
+      expect(find.text('00:00'), findsOneWidget);
+      expect(find.text("TIME'S UP! VOTE NOW"), findsOneWidget);
+    });
+
+    test('createNextRound selects a new movie from selected categories and preserves the imposter', () {
+      const pool = [
+        Movie(
+          id: 'm1',
+          title: 'Movie One',
+          industry: Industry.tollywood,
+          genre: 'Action',
+        ),
+        Movie(
+          id: 'm2',
+          title: 'Movie Two',
+          industry: Industry.tollywood,
+          genre: 'Comedy',
+        ),
+      ];
+
+      final round1 = createRound(
+        CreateRoundParams(
+          players: ['Alice', 'Bob', 'Charlie'],
+          selectedIndustries: [Industry.tollywood],
+          moviePool: pool,
+          numImposters: 1,
+          imposterClueEnabled: false,
+        ),
+      );
+
+      final nextRound = createNextRound(
+        round1,
+        moviePool: pool,
+        usedMovieIds: {round1.movieId},
+      );
+
+      expect(nextRound.imposters, equals(round1.imposters));
+      expect(nextRound.movieId, isNot(equals(round1.movieId)));
+      expect(nextRound.currentCardIndex, equals(0));
+
+      final normalAssignment = nextRound.assignments.firstWhere(
+        (a) => a.role is NormalPlayerRole,
+      );
+      expect((normalAssignment.role as NormalPlayerRole).movieTitle, equals(nextRound.movieTitle));
     });
   });
 }
