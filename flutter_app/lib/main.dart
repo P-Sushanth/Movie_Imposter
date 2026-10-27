@@ -194,6 +194,18 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
     }
   }
 
+  void _handleNextRound() {
+    if (_roundState != null) {
+      setState(() {
+        _roundState = _roundState!.copyWith(
+          currentCardIndex: 0,
+          phase: RoundPhase.dealing,
+        );
+        _currentScreen = ScreenState.dealing;
+      });
+    }
+  }
+
   void _handleReturnToSetup() {
     setState(() {
       _roundState = null;
@@ -311,6 +323,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           startingPlayer: _roundState!.startingPlayer,
           industry: _roundState!.industry,
           onReturnToSetup: _handleReturnToSetup,
+          onNextRound: _handleNextRound,
         );
     }
   }

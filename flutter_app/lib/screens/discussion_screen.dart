@@ -8,6 +8,7 @@ class DiscussionScreen extends StatefulWidget {
   final List<String> imposters;
   final String startingPlayer;
   final VoidCallback onReturnToSetup;
+  final VoidCallback onNextRound;
   final Industry? industry;
 
   const DiscussionScreen({
@@ -16,6 +17,7 @@ class DiscussionScreen extends StatefulWidget {
     required this.imposters,
     required this.startingPlayer,
     required this.onReturnToSetup,
+    required this.onNextRound,
     this.industry,
   });
 
@@ -25,6 +27,41 @@ class DiscussionScreen extends StatefulWidget {
 
 class _DiscussionScreenState extends State<DiscussionScreen> {
   bool _isRevealed = false;
+
+  void _handleNextRoundClick() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.surface,
+        title: const Text(
+          'Start Next Round?',
+          style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textPrimary),
+        ),
+        content: const Text(
+          'Are you sure you want to start the next round? The phone will be passed around from the first player again with the same imposter and title.',
+          style: TextStyle(color: AppColors.textSecondary),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Cancel', style: TextStyle(color: AppColors.textSecondary)),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              widget.onNextRound();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.textOnPrimary,
+              elevation: 0,
+            ),
+            child: const Text('Next Round'),
+          ),
+        ],
+      ),
+    );
+  }
 
   void _handleRevealClick() {
     showDialog(
@@ -237,12 +274,25 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                 ),
               ),
 
-              // Action Button
-              PrimaryButton(
-                title: !_isRevealed ? 'Reveal Imposter' : 'Back to Setup',
-                variant: !_isRevealed ? ButtonVariant.danger : ButtonVariant.primary,
-                onPress: !_isRevealed ? _handleRevealClick : widget.onReturnToSetup,
-              ),
+              // Action Buttons
+              if (!_isRevealed) ...[
+                PrimaryButton(
+                  title: 'Next Round',
+                  variant: ButtonVariant.primary,
+                  onPress: _handleNextRoundClick,
+                ),
+                const SizedBox(height: 12),
+                PrimaryButton(
+                  title: 'Reveal Imposter',
+                  variant: ButtonVariant.danger,
+                  onPress: _handleRevealClick,
+                ),
+              ] else
+                PrimaryButton(
+                  title: 'Back to Setup',
+                  variant: ButtonVariant.primary,
+                  onPress: widget.onReturnToSetup,
+                ),
             ],
           ),
         ),

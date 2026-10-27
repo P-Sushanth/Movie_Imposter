@@ -117,6 +117,18 @@ export default function App() {
     }
   };
 
+  // Next Round handler (restarts card dealing from player 1 with same imposter and title)
+  const handleNextRound = () => {
+    if (roundState) {
+      setRoundState({
+        ...roundState,
+        currentCardIndex: 0,
+        phase: "dealing",
+      });
+      setCurrentScreen("dealing");
+    }
+  };
+
   // Return to Setup handler
   const handleReturnToSetup = () => {
     setRoundState(null);
@@ -201,6 +213,7 @@ export default function App() {
               startingPlayer={roundState.startingPlayer}
               discussionOrder={roundState.discussionOrder}
               onReturnToSetup={handleReturnToSetup}
+              onNextRound={handleNextRound}
             />
           )}
         </View>

@@ -9,6 +9,7 @@ interface DiscussionScreenProps {
   startingPlayer?: string;
   discussionOrder?: string[];
   onReturnToSetup: () => void;
+  onNextRound: () => void;
 }
 
 export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
@@ -17,8 +18,23 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   startingPlayer,
   discussionOrder,
   onReturnToSetup,
+  onNextRound,
 }) => {
   const [isRevealed, setIsRevealed] = useState(false);
+
+  const handleNextRoundClick = () => {
+    Alert.alert(
+      "Start Next Round?",
+      "Are you sure you want to start the next round? The phone will be passed around from the first player again with the same imposter and title.",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Next Round",
+          onPress: onNextRound,
+        },
+      ]
+    );
+  };
 
   const handleRevealClick = () => {
     // Step 13: Double verification prompt
@@ -107,15 +123,24 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
         )}
       </View>
 
-      {/* Step 12: Single button */}
+      {/* Footer Buttons */}
       <View style={styles.footer}>
         {!isRevealed ? (
-          <PrimaryButton
-            title="Reveal Imposter"
-            variant="danger"
-            onPress={handleRevealClick}
-            style={styles.actionButton}
-          />
+          <View style={styles.buttonStack}>
+            <PrimaryButton
+              title="Next Round"
+              variant="primary"
+              onPress={handleNextRoundClick}
+              style={styles.actionButton}
+            />
+            <View style={{ height: spacing.sm }} />
+            <PrimaryButton
+              title="Reveal Imposter"
+              variant="danger"
+              onPress={handleRevealClick}
+              style={styles.actionButton}
+            />
+          </View>
         ) : (
           <PrimaryButton
             title="Back to Setup"
@@ -137,6 +162,9 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxxl,
     paddingBottom: spacing.xl,
     justifyContent: "space-between",
+  },
+  buttonStack: {
+    width: "100%",
   },
   centerSection: {
     flex: 1,

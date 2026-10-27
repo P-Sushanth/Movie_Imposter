@@ -96,6 +96,7 @@ Starting with **v1.2.3**, Movie Imposter provides **3 optimized APK variants**. 
    - Tap **Start Discussion** to spotlight a **randomly chosen player** to start the round!
    - Players discuss the movie/show/cartoon and ask questions without leaking the title directly.
    - The imposter tries to blend in using their subtle clue or knowledge of the title!
+   - **🔄 Next Round**: If players cannot identify the imposter, tap **Next Round** to pass the phone around from the first player again with the same imposter and title for another round of clues!
    - Vote on who the imposter is, then tap **Reveal Imposter** to see if the group won.
 
 ---
