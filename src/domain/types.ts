@@ -27,15 +27,24 @@ export interface RoundState {
   movieId: string;
   movieTitle: string;
   industry: Industry;
+  selectedIndustries: Industry[];
   players: string[];
   imposters: string[]; // names of the imposters
   numImposters: number;
   imposterClueEnabled: boolean;
   revealNameToImposter: boolean;
+  discussionTimerMinutes: number;
   imposterClueKey?: string;
   assignments: PlayerAssignment[];
   startingPlayer: string;
   discussionOrder: string[];
   currentCardIndex: number;
   phase: "dealing" | "discussion";
+}
+
+export interface PlayerGroup {
+  id: string;
+  name: string;
+  players: string[];
+  createdAt: number;
 }
