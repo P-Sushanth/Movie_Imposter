@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../models/movie.dart';
 import '../theme/app_colors.dart';
 import '../widgets/primary_button.dart';
@@ -9,6 +11,7 @@ class DiscussionScreen extends StatefulWidget {
   final String startingPlayer;
   final VoidCallback onReturnToSetup;
   final VoidCallback onNextRound;
+  final int discussionTimerMinutes;
   final Industry? industry;
 
   const DiscussionScreen({
@@ -18,6 +21,7 @@ class DiscussionScreen extends StatefulWidget {
     required this.startingPlayer,
     required this.onReturnToSetup,
     required this.onNextRound,
+    this.discussionTimerMinutes = 0,
     this.industry,
   });
 
@@ -27,24 +31,105 @@ class DiscussionScreen extends StatefulWidget {
 
 class _DiscussionScreenState extends State<DiscussionScreen> {
   bool _isRevealed = false;
+  Timer? _timer;
+  int _remainingSeconds = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.discussionTimerMinutes > 0) {
+      _remainingSeconds = widget.discussionTimerMinutes * 60;
+      _startTimer();
+    }
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      if (_remainingSeconds > 0) {
+        setState(() {
+          _remainingSeconds--;
+        });
+        if (_remainingSeconds == 0) {
+          timer.cancel();
+          _triggerTimesUpVibration();
+        }
+      } else {
+        timer.cancel();
+      }
+    });
+  }
+
+  void _triggerTimesUpVibration() {
+    try {
+      HapticFeedback.vibrate();
+    } catch (_) {}
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  String _formatTimerDisplay(int totalSeconds) {
+    final minutes = totalSeconds ~/ 60;
+    final seconds = totalSeconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+  }
 
   void _handleNextRoundClick() {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.surface,
-        title: const Text(
-          'Start Next Round?',
-          style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textPrimary),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: AppColors.surfaceBorder, width: 1.5),
+        ),
+        titlePadding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        contentPadding: const EdgeInsets.fromLTRB(20, 14, 20, 16),
+        actionsPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        title: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(Icons.replay_rounded, color: AppColors.primary, size: 20),
+            ),
+            const SizedBox(width: 10),
+            const Expanded(
+              child: Text(
+                'Start Next Round?',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+            ),
+          ],
         ),
         content: const Text(
-          'Are you sure you want to start the next round? The phone will be passed around from the first player again with the same imposter and title.',
-          style: TextStyle(color: AppColors.textSecondary),
+          'Are you sure you want to start the next round? The phone will be passed around from the first player again with a new name and the same imposter.',
+          style: TextStyle(fontSize: 14, color: AppColors.textSecondary, height: 1.4),
         ),
         actions: [
-          TextButton(
+          OutlinedButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel', style: TextStyle(color: AppColors.textSecondary)),
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: AppColors.surfaceBorderDark),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            ),
+            child: const Text('Cancel', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textSecondary)),
           ),
           ElevatedButton(
             onPressed: () {
@@ -55,8 +140,10 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
               backgroundColor: AppColors.primary,
               foregroundColor: AppColors.textOnPrimary,
               elevation: 0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             ),
-            child: const Text('Next Round'),
+            child: const Text('Next Round', style: TextStyle(fontWeight: FontWeight.w700)),
           ),
         ],
       ),
@@ -68,22 +155,54 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.surface,
-        title: const Text(
-          'Reveal Imposter?',
-          style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textPrimary),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: AppColors.surfaceBorder, width: 1.5),
+        ),
+        titlePadding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        contentPadding: const EdgeInsets.fromLTRB(20, 14, 20, 16),
+        actionsPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        title: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                color: AppColors.danger.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(Icons.visibility_rounded, color: AppColors.danger, size: 20),
+            ),
+            const SizedBox(width: 10),
+            const Expanded(
+              child: Text(
+                'Reveal Imposter?',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+            ),
+          ],
         ),
         content: const Text(
           'Are you sure you want to end the discussion and reveal the imposter?',
-          style: TextStyle(color: AppColors.textSecondary),
+          style: TextStyle(fontSize: 14, color: AppColors.textSecondary, height: 1.4),
         ),
         actions: [
-          TextButton(
+          OutlinedButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Cancel', style: TextStyle(color: AppColors.textSecondary)),
+            style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: AppColors.surfaceBorderDark),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            ),
+            child: const Text('Cancel', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textSecondary)),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(ctx);
+              _timer?.cancel();
               setState(() {
                 _isRevealed = true;
               });
@@ -92,8 +211,10 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
               backgroundColor: AppColors.danger,
               foregroundColor: AppColors.textOnPrimary,
               elevation: 0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             ),
-            child: const Text('Yes, Reveal'),
+            child: const Text('Yes, Reveal', style: TextStyle(fontWeight: FontWeight.w700)),
           ),
         ],
       ),
@@ -196,6 +317,85 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                   ],
                                 ),
                               ),
+                              if (widget.discussionTimerMinutes > 0) ...[
+                                const SizedBox(height: 16),
+                                Container(
+                                  width: double.infinity,
+                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                                  decoration: BoxDecoration(
+                                    color: _remainingSeconds == 0
+                                        ? AppColors.imposterRedBg
+                                        : (_remainingSeconds <= 30
+                                            ? AppColors.flameOrangeBg
+                                            : AppColors.surface),
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                      color: _remainingSeconds == 0
+                                          ? AppColors.danger
+                                          : (_remainingSeconds <= 30
+                                              ? AppColors.flameOrange
+                                              : AppColors.surfaceBorder),
+                                      width: 2,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.04),
+                                        blurRadius: 12,
+                                        offset: const Offset(0, 4),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.timer_outlined,
+                                            size: 16,
+                                            color: _remainingSeconds == 0
+                                                ? AppColors.danger
+                                                : (_remainingSeconds <= 30
+                                                    ? AppColors.flameOrangeDark
+                                                    : AppColors.textSecondary),
+                                          ),
+                                          const SizedBox(width: 6),
+                                          Text(
+                                            _remainingSeconds == 0
+                                                ? "TIME'S UP! VOTE NOW"
+                                                : 'DISCUSSION TIME REMAINING',
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w800,
+                                              color: _remainingSeconds == 0
+                                                  ? AppColors.danger
+                                                  : (_remainingSeconds <= 30
+                                                      ? AppColors.flameOrangeDark
+                                                      : AppColors.textSecondary),
+                                              letterSpacing: 1.2,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        _formatTimerDisplay(_remainingSeconds),
+                                        style: TextStyle(
+                                          fontSize: 38,
+                                          fontWeight: FontWeight.w900,
+                                          color: _remainingSeconds == 0
+                                              ? AppColors.danger
+                                              : (_remainingSeconds <= 30
+                                                  ? AppColors.flameOrangeDark
+                                                  : AppColors.textPrimary),
+                                          letterSpacing: 1.5,
+                                          fontFamily: 'Courier New',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                               const SizedBox(height: 12),
                             ],
                           ),
