@@ -1,7 +1,7 @@
 name: movie_imposter
 description: "Movie Imposter - Offline Party Game"
 publish_to: "none"
-version: 1.2.3+18
+version: 1.2.4+19
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

@@ -1,6 +1,6 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.2.3)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.2.4)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/P-Sushanth/Movie_Imposter/total?style=for-the-badge&color=brightgreen)](https://github.com/P-Sushanth/Movie_Imposter/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
