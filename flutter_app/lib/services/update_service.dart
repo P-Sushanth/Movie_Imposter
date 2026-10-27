@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_colors.dart';
 
-const String kCurrentAppVersion = '1.2.2';
+const String kCurrentAppVersion = '1.2.3';
 const String kGithubReleasesApiUrl =
     'https://api.github.com/repos/P-Sushanth/Movie_Imposter/releases/latest';
 
