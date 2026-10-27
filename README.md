@@ -1,6 +1,6 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.2.2)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.2.3)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/P-Sushanth/Movie_Imposter/total?style=for-the-badge&color=brightgreen)](https://github.com/P-Sushanth/Movie_Imposter/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
@@ -9,12 +9,70 @@ An offline, pass-and-play party game inspired by Indian and international cinema
 
 ---
 
-## 📲 Download & Install
+## 📲 Download & Choose the Right APK
 
-1. Download the latest **[movie-imposter.apk (v1.2.2)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)** directly to your Android device.
-2. Tap the downloaded `.apk` file to install (allow *"Install unknown apps"* if prompted).
-3. Open **Movie Imposter** and start playing immediately—completely offline with no logins or ads!
-4. *All past versions can be found on the [Releases Page](https://github.com/P-Sushanth/Movie_Imposter/releases).*
+Starting with **v1.2.3**, Movie Imposter provides **3 optimized APK variants**. This reduces download sizes by up to **70%** (down to just **16 MB** from the original 52 MB) while guaranteeing 100% compatibility across all Android devices, TVs, and emulators.
+
+### 📊 Quick Comparison: Which APK is for you?
+
+| APK Variant | Download Link | File Size | Target Processor | Who is it for? |
+| :--- | :--- | :---: | :---: | :--- |
+| 🚀 **Primary (64-bit)** <br> *(Recommended)* | [**`movie-imposter.apk`**](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk) | **`16.1 MB`** | `arm64-v8a` | **99% of Android smartphones today.** <br> Any phone released since 2017 (Samsung Galaxy, OnePlus, Google Pixel, Xiaomi, Redmi, Poco, Realme, Vivo, iQOO, Oppo, Motorola, Nothing, Asus, Sony, etc.). |
+| 🌐 **Universal (All CPUs)** | [**`movie-imposter-universal.apk`**](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter-universal.apk) | **`45.4 MB`** | `arm64` + `arm32` + `x86_64` | **Guaranteed to work on ANY device.** <br> PC Android Emulators (BlueStacks, LDPlayer, Nox), Android TV / Google TV boxes, Smart Projectors, Fire TV, Chromebooks, or if you are unsure of your phone's chip. |
+| 🕰️ **Legacy (32-bit)** | [**`movie-imposter-armeabi-v7a.apk`**](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter-armeabi-v7a.apk) | **`13.4 MB`** | `armeabi-v7a` | **Older or budget Android devices.** <br> Phones manufactured before 2017 or entry-level devices running 32-bit Android Go Edition. |
+
+---
+
+### 🔍 Detailed Breakdown: Which APK Should I Choose?
+
+#### 1. 📱 Primary 64-bit APK (`movie-imposter.apk`) — **16.1 MB** *(Recommended)*
+- **Target Architecture:** `arm64-v8a` (64-bit ARM)
+- **Who should download this:**
+  - Virtually everyone using a standard Android smartphone bought in the last 7+ years.
+  - If you own a Samsung Galaxy (S/A/M/F/Z series), Google Pixel, OnePlus, Xiaomi/Redmi/Poco, Realme, Vivo, iQOO, Oppo, Motorola, Nothing Phone, or Sony Xperia—**this is the build for you**.
+- **Why pick this:**
+  - **Saves ~70% of download bandwidth and storage space** compared to fat universal builds.
+  - Installs almost instantaneously and runs with optimal native 64-bit CPU performance.
+
+#### 2. 🌐 Universal APK (`movie-imposter-universal.apk`) — **45.4 MB** *(Works Everywhere)*
+- **Target Architecture:** Universal bundle (`arm64-v8a`, `armeabi-v7a`, and `x86_64`)
+- **Who should download this:**
+  - **PC Android Emulators:** BlueStacks, LDPlayer, NoxPlayer, MEmu, or Android Studio Emulator on Windows/macOS/Linux.
+  - **Large Screens & Media Boxes:** Android TV, Google TV, Fire TV sticks, Smart Projectors, and Android set-top boxes.
+  - **Chromebooks:** Any ChromeOS laptop running Android subsystem apps.
+  - **Uncertain Users:** If you don't know your phone's processor architecture or if the primary build gives you an "architecture mismatch" error.
+- **Why pick this:**
+  - Contains native compiled code for all 3 major Android CPU architectures. It is 100% fail-safe and guaranteed to install and run properly anywhere.
+
+#### 3. 🕰️ Legacy 32-bit APK (`movie-imposter-armeabi-v7a.apk`) — **13.4 MB** *(Older Phones)*
+- **Target Architecture:** `armeabi-v7a` (32-bit ARM)
+- **Who should download this:**
+  - Older Android phones released before 2017/2018 that still use 32-bit processors.
+  - Entry-level or ultra-budget phones running Android Go Edition with 32-bit chipsets.
+- **Why pick this:**
+  - Tiny 13.4 MB download footprint tailored specifically for older devices with limited internal storage and low RAM.
+
+---
+
+### 📥 How to Install & Update
+
+1. **Download:**
+   - Tap the download link corresponding to your device above (when in doubt, tap [**`movie-imposter.apk`**](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)).
+2. **Allow Installation from Unknown Sources:**
+   - Tap the downloaded `.apk` file from your browser notification or Downloads folder.
+   - If prompted with *"For your security, your phone is not allowed to install unknown apps from this source"*:
+     - Tap **Settings**.
+     - Enable **"Allow from this source"**.
+     - Press the back button and tap **Install**.
+3. **Play Instantly:**
+   - Open **Movie Imposter** and start playing! The app runs 100% offline with zero setup, zero accounts, and zero ads.
+4. **Updating from an Older Version:**
+   - You can simply install the new APK directly over your current installation—no need to uninstall or re-enter settings.
+   - The app also includes an **in-app update detector** that notifies you whenever a new release is available on GitHub and lets you update with 1 tap.
+5. **Troubleshooting:**
+   - If your phone displays *"App not installed as package appears to be invalid"* or *"App not compatible with your device"*, your phone is running a different processor architecture than the split build you downloaded. Simply download and install the **[Universal APK (`movie-imposter-universal.apk`)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter-universal.apk)** instead.
+
+*All releases, source code, and release notes can be found on the [Releases Page](https://github.com/P-Sushanth/Movie_Imposter/releases).*
 
 ---
 
