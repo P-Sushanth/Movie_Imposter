@@ -6,8 +6,10 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "./src/theme";
 import { Industry } from "./src/data/movies/types";
 import { ALL_MOVIES } from "./src/data/movies";
-import { RoundState } from "./src/domain/types";
-import { createRound } from "./src/domain/gameSetup";
+import { RoundState, PlayerGroup } from "./src/domain/types";
+import { createRound, createNextRound } from "./src/domain/gameSetup";
+import { resolvePlayerNames } from "./src/domain/validation";
+import { groupService } from "./src/services/groupService";
 
 import { SetupScreen } from "./src/screens/SetupScreen";
 import { DealCardsScreen } from "./src/screens/DealCardsScreen";
@@ -25,9 +27,12 @@ export default function App() {
     "hollywood",
   ]);
   const [players, setPlayers] = useState<string[]>(["", "", ""]);
+  const [savedGroups, setSavedGroups] = useState<PlayerGroup[]>([]);
+  const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
   const [numImposters, setNumImposters] = useState<number>(1);
   const [imposterClueEnabled, setImposterClueEnabled] = useState<boolean>(true);
   const [revealNameToImposter, setRevealNameToImposter] = useState<boolean>(false);
+  const [discussionTimerMinutes, setDiscussionTimerMinutes] = useState<number>(0);
 
   // Active round state
   const [roundState, setRoundState] = useState<RoundState | null>(null);
@@ -70,6 +75,75 @@ export default function App() {
     }
   };
 
+  const handleMovePlayer = (fromIndex: number, toIndex: number) => {
+    if (fromIndex >= 0 && fromIndex < players.length && toIndex >= 0 && toIndex < players.length) {
+      setPlayers((prev) => {
+        const copy = [...prev];
+        const [moved] = copy.splice(fromIndex, 1);
+        copy.splice(toIndex, 0, moved);
+        return copy;
+      });
+    }
+  };
+
+  // Group handlers & lifecycle
+  useEffect(() => {
+    const loadGroups = async () => {
+      const groups = await groupService.loadGroups();
+      const lastId = await groupService.loadLastSelectedGroupId();
+      setSavedGroups(groups);
+      if (lastId && groups.some((g) => g.id === lastId)) {
+        setSelectedGroupId(lastId);
+        const group = groups.find((g) => g.id === lastId)!;
+        setPlayers([...group.players]);
+        setNumImposters((curr) => Math.max(1, Math.min(curr, Math.floor(group.players.length / 2))));
+      }
+    };
+    loadGroups();
+  }, []);
+
+  const handleSelectGroup = (group: PlayerGroup) => {
+    setSelectedGroupId(group.id);
+    setPlayers([...group.players]);
+    setNumImposters((curr) => Math.max(1, Math.min(curr, Math.floor(group.players.length / 2))));
+    groupService.saveLastSelectedGroupId(group.id);
+  };
+
+  const handleCreateGroup = async (name: string) => {
+    const valid = resolvePlayerNames(players);
+    const newGroup = await groupService.createGroup(name, valid);
+    const groups = await groupService.loadGroups();
+    setSavedGroups(groups);
+    setSelectedGroupId(newGroup.id);
+  };
+
+  const handleRenameGroup = async (groupId: string, newName: string) => {
+    await groupService.renameGroup(groupId, newName);
+    const groups = await groupService.loadGroups();
+    setSavedGroups(groups);
+  };
+
+  const handleUpdateGroup = async (updated: PlayerGroup) => {
+    const valid = resolvePlayerNames(players);
+    await groupService.updateGroup({ ...updated, players: valid });
+    const groups = await groupService.loadGroups();
+    setSavedGroups(groups);
+  };
+
+  const handleDeleteGroup = async (groupId: string) => {
+    await groupService.deleteGroup(groupId);
+    const groups = await groupService.loadGroups();
+    setSavedGroups(groups);
+    if (selectedGroupId === groupId) {
+      setSelectedGroupId(null);
+    }
+  };
+
+  const handleClearGroup = () => {
+    setSelectedGroupId(null);
+    groupService.saveLastSelectedGroupId(null);
+  };
+
   // Track movies played in this session only
   const [usedMovieIds, setUsedMovieIds] = useState<Set<string>>(new Set());
 
@@ -83,6 +157,7 @@ export default function App() {
         numImposters,
         imposterClueEnabled,
         revealNameToImposter,
+        discussionTimerMinutes,
         previousMovieId: roundState?.movieId,
         usedMovieIds,
       });
@@ -106,26 +181,37 @@ export default function App() {
 
   const handleFinishDealing = () => {
     if (roundState) {
-      const shuffled = [...roundState.players].sort(() => Math.random() - 0.5);
+      // Pick a random starting player, and maintain the circular seating order around the room
+      const currentPlayers = roundState.players;
+      const startIdx = Math.floor(Math.random() * currentPlayers.length);
+      const circularOrder = currentPlayers.map(
+        (_, i) => currentPlayers[(startIdx + i) % currentPlayers.length]
+      );
       setRoundState({
         ...roundState,
-        startingPlayer: shuffled[0],
-        discussionOrder: shuffled,
+        startingPlayer: circularOrder[0],
+        discussionOrder: circularOrder,
         phase: "discussion",
       });
       setCurrentScreen("discussion");
     }
   };
 
-  // Next Round handler (restarts card dealing from player 1 with same imposter and title)
+  // Next Round handler (restarts card dealing with new movie from selected categories and same imposter)
   const handleNextRound = () => {
     if (roundState) {
-      setRoundState({
-        ...roundState,
-        currentCardIndex: 0,
-        phase: "dealing",
-      });
-      setCurrentScreen("dealing");
+      try {
+        const nextRound = createNextRound({
+          currentRound: roundState,
+          moviePool: ALL_MOVIES,
+          usedMovieIds,
+        });
+        usedMovieIds.add(nextRound.movieId);
+        setRoundState(nextRound);
+        setCurrentScreen("dealing");
+      } catch (e) {
+        Alert.alert("Error", "Could not generate next round movie.");
+      }
     }
   };
 
@@ -184,15 +270,26 @@ export default function App() {
               onToggleIndustry={handleToggleIndustry}
               onSelectAllIndustries={handleSelectAllIndustries}
               players={players}
+              savedGroups={savedGroups}
+              selectedGroupId={selectedGroupId}
+              onSelectGroup={handleSelectGroup}
+              onCreateGroup={handleCreateGroup}
+              onRenameGroup={handleRenameGroup}
+              onUpdateGroup={handleUpdateGroup}
+              onDeleteGroup={handleDeleteGroup}
+              onClearGroup={handleClearGroup}
               onChangePlayer={handleChangePlayer}
               onAddPlayer={handleAddPlayer}
               onRemovePlayer={handleRemovePlayer}
+              onMovePlayer={handleMovePlayer}
               numImposters={numImposters}
               onChangeNumImposters={setNumImposters}
               imposterClueEnabled={imposterClueEnabled}
               onToggleClueEnabled={setImposterClueEnabled}
               revealNameToImposter={revealNameToImposter}
               onToggleRevealNameToImposter={setRevealNameToImposter}
+              discussionTimerMinutes={discussionTimerMinutes}
+              onChangeDiscussionTimer={setDiscussionTimerMinutes}
               onStartGame={handleStartGame}
             />
           )}
@@ -212,6 +309,7 @@ export default function App() {
               imposters={roundState.imposters}
               startingPlayer={roundState.startingPlayer}
               discussionOrder={roundState.discussionOrder}
+              discussionTimerMinutes={roundState.discussionTimerMinutes}
               onReturnToSetup={handleReturnToSetup}
               onNextRound={handleNextRound}
             />
