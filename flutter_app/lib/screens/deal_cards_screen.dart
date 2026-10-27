@@ -115,26 +115,28 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
                     onTapDown: (_) => _onHoldDown(),
                     onTapUp: (_) => _onHoldUp(),
                     onTapCancel: () => _onHoldUp(),
-                    child: AnimatedBuilder(
-                      animation: _animation,
-                      builder: (context, child) {
-                        final angle = _animation.value;
-                        final isFront = angle < (pi / 2);
+                    child: RepaintBoundary(
+                      child: AnimatedBuilder(
+                        animation: _animation,
+                        builder: (context, child) {
+                          final angle = _animation.value;
+                          final isFront = angle < (pi / 2);
 
-                        return Transform(
-                          transform: Matrix4.identity()
-                            ..setEntry(3, 2, 0.001)
-                            ..rotateY(angle),
-                          alignment: Alignment.center,
-                          child: isFront
-                              ? _buildFrontCard(currentAssignment.playerName)
-                              : Transform(
-                                  transform: Matrix4.identity()..rotateY(pi),
-                                  alignment: Alignment.center,
-                                  child: _buildBackCard(role, isImposter),
-                                ),
-                        );
-                      },
+                          return Transform(
+                            transform: Matrix4.identity()
+                              ..setEntry(3, 2, 0.001)
+                              ..rotateY(angle),
+                            alignment: Alignment.center,
+                            child: isFront
+                                ? _buildFrontCard(currentAssignment.playerName)
+                                : Transform(
+                                    transform: Matrix4.identity()..rotateY(pi),
+                                    alignment: Alignment.center,
+                                    child: _buildBackCard(role, isImposter),
+                                  ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
