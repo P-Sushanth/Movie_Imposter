@@ -86,7 +86,6 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
             children: [
               // Header progress
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Player ${widget.currentCardIndex + 1} of ${widget.assignments.length}',
@@ -94,14 +93,6 @@ class _DealCardsScreenState extends State<DealCardsScreen> with SingleTickerProv
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
-                    ),
-                  ),
-                  const Text(
-                    'Secret Pass',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textMuted,
                     ),
                   ),
                 ],
