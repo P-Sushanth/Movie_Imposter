@@ -12,6 +12,7 @@ class CreateRoundParams {
   final int numImposters;
   final bool imposterClueEnabled;
   final bool revealNameToImposter;
+  final int discussionTimerMinutes;
   final String? previousMovieId;
   final String? previousClueKey;
   final Set<String>? usedMovieIds;
@@ -24,6 +25,7 @@ class CreateRoundParams {
     this.numImposters = 1,
     this.imposterClueEnabled = true,
     this.revealNameToImposter = false,
+    this.discussionTimerMinutes = 0,
     this.previousMovieId,
     this.previousClueKey,
     this.usedMovieIds,
@@ -166,15 +168,129 @@ RoundState createRound(CreateRoundParams params) {
     movieId: selectedMovie.id,
     movieTitle: selectedMovie.title,
     industry: selectedMovie.industry,
+    selectedIndustries: params.selectedIndustries,
     players: resolvedPlayers,
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled: params.imposterClueEnabled,
     revealNameToImposter: params.revealNameToImposter,
+    discussionTimerMinutes: params.discussionTimerMinutes.clamp(0, 10),
     imposterClueKey: imposterClue?.key,
     assignments: assignments,
     startingPlayer: startingPlayer,
     discussionOrder: discussionOrder,
+    currentCardIndex: 0,
+    phase: RoundPhase.dealing,
+  );
+}
+
+RoundState createNextRound(
+  RoundState currentRound, {
+  required List<Movie> moviePool,
+  Set<String>? usedMovieIds,
+  double Function()? random,
+}) {
+  final randomInstance = Random();
+  final rng = random ?? randomInstance.nextDouble;
+
+  final industries = currentRound.selectedIndustries.isNotEmpty
+      ? currentRound.selectedIndustries
+      : [currentRound.industry];
+  final industrySet = industries.toSet();
+  final poolMatchingIndustries = moviePool.where((m) => industrySet.contains(m.industry)).toList();
+
+  if (poolMatchingIndustries.isEmpty) {
+    throw StateError('No eligible movies found for the selected industries.');
+  }
+
+  var eligibleMovies = poolMatchingIndustries
+      .where((m) => !(usedMovieIds?.contains(m.id) ?? false) && m.id != currentRound.movieId)
+      .toList();
+
+  if (eligibleMovies.isEmpty) {
+    usedMovieIds?.removeWhere((id) => poolMatchingIndustries.any((m) => m.id == id));
+    eligibleMovies = poolMatchingIndustries.where((m) => m.id != currentRound.movieId).toList();
+    if (eligibleMovies.isEmpty) {
+      eligibleMovies = poolMatchingIndustries;
+    }
+  }
+
+  Movie? selectedMovie;
+  ClueItem? imposterClue;
+  final candidatePool = List<Movie>.from(eligibleMovies);
+
+  while (candidatePool.isNotEmpty && selectedMovie == null) {
+    final movieIndex = (rng() * candidatePool.length).floor().clamp(0, candidatePool.length - 1);
+    final candidate = candidatePool.removeAt(movieIndex);
+
+    if (currentRound.imposterClueEnabled) {
+      final clue = generateImposterClue(
+        candidate,
+        random: rng,
+        playerCount: currentRound.players.length,
+        previousClueKey: currentRound.imposterClueKey,
+      );
+      if (clue != null) {
+        selectedMovie = candidate;
+        imposterClue = clue;
+        break;
+      }
+    } else {
+      selectedMovie = candidate;
+      break;
+    }
+  }
+
+  selectedMovie ??= eligibleMovies.first;
+
+  final imposterSet = currentRound.imposters.toSet();
+  final newAssignments = <PlayerAssignment>[];
+
+  for (int i = 0; i < currentRound.players.length; i++) {
+    final name = currentRound.players[i];
+    final playerId = 'player-${i + 1}';
+
+    if (imposterSet.contains(name)) {
+      newAssignments.add(
+        PlayerAssignment(
+          playerId: playerId,
+          playerName: name,
+          role: ImposterRole(
+            clueText: currentRound.imposterClueEnabled && imposterClue != null ? imposterClue.displayText : null,
+            clueLabel: currentRound.imposterClueEnabled && imposterClue != null ? imposterClue.label : null,
+            revealedMovieTitle: currentRound.revealNameToImposter ? selectedMovie.title : null,
+          ),
+        ),
+      );
+    } else {
+      newAssignments.add(
+        PlayerAssignment(
+          playerId: playerId,
+          playerName: name,
+          role: NormalPlayerRole(
+            movieTitle: selectedMovie.title,
+            industry: selectedMovie.industry,
+          ),
+        ),
+      );
+    }
+  }
+
+  return RoundState(
+    movieId: selectedMovie.id,
+    movieTitle: selectedMovie.title,
+    industry: selectedMovie.industry,
+    selectedIndustries: industries,
+    players: currentRound.players,
+    imposters: currentRound.imposters,
+    numImposters: currentRound.numImposters,
+    imposterClueEnabled: currentRound.imposterClueEnabled,
+    revealNameToImposter: currentRound.revealNameToImposter,
+    discussionTimerMinutes: currentRound.discussionTimerMinutes,
+    imposterClueKey: imposterClue?.key,
+    assignments: newAssignments,
+    startingPlayer: currentRound.startingPlayer,
+    discussionOrder: currentRound.discussionOrder,
     currentCardIndex: 0,
     phase: RoundPhase.dealing,
   );

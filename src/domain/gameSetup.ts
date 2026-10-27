@@ -10,6 +10,7 @@ export interface CreateRoundParams {
   numImposters?: number;
   imposterClueEnabled?: boolean;
   revealNameToImposter?: boolean;
+  discussionTimerMinutes?: number;
   previousMovieId?: string;
   previousClueKey?: string;
   usedMovieIds?: Set<string>;
@@ -23,6 +24,7 @@ export function createRound({
   numImposters = 1,
   imposterClueEnabled = true,
   revealNameToImposter = false,
+  discussionTimerMinutes = 0,
   previousMovieId,
   previousClueKey,
   usedMovieIds,
@@ -172,15 +174,136 @@ export function createRound({
     movieId: selectedMovie.id,
     movieTitle: selectedMovie.title,
     industry: selectedMovie.industry,
+    selectedIndustries,
     players: resolvedPlayers,
     imposters: imposterNames,
     numImposters: safeNumImposters,
     imposterClueEnabled,
     revealNameToImposter,
+    discussionTimerMinutes: Math.max(0, Math.min(10, discussionTimerMinutes)),
     imposterClueKey: imposterClue?.key,
     assignments,
     startingPlayer,
     discussionOrder,
+    currentCardIndex: 0,
+    phase: "dealing",
+  };
+}
+
+export interface CreateNextRoundParams {
+  currentRound: RoundState;
+  moviePool: Movie[];
+  usedMovieIds?: Set<string>;
+  random?: () => number;
+}
+
+export function createNextRound({
+  currentRound,
+  moviePool,
+  usedMovieIds,
+  random = Math.random,
+}: CreateNextRoundParams): RoundState {
+  const industries = currentRound.selectedIndustries.length > 0
+    ? currentRound.selectedIndustries
+    : [currentRound.industry];
+  const industrySet = new Set(industries);
+  const poolMatchingIndustries = moviePool.filter((m) => industrySet.has(m.industry));
+
+  if (poolMatchingIndustries.length === 0) {
+    throw new Error("No eligible movies found for the selected industries.");
+  }
+
+  let eligibleMovies = poolMatchingIndustries.filter(
+    (m) => !(usedMovieIds?.has(m.id) ?? false) && m.id !== currentRound.movieId
+  );
+
+  if (eligibleMovies.length === 0) {
+    usedMovieIds?.forEach((id) => {
+      if (poolMatchingIndustries.some((m) => m.id === id)) {
+        usedMovieIds.delete(id);
+      }
+    });
+    eligibleMovies = poolMatchingIndustries.filter((m) => m.id !== currentRound.movieId);
+    if (eligibleMovies.length === 0) {
+      eligibleMovies = poolMatchingIndustries;
+    }
+  }
+
+  let selectedMovie: Movie | null = null;
+  let imposterClue: ReturnType<typeof generateImposterClue> = null;
+
+  const candidatePool = [...eligibleMovies];
+  while (candidatePool.length > 0 && selectedMovie === null) {
+    const movieIndex = Math.min(
+      candidatePool.length - 1,
+      Math.floor(random() * candidatePool.length)
+    );
+    const candidate = candidatePool.splice(movieIndex, 1)[0];
+
+    if (currentRound.imposterClueEnabled) {
+      const clue = generateImposterClue(
+        candidate,
+        random,
+        currentRound.players.length,
+        currentRound.imposterClueKey
+      );
+      if (clue) {
+        selectedMovie = candidate;
+        imposterClue = clue;
+        break;
+      }
+    } else {
+      selectedMovie = candidate;
+      break;
+    }
+  }
+
+  if (!selectedMovie) {
+    selectedMovie = eligibleMovies[0];
+  }
+
+  const imposterSet = new Set(currentRound.imposters);
+  const assignments: PlayerAssignment[] = currentRound.players.map((name, index) => {
+    const playerId = `player-${index + 1}`;
+    if (imposterSet.has(name)) {
+      return {
+        playerId,
+        playerName: name,
+        role: {
+          kind: "imposter",
+          clueText: currentRound.imposterClueEnabled && imposterClue ? imposterClue.displayText : undefined,
+          clueLabel: currentRound.imposterClueEnabled && imposterClue ? imposterClue.label : undefined,
+          revealedMovieTitle: currentRound.revealNameToImposter ? selectedMovie!.title : undefined,
+        },
+      };
+    } else {
+      return {
+        playerId,
+        playerName: name,
+        role: {
+          kind: "movie",
+          movieTitle: selectedMovie!.title,
+          industry: selectedMovie!.industry,
+        },
+      };
+    }
+  });
+
+  return {
+    movieId: selectedMovie.id,
+    movieTitle: selectedMovie.title,
+    industry: selectedMovie.industry,
+    selectedIndustries: industries,
+    players: currentRound.players,
+    imposters: currentRound.imposters,
+    numImposters: currentRound.numImposters,
+    imposterClueEnabled: currentRound.imposterClueEnabled,
+    revealNameToImposter: currentRound.revealNameToImposter,
+    discussionTimerMinutes: currentRound.discussionTimerMinutes,
+    imposterClueKey: imposterClue?.key,
+    assignments,
+    startingPlayer: currentRound.startingPlayer,
+    discussionOrder: currentRound.discussionOrder,
     currentCardIndex: 0,
     phase: "dealing",
   };
