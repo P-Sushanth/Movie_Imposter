@@ -15,6 +15,15 @@ class MainActivity: FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
+                "getAppVersion" -> {
+                    try {
+                        @Suppress("DEPRECATION")
+                        val pInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+                        result.success(pInfo.versionName)
+                    } catch (e: Exception) {
+                        result.error("VERSION_ERROR", e.message, null)
+                    }
+                }
                 "getAppCacheDir" -> {
                     try {
                         val cacheDir = context.cacheDir.absolutePath

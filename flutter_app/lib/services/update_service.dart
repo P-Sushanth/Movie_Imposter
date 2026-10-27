@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_colors.dart';
 
-const String kCurrentAppVersion = '1.2.0';
+const String kCurrentAppVersion = '1.2.2';
 const String kGithubReleasesApiUrl =
     'https://api.github.com/repos/P-Sushanth/Movie_Imposter/releases/latest';
 
@@ -20,11 +20,28 @@ class UpdateInfo {
   });
 }
 
-/// Compares two semver strings (e.g. "1.0.1" vs "1.0.0").
+/// Compares two semver strings (e.g. "1.0.1" vs "1.0.0", or "1.2.1+16" vs "1.2.1").
 /// Returns true if [latest] is strictly newer than [current].
 bool isVersionNewer(String latest, String current) {
-  final cleanLatest = latest.replaceFirst(RegExp(r'^[vV]'), '').trim();
-  final cleanCurrent = current.replaceFirst(RegExp(r'^[vV]'), '').trim();
+  var cleanLatest = latest.replaceFirst(RegExp(r'^[vV]'), '').trim();
+  var cleanCurrent = current.replaceFirst(RegExp(r'^[vV]'), '').trim();
+
+  String? latestBuild;
+  String? currentBuild;
+
+  if (cleanLatest.contains('+')) {
+    final parts = cleanLatest.split('+');
+    cleanLatest = parts[0];
+    latestBuild = parts.length > 1 ? parts[1] : null;
+  }
+  if (cleanCurrent.contains('+')) {
+    final parts = cleanCurrent.split('+');
+    cleanCurrent = parts[0];
+    currentBuild = parts.length > 1 ? parts[1] : null;
+  }
+
+  cleanLatest = cleanLatest.split('-').first;
+  cleanCurrent = cleanCurrent.split('-').first;
 
   final latestParts = cleanLatest.split('.').map((p) => int.tryParse(p) ?? 0).toList();
   final currentParts = cleanCurrent.split('.').map((p) => int.tryParse(p) ?? 0).toList();
@@ -36,6 +53,14 @@ bool isVersionNewer(String latest, String current) {
     final c = i < currentParts.length ? currentParts[i] : 0;
     if (l > c) return true;
     if (l < c) return false;
+  }
+
+  if (latestBuild != null && currentBuild != null) {
+    final lBuild = int.tryParse(latestBuild);
+    final cBuild = int.tryParse(currentBuild);
+    if (lBuild != null && cBuild != null) {
+      return lBuild > cBuild;
+    }
   }
 
   return false;
@@ -82,6 +107,24 @@ List<String> parseReleaseFeatures(String? notes) {
 }
 
 class UpdateService {
+  static const MethodChannel _updaterChannel =
+      MethodChannel('com.imposterwho.game/updater');
+
+  static String _runtimeAppVersion = kCurrentAppVersion;
+  static String get currentAppVersion => _runtimeAppVersion;
+
+  /// Queries the Android package manager for the actual version baked into the app.
+  static Future<void> initVersion() async {
+    try {
+      final version = await _updaterChannel.invokeMethod<String>('getAppVersion');
+      if (version != null && version.trim().isNotEmpty) {
+        _runtimeAppVersion = version.trim();
+      }
+    } catch (_) {
+      // Gracefully fall back to kCurrentAppVersion on non-Android or if unsupported
+    }
+  }
+
   /// Notifier tracking the latest update info found, if any.
   static final ValueNotifier<UpdateInfo?> availableUpdateNotifier =
       ValueNotifier<UpdateInfo?>(null);
@@ -95,6 +138,7 @@ class UpdateService {
   /// Silently checks GitHub for a newer release.
   /// Returns null if offline or no update is found.
   static Future<UpdateInfo?> checkForUpdate() async {
+    await initVersion();
     HttpClient? client;
     try {
       client = HttpClient();
@@ -113,7 +157,7 @@ class UpdateService {
       final tagName = json['tag_name'] as String?;
       if (tagName == null) return null;
 
-      if (!isVersionNewer(tagName, kCurrentAppVersion)) {
+      if (!isVersionNewer(tagName, currentAppVersion)) {
         availableUpdateNotifier.value = null;
         return null; // Already on latest or newer version
       }
@@ -259,7 +303,7 @@ class _UpdateAvailableDialog extends StatelessWidget {
                         border: Border.all(color: AppColors.surfaceBorder),
                       ),
                       child: Text(
-                        'v$kCurrentAppVersion  ➔  ${update.version}',
+                        'v${UpdateService.currentAppVersion}  ➔  ${update.version}',
                         style: const TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,

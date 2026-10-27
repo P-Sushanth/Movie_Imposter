@@ -103,7 +103,7 @@ class SetupScreen extends StatelessWidget {
                                       const SizedBox(width: 5),
                                     ],
                                     Text(
-                                      hasUpdate ? 'Update ${update.version}' : 'v$kCurrentAppVersion',
+                                      hasUpdate ? 'Update ${update.version}' : 'v${UpdateService.currentAppVersion}',
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w700,

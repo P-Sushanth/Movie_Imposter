@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:movie_imposter/services/update_service.dart';
 
@@ -16,11 +17,40 @@ void main() {
       expect(isVersionNewer('v1.0.0', '1.0.0'), isFalse);
       expect(isVersionNewer('1.0.0', '1.0.1'), isFalse);
       expect(isVersionNewer('0.9.9', '1.0.0'), isFalse);
+      expect(isVersionNewer('v1.2.1', '1.2.1'), isFalse);
+      expect(isVersionNewer('v1.2.2', '1.2.2'), isFalse);
+    });
+
+    test('handles build metadata with + gracefully without check failure', () {
+      // Latest tag v1.2.1 compared with current app version containing +16
+      expect(isVersionNewer('v1.2.1', '1.2.1+16'), isFalse);
+      expect(isVersionNewer('1.2.1', '1.2.1+16'), isFalse);
+      expect(isVersionNewer('1.2.1+16', '1.2.1'), isFalse);
+      // Higher build number is newer
+      expect(isVersionNewer('1.2.1+17', '1.2.1+16'), isTrue);
+      // Lower build number is not newer
+      expect(isVersionNewer('1.2.1+15', '1.2.1+16'), isFalse);
+      // Semver takes precedence over build number
+      expect(isVersionNewer('1.2.2+1', '1.2.1+99'), isTrue);
+      expect(isVersionNewer('1.2.1+99', '1.2.2+1'), isFalse);
+    });
+
+    test('handles prerelease identifiers with -', () {
+      expect(isVersionNewer('v1.2.3-beta.1', '1.2.2'), isTrue);
+      expect(isVersionNewer('v1.2.2-beta.1', '1.2.2'), isFalse);
     });
 
     test('handles versions with different part lengths', () {
       expect(isVersionNewer('1.0.1.1', '1.0.1'), isTrue);
       expect(isVersionNewer('1.0', '1.0.0'), isFalse);
+    });
+
+    test('kCurrentAppVersion matches pubspec.yaml version without build number', () {
+      final pubspecContent = File('pubspec.yaml').readAsStringSync();
+      final match = RegExp(r'^version:\s*([^\s+]+)', multiLine: true).firstMatch(pubspecContent);
+      expect(match, isNotNull);
+      final pubspecBaseVersion = match!.group(1)!.trim();
+      expect(kCurrentAppVersion, equals(pubspecBaseVersion));
     });
   });
 

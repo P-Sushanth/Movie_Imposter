@@ -6,7 +6,8 @@
     "hero": "Pawan Kalyan",
     "director": "Puri Jagannadh",
     "genre": "Action Romance",
-    "hint": "Bay Of Bengal"
+    "hint": "Bay Of Bengal",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-002",
@@ -15,7 +16,8 @@
     "hero": "Tarun",
     "director": "K. Vijaya Bhaskar",
     "genre": "Romantic Comedy",
-    "hint": "Friendship is Love"
+    "hint": "Friendship is Love",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-003",
@@ -24,7 +26,8 @@
     "hero": "Pawan Kalyan",
     "director": "S. J. Suryah",
     "genre": "Romantic Comedy",
-    "hint": "Slim girl"
+    "hint": "Slim girl",
+    "location": "Canada"
   },
   {
     "id": "tollywood-004",
@@ -33,7 +36,8 @@
     "hero": "Mahesh Babu",
     "director": "Krishna Vamsi",
     "genre": "Supernatural Family Drama",
-    "hint": "Goddess Curse"
+    "hint": "Goddess Curse",
+    "location": "Village"
   },
   {
     "id": "tollywood-005",
@@ -42,7 +46,8 @@
     "hero": "Nandamuri Balakrishna",
     "director": "B. Gopal",
     "genre": "Faction Action",
-    "hint": "Soap Girl"
+    "hint": "Soap Girl",
+    "location": "Visakhapatnam"
   },
   {
     "id": "tollywood-006",
@@ -51,7 +56,8 @@
     "hero": "Venkatesh",
     "director": "K. Vijaya Bhaskar",
     "genre": "Romantic Comedy",
-    "hint": "Swimming"
+    "hint": "Swimming",
+    "location": "Anakapalli"
   },
   {
     "id": "tollywood-007",
@@ -60,7 +66,8 @@
     "hero": "Nagarjuna",
     "director": "K. Vijaya Bhaskar",
     "genre": "Romantic Comedy",
-    "hint": "Red Sky"
+    "hint": "Red Sky",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-008",
@@ -69,7 +76,8 @@
     "hero": "Jr. NTR",
     "director": "V. V. Vinayak",
     "genre": "Action Drama",
-    "hint": "Rayalseema Backdrop"
+    "hint": "Rayalseema Backdrop",
+    "location": "Rayalseema"
   },
   {
     "id": "tollywood-009",
@@ -78,7 +86,8 @@
     "hero": "Chiranjeevi",
     "director": "B. Gopal",
     "genre": "Faction Action Drama",
-    "hint": "Chordophone Step"
+    "hint": "Chordophone Step",
+    "location": "Rayalseema"
   },
   {
     "id": "tollywood-010",
@@ -87,7 +96,8 @@
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
     "genre": "Action Romance",
-    "hint": "Poking Eyes"
+    "hint": "Poking Eyes",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-011",
@@ -96,7 +106,8 @@
     "hero": "Mahesh Babu",
     "director": "Gunasekhar",
     "genre": "Action Romance",
-    "hint": "Kabbadi"
+    "hint": "Kabbadi",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-012",
@@ -105,7 +116,8 @@
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
     "genre": "Action Drama",
-    "hint": "Golf ball"
+    "hint": "Golf ball",
+    "location": "Rayalseema"
   },
   {
     "id": "tollywood-013",
@@ -114,7 +126,8 @@
     "hero": "Chiranjeevi",
     "director": "V. V. Vinayak",
     "genre": "Vigilante Action",
-    "hint": "Building Collapse"
+    "hint": "Building Collapse",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-014",
@@ -123,7 +136,8 @@
     "hero": "Ravi Teja",
     "director": "Puri Jagannadh",
     "genre": "Sports Action Drama",
-    "hint": "Martial Arts"
+    "hint": "Martial Arts",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-015",
@@ -132,7 +146,8 @@
     "hero": "Allu Arjun",
     "director": "Sukumar",
     "genre": "Romantic Action",
-    "hint": "Anklet"
+    "hint": "Anklet",
+    "location": "Kanyakumari"
   },
   {
     "id": "tollywood-016",
@@ -141,7 +156,8 @@
     "hero": "Prabhas",
     "director": "Sobhan",
     "genre": "Action Romance",
-    "hint": "Warangal train"
+    "hint": "Warangal train",
+    "location": "Warangal"
   },
   {
     "id": "tollywood-017",
@@ -150,7 +166,8 @@
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
     "genre": "Comedy Thriller",
-    "hint": "Cold Drink"
+    "hint": "Cold Drink",
+    "location": "Vizag"
   },
   {
     "id": "tollywood-018",
@@ -159,7 +176,8 @@
     "hero": "Ravi Krishna",
     "director": "Selvaraghavan",
     "genre": "Romantic Drama",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-019",
@@ -168,7 +186,8 @@
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
     "genre": "Action Thriller",
-    "hint": "Betrayal"
+    "hint": "Betrayal",
+    "location": "Basarlapudi"
   },
   {
     "id": "tollywood-020",
@@ -177,7 +196,8 @@
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
     "genre": "Action Drama",
-    "hint": "Sun"
+    "hint": "Sun",
+    "location": "Sri Lanka"
   },
   {
     "id": "tollywood-021",
@@ -186,7 +206,8 @@
     "hero": "Jagapathi Babu",
     "director": "Chandra Sekhar Yeleti",
     "genre": "Mystery Thriller",
-    "hint": "Rave Party"
+    "hint": "Rave Party",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-022",
@@ -195,7 +216,8 @@
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
     "genre": "Action Thriller",
-    "hint": "Tiles"
+    "hint": "Tiles",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-023",
@@ -204,7 +226,8 @@
     "hero": "Siddharth",
     "director": "Bhaskar",
     "genre": "Romantic Family Drama",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-024",
@@ -213,7 +236,8 @@
     "hero": "Ravi Teja",
     "director": "S. S. Rajamouli",
     "genre": "Action Drama",
-    "hint": "Suitcase Girl"
+    "hint": "Suitcase Girl",
+    "location": "Devgarh"
   },
   {
     "id": "tollywood-025",
@@ -222,7 +246,8 @@
     "hero": "Allu Arjun",
     "director": "Puri Jagannadh",
     "genre": "Action Romance",
-    "hint": "You You"
+    "hint": "You You",
+    "location": "Dhoolpet"
   },
   {
     "id": "tollywood-026",
@@ -231,7 +256,8 @@
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
     "genre": "Fantasy Action",
-    "hint": "Maid"
+    "hint": "Maid",
+    "location": "Underworld"
   },
   {
     "id": "tollywood-027",
@@ -240,7 +266,8 @@
     "hero": "Varun Sandesh",
     "director": "Sekhar Kammula",
     "genre": "College Drama Romance",
-    "hint": "Friends"
+    "hint": "Friends",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-028",
@@ -249,7 +276,8 @@
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
     "genre": "Action Comedy",
-    "hint": "Rich Father"
+    "hint": "Rich Father",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-029",
@@ -258,7 +286,8 @@
     "hero": "Ram Charan",
     "director": "S. S. Rajamouli",
     "genre": "Reincarnation Fantasy Action",
-    "hint": "Shiva Temple"
+    "hint": "Shiva Temple",
+    "location": "Aravalli Range"
   },
   {
     "id": "tollywood-030",
@@ -267,7 +296,8 @@
     "hero": "Ravi Teja",
     "director": "Surender Reddy",
     "genre": "Action Comedy",
-    "hint": "Thief"
+    "hint": "Thief",
+    "location": "Malaysia"
   },
   {
     "id": "tollywood-031",
@@ -276,7 +306,8 @@
     "hero": "Anushka",
     "director": "Kodi Ramakrishna",
     "genre": "Dark Fantasy Horror",
-    "hint": "Female warrior"
+    "hint": "Female warrior",
+    "location": "Ghadwal"
   },
   {
     "id": "tollywood-032",
@@ -285,7 +316,8 @@
     "hero": "Rana Daggubati",
     "director": "Sekhar Kammula",
     "genre": "Political Drama",
-    "hint": "Antaranitanam"
+    "hint": "Antaranitanam",
+    "location": "AP"
   },
   {
     "id": "tollywood-033",
@@ -294,7 +326,8 @@
     "hero": "Allu Arjun",
     "director": "Krish Jagarlamudi",
     "genre": "Anthology Drama",
-    "hint": "Dual Protagonists"
+    "hint": "Dual Protagonists",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-034",
@@ -303,7 +336,8 @@
     "hero": "Sunil",
     "director": "S. S. Rajamouli",
     "genre": "Comedy Thriller",
-    "hint": "One Step"
+    "hint": "One Step",
+    "location": "Rayalseema"
   },
   {
     "id": "tollywood-035",
@@ -312,7 +346,8 @@
     "hero": "Mahesh Babu",
     "director": "Srinu Vaitla",
     "genre": "Action Comedy",
-    "hint": "Pen Camera"
+    "hint": "Pen Camera",
+    "location": "Shankar Nagar"
   },
   {
     "id": "tollywood-036",
@@ -321,7 +356,8 @@
     "hero": "Mahesh Babu",
     "director": "Puri Jagannadh",
     "genre": "Crime Action",
-    "hint": "Milk"
+    "hint": "Milk",
+    "location": "Mumbai"
   },
   {
     "id": "tollywood-037",
@@ -330,7 +366,8 @@
     "hero": "Nani",
     "director": "S. S. Rajamouli",
     "genre": "Fantasy Revenge",
-    "hint": "Reincarnation"
+    "hint": "Reincarnation",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-038",
@@ -339,7 +376,8 @@
     "hero": "Pawan Kalyan",
     "director": "Harish Shankar",
     "genre": "Action Comedy",
-    "hint": "Sholay"
+    "hint": "Sholay",
+    "location": "Kondaveedu"
   },
   {
     "id": "tollywood-039",
@@ -348,7 +386,8 @@
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
     "genre": "Action Comedy Thriller",
-    "hint": "Container"
+    "hint": "Container",
+    "location": "Vizag"
   },
   {
     "id": "tollywood-040",
@@ -357,7 +396,8 @@
     "hero": "Venkatesh",
     "director": "Srikanth Addala",
     "genre": "Family Drama",
-    "hint": "Pot"
+    "hint": "Pot",
+    "location": "Bhadrachalam"
   },
   {
     "id": "tollywood-041",
@@ -366,7 +406,8 @@
     "hero": "Prabhas",
     "director": "Koratala Siva",
     "genre": "Action Drama",
-    "hint": "One Chance"
+    "hint": "One Chance",
+    "location": "Italy"
   },
   {
     "id": "tollywood-042",
@@ -375,7 +416,8 @@
     "hero": "Pawan Kalyan",
     "director": "Trivikram Srinivas",
     "genre": "Family Comedy Drama",
-    "hint": "Dinosaur"
+    "hint": "Dinosaur",
+    "location": "Italy"
   },
   {
     "id": "tollywood-043",
@@ -384,7 +426,8 @@
     "hero": "Mahesh Babu",
     "director": "Sukumar",
     "genre": "Psychological Action Thriller",
-    "hint": "Rice"
+    "hint": "Rice",
+    "location": "London"
   },
   {
     "id": "tollywood-044",
@@ -393,7 +436,8 @@
     "hero": "Allu Arjun",
     "director": "Surender Reddy",
     "genre": "Action Comedy",
-    "hint": "Brothers"
+    "hint": "Brothers",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-045",
@@ -402,7 +446,8 @@
     "hero": "Nagarjuna",
     "director": "Vikram Kumar",
     "genre": "Fantasy Family Drama",
-    "hint": "All Generations"
+    "hint": "All Generations",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-046",
@@ -411,7 +456,8 @@
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
     "genre": "Action Drama",
-    "hint": "Cycle"
+    "hint": "Cycle",
+    "location": "Devarakota"
   },
   {
     "id": "tollywood-047",
@@ -420,7 +466,8 @@
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
     "genre": "Epic Historical Action",
-    "hint": "Brothers"
+    "hint": "Brothers",
+    "location": "Fictional"
   },
   {
     "id": "tollywood-048",
@@ -429,7 +476,8 @@
     "hero": "Nani",
     "director": "Maruthi",
     "genre": "Romantic Comedy",
-    "hint": "Alzeimer's"
+    "hint": "Alzeimer's",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-049",
@@ -438,7 +486,8 @@
     "hero": "Jr. NTR",
     "director": "Sukumar",
     "genre": "Action Thriller",
-    "hint": "Balls"
+    "hint": "Balls",
+    "location": "London"
   },
   {
     "id": "tollywood-050",
@@ -447,7 +496,8 @@
     "hero": "Adivi Sesh",
     "director": "Ravikanth Perepu",
     "genre": "Mystery Thriller",
-    "hint": "MBBS Banker"
+    "hint": "MBBS Banker",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-051",
@@ -456,7 +506,8 @@
     "hero": "Vijay Deverakonda",
     "director": "Tharun Bhascker",
     "genre": "Romantic Comedy",
-    "hint": "Writing A Book"
+    "hint": "Writing A Book",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-052",
@@ -465,7 +516,8 @@
     "hero": "Jr. NTR",
     "director": "Koratala Siva",
     "genre": "Action Drama",
-    "hint": "Environment"
+    "hint": "Environment",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-053",
@@ -474,7 +526,8 @@
     "hero": "Ram Charan",
     "director": "Surender Reddy",
     "genre": "Action Thriller",
-    "hint": "S"
+    "hint": "S",
+    "location": "AP"
   },
   {
     "id": "tollywood-054",
@@ -483,7 +536,8 @@
     "hero": "Prabhas",
     "director": "S. S. Rajamouli",
     "genre": "Epic Historical Action",
-    "hint": "Statue"
+    "hint": "Statue",
+    "location": "Fictional"
   },
   {
     "id": "tollywood-055",
@@ -492,7 +546,8 @@
     "hero": "Varun Tej",
     "director": "Sekhar Kammula",
     "genre": "Romantic Drama",
-    "hint": "Hybrid"
+    "hint": "Hybrid",
+    "location": "US"
   },
   {
     "id": "tollywood-056",
@@ -501,7 +556,8 @@
     "hero": "Vijay Deverakonda",
     "director": "Sandeep Reddy Vanga",
     "genre": "Romantic Drama",
-    "hint": "Ice"
+    "hint": "Ice",
+    "location": "Mangalore"
   },
   {
     "id": "tollywood-057",
@@ -510,7 +566,8 @@
     "hero": "Ram Charan",
     "director": "Sukumar",
     "genre": "Period Action Drama",
-    "hint": "Politics"
+    "hint": "Politics",
+    "location": "Village"
   },
   {
     "id": "tollywood-058",
@@ -519,7 +576,8 @@
     "hero": "Dulquer Salmaan",
     "director": "Nag Ashwin",
     "genre": "Biographical Drama",
-    "hint": "GOAT"
+    "hint": "GOAT",
+    "location": "Telugu States"
   },
   {
     "id": "tollywood-059",
@@ -528,7 +586,8 @@
     "hero": "Mahesh Babu",
     "director": "Koratala Siva",
     "genre": "Political Action",
-    "hint": "Friendship"
+    "hint": "Friendship",
+    "location": "AP"
   },
   {
     "id": "tollywood-060",
@@ -537,7 +596,8 @@
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
     "genre": "Spy Thriller",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Chittagong"
   },
   {
     "id": "tollywood-061",
@@ -546,7 +606,8 @@
     "hero": "Vijay Deverakonda",
     "director": "Parasuram",
     "genre": "Romantic Comedy",
-    "hint": "Marriage"
+    "hint": "Marriage",
+    "location": "Kakinada"
   },
   {
     "id": "tollywood-062",
@@ -555,7 +616,8 @@
     "hero": "Jr. NTR",
     "director": "Trivikram Srinivas",
     "genre": "Action Drama",
-    "hint": "Blunt Knife"
+    "hint": "Blunt Knife",
+    "location": "Rayalseema"
   },
   {
     "id": "tollywood-063",
@@ -564,7 +626,8 @@
     "hero": "Nani",
     "director": "Gowtam Tinnanuri",
     "genre": "Sports Drama",
-    "hint": "36 Years"
+    "hint": "36 Years",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-064",
@@ -573,7 +636,8 @@
     "hero": "Naveen Polishetty",
     "director": "Swaroop RSJ",
     "genre": "Comedy Detective Thriller",
-    "hint": "Mother-Son Dynamic"
+    "hint": "Mother-Son Dynamic",
+    "location": "Nellore"
   },
   {
     "id": "tollywood-065",
@@ -582,7 +646,8 @@
     "hero": "Adivi Sesh",
     "director": "Venkat Ramji",
     "genre": "Crime Mystery Thriller",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Coonoor"
   },
   {
     "id": "tollywood-066",
@@ -591,7 +656,8 @@
     "hero": "Allu Arjun",
     "director": "Trivikram Srinivas",
     "genre": "Action Family Drama",
-    "hint": "Gap"
+    "hint": "Gap",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-067",
@@ -600,7 +666,8 @@
     "hero": "Mahesh Babu",
     "director": "Anil Ravipudi",
     "genre": "Action Comedy",
-    "hint": "Puff"
+    "hint": "Puff",
+    "location": "Kurnool"
   },
   {
     "id": "tollywood-068",
@@ -609,7 +676,8 @@
     "hero": "Suhas",
     "director": "Sandeep Raj",
     "genre": "Period Romantic Drama",
-    "hint": "Shirt"
+    "hint": "Shirt",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-069",
@@ -618,7 +686,8 @@
     "hero": "Naveen Polishetty",
     "director": "Anudeep K. V.",
     "genre": "Comedy",
-    "hint": "Goalkeeper"
+    "hint": "Goalkeeper",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-070",
@@ -627,7 +696,8 @@
     "hero": "Pawan Kalyan",
     "director": "Venu Sriram",
     "genre": "Legal Action Drama",
-    "hint": "Objection"
+    "hint": "Objection",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-071",
@@ -636,7 +706,8 @@
     "hero": "Allu Arjun",
     "director": "Sukumar",
     "genre": "Action Crime Drama",
-    "hint": "Flower"
+    "hint": "Flower",
+    "location": "Tirupati"
   },
   {
     "id": "tollywood-072",
@@ -645,7 +716,8 @@
     "hero": "Nani",
     "director": "Rahul Sankrityan",
     "genre": "Period Supernatural Drama",
-    "hint": "Reincarnation"
+    "hint": "Reincarnation",
+    "location": "West Bengal"
   },
   {
     "id": "tollywood-073",
@@ -654,7 +726,8 @@
     "hero": "Nandamuri Balakrishna",
     "director": "Boyapati Srinu",
     "genre": "Action Drama",
-    "hint": "Dual Role"
+    "hint": "Dual Role",
+    "location": "Anantapur"
   },
   {
     "id": "tollywood-074",
@@ -663,7 +736,8 @@
     "hero": "Siddhu Jonnalagadda",
     "director": "Vimal Krishna",
     "genre": "Crime Comedy",
-    "hint": "Dead Body"
+    "hint": "Dead Body",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-075",
@@ -672,7 +746,8 @@
     "hero": "Jr. NTR",
     "director": "S. S. Rajamouli",
     "genre": "Epic Period Action",
-    "hint": "Friends"
+    "hint": "Friends",
+    "location": "Delhi"
   },
   {
     "id": "tollywood-076",
@@ -681,7 +756,8 @@
     "hero": "Adivi Sesh",
     "director": "Sashi Kiran Tikka",
     "genre": "Biographical Action",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Mumbai"
   },
   {
     "id": "tollywood-077",
@@ -690,7 +766,8 @@
     "hero": "Dulquer Salmaan",
     "director": "Hanu Raghavapudi",
     "genre": "Period Romance Drama",
-    "hint": "Letter"
+    "hint": "Letter",
+    "location": "Kashmir"
   },
   {
     "id": "tollywood-078",
@@ -699,7 +776,8 @@
     "hero": "Nikhil Siddharth",
     "director": "Chandoo Mondeti",
     "genre": "Mystery Adventure",
-    "hint": "Anklet"
+    "hint": "Anklet",
+    "location": "Dwarka"
   },
   {
     "id": "tollywood-079",
@@ -708,7 +786,8 @@
     "hero": "Chiranjeevi",
     "director": "Bobby Kolli",
     "genre": "Action Comedy",
-    "hint": "Dual Protagonists"
+    "hint": "Dual Protagonists",
+    "location": "Visakhapatnam"
   },
   {
     "id": "tollywood-080",
@@ -717,7 +796,8 @@
     "hero": "Priyadarshi",
     "director": "Venu Yeldandi",
     "genre": "Family Drama",
-    "hint": "Comedian"
+    "hint": "Comedian",
+    "location": "Village"
   },
   {
     "id": "tollywood-081",
@@ -726,7 +806,8 @@
     "hero": "Nani",
     "director": "Srikanth Odela",
     "genre": "Period Action Drama",
-    "hint": "Festival"
+    "hint": "Festival",
+    "location": "Village"
   },
   {
     "id": "tollywood-082",
@@ -735,7 +816,8 @@
     "hero": "Nani",
     "director": "Shouryuv",
     "genre": "Romantic Family Drama",
-    "hint": "Roses"
+    "hint": "Roses",
+    "location": "Mumbai"
   },
   {
     "id": "tollywood-083",
@@ -744,7 +826,8 @@
     "hero": "Prabhas",
     "director": "Prashanth Neel",
     "genre": "Action Crime Drama",
-    "hint": "Friends"
+    "hint": "Friends",
+    "location": "Fictional"
   },
   {
     "id": "tollywood-084",
@@ -753,7 +836,8 @@
     "hero": "Teja Sajja",
     "director": "Prasanth Varma",
     "genre": "Superhero Fantasy",
-    "hint": "Stone"
+    "hint": "Stone",
+    "location": "Anjanadri"
   },
   {
     "id": "tollywood-085",
@@ -762,7 +846,8 @@
     "hero": "Siddhu Jonnalagadda",
     "director": "Mallik Ram",
     "genre": "Crime Comedy",
-    "hint": "University"
+    "hint": "University",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-086",
@@ -771,7 +856,8 @@
     "hero": "Prabhas",
     "director": "Nag Ashwin",
     "genre": "Post-apocalyptic Sci-Fi",
-    "hint": "Reincarnation"
+    "hint": "Reincarnation",
+    "location": "Fictional"
   },
   {
     "id": "tollywood-087",
@@ -780,7 +866,8 @@
     "hero": "Allu Arjun",
     "director": "Sukumar",
     "genre": "Action Drama",
-    "hint": "Photo"
+    "hint": "Photo",
+    "location": "Tirupati"
   },
   {
     "id": "tollywood-088",
@@ -789,7 +876,8 @@
     "hero": "N. T. Rama Rao Jr.",
     "director": "Koratala Siva",
     "genre": "Action Coastal Drama",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Fictional"
   },
   {
     "id": "tollywood-089",
@@ -798,7 +886,8 @@
     "hero": "Mahesh Babu",
     "director": "Trivikram Srinivas",
     "genre": "Action Family Drama",
-    "hint": "Mother-Son Dynamic"
+    "hint": "Mother-Son Dynamic",
+    "location": "Guntur"
   },
   {
     "id": "tollywood-090",
@@ -807,7 +896,8 @@
     "hero": "Nani",
     "director": "Vivek Athreya",
     "genre": "Action Vigilante Thriller",
-    "hint": "Half Beard"
+    "hint": "Half Beard",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-091",
@@ -816,7 +906,8 @@
     "hero": "Dulquer Salmaan",
     "director": "Venky Atluri",
     "genre": "Financial Crime Thriller",
-    "hint": "Insider Trading"
+    "hint": "Insider Trading",
+    "location": "Mumbai"
   },
   {
     "id": "tollywood-092",
@@ -825,7 +916,8 @@
     "hero": "Sri Simha Koduri",
     "director": "Ritesh Rana",
     "genre": "Crime Comedy",
-    "hint": "Honey in Tea"
+    "hint": "Honey in Tea",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-093",
@@ -834,7 +926,8 @@
     "hero": "Narne Nithin",
     "director": "Anji K. Maniputhra",
     "genre": "Romantic Rural Comedy",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Kodada"
   },
   {
     "id": "tollywood-094",
@@ -843,7 +936,8 @@
     "hero": "Sandeep Saroj",
     "director": "Yadhu Vamsi",
     "genre": "Village Youth Drama",
-    "hint": "East Godavari"
+    "hint": "East Godavari",
+    "location": "East Godavari"
   },
   {
     "id": "tollywood-095",
@@ -852,7 +946,8 @@
     "hero": "Ram Charan",
     "director": "S. Shankar",
     "genre": "Political Action Drama",
-    "hint": "Father-Son Dynamic"
+    "hint": "Father-Son Dynamic",
+    "location": "Visakhapatnam"
   },
   {
     "id": "tollywood-096",
@@ -861,7 +956,8 @@
     "hero": "Nandamuri Balakrishna",
     "director": "Bobby Kolli",
     "genre": "Action Drama",
-    "hint": "Water"
+    "hint": "Water",
+    "location": "Bajrangpur"
   },
   {
     "id": "tollywood-097",
@@ -870,7 +966,8 @@
     "hero": "Venkatesh",
     "director": "Anil Ravipudi",
     "genre": "Action Crime Comedy",
-    "hint": "Teacher"
+    "hint": "Teacher",
+    "location": "Rajamundry"
   },
   {
     "id": "tollywood-098",
@@ -879,7 +976,8 @@
     "hero": "Naga Chaitanya",
     "director": "Chandoo Mondeti",
     "genre": "Romantic Survival Drama",
-    "hint": "Patriotic"
+    "hint": "Patriotic",
+    "location": "Srikakulam"
   },
   {
     "id": "tollywood-099",
@@ -888,7 +986,8 @@
     "hero": "Prabhas",
     "director": "Maruthi",
     "genre": "Romantic Horror Comedy",
-    "hint": "Marwadi Girl"
+    "hint": "Marwadi Girl",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-100",
@@ -897,7 +996,8 @@
     "hero": "Pawan Kalyan",
     "director": "Jyothi Krishna",
     "genre": "Period Action Adventure",
-    "hint": "Droplet"
+    "hint": "Droplet",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-101",
@@ -906,7 +1006,8 @@
     "hero": "Pawan Kalyan",
     "director": "Sujeeth",
     "genre": "Neo-Noir Gangster Action",
-    "hint": "Gangster"
+    "hint": "Gangster",
+    "location": "Mumbai"
   },
   {
     "id": "tollywood-102",
@@ -915,7 +1016,8 @@
     "hero": "Teja Sajja",
     "director": "Karthik Gattamneni",
     "genre": "Mythological Action Adventure",
-    "hint": "Books"
+    "hint": "Books",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-103",
@@ -924,16 +1026,18 @@
     "hero": "Nani",
     "director": "Sailesh Kolanu",
     "genre": "Action Crime Thriller",
-    "hint": "Baby"
+    "hint": "Baby",
+    "location": "Burma"
   },
   {
     "id": "tollywood-104",
-    "title": "Kubera",
+    "title": "Kuberaa",
     "industry": "tollywood",
     "hero": "Dhanush",
     "director": "Sekhar Kammula",
     "genre": "Social Drama Thriller",
-    "hint": "Dumpyard"
+    "hint": "Dumpyard",
+    "location": "Tirupati"
   },
   {
     "id": "tollywood-105",
@@ -942,7 +1046,8 @@
     "hero": "Nithiin",
     "director": "Venky Kudumula",
     "genre": "Action Heist Comedy",
-    "hint": "Cricketer"
+    "hint": "Cricketer",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-106",
@@ -951,7 +1056,8 @@
     "hero": "Sai Dharam Tej",
     "director": "Karthik Varma Dandu",
     "genre": "Mystery Horror Thriller",
-    "hint": "Crow"
+    "hint": "Crow",
+    "location": "Rudravanam"
   },
   {
     "id": "tollywood-107",
@@ -960,7 +1066,8 @@
     "hero": "Anand Deverakonda",
     "director": "Sai Rajesh",
     "genre": "Romantic Drama",
-    "hint": "Auto"
+    "hint": "Auto",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-108",
@@ -969,7 +1076,8 @@
     "hero": "Narne Nithin",
     "director": "Kalyan Shankar",
     "genre": "Campus Comedy",
-    "hint": "Guava Tree"
+    "hint": "Guava Tree",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-109",
@@ -978,7 +1086,8 @@
     "hero": "Nandamuri Kalyan Ram",
     "director": "Mallidi Vashist",
     "genre": "Time Travel Fantasy Action",
-    "hint": "Little Girl"
+    "hint": "Little Girl",
+    "location": "Hyderabad"
   },
   {
     "id": "tollywood-110",
@@ -987,7 +1096,8 @@
     "hero": "Sree Vishnu",
     "director": "Vivek Athreya",
     "genre": "Crime Comedy",
-    "hint": "Dumb Girl"
+    "hint": "Dumb Girl",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-111",
@@ -996,7 +1106,8 @@
     "hero": "Vishwak Sen",
     "director": "Tharun Bhascker",
     "genre": "Buddy Comedy Drama",
-    "hint": "Ring"
+    "hint": "Ring",
+    "location": "Goa"
   },
   {
     "id": "tollywood-112",
@@ -1005,7 +1116,8 @@
     "hero": "Nani",
     "director": "Mohana Krishna Indraganti",
     "genre": "Romantic Comedy",
-    "hint": "Mahesh"
+    "hint": "Mahesh",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-113",
@@ -1014,7 +1126,8 @@
     "hero": "N. T. Rama Rao Jr.",
     "director": "V. V. Vinayak",
     "genre": "Action Comedy",
-    "hint": "Double Role"
+    "hint": "Double Role",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-114",
@@ -1023,7 +1136,8 @@
     "hero": "Vishnu Manchu",
     "director": "Srinu Vaitla",
     "genre": "Action Comedy",
-    "hint": "Painting"
+    "hint": "Painting",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-115",
@@ -1032,7 +1146,8 @@
     "hero": "Ram Pothineni",
     "director": "Srinu Vaitla",
     "genre": "Romantic Action Comedy",
-    "hint": "Families"
+    "hint": "Families",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-116",
@@ -1041,7 +1156,8 @@
     "hero": "Aryan Rajesh",
     "director": "Srinu Vaitla",
     "genre": "Romantic Comedy",
-    "hint": "College Friends"
+    "hint": "College Friends",
+    "location": "Kashmir"
   },
   {
     "id": "tollywood-117",
@@ -1050,7 +1166,8 @@
     "hero": "Allu Arjun",
     "director": "Boyapati Srinu",
     "genre": "Action Masala",
-    "hint": "Sambar"
+    "hint": "Sambar",
+    "location": "Telugu State"
   },
   {
     "id": "tollywood-118",
@@ -1059,6 +1176,7 @@
     "hero": "Ravi Teja",
     "director": "Srinu Vaitla",
     "genre": "Action Comedy",
-    "hint": "Paav Bhaji"
+    "hint": "Paav Bhaji",
+    "location": "Mumbai"
   }
 ]
