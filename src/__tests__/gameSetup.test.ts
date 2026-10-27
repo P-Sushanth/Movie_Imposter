@@ -1,4 +1,4 @@
-import { createRound } from "../domain/gameSetup";
+import { createRound, createNextRound } from "../domain/gameSetup";
 import { ALL_MOVIES, getMoviesByIndustries } from "../data/movies";
 
 describe("Game Setup & Role Assignment", () => {
@@ -107,5 +107,37 @@ describe("Game Setup & Role Assignment", () => {
     });
 
     expect(round2.movieId).not.toBe(round1.movieId);
+  });
+
+  it("createNextRound picks a new movie from selected industries while preserving the imposter", () => {
+    const round1 = createRound({
+      players,
+      selectedIndustries: ["tollywood", "bollywood"],
+      moviePool: ALL_MOVIES,
+      numImposters: 1,
+      random: () => 0.2,
+    });
+
+    const nextRound = createNextRound({
+      currentRound: round1,
+      moviePool: ALL_MOVIES,
+      usedMovieIds: new Set([round1.movieId]),
+      random: () => 0.5,
+    });
+
+    // Imposters must be the same
+    expect(nextRound.imposters).toEqual(round1.imposters);
+    // Movie must be different
+    expect(nextRound.movieId).not.toBe(round1.movieId);
+    expect(["tollywood", "bollywood"]).toContain(nextRound.industry);
+    // Dealing index must reset
+    expect(nextRound.currentCardIndex).toBe(0);
+    expect(nextRound.phase).toBe("dealing");
+    // Normal players receive new movie title
+    const normalAssignment = nextRound.assignments.find((a) => a.role.kind === "movie");
+    expect(normalAssignment?.role.kind).toBe("movie");
+    if (normalAssignment?.role.kind === "movie") {
+      expect(normalAssignment.role.movieTitle).toBe(nextRound.movieTitle);
+    }
   });
 });
