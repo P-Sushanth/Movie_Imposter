@@ -1,6 +1,6 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.3.0)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.3.1)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/P-Sushanth/Movie_Imposter/total?style=for-the-badge&color=brightgreen)](https://github.com/P-Sushanth/Movie_Imposter/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
@@ -11,7 +11,7 @@ An offline, pass-and-play party game inspired by Indian and international cinema
 
 ## 📲 Download & Choose the Right APK
 
-Starting with **v1.3.0**, Movie Imposter provides **optimized APK variants** for every platform. This reduces download sizes by up to **65%** compared to fat universal builds while guaranteeing 100% compatibility across all Android devices, TVs, and emulators.
+Starting with **v1.3.1**, Movie Imposter provides **optimized APK variants** for every platform. This reduces download sizes by up to **65%** compared to fat universal builds while guaranteeing 100% compatibility across all Android devices, TVs, and emulators.
 
 ### 📊 Quick Comparison: Which APK is for you?
 
@@ -117,6 +117,7 @@ Starting with **v1.3.0**, Movie Imposter provides **optimized APK variants** for
 - **👥 Player Groups**: Save and manage custom player groups stored securely in your device's local cache. Restores your last active group automatically on app launch.
 - **↕️ Custom Player Drag Reordering**: Easily reorder player speaking or dealing positions using drag-and-drop handles.
 - **📳 Times-Up Vibration**: Physical haptic feedback alerts players when the discussion timer expires at `00:00`.
+- **⚡ Improved Gameplay Mechanics (v1.3.1)**: Persistent local movie cache across app restarts, 50% weighted soft bias against repeating imposters, max-intensity hardware vibration alert, and 5-second danger red countdown transition.
 - **🔄 Category-Filtered Next Round**: Pass the phone around again with a fresh movie drawn exclusively from your selected categories while preserving the secret imposter.
 - **📜 Retro Typewriter Card UI**: Cohesive Courier New typewriter aesthetic with rounded card borders, icon badges, and styled confirmation dialogs.
 - **Multiple Categories**: Play with Tollywood, Bollywood, Hollywood movies, binge-worthy Shows, K-Drama, or nostalgic Cartoons.
