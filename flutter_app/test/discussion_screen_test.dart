@@ -221,5 +221,41 @@ void main() {
       );
       expect((normalAssignment.role as NormalPlayerRole).movieTitle, equals(nextRound.movieTitle));
     });
+
+    test('createRound applies weighted soft bias against previous imposters', () {
+      const pool = [
+        Movie(
+          id: 'm1',
+          title: 'Movie One',
+          industry: Industry.tollywood,
+          genre: 'Action',
+        ),
+      ];
+
+      final players = ['Alice', 'Bob', 'Charlie', 'David'];
+      int aliceCount = 0;
+      const trials = 1000;
+
+      for (int i = 0; i < trials; i++) {
+        final round = createRound(
+          CreateRoundParams(
+            players: players,
+            selectedIndustries: [Industry.tollywood],
+            moviePool: pool,
+            numImposters: 1,
+            imposterClueEnabled: false,
+            previousImposters: ['Alice'],
+          ),
+        );
+        if (round.imposters.contains('Alice')) {
+          aliceCount++;
+        }
+      }
+
+      // Theoretical probability: 0.5 / 3.5 ≈ 14.3% (~143 out of 1000).
+      // Much lower than uniform 25% (250), but strictly > 0 (not 100% excluded).
+      expect(aliceCount, greaterThan(60));
+      expect(aliceCount, lessThan(220));
+    });
   });
 }

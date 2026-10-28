@@ -15,6 +15,7 @@ class CreateRoundParams {
   final int discussionTimerMinutes;
   final String? previousMovieId;
   final String? previousClueKey;
+  final List<String>? previousImposters;
   final Set<String>? usedMovieIds;
   final double Function()? random;
 
@@ -28,6 +29,7 @@ class CreateRoundParams {
     this.discussionTimerMinutes = 0,
     this.previousMovieId,
     this.previousClueKey,
+    this.previousImposters,
     this.usedMovieIds,
     this.random,
   });
@@ -109,13 +111,39 @@ RoundState createRound(CreateRoundParams params) {
     throw StateError('Failed to find an eligible movie.');
   }
 
-  // 8. Pick distinct imposter indices uniformly at random
-  final allIndices = List<int>.generate(resolvedPlayers.length, (i) => i);
+  // 8. Pick distinct imposter indices using weighted soft bias against previous imposters
+  final prevImposterLower = params.previousImposters
+          ?.map((name) => name.trim().toLowerCase())
+          .toSet() ??
+      <String>{};
+
+  final availableIndices = List<int>.generate(resolvedPlayers.length, (i) => i);
   final imposterIndices = <int>{};
 
-  while (imposterIndices.length < safeNumImposters && allIndices.isNotEmpty) {
-    final pickIdx = (rng() * allIndices.length).floor().clamp(0, allIndices.length - 1);
-    final chosen = allIndices.removeAt(pickIdx);
+  while (imposterIndices.length < safeNumImposters && availableIndices.isNotEmpty) {
+    // Candidates who were imposter in the previous round receive weight 0.5 (half as likely relative to others),
+    // while others receive weight 1.0. This prevents back-to-back streaks while keeping
+    // bluffing and paranoia alive because the chance is never zero.
+    final weights = availableIndices.map((idx) {
+      final playerName = resolvedPlayers[idx].trim().toLowerCase();
+      final wasPreviousImposter = prevImposterLower.contains(playerName);
+      return wasPreviousImposter ? 0.5 : 1.0;
+    }).toList();
+
+    final totalWeight = weights.reduce((a, b) => a + b);
+    final randomVal = rng() * totalWeight;
+
+    double cumulative = 0.0;
+    int selectedCandidatePos = availableIndices.length - 1;
+    for (int i = 0; i < availableIndices.length; i++) {
+      cumulative += weights[i];
+      if (randomVal <= cumulative) {
+        selectedCandidatePos = i;
+        break;
+      }
+    }
+
+    final chosen = availableIndices.removeAt(selectedCandidatePos);
     imposterIndices.add(chosen);
   }
 
