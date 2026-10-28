@@ -10,6 +10,7 @@ import { RoundState, PlayerGroup } from "./src/domain/types";
 import { createRound, createNextRound } from "./src/domain/gameSetup";
 import { resolvePlayerNames } from "./src/domain/validation";
 import { groupService } from "./src/services/groupService";
+import { movieHistoryService } from "./src/services/movieHistoryService";
 
 import { SetupScreen } from "./src/screens/SetupScreen";
 import { DealCardsScreen } from "./src/screens/DealCardsScreen";
@@ -100,6 +101,15 @@ export default function App() {
       }
     };
     loadGroups();
+
+    // Load persistent cached used movies across sessions
+    const loadCachedMovies = async () => {
+      const cached = await movieHistoryService.loadUsedMovieIds();
+      if (cached.length > 0) {
+        setUsedMovieIds(new Set(cached));
+      }
+    };
+    loadCachedMovies();
   }, []);
 
   const handleSelectGroup = (group: PlayerGroup) => {
@@ -144,7 +154,7 @@ export default function App() {
     groupService.saveLastSelectedGroupId(null);
   };
 
-  // Track movies played in this session only
+  // Track movies played across sessions (backed by local storage cache)
   const [usedMovieIds, setUsedMovieIds] = useState<Set<string>>(new Set());
 
   // Start Game handler
@@ -159,9 +169,14 @@ export default function App() {
         revealNameToImposter,
         discussionTimerMinutes,
         previousMovieId: roundState?.movieId,
+        previousImposters: roundState?.imposters,
         usedMovieIds,
       });
-      setUsedMovieIds((prev) => new Set(prev).add(newRound.movieId));
+      // Update in-memory set and persist to device cache
+      const updatedSet = new Set(usedMovieIds).add(newRound.movieId);
+      setUsedMovieIds(updatedSet);
+      movieHistoryService.recordUsedMovieId(newRound.movieId);
+
       setRoundState(newRound);
       setCurrentScreen("dealing");
     } catch (err: any) {
@@ -206,7 +221,10 @@ export default function App() {
           moviePool: ALL_MOVIES,
           usedMovieIds,
         });
-        usedMovieIds.add(nextRound.movieId);
+        const updatedSet = new Set(usedMovieIds).add(nextRound.movieId);
+        setUsedMovieIds(updatedSet);
+        movieHistoryService.recordUsedMovieId(nextRound.movieId);
+
         setRoundState(nextRound);
         setCurrentScreen("dealing");
       } catch (e) {
