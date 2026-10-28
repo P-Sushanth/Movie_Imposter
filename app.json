@@ -17,6 +17,7 @@
     },
     "android": {
       "package": "com.imposterwho.game",
+      "permissions": ["VIBRATE"],
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
