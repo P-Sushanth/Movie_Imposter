@@ -1,7 +1,12 @@
 package com.imposterwho.game
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import androidx.core.content.FileProvider
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -75,6 +80,52 @@ class MainActivity: FlutterActivity() {
                         }
                     } else {
                         result.error("INVALID_URL", "URL was null", null)
+                    }
+                }
+                "vibrateAlert" -> {
+                    try {
+                        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                            vibratorManager.defaultVibrator
+                        } else {
+                            @Suppress("DEPRECATION")
+                            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                        }
+
+                        if (vibrator.hasVibrator()) {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                // High-intensity repeating pulse pattern for times-up alert:
+                                // 0ms delay, 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz
+                                // Amplitude 255 = maximum hardware motor strength
+                                val timings = longArrayOf(0, 500, 150, 500, 150, 800)
+                                val amplitudes = intArrayOf(0, 255, 0, 255, 0, 255)
+                                val effect = VibrationEffect.createWaveform(timings, amplitudes, -1)
+                                vibrator.vibrate(effect)
+                            } else {
+                                @Suppress("DEPRECATION")
+                                val pattern = longArrayOf(0, 500, 150, 500, 150, 800)
+                                @Suppress("DEPRECATION")
+                                vibrator.vibrate(pattern, -1)
+                            }
+                        }
+                        result.success(true)
+                    } catch (e: Exception) {
+                        result.error("VIBRATION_ERROR", e.message, null)
+                    }
+                }
+                "cancelVibration" -> {
+                    try {
+                        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                            vibratorManager.defaultVibrator
+                        } else {
+                            @Suppress("DEPRECATION")
+                            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                        }
+                        vibrator.cancel()
+                        result.success(true)
+                    } catch (e: Exception) {
+                        result.success(false)
                     }
                 }
                 else -> result.notImplemented()
