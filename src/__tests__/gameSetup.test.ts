@@ -140,4 +140,29 @@ describe("Game Setup & Role Assignment", () => {
       expect(normalAssignment.role.movieTitle).toBe(nextRound.movieTitle);
     }
   });
+
+  it("applies weighted soft bias against previous imposters without 100% excluding them", () => {
+    const testPlayers = ["Alice", "Bob", "Charlie", "David"];
+    let aliceCount = 0;
+    const trials = 1000;
+
+    for (let i = 0; i < trials; i++) {
+      const round = createRound({
+        players: testPlayers,
+        selectedIndustries: ["tollywood"],
+        moviePool: ALL_MOVIES,
+        numImposters: 1,
+        previousImposters: ["Alice"],
+      });
+      if (round.imposters.includes("Alice")) {
+        aliceCount++;
+      }
+    }
+
+    // Theoretical probability is 0.5 / 3.5 ≈ 14.3% (~143 out of 1000).
+    // Without bias it would be 25% (250).
+    // Must be significantly reduced while remaining > 0 (not 100% excluded).
+    expect(aliceCount).toBeGreaterThan(60);
+    expect(aliceCount).toBeLessThan(220);
+  });
 });

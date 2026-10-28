@@ -13,6 +13,7 @@ export interface CreateRoundParams {
   discussionTimerMinutes?: number;
   previousMovieId?: string;
   previousClueKey?: string;
+  previousImposters?: string[];
   usedMovieIds?: Set<string>;
   random?: () => number;
 }
@@ -27,6 +28,7 @@ export function createRound({
   discussionTimerMinutes = 0,
   previousMovieId,
   previousClueKey,
+  previousImposters,
   usedMovieIds,
   random = Math.random,
 }: CreateRoundParams): RoundState {
@@ -108,14 +110,38 @@ export function createRound({
     throw new Error("Failed to find an eligible movie.");
   }
 
-  // 8. Pick distinct imposter indices uniformly at random
-  const allIndices = Array.from({ length: resolvedPlayers.length }, (_, i) => i);
+  // 8. Pick distinct imposter indices using weighted soft bias against previous imposters
+  const prevImposterLower = new Set(
+    (previousImposters || []).map((name) => name.trim().toLowerCase())
+  );
+
+  const availableIndices = Array.from({ length: resolvedPlayers.length }, (_, i) => i);
   const imposterIndices = new Set<number>();
 
-  while (imposterIndices.size < safeNumImposters && allIndices.length > 0) {
-    const pickIdx = Math.floor(random() * allIndices.length);
-    const chosen = allIndices.splice(pickIdx, 1)[0];
-    imposterIndices.add(chosen);
+  while (imposterIndices.size < safeNumImposters && availableIndices.length > 0) {
+    // Candidates who were imposter in the previous round receive weight 0.5 (half as likely relative to others),
+    // while others receive weight 1.0. This prevents back-to-back streaks while keeping
+    // bluffing and paranoia alive because the chance is never zero.
+    const weights = availableIndices.map((idx) => {
+      const playerName = resolvedPlayers[idx].trim().toLowerCase();
+      return prevImposterLower.has(playerName) ? 0.5 : 1.0;
+    });
+
+    const totalWeight = weights.reduce((acc, w) => acc + w, 0);
+    const randomVal = random() * totalWeight;
+
+    let cumulative = 0;
+    let selectedCandidatePos = availableIndices.length - 1;
+    for (let i = 0; i < availableIndices.length; i++) {
+      cumulative += weights[i];
+      if (randomVal <= cumulative) {
+        selectedCandidatePos = i;
+        break;
+      }
+    }
+
+    const chosenIndex = availableIndices.splice(selectedCandidatePos, 1)[0];
+    imposterIndices.add(chosenIndex);
   }
 
   // 9. Always randomize the dealing order so no player always goes first or last
