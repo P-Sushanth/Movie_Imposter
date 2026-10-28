@@ -37,14 +37,20 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
         if (prev <= 1) {
           clearInterval(interval);
           try {
-            Vibration.vibrate([0, 500, 200, 500]);
+            // High-intensity alerting pattern: 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz
+            Vibration.vibrate([0, 500, 150, 500, 150, 800]);
           } catch (_) {}
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      try {
+        Vibration.cancel();
+      } catch (_) {}
+    };
   }, [discussionTimerMinutes, isRevealed]);
 
   const formatTimer = (totalSeconds: number) => {
@@ -53,7 +59,43 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const getTimerColors = (seconds: number) => {
+    if (seconds === 0) {
+      return {
+        text: "#FF0000", // Pure Red
+        border: "#FF0000",
+        bg: "#FFEAEA",
+      };
+    }
+    if (seconds <= 5) {
+      // 5-second countdown: increasing the blacks of the red with each decreasing second towards pure red #FF0000
+      const colorsMap: Record<number, { text: string; border: string; bg: string }> = {
+        5: { text: "#1E0000", border: "#3A0808", bg: "#FFF4F2" },
+        4: { text: "#4B0000", border: "#6E0A0A", bg: "#FFF0EE" },
+        3: { text: "#780000", border: "#9E0E0E", bg: "#FFECEA" },
+        2: { text: "#A50000", border: "#CF1010", bg: "#FFE8E6" },
+        1: { text: "#D20000", border: "#EE0808", bg: "#FFE6E4" },
+      };
+      return colorsMap[seconds] || { text: "#FF0000", border: "#FF0000", bg: "#FFEAEA" };
+    }
+    if (seconds <= 30) {
+      return {
+        text: "#D84315",
+        border: "#FF5722",
+        bg: "#FFF7F2",
+      };
+    }
+    return {
+      text: colors.textPrimary,
+      border: colors.surfaceBorder,
+      bg: colors.surface,
+    };
+  };
+
   const handleNextRoundClick = () => {
+    try {
+      Vibration.cancel();
+    } catch (_) {}
     Alert.alert(
       "Start Next Round?",
       "Are you sure you want to start the next round? The phone will be passed around from the first player again with a new name and the same imposter.",
@@ -68,6 +110,9 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   };
 
   const handleRevealClick = () => {
+    try {
+      Vibration.cancel();
+    } catch (_) {}
     // Step 13: Double verification prompt
     Alert.alert(
       "Reveal Imposter?",
@@ -105,45 +150,39 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
               </View>
             )}
 
-            {discussionTimerMinutes > 0 && (
-              <View
-                style={[
-                  styles.timerCard,
-                  remainingSeconds === 0
-                    ? styles.timerCardExpired
-                    : remainingSeconds <= 30
-                    ? styles.timerCardWarning
-                    : null,
-                ]}
-              >
-                <Text
+            {discussionTimerMinutes > 0 && (() => {
+              const timerTheme = getTimerColors(remainingSeconds);
+              return (
+                <View
                   style={[
-                    styles.timerBadge,
-                    remainingSeconds === 0
-                      ? styles.timerBadgeExpired
-                      : remainingSeconds <= 30
-                      ? styles.timerBadgeWarning
-                      : null,
+                    styles.timerCard,
+                    {
+                      backgroundColor: timerTheme.bg,
+                      borderColor: timerTheme.border,
+                    },
                   ]}
                 >
-                  {remainingSeconds === 0
-                    ? "⏱️ TIME'S UP! VOTE NOW"
-                    : "⏱️ DISCUSSION TIME REMAINING"}
-                </Text>
-                <Text
-                  style={[
-                    styles.timerText,
-                    remainingSeconds === 0
-                      ? styles.timerTextExpired
-                      : remainingSeconds <= 30
-                      ? styles.timerTextWarning
-                      : null,
-                  ]}
-                >
-                  {formatTimer(remainingSeconds)}
-                </Text>
-              </View>
-            )}
+                  <Text
+                    style={[
+                      styles.timerBadge,
+                      { color: timerTheme.text },
+                    ]}
+                  >
+                    {remainingSeconds === 0
+                      ? "⏱️ TIME'S UP! VOTE NOW"
+                      : "⏱️ DISCUSSION TIME REMAINING"}
+                  </Text>
+                  <Text
+                    style={[
+                      styles.timerText,
+                      { color: timerTheme.text },
+                    ]}
+                  >
+                    {formatTimer(remainingSeconds)}
+                  </Text>
+                </View>
+              );
+            })()}
 
             {discussionOrder && discussionOrder.length > 0 && (
               <View style={styles.orderCard}>
