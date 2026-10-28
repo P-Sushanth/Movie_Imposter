@@ -64,15 +64,31 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
     });
   }
 
+  static const MethodChannel _nativeChannel = MethodChannel('com.imposterwho.game/updater');
+
   void _triggerTimesUpVibration() {
     try {
+      // High-intensity repeating hardware vibration pattern on Android:
+      // 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz at max amplitude
+      _nativeChannel.invokeMethod('vibrateAlert').catchError((_) => null);
+    } catch (_) {}
+
+    try {
+      HapticFeedback.heavyImpact();
       HapticFeedback.vibrate();
+    } catch (_) {}
+  }
+
+  void _stopTimesUpVibration() {
+    try {
+      _nativeChannel.invokeMethod('cancelVibration').catchError((_) => null);
     } catch (_) {}
   }
 
   @override
   void dispose() {
     _timer?.cancel();
+    _stopTimesUpVibration();
     super.dispose();
   }
 
@@ -82,7 +98,64 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
     return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
   }
 
+  Color _getTimerTextColor() {
+    if (_remainingSeconds == 0) {
+      return const Color(0xFFFF0000); // Pure Red
+    }
+    if (_remainingSeconds <= 5) {
+      final t = (5 - _remainingSeconds) / 5.0;
+      return Color.lerp(const Color(0xFF1E0000), const Color(0xFFFF0000), t)!;
+    }
+    if (_remainingSeconds <= 30) {
+      return AppColors.flameOrangeDark;
+    }
+    return AppColors.textPrimary;
+  }
+
+  Color _getTimerLabelColor() {
+    if (_remainingSeconds == 0) {
+      return const Color(0xFFFF0000); // Pure Red
+    }
+    if (_remainingSeconds <= 5) {
+      final t = (5 - _remainingSeconds) / 5.0;
+      return Color.lerp(const Color(0xFF1E0000), const Color(0xFFFF0000), t)!;
+    }
+    if (_remainingSeconds <= 30) {
+      return AppColors.flameOrangeDark;
+    }
+    return AppColors.textSecondary;
+  }
+
+  Color _getTimerBorderColor() {
+    if (_remainingSeconds == 0) {
+      return const Color(0xFFFF0000); // Pure Red
+    }
+    if (_remainingSeconds <= 5) {
+      final t = (5 - _remainingSeconds) / 5.0;
+      return Color.lerp(const Color(0xFF3A0808), const Color(0xFFFF0000), t)!;
+    }
+    if (_remainingSeconds <= 30) {
+      return AppColors.flameOrange;
+    }
+    return AppColors.surfaceBorder;
+  }
+
+  Color _getTimerBgColor() {
+    if (_remainingSeconds == 0) {
+      return const Color(0xFFFFEAEA);
+    }
+    if (_remainingSeconds <= 5) {
+      final t = (5 - _remainingSeconds) / 5.0;
+      return Color.lerp(const Color(0xFFFFF7F2), const Color(0xFFFFEAEA), t)!;
+    }
+    if (_remainingSeconds <= 30) {
+      return AppColors.flameOrangeBg;
+    }
+    return AppColors.surface;
+  }
+
   void _handleNextRoundClick() {
+    _stopTimesUpVibration();
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -151,6 +224,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   }
 
   void _handleRevealClick() {
+    _stopTimesUpVibration();
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -323,18 +397,10 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                   width: double.infinity,
                                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                                   decoration: BoxDecoration(
-                                    color: _remainingSeconds == 0
-                                        ? AppColors.imposterRedBg
-                                        : (_remainingSeconds <= 30
-                                            ? AppColors.flameOrangeBg
-                                            : AppColors.surface),
+                                    color: _getTimerBgColor(),
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
-                                      color: _remainingSeconds == 0
-                                          ? AppColors.danger
-                                          : (_remainingSeconds <= 30
-                                              ? AppColors.flameOrange
-                                              : AppColors.surfaceBorder),
+                                      color: _getTimerBorderColor(),
                                       width: 2,
                                     ),
                                     boxShadow: [
@@ -353,11 +419,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                           Icon(
                                             Icons.timer_outlined,
                                             size: 16,
-                                            color: _remainingSeconds == 0
-                                                ? AppColors.danger
-                                                : (_remainingSeconds <= 30
-                                                    ? AppColors.flameOrangeDark
-                                                    : AppColors.textSecondary),
+                                            color: _getTimerLabelColor(),
                                           ),
                                           const SizedBox(width: 6),
                                           Text(
@@ -367,11 +429,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                             style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w800,
-                                              color: _remainingSeconds == 0
-                                                  ? AppColors.danger
-                                                  : (_remainingSeconds <= 30
-                                                      ? AppColors.flameOrangeDark
-                                                      : AppColors.textSecondary),
+                                              color: _getTimerLabelColor(),
                                               letterSpacing: 1.2,
                                             ),
                                           ),
@@ -383,11 +441,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
                                         style: TextStyle(
                                           fontSize: 38,
                                           fontWeight: FontWeight.w900,
-                                          color: _remainingSeconds == 0
-                                              ? AppColors.danger
-                                              : (_remainingSeconds <= 30
-                                                  ? AppColors.flameOrangeDark
-                                                  : AppColors.textPrimary),
+                                          color: _getTimerTextColor(),
                                           letterSpacing: 1.5,
                                           fontFamily: 'Courier New',
                                         ),
