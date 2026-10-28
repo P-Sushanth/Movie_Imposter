@@ -10,6 +10,7 @@ import 'screens/deal_cards_screen.dart';
 import 'screens/discussion_screen.dart';
 import 'screens/setup_screen.dart';
 import 'services/group_service.dart';
+import 'services/movie_history_service.dart';
 import 'services/update_service.dart';
 import 'theme/app_colors.dart';
 import 'theme/app_theme.dart';
@@ -55,6 +56,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _loadSavedGroups();
+    _loadCachedUsedMovies();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       UpdateService.checkAndShowUpdateDialog(context);
     });
@@ -95,9 +97,18 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
   // Active round state
   RoundState? _roundState;
 
-  // Track movies played in this session only
+  // Track movies played across sessions (backed by local storage cache)
   final Set<String> _usedMovieIds = <String>{};
   String? _previousClueKey;
+
+  Future<void> _loadCachedUsedMovies() async {
+    final cached = await MovieHistoryService.loadUsedMovieIds();
+    if (cached.isNotEmpty && mounted) {
+      setState(() {
+        _usedMovieIds.addAll(cached);
+      });
+    }
+  }
 
   // Industry handlers
   void _handleToggleIndustry(Industry ind) {
@@ -262,11 +273,13 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           discussionTimerMinutes: _discussionTimerMinutes,
           previousMovieId: _roundState?.movieId,
           previousClueKey: _previousClueKey,
+          previousImposters: _roundState?.imposters,
           usedMovieIds: _usedMovieIds,
         ),
       );
 
       _usedMovieIds.add(round.movieId);
+      MovieHistoryService.recordUsedMovieId(round.movieId);
       _previousClueKey = round.imposterClueKey;
 
       setState(() {
@@ -321,6 +334,7 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           usedMovieIds: _usedMovieIds,
         );
         _usedMovieIds.add(nextRound.movieId);
+        MovieHistoryService.recordUsedMovieId(nextRound.movieId);
         _previousClueKey = nextRound.imposterClueKey;
         setState(() {
           _roundState = nextRound;
