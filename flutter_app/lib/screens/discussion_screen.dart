@@ -99,9 +99,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
 
   Color _getTimerTextColor() {
     if (_remainingSeconds <= 5) {
-      // 5s down to 0s: start from 30s flameOrangeDark (#D84315) and progressively increase black
+      // 5s down to 0s: start from 30s flameOrangeDark (#D84315) and smoothly transition into bright red (#FF0000)
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFF0F0200), t)!;
+      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFFFF0000), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeDark;
@@ -112,7 +112,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   Color _getTimerLabelColor() {
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFF0F0200), t)!;
+      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFFFF0000), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeDark;
@@ -123,7 +123,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   Color _getTimerBorderColor() {
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(AppColors.flameOrange, const Color(0xFF2E0500), t)!;
+      return Color.lerp(AppColors.flameOrange, const Color(0xFFFF0000), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrange;
@@ -134,7 +134,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   Color _getTimerBgColor() {
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(AppColors.flameOrangeBg, const Color(0xFFFFECE5), t)!;
+      return Color.lerp(AppColors.flameOrangeBg, const Color(0xFFFFEAEA), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeBg;

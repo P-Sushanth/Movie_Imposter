@@ -62,16 +62,16 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   const getTimerColors = (seconds: number) => {
     if (seconds <= 5) {
       // 5-second countdown: starts from the same 30s red (#D84315),
-      // and progressively darkens by increasing black towards 00:00
+      // and smoothly transitions into bright red (#FF0000)
       const colorsMap: Record<number, { text: string; border: string; bg: string }> = {
         5: { text: "#D84315", border: "#FF5722", bg: "#FFF7F2" }, // Identical to 30s red
-        4: { text: "#AD3611", border: "#D4441B", bg: "#FFF4EF" },
-        3: { text: "#82280D", border: "#AA3214", bg: "#FFF2EC" },
-        2: { text: "#561B08", border: "#7F210E", bg: "#FFEFE9" },
-        1: { text: "#2B0D04", border: "#551107", bg: "#FFEDE6" },
-        0: { text: "#0F0200", border: "#2E0500", bg: "#FFECE5" },
+        4: { text: "#E03510", border: "#FF451B", bg: "#FFF4F0" },
+        3: { text: "#E8280C", border: "#FF3415", bg: "#FFF2EF" },
+        2: { text: "#F01B08", border: "#FF230E", bg: "#FFF0ED" },
+        1: { text: "#F70D04", border: "#FF1107", bg: "#FFEFEB" },
+        0: { text: "#FF0000", border: "#FF0000", bg: "#FFEAEA" }, // Vivid bright red
       };
-      return colorsMap[seconds] || { text: "#0F0200", border: "#2E0500", bg: "#FFECE5" };
+      return colorsMap[seconds] || { text: "#FF0000", border: "#FF0000", bg: "#FFEAEA" };
     }
     if (seconds <= 30) {
       return {
