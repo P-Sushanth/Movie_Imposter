@@ -2,6 +2,7 @@ package com.imposterwho.game
 
 import android.content.Context
 import android.content.Intent
+import android.media.AudioAttributes
 import android.net.Uri
 import android.os.Build
 import android.os.VibrationEffect
@@ -93,19 +94,33 @@ class MainActivity: FlutterActivity() {
                         }
 
                         if (vibrator.hasVibrator()) {
+                            // Enforce ALARM audio usage so Android routes vibration at 100% full motor power
+                            // and does NOT mute or scale it down via low touch/haptic UI settings
+                            val audioAttributes = AudioAttributes.Builder()
+                                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                                .setUsage(AudioAttributes.USAGE_ALARM)
+                                .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
+                                .build()
+
+                            // Sustained, unmistakable high-intensity pulse alert (~3.7s total):
+                            val timings = longArrayOf(0, 700, 200, 700, 200, 700, 200, 1000)
+                            val amplitudes = intArrayOf(0, 255, 0, 255, 0, 255, 0, 255)
+
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                // High-intensity repeating pulse pattern for times-up alert:
-                                // 0ms delay, 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz
-                                // Amplitude 255 = maximum hardware motor strength
-                                val timings = longArrayOf(0, 500, 150, 500, 150, 800)
-                                val amplitudes = intArrayOf(0, 255, 0, 255, 0, 255)
-                                val effect = VibrationEffect.createWaveform(timings, amplitudes, -1)
-                                vibrator.vibrate(effect)
+                                try {
+                                    val effect = if (vibrator.hasAmplitudeControl()) {
+                                        VibrationEffect.createWaveform(timings, amplitudes, -1)
+                                    } else {
+                                        VibrationEffect.createWaveform(timings, -1)
+                                    }
+                                    vibrator.vibrate(effect, audioAttributes)
+                                } catch (_: Exception) {
+                                    val effect = VibrationEffect.createWaveform(timings, -1)
+                                    vibrator.vibrate(effect, audioAttributes)
+                                }
                             } else {
                                 @Suppress("DEPRECATION")
-                                val pattern = longArrayOf(0, 500, 150, 500, 150, 800)
-                                @Suppress("DEPRECATION")
-                                vibrator.vibrate(pattern, -1)
+                                vibrator.vibrate(timings, -1, audioAttributes)
                             }
                         }
                         result.success(true)
@@ -113,7 +128,7 @@ class MainActivity: FlutterActivity() {
                         result.error("VIBRATION_ERROR", e.message, null)
                     }
                 }
-                "cancelVibration" -> {
+            "cancelVibration" -> {
                     try {
                         val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                             val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager

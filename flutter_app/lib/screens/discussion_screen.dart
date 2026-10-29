@@ -68,8 +68,7 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
 
   void _triggerTimesUpVibration() {
     try {
-      // High-intensity repeating hardware vibration pattern on Android:
-      // 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz at max amplitude
+      // High-intensity repeating hardware vibration pattern on Android with USAGE_ALARM:
       _nativeChannel.invokeMethod('vibrateAlert').catchError((_) => null);
     } catch (_) {}
 
@@ -99,12 +98,10 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   }
 
   Color _getTimerTextColor() {
-    if (_remainingSeconds == 0) {
-      return const Color(0xFFFF0000); // Pure Red
-    }
     if (_remainingSeconds <= 5) {
+      // 5s down to 0s: start from 30s flameOrangeDark (#D84315) and progressively increase black
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(const Color(0xFF1E0000), const Color(0xFFFF0000), t)!;
+      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFF0F0200), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeDark;
@@ -113,12 +110,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   }
 
   Color _getTimerLabelColor() {
-    if (_remainingSeconds == 0) {
-      return const Color(0xFFFF0000); // Pure Red
-    }
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(const Color(0xFF1E0000), const Color(0xFFFF0000), t)!;
+      return Color.lerp(AppColors.flameOrangeDark, const Color(0xFF0F0200), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeDark;
@@ -127,12 +121,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   }
 
   Color _getTimerBorderColor() {
-    if (_remainingSeconds == 0) {
-      return const Color(0xFFFF0000); // Pure Red
-    }
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(const Color(0xFF3A0808), const Color(0xFFFF0000), t)!;
+      return Color.lerp(AppColors.flameOrange, const Color(0xFF2E0500), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrange;
@@ -141,12 +132,9 @@ class _DiscussionScreenState extends State<DiscussionScreen> {
   }
 
   Color _getTimerBgColor() {
-    if (_remainingSeconds == 0) {
-      return const Color(0xFFFFEAEA);
-    }
     if (_remainingSeconds <= 5) {
       final t = (5 - _remainingSeconds) / 5.0;
-      return Color.lerp(const Color(0xFFFFF7F2), const Color(0xFFFFEAEA), t)!;
+      return Color.lerp(AppColors.flameOrangeBg, const Color(0xFFFFECE5), t)!;
     }
     if (_remainingSeconds <= 30) {
       return AppColors.flameOrangeBg;

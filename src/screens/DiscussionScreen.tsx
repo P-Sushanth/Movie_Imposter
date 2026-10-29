@@ -37,8 +37,8 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
         if (prev <= 1) {
           clearInterval(interval);
           try {
-            // High-intensity alerting pattern: 500ms buzz, 150ms pause, 500ms buzz, 150ms pause, 800ms buzz
-            Vibration.vibrate([0, 500, 150, 500, 150, 800]);
+            // Sustained high-intensity alert pattern (~3.7s total buzz):
+            Vibration.vibrate([0, 700, 200, 700, 200, 700, 200, 1000]);
           } catch (_) {}
           return 0;
         }
@@ -60,23 +60,18 @@ export const DiscussionScreen: React.FC<DiscussionScreenProps> = ({
   };
 
   const getTimerColors = (seconds: number) => {
-    if (seconds === 0) {
-      return {
-        text: "#FF0000", // Pure Red
-        border: "#FF0000",
-        bg: "#FFEAEA",
-      };
-    }
     if (seconds <= 5) {
-      // 5-second countdown: increasing the blacks of the red with each decreasing second towards pure red #FF0000
+      // 5-second countdown: starts from the same 30s red (#D84315),
+      // and progressively darkens by increasing black towards 00:00
       const colorsMap: Record<number, { text: string; border: string; bg: string }> = {
-        5: { text: "#1E0000", border: "#3A0808", bg: "#FFF4F2" },
-        4: { text: "#4B0000", border: "#6E0A0A", bg: "#FFF0EE" },
-        3: { text: "#780000", border: "#9E0E0E", bg: "#FFECEA" },
-        2: { text: "#A50000", border: "#CF1010", bg: "#FFE8E6" },
-        1: { text: "#D20000", border: "#EE0808", bg: "#FFE6E4" },
+        5: { text: "#D84315", border: "#FF5722", bg: "#FFF7F2" }, // Identical to 30s red
+        4: { text: "#AD3611", border: "#D4441B", bg: "#FFF4EF" },
+        3: { text: "#82280D", border: "#AA3214", bg: "#FFF2EC" },
+        2: { text: "#561B08", border: "#7F210E", bg: "#FFEFE9" },
+        1: { text: "#2B0D04", border: "#551107", bg: "#FFEDE6" },
+        0: { text: "#0F0200", border: "#2E0500", bg: "#FFECE5" },
       };
-      return colorsMap[seconds] || { text: "#FF0000", border: "#FF0000", bg: "#FFEAEA" };
+      return colorsMap[seconds] || { text: "#0F0200", border: "#2E0500", bg: "#FFECE5" };
     }
     if (seconds <= 30) {
       return {
