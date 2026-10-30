@@ -1,17 +1,17 @@
 # 🎬 Movie Imposter
 
-[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.3.1)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
+[![Download Android APK](https://img.shields.io/badge/Download-Android%20APK%20(v1.4.0)-2ea44f?style=for-the-badge&logo=android&logoColor=white)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest/download/movie-imposter.apk)
 [![GitHub Release](https://img.shields.io/github/v/release/P-Sushanth/Movie_Imposter?style=for-the-badge&color=blue)](https://github.com/P-Sushanth/Movie_Imposter/releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/P-Sushanth/Movie_Imposter/total?style=for-the-badge&color=brightgreen)](https://github.com/P-Sushanth/Movie_Imposter/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-An offline, pass-and-play party game inspired by Indian and international cinema (Tollywood, Bollywood, Hollywood), TV/OTT Shows, Korean Dramas (K-Drama), and Nostalgic Cartoons. Designed for 3 or more players (unlimited players!) to enjoy on a single phone with zero internet required.
+An offline, pass-and-play party arcade featuring **Movie Imposter** and **Hangman Battle**—inspired by Indian and international cinema (Tollywood, Bollywood, Hollywood), TV/OTT Shows, Korean Dramas (K-Drama), and Nostalgic Cartoons. Designed for parties and game nights to enjoy on a single phone with zero internet required.
 
 ---
 
 ## 📲 Download & Choose the Right APK
 
-Starting with **v1.3.1**, Movie Imposter provides **optimized APK variants** for every platform. This reduces download sizes by up to **65%** compared to fat universal builds while guaranteeing 100% compatibility across all Android devices, TVs, and emulators.
+Starting with **v1.4.0**, Movie Imposter provides **optimized APK variants** for every platform. This reduces download sizes by up to **65%** compared to fat universal builds while guaranteeing 100% compatibility across all Android devices, TVs, and emulators.
 
 ### 📊 Quick Comparison: Which APK is for you?
 
@@ -84,7 +84,9 @@ Starting with **v1.3.1**, Movie Imposter provides **optimized APK variants** for
 
 ---
 
-## 🎮 How to Play
+## 🎮 Games & How to Play
+
+### 🕵️ 1. Movie Imposter (3–10+ Players)
 
 1. **Setup**:
    - Choose your categories (**Tollywood**, **Bollywood**, **Hollywood**, **Shows**, **K-Drama**, **Cartoons**, or any combination).
@@ -111,8 +113,34 @@ Starting with **v1.3.1**, Movie Imposter provides **optimized APK variants** for
 
 ---
 
+### 🪢 2. Hangman Battle (2 Teams • New in v1.4.0)
+
+A pass-and-play duel featuring strike tracking, optional trivia hints, and competitive session scoring!
+
+1. **Team Setup**:
+   - Customize Team A and Team B names (e.g., `Team Popcorn` vs `Team Cinema`).
+   - View cumulative session scores preserved across all rounds.
+2. **Word Entry (Word Creator Spotlight)**:
+   - The setting team is spotlighted on a high-contrast dark card.
+   - Enter any secret word, movie title, or phrase (spaces and punctuation reveal automatically).
+   - Add up to 3 optional clues (e.g., *"Directed by Christopher Nolan"*, *"2014 Sci-Fi masterpiece"*).
+   - Tap **Lock Word & Pass Phone →** to hand the device to the guessing team.
+3. **Guessing Arena**:
+   - Guess letters or digits using the typewriter keypad.
+   - **7-Strike Tracker**: Incorrect guesses strike through the letters `H - A - N - G - M - A - N` one by one.
+   - **Clues Drawer**: Open hints anytime—viewing clues adjusts the win reward from `+2 Pts` to `+1 Pt`.
+4. **Scoring Rules & Next Round**:
+   - `• Guess without clues: +2 Points`
+   - `• Guess with clues opened: +1 Point`
+   - `• 7 strikes hit: Setting team +1 Pt`
+   - Tap **Swap Roles & Next Round →** to alternate setting/guessing turns while continuing the session score!
+
+---
+
 ## ✨ Features
 
+- **🎪 Party Arcade Hub (v1.4.0)**: Choose seamlessly between Movie Imposter and the new Hangman Battle duel mode.
+- **🪢 Hangman Battle Mode (v1.4.0)**: Pass-and-play team duel with custom words, optional hints, strike tracker, retro rubber-stamp outcome modal, and session scores.
 - **100% Offline-First**: No servers, no accounts, no analytics, no ads required for gameplay.
 - **👥 Player Groups**: Save and manage custom player groups stored securely in your device's local cache. Restores your last active group automatically on app launch.
 - **↕️ Custom Player Drag Reordering**: Easily reorder player speaking or dealing positions using drag-and-drop handles.
