@@ -33,6 +33,7 @@ class SetupScreen extends StatelessWidget {
   final int discussionTimerMinutes;
   final void Function(int minutes) onChangeDiscussionTimer;
   final VoidCallback onStartGame;
+  final VoidCallback? onBackToHub;
   const SetupScreen({
     super.key,
     required this.selectedIndustries,
@@ -61,6 +62,7 @@ class SetupScreen extends StatelessWidget {
     this.discussionTimerMinutes = 0,
     required this.onChangeDiscussionTimer,
     required this.onStartGame,
+    this.onBackToHub,
   });
 
   @override
@@ -84,13 +86,38 @@ class SetupScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Movie Imposter',
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.w800,
-                            color: AppColors.textPrimary,
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (onBackToHub != null) ...[
+                              InkWell(
+                                onTap: onBackToHub,
+                                borderRadius: BorderRadius.circular(8),
+                                child: Container(
+                                  padding: const EdgeInsets.all(6),
+                                  margin: const EdgeInsets.only(right: 10),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.surfaceElevated,
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(color: AppColors.surfaceBorder),
+                                  ),
+                                  child: const Icon(
+                                    Icons.arrow_back,
+                                    size: 18,
+                                    color: AppColors.textPrimary,
+                                  ),
+                                ),
+                              ),
+                            ],
+                            const Text(
+                              'Movie Imposter',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                          ],
                         ),
                         ValueListenableBuilder<UpdateInfo?>(
                           valueListenable: UpdateService.availableUpdateNotifier,
