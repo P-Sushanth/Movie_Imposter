@@ -6,8 +6,13 @@ import 'domain/validation.dart';
 import 'models/movie.dart';
 import 'models/player_group.dart';
 import 'models/round_state.dart';
+import 'domain/hangman.dart';
 import 'screens/deal_cards_screen.dart';
 import 'screens/discussion_screen.dart';
+import 'screens/game_hub_screen.dart';
+import 'screens/hangman_arena_screen.dart';
+import 'screens/hangman_team_setup_screen.dart';
+import 'screens/hangman_word_entry_screen.dart';
 import 'screens/setup_screen.dart';
 import 'services/group_service.dart';
 import 'services/movie_history_service.dart';
@@ -36,9 +41,13 @@ class MovieImposterApp extends StatelessWidget {
 }
 
 enum ScreenState {
+  gameHub,
   setup,
   dealing,
   discussion,
+  hangmanTeamSetup,
+  hangmanWordEntry,
+  hangmanArena,
 }
 
 class GameContainer extends StatefulWidget {
@@ -49,7 +58,142 @@ class GameContainer extends StatefulWidget {
 }
 
 class _GameContainerState extends State<GameContainer> with WidgetsBindingObserver {
-  ScreenState _currentScreen = ScreenState.setup;
+  ScreenState _currentScreen = ScreenState.gameHub;
+
+  bool _hasActiveHangmanSession = false;
+
+  HangmanState _hangmanState = const HangmanState(
+    teamAName: 'Team Popcorn',
+    teamBName: 'Team Cinema',
+    settingTeam: HangmanTeamRole.teamA,
+    secretWord: '',
+    clues: [],
+    guessedLetters: {},
+    cluesViewed: false,
+    scoreTeamA: 0,
+    scoreTeamB: 0,
+  );
+
+  bool get _hasHangmanSession =>
+      _hasActiveHangmanSession ||
+      _hangmanState.scoreTeamA > 0 ||
+      _hangmanState.scoreTeamB > 0 ||
+      _hangmanState.secretWord.isNotEmpty;
+
+  void _resetHangmanAndStart() {
+    setState(() {
+      _hasActiveHangmanSession = false;
+      _hangmanState = const HangmanState(
+        teamAName: 'Team Popcorn',
+        teamBName: 'Team Cinema',
+        settingTeam: HangmanTeamRole.teamA,
+        secretWord: '',
+        clues: [],
+        guessedLetters: {},
+        cluesViewed: false,
+        scoreTeamA: 0,
+        scoreTeamB: 0,
+      );
+      _currentScreen = ScreenState.hangmanTeamSetup;
+    });
+  }
+
+  void _continueHangmanSession() {
+    setState(() {
+      if (_hangmanState.secretWord.isNotEmpty &&
+          !isRoundOver(_hangmanState.secretWord, _hangmanState.guessedLetters)) {
+        _currentScreen = ScreenState.hangmanArena;
+      } else {
+        _currentScreen = ScreenState.hangmanWordEntry;
+      }
+    });
+  }
+
+  void _handleSelectHangmanFromHub() {
+    if (_hasHangmanSession) {
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+          title: const Text(
+            'Continue Hangman Session?',
+            style: TextStyle(fontWeight: FontWeight.w800),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Previous match found:',
+                style: TextStyle(fontSize: 13, color: AppColors.textSecondary),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                decoration: BoxDecoration(
+                  color: AppColors.surfaceElevated,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: AppColors.surfaceBorder),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '${_hangmanState.teamAName}: ${_hangmanState.scoreTeamA}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.textPrimary,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const Text('VS', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textMuted)),
+                    Text(
+                      '${_hangmanState.scoreTeamB} :${_hangmanState.teamBName}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w800,
+                        color: AppColors.warmAmber,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Would you like to continue this session or reset the entire thing and start from team setup again?',
+                style: TextStyle(fontSize: 13, color: AppColors.textSecondary),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                _resetHangmanAndStart();
+              },
+              style: TextButton.styleFrom(foregroundColor: AppColors.danger),
+              child: const Text('Reset & Start Fresh', style: TextStyle(fontWeight: FontWeight.w700)),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                _continueHangmanSession();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.warmAmber,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              ),
+              child: const Text('Continue Session', style: TextStyle(fontWeight: FontWeight.w800)),
+            ),
+          ],
+        ),
+      );
+    } else {
+      _resetHangmanAndStart();
+    }
+  }
 
   @override
   void initState() {
@@ -447,13 +591,68 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
       return false;
     }
 
+    if (_currentScreen == ScreenState.hangmanWordEntry) {
+      setState(() {
+        _currentScreen = ScreenState.hangmanTeamSetup;
+      });
+      return false;
+    }
+
+    if (_currentScreen == ScreenState.setup ||
+        _currentScreen == ScreenState.hangmanTeamSetup) {
+      setState(() {
+        _currentScreen = ScreenState.gameHub;
+      });
+      return false;
+    }
+
+    if (_currentScreen == ScreenState.hangmanArena) {
+      final shouldExit = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: const Text('Exit Hangman Round?', style: TextStyle(fontWeight: FontWeight.w800)),
+          content: const Text('Going back will cancel the round in progress.'),
+          actions: [
+            OutlinedButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: AppColors.surfaceBorderDark),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              ),
+              child: const Text('Continue Playing', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.textSecondary)),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.danger,
+                foregroundColor: Colors.white,
+                elevation: 0,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              ),
+              child: const Text('Exit Round', style: TextStyle(fontWeight: FontWeight.w700)),
+            ),
+          ],
+        ),
+      );
+
+      if (shouldExit == true) {
+        setState(() {
+          _currentScreen = ScreenState.hangmanWordEntry;
+        });
+      }
+      return false;
+    }
+
     return true;
   }
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: _currentScreen == ScreenState.setup,
+      canPop: _currentScreen == ScreenState.gameHub,
       onPopInvokedWithResult: (didPop, _) {
         if (!didPop) {
           _onWillPop();
@@ -465,8 +664,23 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
 
   Widget _buildCurrentScreen() {
     switch (_currentScreen) {
+      case ScreenState.gameHub:
+        return GameHubScreen(
+          onPlayImposter: () {
+            setState(() {
+              _currentScreen = ScreenState.setup;
+            });
+          },
+          onPlayHangman: _handleSelectHangmanFromHub,
+        );
+
       case ScreenState.setup:
         return SetupScreen(
+          onBackToHub: () {
+            setState(() {
+              _currentScreen = ScreenState.gameHub;
+            });
+          },
           selectedIndustries: _selectedIndustries,
           onToggleIndustry: _handleToggleIndustry,
           onSelectAllIndustries: _handleSelectAllIndustries,
@@ -530,6 +744,82 @@ class _GameContainerState extends State<GameContainer> with WidgetsBindingObserv
           discussionTimerMinutes: _roundState!.discussionTimerMinutes,
           onReturnToSetup: _handleReturnToSetup,
           onNextRound: _handleNextRound,
+        );
+
+      case ScreenState.hangmanTeamSetup:
+        return HangmanTeamSetupScreen(
+          state: _hangmanState,
+          onBackToHub: () {
+            setState(() {
+              _currentScreen = ScreenState.gameHub;
+            });
+          },
+          onProceedToWordEntry: ({
+            required String teamAName,
+            required String teamBName,
+          }) {
+            setState(() {
+              _hangmanState = _hangmanState.copyWith(
+                teamAName: teamAName,
+                teamBName: teamBName,
+              );
+              _currentScreen = ScreenState.hangmanWordEntry;
+            });
+          },
+        );
+
+      case ScreenState.hangmanWordEntry:
+        return HangmanWordEntryScreen(
+          state: _hangmanState,
+          onBackToTeamSetup: () {
+            setState(() {
+              _currentScreen = ScreenState.hangmanTeamSetup;
+            });
+          },
+          onLockWordAndPass: ({
+            required String secretWord,
+            required List<String> clues,
+          }) {
+            setState(() {
+              _hasActiveHangmanSession = true;
+              _hangmanState = _hangmanState.copyWith(
+                secretWord: secretWord,
+                clues: clues,
+                guessedLetters: const <String>{},
+                cluesViewed: false,
+              );
+              _currentScreen = ScreenState.hangmanArena;
+            });
+          },
+        );
+
+      case ScreenState.hangmanArena:
+        return HangmanArenaScreen(
+          state: _hangmanState,
+          onGuessLetter: (letter) {
+            setState(() {
+              final updated = Set<String>.from(_hangmanState.guessedLetters)
+                ..add(letter.toUpperCase());
+              _hangmanState = _hangmanState.copyWith(guessedLetters: updated);
+            });
+          },
+          onOpenClues: () {
+            setState(() {
+              _hangmanState = _hangmanState.copyWith(cluesViewed: true);
+            });
+          },
+          onNextRound: () {
+            setState(() {
+              final outcome = calculateRoundOutcome(_hangmanState);
+              _hangmanState = createNextHangmanRound(_hangmanState, outcome);
+              _currentScreen = ScreenState.hangmanWordEntry;
+            });
+          },
+          onBackToHub: () {
+            setState(() {
+              _currentScreen = ScreenState.gameHub;
+            });
+          },
         );
     }
   }
