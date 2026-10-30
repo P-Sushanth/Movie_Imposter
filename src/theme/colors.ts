@@ -17,6 +17,12 @@ export const colors = {
   movieBlue: "#2563EB",
   movieBlueBg: "#EFF6FF",
 
+  // Warm Amber (Hangman focal accent - 60:30:10 rule)
+  warmAmber: "#A55704",
+  warmAmberBg: "#FBF4ED",
+  warmAmberBorder: "#E8C5A0",
+  warmAmberLight: "#D97706",
+
   // Clean high-contrast typography
   textPrimary: "#0F172A",
   textSecondary: "#475569",
