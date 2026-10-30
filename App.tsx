@@ -15,11 +15,97 @@ import { movieHistoryService } from "./src/services/movieHistoryService";
 import { SetupScreen } from "./src/screens/SetupScreen";
 import { DealCardsScreen } from "./src/screens/DealCardsScreen";
 import { DiscussionScreen } from "./src/screens/DiscussionScreen";
+import { GameHubScreen } from "./src/screens/GameHubScreen";
+import { HangmanTeamSetupScreen } from "./src/screens/HangmanTeamSetupScreen";
+import { HangmanWordEntryScreen } from "./src/screens/HangmanWordEntryScreen";
+import { HangmanArenaScreen } from "./src/screens/HangmanArenaScreen";
+import {
+  HangmanState,
+  calculateRoundOutcome,
+  createNextHangmanRound,
+  isRoundOver,
+} from "./src/domain/hangman";
 
-type ScreenName = "setup" | "dealing" | "discussion";
+type ScreenName =
+  | "gameHub"
+  | "setup"
+  | "dealing"
+  | "discussion"
+  | "hangmanTeamSetup"
+  | "hangmanWordEntry"
+  | "hangmanArena";
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState<ScreenName>("setup");
+  const [currentScreen, setCurrentScreen] = useState<ScreenName>("gameHub");
+
+  // Hangman State
+  const [hasActiveHangmanSession, setHasActiveHangmanSession] = useState(false);
+  const [hangmanState, setHangmanState] = useState<HangmanState>({
+    teamAName: "Team Popcorn",
+    teamBName: "Team Cinema",
+    settingTeam: "teamA",
+    secretWord: "",
+    clues: [],
+    guessedLetters: new Set<string>(),
+    cluesViewed: false,
+    scoreTeamA: 0,
+    scoreTeamB: 0,
+  });
+
+  const hasHangmanSession =
+    hasActiveHangmanSession ||
+    hangmanState.scoreTeamA > 0 ||
+    hangmanState.scoreTeamB > 0 ||
+    hangmanState.secretWord.length > 0;
+
+  const resetHangmanAndStart = () => {
+    setHasActiveHangmanSession(false);
+    setHangmanState({
+      teamAName: "Team Popcorn",
+      teamBName: "Team Cinema",
+      settingTeam: "teamA",
+      secretWord: "",
+      clues: [],
+      guessedLetters: new Set<string>(),
+      cluesViewed: false,
+      scoreTeamA: 0,
+      scoreTeamB: 0,
+    });
+    setCurrentScreen("hangmanTeamSetup");
+  };
+
+  const continueHangmanSession = () => {
+    if (
+      hangmanState.secretWord &&
+      !isRoundOver(hangmanState.secretWord, hangmanState.guessedLetters)
+    ) {
+      setCurrentScreen("hangmanArena");
+    } else {
+      setCurrentScreen("hangmanWordEntry");
+    }
+  };
+
+  const handleSelectHangmanFromHub = () => {
+    if (hasHangmanSession) {
+      Alert.alert(
+        "Continue Hangman Session?",
+        `Previous match found:\n${hangmanState.teamAName} (${hangmanState.scoreTeamA}) — ${hangmanState.teamBName} (${hangmanState.scoreTeamB})\n\nWould you like to continue this session or reset the entire thing and start from team setup again?`,
+        [
+          {
+            text: "Reset & Start Fresh",
+            style: "destructive",
+            onPress: resetHangmanAndStart,
+          },
+          {
+            text: "Continue Session",
+            onPress: continueHangmanSession,
+          },
+        ]
+      );
+    } else {
+      resetHangmanAndStart();
+    }
+  };
 
   // Selection states
   const [selectedIndustries, setSelectedIndustries] = useState<Industry[]>([
@@ -241,8 +327,12 @@ export default function App() {
 
   // Android Back Button safety
   const handleHardwareBack = useCallback(() => {
-    if (currentScreen === "setup") {
+    if (currentScreen === "gameHub") {
       return false; // Exit app
+    }
+    if (currentScreen === "setup" || currentScreen === "hangmanTeamSetup") {
+      setCurrentScreen("gameHub");
+      return true;
     }
     if (currentScreen === "dealing") {
       Alert.alert(
@@ -266,6 +356,27 @@ export default function App() {
       setCurrentScreen("setup");
       return true;
     }
+    if (currentScreen === "hangmanWordEntry") {
+      setCurrentScreen("hangmanTeamSetup");
+      return true;
+    }
+    if (currentScreen === "hangmanArena") {
+      Alert.alert(
+        "Exit Hangman Round?",
+        "Going back will cancel the round in progress.",
+        [
+          { text: "Continue Playing", style: "cancel" },
+          {
+            text: "Exit Round",
+            style: "destructive",
+            onPress: () => {
+              setCurrentScreen("hangmanWordEntry");
+            },
+          },
+        ]
+      );
+      return true;
+    }
     return false;
   }, [currentScreen]);
 
@@ -282,8 +393,16 @@ export default function App() {
       <SafeAreaView style={styles.safeArea}>
         <StatusBar style="dark" />
         <View style={styles.container}>
+          {currentScreen === "gameHub" && (
+            <GameHubScreen
+              onPlayImposter={() => setCurrentScreen("setup")}
+              onPlayHangman={handleSelectHangmanFromHub}
+            />
+          )}
+
           {currentScreen === "setup" && (
             <SetupScreen
+              onBackToHub={() => setCurrentScreen("gameHub")}
               selectedIndustries={selectedIndustries}
               onToggleIndustry={handleToggleIndustry}
               onSelectAllIndustries={handleSelectAllIndustries}
@@ -330,6 +449,66 @@ export default function App() {
               discussionTimerMinutes={roundState.discussionTimerMinutes}
               onReturnToSetup={handleReturnToSetup}
               onNextRound={handleNextRound}
+            />
+          )}
+
+          {currentScreen === "hangmanTeamSetup" && (
+            <HangmanTeamSetupScreen
+              state={hangmanState}
+              onBackToHub={() => setCurrentScreen("gameHub")}
+              onProceedToWordEntry={({ teamAName, teamBName }) => {
+                setHangmanState((prev) => ({
+                  ...prev,
+                  teamAName,
+                  teamBName,
+                }));
+                setCurrentScreen("hangmanWordEntry");
+              }}
+            />
+          )}
+
+          {currentScreen === "hangmanWordEntry" && (
+            <HangmanWordEntryScreen
+              state={hangmanState}
+              onBackToTeamSetup={() => setCurrentScreen("hangmanTeamSetup")}
+              onLockWordAndPass={({ secretWord, clues }) => {
+                setHasActiveHangmanSession(true);
+                setHangmanState((prev) => ({
+                  ...prev,
+                  secretWord,
+                  clues,
+                  guessedLetters: new Set<string>(),
+                  cluesViewed: false,
+                }));
+                setCurrentScreen("hangmanArena");
+              }}
+            />
+          )}
+
+          {currentScreen === "hangmanArena" && (
+            <HangmanArenaScreen
+              state={hangmanState}
+              onGuessLetter={(char) => {
+                setHangmanState((prev) => ({
+                  ...prev,
+                  guessedLetters: new Set(prev.guessedLetters).add(
+                    char.toUpperCase()
+                  ),
+                }));
+              }}
+              onOpenClues={() => {
+                setHangmanState((prev) => ({
+                  ...prev,
+                  cluesViewed: true,
+                }));
+              }}
+              onNextRound={() => {
+                const outcome = calculateRoundOutcome(hangmanState);
+                const nextRound = createNextHangmanRound(hangmanState, outcome);
+                setHangmanState(nextRound);
+                setCurrentScreen("hangmanWordEntry");
+              }}
+              onBackToHub={() => setCurrentScreen("gameHub")}
             />
           )}
         </View>
