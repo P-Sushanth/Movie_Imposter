@@ -42,6 +42,7 @@ interface SetupScreenProps {
   discussionTimerMinutes: number;
   onChangeDiscussionTimer: (minutes: number) => void;
   onStartGame: () => void;
+  onBackToHub?: () => void;
 }
 
 const CATEGORIES: { id: Industry; label: string }[] = [
@@ -76,6 +77,7 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
   discussionTimerMinutes = 0,
   onChangeDiscussionTimer,
   onStartGame,
+  onBackToHub,
 }) => {
   const maxImposters = Math.max(1, Math.floor(players.length / 2));
   const canAddMorePlayers = players.length < 10;
@@ -163,7 +165,27 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
       >
         {/* App Title */}
         <View style={styles.header}>
-          <Text style={styles.title}>Movie Imposter</Text>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            {onBackToHub ? (
+              <Pressable
+                onPress={onBackToHub}
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: 8,
+                  backgroundColor: colors.surfaceElevated,
+                  borderWidth: 1,
+                  borderColor: colors.surfaceBorder,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginRight: 10,
+                }}
+              >
+                <Text style={{ fontSize: 16, fontWeight: "700", color: colors.textPrimary }}>←</Text>
+              </Pressable>
+            ) : null}
+            <Text style={styles.title}>Movie Imposter</Text>
+          </View>
         </View>
 
         {/* 1. Categories Section */}
