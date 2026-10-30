@@ -36,6 +36,21 @@ def main():
     ]
     run_command(universal_cmd, flutter_dir)
 
+    print("\n=== Copying to Release Asset Names ===")
+    copy_map = {
+        "app-arm64-v8a-release.apk": "movie-imposter.apk",
+        "app-release.apk": "movie-imposter-universal.apk",
+        "app-armeabi-v7a-release.apk": "movie-imposter-armeabi-v7a.apk",
+        "app-x86_64-release.apk": "movie-imposter-x86_64.apk",
+    }
+    import shutil
+    for src_name, dst_name in copy_map.items():
+        src_path = os.path.join(apk_dir, src_name)
+        dst_path = os.path.join(apk_dir, dst_name)
+        if os.path.exists(src_path):
+            shutil.copyfile(src_path, dst_path)
+            print(f"  Copied {src_name} -> {dst_name}")
+
     print("\n=== Build Complete! Generated APKs: ===")
     if os.path.exists(apk_dir):
         for f in sorted(os.listdir(apk_dir)):
