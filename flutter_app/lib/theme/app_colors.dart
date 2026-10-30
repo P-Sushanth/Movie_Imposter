@@ -25,6 +25,12 @@ class AppColors {
   static const Color flameOrangeBg = Color(0xFFFFF7F2);
   static const Color flameOrangeBorder = Color(0xFFFFAB91);
 
+  // Warm Amber (Hangman focal accent - 60:30:10 rule)
+  static const Color warmAmber = Color(0xFFA55704);
+  static const Color warmAmberBg = Color(0xFFFBF4ED);
+  static const Color warmAmberBorder = Color(0xFFE8C5A0);
+  static const Color warmAmberLight = Color(0xFFD97706);
+
   // Typography colors
   static const Color textPrimary = Color(0xFF0F172A);
   static const Color textSecondary = Color(0xFF475569);
