@@ -50,8 +50,5 @@ flutter_app/.dart_tool/
 flutter_app/.flutter-plugins
 flutter_app/.flutter-plugins-dependencies
 
-# Private / Internal planning docs
-ONLINE_PARTY_MODE.md
-
 flutter_app/android/local.properties
 .gradle/

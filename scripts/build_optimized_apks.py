@@ -23,7 +23,6 @@ def main():
         "--split-per-abi",
         "--obfuscate",
         f"--split-debug-info={symbols_dir}",
-        "--android-skip-build-dependency-validation"
     ]
     run_command(split_cmd, flutter_dir)
 
@@ -32,7 +31,6 @@ def main():
         "flutter", "build", "apk", "--release",
         "--obfuscate",
         f"--split-debug-info={symbols_dir}",
-        "--android-skip-build-dependency-validation"
     ]
     run_command(universal_cmd, flutter_dir)
 

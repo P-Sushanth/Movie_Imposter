@@ -113,9 +113,11 @@ class MainActivity: FlutterActivity() {
                                     } else {
                                         VibrationEffect.createWaveform(timings, -1)
                                     }
+                                    @Suppress("DEPRECATION")
                                     vibrator.vibrate(effect, audioAttributes)
                                 } catch (_: Exception) {
                                     val effect = VibrationEffect.createWaveform(timings, -1)
+                                    @Suppress("DEPRECATION")
                                     vibrator.vibrate(effect, audioAttributes)
                                 }
                             } else {
